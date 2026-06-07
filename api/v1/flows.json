@@ -1,0 +1,42 @@
+{
+  "dataset": "flows",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "analysis/genesis71.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l3",
+  "data": [
+    {
+      "key": "genesis-fingerprint",
+      "title": "The Genesis Airdrop",
+      "blurb": "On 2023-06-22, the creator sent exactly 71 transfers of 5,915,493.929 TOKE in one block \u2014 the entire 420,000,069 supply \u2014 to the 71 Taste-of-Mycelium holders.",
+      "nodes": [
+        {
+          "id": "creator",
+          "label": "creator 4R9v\u2026"
+        },
+        {
+          "id": "g71",
+          "label": "71 genesis wallets"
+        }
+      ],
+      "edges": [
+        {
+          "from": "creator",
+          "to": "g71",
+          "amount": 420000069,
+          "count": 71,
+          "cite": {
+            "type": "account",
+            "ref": "4R9vgpp8yDpysvLZFb6V2pipJ8p2AqEyF5g9ozyEyDjt"
+          }
+        }
+      ]
+    }
+  ]
+}

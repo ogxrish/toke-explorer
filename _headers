@@ -1,0 +1,16 @@
+# Cloudflare Pages headers for the TOKE Explorer static bundle.
+# Datasets refresh daily via build/refresh.sh — short cache + revalidate so updates land fast.
+
+/api/v1/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/data.js
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/assets/*
+  Cache-Control: public, max-age=86400
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

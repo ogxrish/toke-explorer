@@ -1,0 +1,33 @@
+{
+  "dataset": "index",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "visibility": "l1",
+  "source": {
+    "kb_files": []
+  },
+  "data": {
+    "contract_version": "v1",
+    "generated_at": "2026-06-07T22:28:05.723574Z",
+    "datasets": [
+      "token",
+      "oracle",
+      "pools",
+      "supply",
+      "holders",
+      "cohorts",
+      "governance",
+      "badges",
+      "liquidity",
+      "flows",
+      "lore",
+      "health",
+      "activity"
+    ],
+    "subject": {
+      "symbol": "TOKE",
+      "mint": "AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo",
+      "chain": "solana-mainnet"
+    }
+  }
+}

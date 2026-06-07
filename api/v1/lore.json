@@ -1,0 +1,42 @@
+{
+  "dataset": "lore",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "07-narrative-lore/lore.md",
+      "07-narrative-lore/hall-of-fame.md"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l3",
+  "data": {
+    "saga": [
+      {
+        "key": "mcvault",
+        "title": "The McVault Saga",
+        "blurb": "A misconfigured 60% quorum once locked ~6.78% of supply; three annual 4/20 Great McVotes tried to free it; the third passed."
+      },
+      {
+        "key": "moonman",
+        "title": "Moon Man & the cyborg moon-dog $DANK",
+        "blurb": "The astronaut mascot and his companion token \u2014 the project's iconography."
+      },
+      {
+        "key": "idiot-dev",
+        "title": "The Idiot Dev",
+        "blurb": "The anonymous creator whose blunder accidentally freed TOKE to the community. Identity unknown \u2014 recorded as canon that it is unknown."
+      }
+    ],
+    "hall_of_fame": [
+      {
+        "exhibit": "001",
+        "title": "The Toke Story",
+        "status": "preserved"
+      }
+    ],
+    "epithets": {}
+  },
+  "notes": "Epithets address-keyed, zero names; empty until owner naming pass."
+}

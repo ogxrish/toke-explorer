@@ -1,0 +1,65 @@
+{
+  "dataset": "classes",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "backfill/token_accounts.jsonl",
+      "backfill/transfers.jsonl"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "config",
+  "data": {
+    "dao": {
+      "label": "DAO",
+      "count": 0
+    },
+    "cex": {
+      "label": "Exchange",
+      "count": 0
+    },
+    "project": {
+      "label": "Project",
+      "count": 0
+    },
+    "distributor": {
+      "label": "Distributor",
+      "count": 5
+    },
+    "treasury": {
+      "label": "Treasury",
+      "count": 1
+    },
+    "flagged": {
+      "label": "Flagged",
+      "count": 1
+    },
+    "infra": {
+      "label": "Infrastructure",
+      "count": 1069
+    },
+    "unknown": {
+      "label": "Unknown",
+      "count": 0
+    },
+    "amm": {
+      "label": "AMM / Liquidity Pool",
+      "count": 64
+    },
+    "program": {
+      "label": "Program / Contract",
+      "count": 1
+    },
+    "bot": {
+      "label": "Bot / Active Trader",
+      "count": 166
+    },
+    "wallet": {
+      "label": "Wallet",
+      "count": 21326
+    }
+  },
+  "notes": "Class catalog: key -> label + count. Drives the classification filter; edit curated/address-labels.json to recategorize."
+}

@@ -1,0 +1,99 @@
+{
+  "dataset": "cohorts",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "backfill/token_accounts.jsonl",
+      "backfill/transfers.jsonl"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "config",
+  "data": {
+    "genesis-71": {
+      "label": "OG Airdrop (Genesis 71)",
+      "tier": "primary",
+      "date": "2023-06-22",
+      "count": 71
+    },
+    "mobile": {
+      "label": "$MOBILE Airdrop",
+      "tier": "secondary",
+      "date": "2023-09-25",
+      "count": 11199
+    },
+    "pollen": {
+      "label": "$POLLEN Airdrop",
+      "tier": "secondary",
+      "date": "2023-10-17",
+      "count": 1868
+    },
+    "pixel-illiquid": {
+      "label": "Helium Pixel (illiquid)",
+      "tier": "secondary",
+      "date": "2024-04-16",
+      "count": 103
+    },
+    "pixel-corrected": {
+      "label": "Helium Pixel",
+      "tier": "secondary",
+      "date": "2024-04-17",
+      "count": 115
+    },
+    "mcdegens": {
+      "label": "McDegens",
+      "tier": "secondary",
+      "date": "2024-04-17",
+      "count": 58
+    },
+    "dewicats": {
+      "label": "DeWiCats",
+      "tier": "secondary",
+      "date": "2024-04-18",
+      "count": 53
+    },
+    "hot-heads": {
+      "label": "Hot Heads",
+      "tier": "secondary",
+      "date": "2024-04-19",
+      "count": 64
+    },
+    "depin-happy-hour": {
+      "label": "DePIN Happy Hour",
+      "tier": "secondary",
+      "date": "2024-07-05",
+      "count": 236
+    },
+    "entropy-r1": {
+      "label": "Entropy R1",
+      "tier": "secondary",
+      "date": "2024-09-04",
+      "count": 179
+    },
+    "entropy-r2": {
+      "label": "Entropy R2",
+      "tier": "secondary",
+      "date": "2024-10-15",
+      "count": 162
+    },
+    "depioneers": {
+      "label": "DePioneers",
+      "tier": "secondary",
+      "date": "2024-10-17",
+      "count": 1731
+    },
+    "dank": {
+      "label": "DANK Holder",
+      "tier": "badge",
+      "count": 77
+    },
+    "voter": {
+      "label": "Voted",
+      "tier": "badge",
+      "count": 79
+    }
+  },
+  "notes": "Cohort catalog: key -> public label, tier (primary/secondary/badge), date, live member count in the base."
+}

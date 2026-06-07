@@ -1,0 +1,70 @@
+{
+  "dataset": "badges",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "01-token/tiers-and-units.md"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l2",
+  "data": {
+    "badges": [
+      {
+        "key": "mcwhale",
+        "glyph": "\ud83d\udc0b",
+        "label": "McWhale",
+        "rule": ">=5,000,000 TOKE",
+        "max_possible": 84,
+        "kind": "tier"
+      },
+      {
+        "key": "1pct-club",
+        "glyph": "\ud83d\udcaf",
+        "label": "1% Club",
+        "rule": ">=4,200,000.69 TOKE",
+        "max_possible": 100,
+        "kind": "tier"
+      },
+      {
+        "key": "mcmillionaire",
+        "glyph": "\ud83c\udfc6",
+        "label": "McMillionaire",
+        "rule": ">=1,000,000 TOKE",
+        "max_possible": 420,
+        "kind": "tier"
+      },
+      {
+        "key": "mcvoter",
+        "glyph": "\ud83d\uddf3\ufe0f",
+        "label": "McVoter / Community",
+        "rule": ">=1 TOKE = 1 vote",
+        "kind": "tier"
+      },
+      {
+        "key": "born-mcwhale",
+        "glyph": "\u2b50",
+        "label": "Born McWhale",
+        "rule": "genesis-71 recipient",
+        "max_possible": 71,
+        "kind": "historical"
+      },
+      {
+        "key": "dank",
+        "glyph": "\ud83c\udf3f",
+        "label": "DANK badge",
+        "rule": "genesis McMillionaire holding DANK",
+        "kind": "honor"
+      }
+    ],
+    "featured_tier_counts": {
+      "mcwhale": 23,
+      "1pct-club": 3,
+      "mcmillionaire": 2,
+      "mcvoter": 15,
+      "sub-1-toke": 36
+    }
+  }
+}

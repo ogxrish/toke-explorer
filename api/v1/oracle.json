@@ -1,0 +1,52 @@
+{
+  "dataset": "oracle",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "analysis/oracle_20260530.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l2",
+  "data": {
+    "liquidity_weighted_price_usd": 0.00014706,
+    "total_pool_liquidity_usd": 18286.06,
+    "implied_mcap_usd": 61721,
+    "method": "liquidity-weighted VWAP across material pools",
+    "pools": [
+      {
+        "dex": "meteora",
+        "quote": "SOL",
+        "priceUsd": 0.0001474,
+        "liquidityUsd": 15941.35,
+        "cite": {
+          "type": "account",
+          "ref": "6cVMwWp6gmz697WyX9JedHu6Mxey8hV5ct8BhJNVdCwg"
+        }
+      },
+      {
+        "dex": "meteora",
+        "quote": "USDC",
+        "priceUsd": 0.0001444,
+        "liquidityUsd": 1719.93,
+        "cite": {
+          "type": "account",
+          "ref": "Ad6NEGrxHSBAGwfSTtBSHmKQgedHotCJZyFwCgRRAXc9"
+        }
+      },
+      {
+        "dex": "raydium",
+        "quote": "SOL",
+        "priceUsd": 0.0001456,
+        "liquidityUsd": 624.78,
+        "cite": {
+          "type": "account",
+          "ref": "HCRty6J2toqf8EAiQSNpAeG21Qd1p8bymJpWWkBkAXkz"
+        }
+      }
+    ],
+    "caveat": "Indicative liquidity-weighted price. Thin liquidity (~$18.3K), no CEX spot market; price is highly sensitive to small trades. Source: Dexscreener."
+  }
+}

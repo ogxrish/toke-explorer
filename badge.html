@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>$TOKE health badge</title>
+<style>
+  :root{--p:#13161d;--line:#242a33;--txt:#e7eaef;--mut:#8b94a3;--accent:#5ad1b3;--gold:#e7b84a;--warn:#ff6b6b}
+  *{box-sizing:border-box} html,body{margin:0;background:transparent}
+  .b{width:340px;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;background:var(--p);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--txt);display:block}
+  .r{display:flex;align-items:center;gap:10px}
+  .logo{width:30px;height:30px;border-radius:8px;display:block}
+  .t b{font-size:14px}.t div{font-size:11px;color:var(--mut)}
+  .g{margin-left:auto;text-align:right}.grade{font-size:18px;font-weight:800}.gl{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+  .row{display:flex;gap:16px;margin-top:11px}
+  .row div{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+  .row b{color:var(--txt);font-size:13px;display:block;margin-top:2px;letter-spacing:0;text-transform:none}
+  a.b{text-decoration:none}
+</style></head><body>
+<a class="b" id="card" href="https://explorer.mctoken.xyz" target="_blank" rel="noopener">
+  <div class="r">
+    <img class="logo" src="assets/toke-logo.png" alt="TOKE" onerror="this.style.display='none'">
+    <div class="t"><b>$TOKE · McToken</b><div>explorer.mctoken.xyz</div></div>
+    <div class="g"><div class="grade" id="grade">—</div><div class="gl">health</div></div>
+  </div>
+  <div class="row">
+    <div>Price<b id="price">…</b></div>
+    <div>Liquidity<b id="liq">…</b></div>
+    <div>Top-10<b id="t10">…</b></div>
+  </div>
+</a>
+<script>
+const MINT="AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo";
+const usd=n=> n>=1000?"$"+Math.round(n).toLocaleString():"$"+(+n).toPrecision(3);
+(async function(){
+  try{ const h=await (await fetch("api/v1/health.json",{cache:"no-store"})).json();
+    const t10=h.data.top10_pct; if(t10!=null) document.getElementById("t10").textContent=t10+"%";
+    const score=((h.data.rugcheck||"").match(/(\d+)\/100/)||[])[1];
+    const gel=document.getElementById("grade");
+    if(score){ gel.textContent=score+"/100"; gel.style.color = score>=70?"var(--accent)": score>=50?"var(--gold)":"var(--warn)"; }
+  }catch(e){}
+  try{ const j=await (await fetch("https://api.dexscreener.com/latest/dex/tokens/"+MINT,{cache:"no-store"})).json();
+    const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0); let liq=0,pw=0;
+    ps.forEach(p=>{const L=+p.liquidity.usd; liq+=L; pw+=(+p.priceUsd)*L;});
+    if(liq){ document.getElementById("price").textContent="$"+(pw/liq).toFixed(6); document.getElementById("liq").textContent=usd(liq); }
+  }catch(e){ document.getElementById("price").textContent="—"; }
+})();
+</script></body></html>

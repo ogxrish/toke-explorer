@@ -1,0 +1,1398 @@
+{
+  "dataset": "governance",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "analysis/governance.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l2",
+  "data": {
+    "program": "GovER5Lthms3bLBqWub97yVrMmEogzX7xNjdXpPPCVZw",
+    "proposals": [
+      {
+        "id": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "state": 7,
+        "voters": 34,
+        "total_weight_toke": 161217299.864,
+        "turnout_pct": 38.39,
+        "cite": {
+          "type": "account",
+          "ref": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5"
+        }
+      },
+      {
+        "id": "EASXhE2KQs7BjybWZsfkuC858kgWJ1MiSsCYKecHBpfH",
+        "state": 6,
+        "voters": 1,
+        "total_weight_toke": 1076971.0,
+        "turnout_pct": 0.26,
+        "cite": {
+          "type": "account",
+          "ref": "EASXhE2KQs7BjybWZsfkuC858kgWJ1MiSsCYKecHBpfH"
+        }
+      },
+      {
+        "id": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "state": 5,
+        "voters": 44,
+        "total_weight_toke": 287440439.373,
+        "turnout_pct": 68.44,
+        "cite": {
+          "type": "account",
+          "ref": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z"
+        }
+      },
+      {
+        "id": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "state": 7,
+        "voters": 47,
+        "total_weight_toke": 199567946.899,
+        "turnout_pct": 47.52,
+        "cite": {
+          "type": "account",
+          "ref": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS"
+        }
+      },
+      {
+        "id": "7Xk2w2q4mGTy66UEW59NHkJb3ixwimra3CGspdRr174d",
+        "state": 5,
+        "voters": 4,
+        "total_weight_toke": 92447186.245,
+        "turnout_pct": 22.01,
+        "cite": {
+          "type": "account",
+          "ref": "7Xk2w2q4mGTy66UEW59NHkJb3ixwimra3CGspdRr174d"
+        }
+      },
+      {
+        "id": "ArPdmoV1jqEGmFrpgkmU2fEXNBJw4owdyGivyLb8pFub",
+        "state": 6,
+        "voters": 1,
+        "total_weight_toke": 13694.977,
+        "turnout_pct": 0.0,
+        "cite": {
+          "type": "account",
+          "ref": "ArPdmoV1jqEGmFrpgkmU2fEXNBJw4owdyGivyLb8pFub"
+        }
+      }
+    ],
+    "rolls": [
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "Gmc26GMnhE3AWwdAQpxxsQPo6UYaob4wPRxUpmDsujoX",
+        "weight_toke": 6000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Gmc26GMnhE3AWwdAQpxxsQPo6UYaob4wPRxUpmDsujoX"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG",
+        "weight_toke": 141.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "4icrV9pcQeUFLyynTKvzJXag5bpYZQ4dEEAhhwEzjrG3",
+        "weight_toke": 19000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4icrV9pcQeUFLyynTKvzJXag5bpYZQ4dEEAhhwEzjrG3"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "4STmnWqgndnQreDtBV4o1SB9FN7zj4CBT4FHLPquj9V7",
+        "weight_toke": 40730.794,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4STmnWqgndnQreDtBV4o1SB9FN7zj4CBT4FHLPquj9V7"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU",
+        "weight_toke": 14000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt",
+        "weight_toke": 10085781.869,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+        "weight_toke": 1000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+        "weight_toke": 501688.659,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+        "weight_toke": 8000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "DaKSMXkaaeDZ99ZLn3o7KiLFUmx78P7fzFYRehNJjz1m",
+        "weight_toke": 10034572.414,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "DaKSMXkaaeDZ99ZLn3o7KiLFUmx78P7fzFYRehNJjz1m"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "FHXFaDZu48UCaDEzXYf9ybvdVeErnKtMZv6TFYPo7xkM",
+        "weight_toke": 3000.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "FHXFaDZu48UCaDEzXYf9ybvdVeErnKtMZv6TFYPo7xkM"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+        "weight_toke": 1000449.548,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+        "weight_toke": 5327730.088,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "41aG2SQnWaRWrLYSBRLkysC6zo9RWPiaKxwsSPUybFHN",
+        "weight_toke": 39462043.709,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "41aG2SQnWaRWrLYSBRLkysC6zo9RWPiaKxwsSPUybFHN"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "7Z7sWNw8toookLNjRLAPjuwe8SNCoXfSrrnUjfLJFFB8",
+        "weight_toke": 2017098.364,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "7Z7sWNw8toookLNjRLAPjuwe8SNCoXfSrrnUjfLJFFB8"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+        "weight_toke": 5360000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt",
+        "weight_toke": 1949.512,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "Axuag93xbc2hEg5LpqNByt9nWbMuW4sogZvv2HU8VQUY",
+        "weight_toke": 8708984.343,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Axuag93xbc2hEg5LpqNByt9nWbMuW4sogZvv2HU8VQUY"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm",
+        "weight_toke": 7558879.121,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU",
+        "weight_toke": 200.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht",
+        "weight_toke": 750000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "7F7Th1McdngsN6KeuzBtN1shphxgLe5to8RXBeL4ivwW",
+        "weight_toke": 1000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "7F7Th1McdngsN6KeuzBtN1shphxgLe5to8RXBeL4ivwW"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+        "weight_toke": 48560.38,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+        "weight_toke": 100.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "GKr5evqjBBqVsmb29siA7XzhK9sDBanvbA8bbEf9oG9G",
+        "weight_toke": 35000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "GKr5evqjBBqVsmb29siA7XzhK9sDBanvbA8bbEf9oG9G"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "4Uuay8hqDH9j9rNu9dRscDckQfXvJHCxJ1e11bjbvk1m",
+        "weight_toke": 153882.239,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4Uuay8hqDH9j9rNu9dRscDckQfXvJHCxJ1e11bjbvk1m"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+        "weight_toke": 5973219.343,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "BfVHFudvbfYf34YGe2n5Cri1UWTi3eSWPXFurb99JJY2",
+        "weight_toke": 1000948.047,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "BfVHFudvbfYf34YGe2n5Cri1UWTi3eSWPXFurb99JJY2"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "7hzKQP5E6hBKE5oUrUWvo4PPoYZiG4tHdXiWhYNT7w8p",
+        "weight_toke": 20000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "7hzKQP5E6hBKE5oUrUWvo4PPoYZiG4tHdXiWhYNT7w8p"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+        "weight_toke": 5000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "7QTVDSypfDiubj6tqBqXTZUMBAxy8DTpkCxZjLy4cAA8",
+        "weight_toke": 2000.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "7QTVDSypfDiubj6tqBqXTZUMBAxy8DTpkCxZjLy4cAA8"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD",
+        "weight_toke": 8.949,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "8aL9B4zEjgqivTEt2uNezhTTJ2sp5MaLAQwYPcX8pWvC",
+        "weight_toke": 1024636.508,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "8aL9B4zEjgqivTEt2uNezhTTJ2sp5MaLAQwYPcX8pWvC"
+        }
+      },
+      {
+        "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+        "voter": "DqYPB9uTWXEU7NKQbZG5cg4T5SBc3VbPocpjssDvZNxr",
+        "weight_toke": 113694.977,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "DqYPB9uTWXEU7NKQbZG5cg4T5SBc3VbPocpjssDvZNxr"
+        }
+      },
+      {
+        "proposal": "EASXhE2KQs7BjybWZsfkuC858kgWJ1MiSsCYKecHBpfH",
+        "voter": "Gmc26GMnhE3AWwdAQpxxsQPo6UYaob4wPRxUpmDsujoX",
+        "weight_toke": 1076971.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Gmc26GMnhE3AWwdAQpxxsQPo6UYaob4wPRxUpmDsujoX"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+        "weight_toke": 2388022.263,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR",
+        "weight_toke": 1457.632,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ",
+        "weight_toke": 34572.414,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ",
+        "weight_toke": 90000.608,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
+        "weight_toke": 1781.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD",
+        "weight_toke": 8.949,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+        "weight_toke": 6986.244,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "BUUpQKV29s7ETEDDHSR61gATqFe9FZAaCGmtLFNkTYm7",
+        "weight_toke": 5437492.929,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "BUUpQKV29s7ETEDDHSR61gATqFe9FZAaCGmtLFNkTYm7"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM",
+        "weight_toke": 4200.204,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG",
+        "weight_toke": 131812.366,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ",
+        "weight_toke": 1149.113,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9",
+        "weight_toke": 322142.438,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "96tzHrW9WyUeNWfRSL6WHnRMUGcs57f6vvZqcYnr8Fxy",
+        "weight_toke": 58901155.315,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "96tzHrW9WyUeNWfRSL6WHnRMUGcs57f6vvZqcYnr8Fxy"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+        "weight_toke": 15367952.015,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
+        "weight_toke": 317507.783,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm",
+        "weight_toke": 17530400.726,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+        "weight_toke": 76107.169,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+        "weight_toke": 1000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8",
+        "weight_toke": 125566.141,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ",
+        "weight_toke": 9750.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+        "weight_toke": 5800000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ",
+        "weight_toke": 21158008.667,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4",
+        "weight_toke": 84272269.116,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+        "weight_toke": 1.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+        "weight_toke": 500246.065,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+        "weight_toke": 10698136.9,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "CNYZVtjWmxAReY5cDZ1pGMKVbpGpzFX9M5UmUxDJJ8zb",
+        "weight_toke": 7559759.55,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "CNYZVtjWmxAReY5cDZ1pGMKVbpGpzFX9M5UmUxDJJ8zb"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+        "weight_toke": 9307584.499,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "BeWdDLTddmeeGYPJ1DUFLBmBT7rZinLrpmztd7bC3kyT",
+        "weight_toke": 14937133.407,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "BeWdDLTddmeeGYPJ1DUFLBmBT7rZinLrpmztd7bC3kyT"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "8iCxDXSnsdvWszSwsF4yWFaMHePxJkr3U7796KgQKr5D",
+        "weight_toke": 1016.214,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "8iCxDXSnsdvWszSwsF4yWFaMHePxJkr3U7796KgQKr5D"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "75e8V3dgRuhWgJhzBAGHCzp5cQkWmwDKsJgbo98PdGJH",
+        "weight_toke": 1108423.353,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "75e8V3dgRuhWgJhzBAGHCzp5cQkWmwDKsJgbo98PdGJH"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "3wNQnr98nRfcbNEjfvq88J5mv8BdJKKqEzyibFfhCvoA",
+        "weight_toke": 109708.655,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3wNQnr98nRfcbNEjfvq88J5mv8BdJKKqEzyibFfhCvoA"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
+        "weight_toke": 5924957.89,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX",
+        "weight_toke": 9829.42,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa",
+        "weight_toke": 44025.514,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z",
+        "weight_toke": 6520.575,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h",
+        "weight_toke": 1737.303,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht",
+        "weight_toke": 1002987.579,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w",
+        "weight_toke": 100091.568,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w",
+        "weight_toke": 24500.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+        "weight_toke": 5983778.033,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "9Tr2n1FgSdVbVSbZMbzWeEUcD38vPnZUeT49Rn5WMsjg",
+        "weight_toke": 7140483.783,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9Tr2n1FgSdVbVSbZMbzWeEUcD38vPnZUeT49Rn5WMsjg"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G",
+        "weight_toke": 10000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G"
+        }
+      },
+      {
+        "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+        "voter": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU",
+        "weight_toke": 1174.973,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm",
+        "weight_toke": 10000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+        "weight_toke": 14682583.496,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+        "weight_toke": 1703778.352,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+        "weight_toke": 5983778.033,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht",
+        "weight_toke": 1002987.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+        "weight_toke": 3000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8",
+        "weight_toke": 40366.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "5svWrR4y3QSNjnnxR2DRZEzfrWakaFkBzYEJMdYKHasj",
+        "weight_toke": 27299.427,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "5svWrR4y3QSNjnnxR2DRZEzfrWakaFkBzYEJMdYKHasj"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "D9YJGMFKwh9EPU9ALqXndVzuXtqVmUDxVvhEBy1PTFcB",
+        "weight_toke": 281325.945,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "D9YJGMFKwh9EPU9ALqXndVzuXtqVmUDxVvhEBy1PTFcB"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+        "weight_toke": 1.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+        "weight_toke": 500246.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9",
+        "weight_toke": 178920.99,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "EKRFSydvScPyPV8Ek5sLuZQtyhiaJQRCvUd985D6ZTY4",
+        "weight_toke": 5861.684,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "EKRFSydvScPyPV8Ek5sLuZQtyhiaJQRCvUd985D6ZTY4"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ",
+        "weight_toke": 34572.414,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt",
+        "weight_toke": 71950.512,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM",
+        "weight_toke": 1033.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX",
+        "weight_toke": 9829.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa",
+        "weight_toke": 32449.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
+        "weight_toke": 1003871.647,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "7WGkeTqFsh9nhxFD9a3Q7msspSqeyRmHoqFVTF4W9Aey",
+        "weight_toke": 10000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "7WGkeTqFsh9nhxFD9a3Q7msspSqeyRmHoqFVTF4W9Aey"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "E6dXjnXU2FC6LYp9ycWryxTm5mYURTPSHRPvaKX65gCP",
+        "weight_toke": 420.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "E6dXjnXU2FC6LYp9ycWryxTm5mYURTPSHRPvaKX65gCP"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "FNp1aBZsucPh1Bg8RdtRpGQDNJQmkXQQxQXotqtykpcF",
+        "weight_toke": 101041.774,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "FNp1aBZsucPh1Bg8RdtRpGQDNJQmkXQQxQXotqtykpcF"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+        "weight_toke": 5009.418,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ",
+        "weight_toke": 9750.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "4TTJx3o91zb1RFSuXLhzr9SUGCKJd8GcFq9LxYrXLeez",
+        "weight_toke": 8581727.042,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4TTJx3o91zb1RFSuXLhzr9SUGCKJd8GcFq9LxYrXLeez"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR",
+        "weight_toke": 1457.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "48vvCZctCziUAHiFNv43HSMugxnhjLviPnx7sGsBaPbS",
+        "weight_toke": 42047358.222,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "48vvCZctCziUAHiFNv43HSMugxnhjLviPnx7sGsBaPbS"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ",
+        "weight_toke": 798.79,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+        "weight_toke": 1004247.705,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG",
+        "weight_toke": 47527.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "2jmHbKMkRfSSTVoUGG7N7LhvdDaqJdbTk8B55RcYGt2B",
+        "weight_toke": 19096334.98,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "2jmHbKMkRfSSTVoUGG7N7LhvdDaqJdbTk8B55RcYGt2B"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "8Yjy7sGuKW7qDRHnnLPETPfH637PZas6Q59JoBwN3wAp",
+        "weight_toke": 12771.703,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "8Yjy7sGuKW7qDRHnnLPETPfH637PZas6Q59JoBwN3wAp"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "DEFYP5GexHE7ptQrcYvry3YUAeHTg5u5ugMxPA11mDmj",
+        "weight_toke": 1.0,
+        "relinquished": false,
+        "cite": {
+          "type": "account",
+          "ref": "DEFYP5GexHE7ptQrcYvry3YUAeHTg5u5ugMxPA11mDmj"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+        "weight_toke": 8144050.627,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w",
+        "weight_toke": 100091.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "AvhDZtGLMEdzwbFoLtBDuZnj3yzsncv4hSRMJ1i7zYGa",
+        "weight_toke": 21158008.667,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "AvhDZtGLMEdzwbFoLtBDuZnj3yzsncv4hSRMJ1i7zYGa"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h",
+        "weight_toke": 1737.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w",
+        "weight_toke": 24500.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
+        "weight_toke": 5924957.89,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt",
+        "weight_toke": 9693889.195,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU",
+        "weight_toke": 1174.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "EUQvUBiwxw98CU319tSc6oEnCm6RR3EZJruxsz9GGZG7",
+        "weight_toke": 10043036.421,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "EUQvUBiwxw98CU319tSc6oEnCm6RR3EZJruxsz9GGZG7"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ",
+        "weight_toke": 21094207.094,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z",
+        "weight_toke": 6520.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+        "weight_toke": 6701523.187,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY",
+        "weight_toke": 101953.684,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY"
+        }
+      },
+      {
+        "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+        "voter": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ",
+        "weight_toke": 100000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ"
+        }
+      },
+      {
+        "proposal": "7Xk2w2q4mGTy66UEW59NHkJb3ixwimra3CGspdRr174d",
+        "voter": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+        "weight_toke": 2388022.263,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi"
+        }
+      },
+      {
+        "proposal": "7Xk2w2q4mGTy66UEW59NHkJb3ixwimra3CGspdRr174d",
+        "voter": "96tzHrW9WyUeNWfRSL6WHnRMUGcs57f6vvZqcYnr8Fxy",
+        "weight_toke": 58901155.315,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "96tzHrW9WyUeNWfRSL6WHnRMUGcs57f6vvZqcYnr8Fxy"
+        }
+      },
+      {
+        "proposal": "7Xk2w2q4mGTy66UEW59NHkJb3ixwimra3CGspdRr174d",
+        "voter": "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G",
+        "weight_toke": 10000000.0,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G"
+        }
+      },
+      {
+        "proposal": "7Xk2w2q4mGTy66UEW59NHkJb3ixwimra3CGspdRr174d",
+        "voter": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ",
+        "weight_toke": 21158008.667,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ"
+        }
+      },
+      {
+        "proposal": "ArPdmoV1jqEGmFrpgkmU2fEXNBJw4owdyGivyLb8pFub",
+        "voter": "DqYPB9uTWXEU7NKQbZG5cg4T5SBc3VbPocpjssDvZNxr",
+        "weight_toke": 13694.977,
+        "relinquished": true,
+        "cite": {
+          "type": "account",
+          "ref": "DqYPB9uTWXEU7NKQbZG5cg4T5SBc3VbPocpjssDvZNxr"
+        }
+      }
+    ],
+    "participant_count": 86
+  },
+  "notes": "Voter rolls anonymous (addresses). Vote direction + McVote-year labels land in M2 from realms_audit.json."
+}

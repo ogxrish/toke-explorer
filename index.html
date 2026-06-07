@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$TOKE Explorer · explorer.mctoken.xyz</title>
+<link rel="icon" type="image/png" href="assets/toke-logo.png">
+<style>
+  :root{
+    --bg:#0a0c10;--panel:#13161d;--panel2:#181c24;--line:#242a33;--line2:#2e3540;
+    --txt:#e7eaef;--mut:#8b94a3;--mut2:#5b6472;
+    --accent:#5ad1b3;--accent2:#4aa3ff;--warn:#ff6b6b;--gold:#e7b84a;--purple:#9b8cff;
+    --r:13px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+  .mono{font-family:ui-monospace,Menlo,monospace}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 20px 80px}
+
+  header{position:sticky;top:0;z-index:30;background:rgba(10,12,16,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hbar{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{width:38px;height:38px;border-radius:10px;display:block;object-fit:cover}
+  .hprice{font-size:11.5px;color:var(--mut);text-align:right;line-height:1.35;margin-right:4px}
+  .hprice b{color:var(--accent);font-size:15px}
+  .typ.holder{background:rgba(155,140,255,.14);color:var(--purple)}
+  .typ.infrastructure{background:rgba(74,163,255,.14);color:var(--accent2)}
+  .typ.governance{background:rgba(90,209,179,.14);color:var(--accent)}
+  .sns{color:var(--gold);font-weight:700}
+  .typ.lp{background:rgba(231,184,74,.16);color:var(--gold)}
+  .typ.project{background:rgba(155,140,255,.14);color:var(--purple)}
+  .tier{font-size:12px;margin-right:5px;cursor:help}
+  .brand b{font-size:16px;letter-spacing:.3px}
+  .brand .s{font-size:11px;color:var(--mut)}
+  .spacer{flex:1}
+  .ctrl{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mut)}
+  select,.toggle{background:var(--panel2);color:var(--txt);border:1px solid var(--line2);border-radius:8px;padding:5px 9px;font-size:12px;cursor:pointer}
+  .toggle{display:inline-flex;align-items:center;gap:7px;user-select:none}
+  .toggle input{accent-color:var(--accent)}
+  .seg2{display:inline-flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden}
+  .segb{background:var(--panel2);color:var(--mut);border:0;padding:6px 11px;font-size:12px;cursor:pointer;font-family:inherit}
+  .segb.on{background:rgba(90,209,179,.16);color:var(--accent)}
+  .segb+.segb{border-left:1px solid var(--line2)}
+  .typ.distributor,.typ.routing{background:rgba(91,100,114,.22);color:var(--mut)}
+  .typ.flagged{background:rgba(255,107,107,.16);color:var(--warn)}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin:18px 0}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:11px 13px}
+  .kpi .l{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut)}
+  .kpi .v{font-size:19px;font-weight:700;margin-top:4px}
+  .kpi .n{font-size:10.5px;color:var(--mut);margin-top:2px}
+  .up{color:var(--accent)}.down{color:var(--warn)}.gold{color:var(--gold)}
+
+  h2.sec{font-size:12px;text-transform:uppercase;letter-spacing:.9px;color:#aeb6c2;margin:26px 0 4px;font-weight:700}
+  .sub{font-size:12px;color:var(--mut);margin:0 0 12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+
+  /* MAP */
+  .ribbon{display:flex;height:74px;border-radius:11px;overflow:hidden;border:1px solid var(--line2);gap:2px;background:var(--line)}
+  .seg{position:relative;min-width:8px;display:flex;flex-direction:column;justify-content:center;padding:0 11px;cursor:pointer;transition:filter .15s;overflow:hidden;color:#0a0c10}
+  .seg:hover{filter:brightness(1.12)}
+  .seg .pct{font-size:15px;font-weight:800}
+  .seg .lab{font-size:10px;font-weight:600;opacity:.85;white-space:nowrap}
+  .seg.sel{outline:2px solid #fff;outline-offset:-2px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .lg{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--mut);background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer}
+  .lg .dot{width:9px;height:9px;border-radius:3px}
+  .lg b{color:var(--txt);font-weight:600}
+  .concbar{height:9px;border-radius:6px;background:var(--panel2);overflow:hidden;margin-top:14px;border:1px solid var(--line)}
+  .concbar>span{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--accent2))}
+
+  /* leaderboard */
+  .lbctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+  input[type=search]{background:var(--panel2);border:1px solid var(--line2);border-radius:8px;color:var(--txt);padding:7px 11px;font-size:13px;min-width:220px}
+  .chip{font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--line2);background:var(--panel2);color:var(--mut);cursor:pointer;user-select:none}
+  .chip.on{background:rgba(90,209,179,.16);color:var(--accent);border-color:rgba(90,209,179,.4)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--mut);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;user-select:none;white-space:nowrap}
+  th.r,td.r{text-align:right}
+  th .ar{opacity:.5;font-size:9px}
+  tbody tr{cursor:pointer}
+  tbody tr:hover{background:var(--panel2)}
+  .badge{font-size:13px;margin-right:1px}
+  .ctag{font-size:9.5px;color:var(--mut);background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-right:3px;white-space:nowrap}
+  .typ{font-size:10px;padding:2px 7px;border-radius:6px;font-weight:600}
+  .typ.community{background:rgba(155,140,255,.14);color:var(--purple)}
+  .typ.treasury{background:rgba(231,184,74,.14);color:var(--gold)}
+  .typ.market-maker{background:rgba(74,163,255,.14);color:var(--accent2)}
+  .typ.routing{background:rgba(91,100,114,.22);color:var(--mut)}
+  .typ.gov-escrow{background:rgba(90,209,179,.14);color:var(--accent)}
+  .alink{font-size:10px;color:var(--mut);margin-left:6px}
+
+  /* drawer */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:.2s;z-index:40}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:var(--panel);border-left:1px solid var(--line2);transform:translateX(100%);transition:.22s;z-index:50;overflow-y:auto;padding:22px}
+  .drawer.on{transform:none}
+  .drawer h3{margin:.2em 0;font-size:15px}
+  .drawer .x{position:absolute;top:14px;right:16px;cursor:pointer;color:var(--mut);font-size:20px}
+  .kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .kv .k{color:var(--mut)}
+  .pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;background:var(--panel2);border:1px solid var(--line2);margin:3px 4px 0 0}
+
+  .l3 .l3only{display:block}
+  body.truth .l3only{display:none!important}
+  .truthnote{font-size:11px;color:var(--gold);margin-top:6px;display:none}
+  body.truth .truthnote{display:block}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}.drawer{width:100%}}
+  .foot{margin-top:34px;border-top:1px solid var(--line);padding-top:16px;font-size:11px;color:var(--mut)}
+  .vis{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut2);border:1px solid var(--line2);border-radius:5px;padding:1px 5px;margin-left:6px}
+  .loreCard{background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+  .loreCard h4{margin:0 0 5px;font-size:13px}
+  .loreCard p{margin:0;font-size:12px;color:var(--mut)}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+  .cohortCard{cursor:pointer;transition:border-color .15s}
+  .cohortCard:hover{border-color:var(--accent)}
+  .cc-n{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut)}
+  .cc-v{font-size:24px;font-weight:800;margin:4px 0}
+  .cc-r{font-size:10.5px;color:var(--mut)}
+  .flowrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;margin:6px 0}
+  .node{padding:6px 10px;border-radius:8px;background:var(--panel2);border:1px solid var(--line)}
+  .arrow{color:var(--accent);font-size:11px}
+  .exp{background:rgba(90,209,179,.14);color:var(--accent);border-color:rgba(90,209,179,.4)}
+  .treemap{position:relative;width:100%;height:174px;border-radius:11px;overflow:hidden;border:1px solid var(--line2);background:var(--line)}
+  .tm{position:absolute;cursor:pointer;transition:opacity .45s ease,transform .45s ease,filter .15s;color:#0a0c10;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(10,12,16,.25)}
+  .tm:hover{filter:brightness(1.12)}
+  .tm.sel{box-shadow:inset 0 0 0 2px #fff;z-index:2}
+  .tm-lab{padding:9px 11px;font-size:11px;font-weight:600;line-height:1.25}
+  .tm-lab b{font-size:18px;font-weight:800}
+  .wrapModal{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
+  .wrapModal.on{display:flex}
+  .wrapBox{background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:16px;max-width:480px;width:100%}
+  .wrapBox .x{float:right;cursor:pointer;color:var(--mut);font-size:20px;line-height:1}
+  .wrapBox svg{width:100%;height:auto;border-radius:12px;display:block}
+  .wrapDl{display:flex;gap:8px;margin-top:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="hbar">
+    <img class="logo" src="assets/toke-logo.png" alt="TOKE">
+    <div class="brand">
+      <b>$TOKE <span style="color:var(--mut);font-weight:400">·</span> McToken</b>
+      <div class="s">Solana · <span class="mono" id="mintline">…</span></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="hprice" id="hprice"></div>
+    <div class="ctrl" id="livestat" title="click to refresh live data" style="cursor:pointer"></div>
+    <div class="ctrl">explorer
+      <select id="exp">
+        <option value="orb" selected>Orb (Helius)</option>
+        <option value="solscan">Solscan</option>
+        <option value="xray">XRAY</option>
+        <option value="solana">Solana Explorer</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="loaderr" style="display:none" class="card" >⚠️ Couldn't load <span class="mono">data.js</span>. Open <span class="mono">index.html</span> from the <b>explorer/public</b> folder (so <span class="mono">data.js</span> sits beside it), or serve the folder over http.</div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <h2 class="sec">The TOKE Map — where all 420,000,069 sits</h2>
+  <p class="sub">Every holder counted. Click a region to filter the leaderboard. <span id="mapas"></span></p>
+  <div class="card">
+    <div class="treemap" id="treemap"></div>
+    <div class="legend" id="legend"></div>
+    <div style="margin-top:16px;font-size:11px;color:var(--mut)">Top-10 concentration <b id="conclbl" style="color:var(--txt)"></b></div>
+    <div class="concbar"><span id="concbar"></span></div>
+  </div>
+
+  <h2 class="sec">The Orb — tracked wallets <span class="vis">anonymous · L1+L2</span></h2>
+  <p class="sub" id="lbsub"></p>
+  <div class="card">
+    <div class="lbctrl">
+      <input type="search" id="q" placeholder="Search address or .sol…">
+      <div class="seg2" id="focusSeg" title="default = current holders + any tagged wallet (airdrops/voted/DANK); ever-touched = every address that ever held or moved TOKE">
+        <button class="segb on" data-focus="default">Holders + Tagged</button>
+        <button class="segb" data-focus="ever">Ever touched</button>
+      </div>
+      <select id="ftier"><option value="">All tiers</option><option value="mcwhale">🐋 McWhale</option><option value="1pct-club">💯 1% Club</option><option value="mcmillionaire">🏆 McMillionaire</option><option value="mcvoter">🗳️ McVoter</option><option value="sub-1-toke">g · g-Bag</option><option value="former">∅ Former (0)</option></select>
+      <select id="fclass" title="classification — wallet / AMM / program / CEX / distributor / infra"><option value="">All classes</option></select>
+      <select id="fcoh" title="cohort / airdrop membership"><option value="">All cohorts</option></select>
+      <span class="chip" data-coh="genesis-71">🍄 OG Airdrop</span>
+      <span class="chip" data-coh="dank">🌿 DANK</span>
+      <span class="chip" data-coh="voter">🏛️ Voted</span>
+      <span class="chip exp" id="expJson" title="export the filtered set as JSON (airdrop)">⬇ JSON</span>
+      <span class="chip exp" id="expCsv" title="export the filtered set as CSV">⬇ CSV</span>
+      <span class="chip" id="clearf">clear</span>
+    </div>
+    <div id="focusNote" class="sub" style="margin:-6px 0 8px;color:var(--mut)"></div>
+    <table>
+      <thead><tr>
+        <th data-sort="rank">#<span class="ar"></span></th>
+        <th>Wallet</th>
+        <th>Type</th>
+        <th class="r" data-sort="balance">Balance<span class="ar">▼</span></th>
+        <th class="r" data-sort="pct">%<span class="ar"></span></th>
+        <th>Badges</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div id="lbcount" class="sub" style="margin:10px 0 0"></div>
+  </div>
+
+  <h2 class="sec" style="margin-top:22px">Liquidity <span class="vis">L2</span></h2>
+  <p class="sub">The honest picture — pool liquidity vs implied market cap, plus anonymous LP holders.</p>
+  <div class="card" id="liq"></div>
+
+  <h2 class="sec" style="margin-top:22px">Activity <span class="vis">live</span></h2>
+  <p class="sub">24h market activity (live from Dexscreener). Per-transaction feed via the live TOKE API.</p>
+  <div class="card" id="activity"></div>
+
+  <h2 class="sec" style="margin-top:22px">Cohorts &amp; airdrop export <span class="vis">L2</span></h2>
+  <p class="sub">Membership groups — click a card to filter the board, then use ⬇ JSON / ⬇ CSV above to export the set for an airdrop. Snapshot is verifiable on-chain.</p>
+  <div class="grid3" id="cohortCards"></div>
+
+  <h2 class="sec" style="margin-top:22px">Governance <span class="vis">L1+L2</span></h2>
+  <p class="sub">On-chain proposals (SPL Governance / Realms). Turnout = vote weight ÷ supply.</p>
+  <div class="card"><table id="govt"></table></div>
+
+  <h2 class="sec" style="margin-top:22px">Flows <span class="vis">L1 · verifiable</span></h2>
+  <p class="sub">Guided on-chain stories — every edge links to a transaction.</p>
+  <div class="card" id="flows"></div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"></aside>
+<div class="wrapModal" id="wrapModal"><div class="wrapBox"><span class="x" onclick="closeWrap()">×</span><div id="wrapCard"></div><div class="wrapDl"><span class="chip exp" onclick="downloadWrapped('png')">⬇ PNG</span><span class="chip exp" onclick="downloadWrapped('svg')">⬇ SVG</span><span class="chip" style="margin-left:auto" onclick="closeWrap()">close</span></div></div></div>
+
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script>
+const D = (window.__TOKE_DATA__)||null;
+const $=id=>document.getElementById(id);
+const get=n=> (D&&D[n]&&D[n].data)||null;
+if(!D){ $('loaderr').style.display='block'; }
+
+// ---------- explorer links ----------
+const EX={
+  orb:{account:a=>`https://orbmarkets.io/address/${a}?cluster=mainnet-beta`,token:a=>`https://orbmarkets.io/address/${a}?cluster=mainnet-beta`,tx:s=>`https://orbmarkets.io/tx/${s}?cluster=mainnet-beta`,program:a=>`https://orbmarkets.io/address/${a}?cluster=mainnet-beta`},
+  solscan:{account:a=>`https://solscan.io/account/${a}`,token:a=>`https://solscan.io/token/${a}`,tx:s=>`https://solscan.io/tx/${s}`,program:a=>`https://solscan.io/account/${a}`},
+  xray:{account:a=>`https://xray.helius.dev/account/${a}`,token:a=>`https://xray.helius.dev/token/${a}`,tx:s=>`https://xray.helius.dev/tx/${s}`,program:a=>`https://xray.helius.dev/account/${a}`},
+  solana:{account:a=>`https://explorer.solana.com/address/${a}`,token:a=>`https://explorer.solana.com/address/${a}`,tx:s=>`https://explorer.solana.com/tx/${s}`,program:a=>`https://explorer.solana.com/address/${a}`},
+};
+let EXP='orb';
+// ---- tiers (a function of balance — shown NEXT TO the count, not in Badges) ----
+const TIER_KEYS=new Set(['mcwhale','1pct-club','mcmillionaire','mcvoter','sub-1-toke','former']);
+const TIERS={mcwhale:{g:'🐋',l:'McWhale (≥5M)'},'1pct-club':{g:'💯',l:'1% Club (≥4.2M)'},mcmillionaire:{g:'🏆',l:'McMillionaire (≥1M)'},mcvoter:{g:'🗳️',l:'McVoter (≥1 TOKE)'},'sub-1-toke':{g:'g',l:'g-Bag (<1 TOKE · measured in g; 1,000 g = 1 TOKE)'},'former':{g:'∅',l:'Former holder — received then exited (0 now)'}};
+// ---- earned badges (honors only — stand alone) ----
+const HONOR={'born-mcwhale':{g:'⭐',l:'Born McWhale — OG Airdrop recipient'},'dank':{g:'🌿',l:'DANK badge'}};
+// ---- cohorts (membership groups — public labels) ----
+const COHORT_LABELS={'genesis-71':'OG Airdrop','dank':'DANK Holder','voter':'Voted','nft-taste':'Taste of Mycelium','nft-mcvote':'Great McVote','mobile':'$MOBILE Airdrop','pollen':'$POLLEN Airdrop','pixel-illiquid':'Helium Pixel (illiquid)','pixel-corrected':'Helium Pixel','mcdegens':'McDegens','dewicats':'DeWiCats','hot-heads':'Hot Heads','depin-happy-hour':'DePIN Happy Hour','entropy-r1':'Entropy R1','entropy-r2':'Entropy R2','depioneers':'DePioneers'};
+function cohLabel(k){ const c=get('cohorts'); return (c&&c[k]&&c[k].label)||COHORT_LABELS[k]||k; }
+// ---- per-address type overrides (owner-clarified). Default = "Holder". ----
+const WALLET_TYPE={
+ 'HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4':{label:'Holder',cls:'holder',basis:'Top holder · SuperToke brand wallet — NOT an official treasury'},
+ 'HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC':{label:'LP',cls:'lp',basis:'Meteora DYN2 SOL pool — liquidity, not a personal holder',pool:'Meteora DYN2 · TOKE/SOL',pair:'6cVMwWp6gmz697WyX9JedHu6Mxey8hV5ct8BhJNVdCwg'},
+ 'EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G':{label:'Treasury · DAO',cls:'treasury',basis:"tokecouncil.sol — the project's official DAO treasury + governance"},
+ 'BEmzTQaiwyj69uvxmdL9fSEuETg9vsVrRDAkmDE1HWTD':{label:'DAO Contract',cls:'governance',basis:'Realms DAO governance program account (vote escrow)'},
+ '8RVonbcszVJeL9RXr9kb3PvpTe91XXDbKJRQLfMQuTZR':{label:'Project',cls:'project',basis:'mctoken.sol — project wallet (holds key NFTs)'},
+};
+const TYPE_FALLBACK={community:'Holder',holder:'Holder',treasury:'Treasury','market-maker':'LP','gov-escrow':'Governance'};
+const CLASS_CSS={wallet:'holder',amm:'lp',cex:'market-maker',program:'gov-escrow',distributor:'distributor',treasury:'treasury',project:'project',dao:'governance',bot:'routing',infra:'infrastructure',flagged:'flagged',unknown:'routing'};
+function classCat(){ return get('classes')||{}; }
+function classLabelOf(r){ const k=r.class||'wallet'; return r.class_label || (classCat()[k]&&classCat()[k].label) || (k.charAt(0).toUpperCase()+k.slice(1)); }
+const DOMAINS={'HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4':['supertoke.sol'],'EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G':['tokecouncil.sol'],'8RVonbcszVJeL9RXr9kb3PvpTe91XXDbKJRQLfMQuTZR':['mctoken.sol']};
+function domainOf(r){ return (DOMAINS[r.address]&&DOMAINS[r.address][0]) || r.sns || null; }
+function typeOf(r){
+  if(WALLET_TYPE[r.address]) return WALLET_TYPE[r.address];
+  const k=r.class||'wallet';
+  if(k!=='wallet') return {label:classLabelOf(r),cls:CLASS_CSS[k]||'routing',basis:(r.class_source==='curated'?'curated classification':'auto-classified · '+k)};
+  return {label:(TYPE_FALLBACK[r.type]||'Holder'),cls:'holder',basis:'default — holds TOKE; no further claim'};
+}
+function tierOf(r){ return TIERS[r.badges&&r.badges[0]] || null; }
+function honorsOf(r){ return (r.badges||[]).filter(b=>!TIER_KEYS.has(b)); }
+function tierKey(b){ if(b>=5e6)return 'mcwhale'; if(b>=4200000.69)return '1pct-club'; if(b>=1e6)return 'mcmillionaire'; if(b>=1)return 'mcvoter'; return 'sub-1-toke'; }
+function focusRows(){ if(!BASE) return null; return (focus==='ever') ? BASE : BASE.filter(r=>r.holder||r.tagged); }
+function activeHolders(){ return focusRows() || (get('holders')||[]); }
+// membership/achievement BADGES (NOT count-tier): OG Airdrop, DANK, Voter — shown together
+function badgesOf(r){ const b=r.badges||[], c=r.cohorts||[], out=[];
+  if(b.includes('born-mcwhale')||c.includes('genesis-71')) out.push({g:'⭐',l:'OG Airdrop — genesis born-McWhale'});
+  if(b.includes('dank')||c.includes('dank')) out.push({g:'🌿',l:'DANK badge'});
+  if(c.includes('voter')) out.push({g:'🏛️',l:'Voter — cast a McVote'});
+  return out; }
+function citeURL(c){ if(!c||c.type==='computed'||!c.ref) return null; const e=EX[EXP]; return (e[c.type]||e.account)(c.ref); }
+function exLink(c,label){ const u=citeURL(c); return u?`<a class="alink" href="${u}" target="_blank" rel="noopener" title="verify on chain">${label||'↗'}</a>`:''; }
+
+// ---------- format ----------
+const fmtT=n=> n==null?'—': n>=1e6?(n/1e6).toFixed(2)+'M' : n>=1e3?(n/1e3).toFixed(1)+'K' : (n<1? (n*1000).toFixed(0)+' g' : n.toLocaleString());
+const usd=n=> n==null?'—': n>=1000?'$'+Math.round(n).toLocaleString() : '$'+(+n).toPrecision(3);
+const trunc=a=> a? a.slice(0,4)+'…'+a.slice(-4):'';
+const BG={mcwhale:'🐋','1pct-club':'💯',mcmillionaire:'🏆',mcvoter:'🗳️','sub-1-toke':'·','former':'∅','born-mcwhale':'⭐',dank:'🌿'};
+const BLAB={mcwhale:'McWhale','1pct-club':'1% Club',mcmillionaire:'McMillionaire',mcvoter:'McVoter','sub-1-toke':'sub-1 TOKE','former':'Former holder','born-mcwhale':'Born McWhale (genesis-71)',dank:'DANK badge'};
+const MAPCOL={active_lt1yr:'#5ad1b3',dormant_gt1yr:'#5b6472',untouched_genesis:'#e7b84a',routing_infra:'#9b8cff',dust_lt1:'#39414d',burned:'#ff6b6b'};
+
+// ---------- LIVE (client-side Dexscreener; key-free; graceful fallback to snapshot) ----------
+const MINT='AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo';
+let liveOracle=null, liveState='snapshot', live24=null;
+function oracleNow(){ return liveOracle || get('oracle'); }
+function renderLiveDot(){ const el=$('livestat'); if(!el)return; const ts=window.__liveTs?(' '+window.__liveTs.toLocaleTimeString()):''; const m={live:'● LIVE'+ts,loading:'◌ live…',snapshot:'○ snapshot'}; el.innerHTML=`<span style="color:${liveState==='live'?'var(--accent)':'var(--mut)'}">${m[liveState]}</span>`; }
+async function goLive(){
+  liveState='loading'; renderLiveDot();
+  try{
+    const r=await fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT,{cache:'no-store'});
+    const j=await r.json(); const pairs=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0);
+    if(!pairs.length) throw 0;
+    pairs.sort((a,b)=>(+b.liquidity.usd)-(+a.liquidity.usd));
+    let liq=0,pw=0,vol=0,buys=0,sells=0;
+    pairs.forEach(p=>{const L=+p.liquidity.usd||0; liq+=L; pw+=(+p.priceUsd||0)*L; vol+=(+(p.volume&&p.volume.h24)||0); const tx=(p.txns&&p.txns.h24)||{}; buys+=(+tx.buys||0); sells+=(+tx.sells||0);});
+    const price=liq?pw/liq:(+pairs[0].priceUsd||0);
+    const supply=(get('token')||{}).current_supply||420000069;
+    liveOracle={liquidity_weighted_price_usd:price,total_pool_liquidity_usd:liq,implied_mcap_usd:price*supply,
+      pools:pairs.map(p=>({dex:p.dexId,quote:p.quoteToken&&p.quoteToken.symbol,priceUsd:+p.priceUsd,liquidityUsd:+p.liquidity.usd,cite:{type:'account',ref:p.pairAddress}}))};
+    live24={vol,buys,sells,chg:(+(pairs[0].priceChange&&pairs[0].priceChange.h24)||0)};
+    liveState='live'; window.__liveTs=new Date();
+  }catch(e){ liveState='snapshot'; }
+  kpis(); liq(); activity(); renderLiveDot();
+}
+
+// ---------- KPI ----------
+function kpis(){
+  if(!D) return;
+  const t=get('token'),o=oracleNow(),s=get('supply');
+  const k=[
+    {l:'Price (LWP)',v:o?('$'+(+o.liquidity_weighted_price_usd).toFixed(6)):'—',n:(liveState==='live'?'live · Dexscreener':'snapshot'),c:(liveState==='live'?'up':'')},
+    {l:'Liquidity',v:o?usd(o.total_pool_liquidity_usd):'—',n:'3 pools · thin',c:'down'},
+    {l:'Market cap',v:o?usd(o.implied_mcap_usd):'—',n:'≈ FDV'},
+    {l:'Holders',v:(s&&s.holders_count)?s.holders_count.toLocaleString():'—',n:'on-chain snapshot'},
+    {l:'Top-10',v:(s&&s.concentration)?s.concentration.top10_pct+'%':'—',n:'concentration',c:'down'},
+    {l:'Supply',v:t?fmtT(t.current_supply):'—',n:(t?('of '+fmtT(t.max_supply)+' · '+t.burned_pct+'% burned'):'')},
+    {l:'Health',v:'RugCheck',n:(t&&t.rugcheck)?t.rugcheck.split(':')[0]:'—',c:'down'},
+  ];
+  $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x.l}</div><div class="v ${x.c||''}">${x.v}</div><div class="n">${x.n}</div></div>`).join('');
+  const tok=get('token'), oo=oracleNow();
+  if(tok){ $('mintline').innerHTML=`<a href="${EX[EXP].token(tok.mint)}" target="_blank" rel="noopener" title="token mint on ${EXP}">${trunc(tok.mint)}</a> · 3 dec · max 420,000,069`; }
+  if(oo){ $('hprice').innerHTML=`<b>$${(+oo.liquidity_weighted_price_usd).toFixed(6)}</b><br>mcap ${usd(oo.implied_mcap_usd)} · liq ${usd(oo.total_pool_liquidity_usd)}`; }
+}
+
+// ---------- MAP ----------
+let mapFilter=null;
+function treemap(items,W,Hh){
+  items=items.slice().sort((a,b)=>b.value-a.value); const out=[];
+  (function rec(list,x,y,w,h,horiz){
+    if(list.length===1){ out.push(Object.assign({},list[0],{x,y,w,h})); return; }
+    const tot=list.reduce((s,i)=>s+i.value,0), half=tot/2; let g1=[],g2=[],s=0;
+    for(const it of list){ if(s<half||g1.length===0){g1.push(it);s+=it.value;} else g2.push(it); }
+    const frac=g1.reduce((a,b)=>a+b.value,0)/tot;
+    if(horiz){const w1=w*frac; rec(g1,x,y,w1,h,!horiz); rec(g2,x+w1,y,w-w1,h,!horiz);}
+    else {const h1=h*frac; rec(g1,x,y,w,h1,!horiz); rec(g2,x,y+h1,w,h-h1,!horiz);}
+  })(items,0,0,W,Hh,true);
+  return out;
+}
+function map(){
+  const s=get('supply'); if(!s)return;
+  const all=s.buckets.filter(x=>x.pct>0);
+  $('mapas').textContent='as-of '+(((D.supply&&D.supply.as_of)||'').slice(0,10));
+  const partKeys=['active_lt1yr','dormant_gt1yr','routing_infra','burned'];
+  const part=all.filter(x=>partKeys.includes(x.key)).map(x=>Object.assign({},x,{value:x.pct}));
+  const C=$('treemap'); const W=C.clientWidth||900, Hh=174;
+  const tiles=treemap(part,W,Hh);
+  C.innerHTML=tiles.map(t=>{const big=(t.w*t.h)>5200; return `<div class="tm" data-k="${t.key}" title="${t.label}: ${t.pct}% · ${t.wallets??''} wallets" style="left:${t.x}px;top:${t.y}px;width:${t.w}px;height:${t.h}px;background:${MAPCOL[t.key]||'#39414d'}">${big?`<div class="tm-lab"><b>${t.pct.toFixed(1)}%</b><br>${t.label}</div>`:''}</div>`;}).join('');
+  requestAnimationFrame(()=>C.querySelectorAll('.tm').forEach((e,i)=>{e.style.opacity='0';e.style.transform='scale(.96)';setTimeout(()=>{e.style.opacity='1';e.style.transform='none';},20+i*45);}));
+  $('legend').innerHTML=all.map(x=>`<span class="lg" data-k="${x.key}"><span class="dot" style="background:${MAPCOL[x.key]||'#39414d'}"></span><b>${x.label}</b> ${x.pct}%${x.key==='untouched_genesis'?' · within dormant':(x.wallets!=null?' · '+x.wallets.toLocaleString()+' w':'')}</span>`).join('');
+  const top10=s.concentration?s.concentration.top10_pct:0;
+  $('conclbl').textContent=top10+'%'; $('concbar').style.width=top10+'%';
+  document.querySelectorAll('.tm,.lg').forEach(el=>el.onclick=()=>{ mapFilter=(mapFilter===el.dataset.k)?null:el.dataset.k; renderMapSel(); draw(); $('rows').scrollIntoView({behavior:'smooth'}); });
+}
+function renderMapSel(){ document.querySelectorAll('.tm').forEach(e=>e.classList.toggle('sel',e.dataset.k===mapFilter)); }
+
+// ---------- LEADERBOARD ----------
+let sortKey='balance', sortDir=-1, cohFilters=new Set();
+let BASE=null, baseLoading=false, focus='default', classFilter=''; const CAP=500;
+function setFocusNote(t){ const e=$('focusNote'); if(e) e.textContent=t||''; }
+function loadBase(cb){ if(BASE){cb&&cb();return;} if(baseLoading) return; baseLoading=true; setFocusNote('loading complete base…');
+  fetch('api/v1/base_all.json',{cache:'force-cache'}).then(r=>r.json()).then(j=>{ BASE=j.data; baseLoading=false; setFocusNote(''); draw(); lbSub(); cb&&cb(); })
+   .catch(()=>{ baseLoading=false; setFocusNote('complete base needs http (serve the folder) — showing featured set'); }); }
+function syncCohUI(){ document.querySelectorAll('.chip[data-coh]').forEach(ch=>ch.classList.toggle('on',cohFilters.has(ch.dataset.coh))); const fc=$('fcoh'); if(fc) fc.value=(cohFilters.size===1?[...cohFilters][0]:''); }
+function setFocus(f){ focus=f; document.querySelectorAll('.segb').forEach(b=>b.classList.toggle('on',b.dataset.focus===f)); if(BASE){draw();lbSub();} else loadBase(); }
+function populateFilters(){
+  const cc=get('classes')||{}; const fcl=$('fclass');
+  if(fcl) fcl.innerHTML='<option value="">All classes</option>'+Object.entries(cc).filter(([k,v])=>(v.count||0)>0).sort((a,b)=>b[1].count-a[1].count).map(([k,v])=>`<option value="${k}">${v.label} (${v.count.toLocaleString()})</option>`).join('');
+  const co=get('cohorts')||{}; const fco=$('fcoh'); const ord={primary:0,secondary:1,badge:2};
+  if(fco) fco.innerHTML='<option value="">All cohorts</option>'+Object.entries(co).sort((a,b)=>((ord[a[1].tier]??9)-(ord[b[1].tier]??9))||(b[1].count||0)-(a[1].count||0)).map(([k,v])=>`<option value="${k}">${v.label} (${(v.count||0).toLocaleString()})</option>`).join('');
+}
+function lbControls(){
+  document.querySelectorAll('th[data-sort]').forEach(th=>th.onclick=()=>{
+    const k=th.dataset.sort; if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir=(k==='rank')?1:-1;}
+    document.querySelectorAll('th .ar').forEach(a=>a.textContent=''); th.querySelector('.ar').textContent=sortDir<0?'▼':'▲'; draw();
+  });
+  document.querySelectorAll('.segb').forEach(b=>b.onclick=()=>setFocus(b.dataset.focus));
+  document.querySelectorAll('.chip[data-coh]').forEach(c=>c.onclick=()=>{ const k=c.dataset.coh; loadBase(()=>{ cohFilters.has(k)?cohFilters.delete(k):cohFilters.add(k); syncCohUI(); draw(); }); });
+  $('q').oninput=draw; $('ftier').onchange=draw;
+  $('fclass').onchange=e=>{ classFilter=e.target.value; if(BASE) draw(); else loadBase(); };
+  $('fcoh').onchange=e=>{ const k=e.target.value; loadBase(()=>{ cohFilters.clear(); if(k)cohFilters.add(k); syncCohUI(); draw(); }); };
+  $('clearf').onclick=()=>{ $('q').value='';$('ftier').value='';$('fclass').value='';classFilter=''; cohFilters.clear(); mapFilter=null; syncCohUI(); renderMapSel(); draw(); };
+}
+function passMap(r){
+  if(!mapFilter) return true;
+  if(mapFilter==='untouched_genesis') return r.cohorts.includes('genesis-71') && r.balance>=5900000 && r.balance<=5920000;
+  if(mapFilter==='active_lt1yr') return r.balance>=1; // coarse for M1
+  if(mapFilter==='routing_infra') return r.type==='routing'||r.type==='market-maker'||r.type==='gov-escrow';
+  return true;
+}
+function draw(){
+  const H=activeHolders(); if(!H)return;
+  const q=$('q').value.trim().toLowerCase(), tf=$('ftier').value;
+  let rows=H.filter(r=>{
+    if(q && !(r.address.toLowerCase().includes(q) || (domainOf(r)||'').toLowerCase().includes(q))) return false;
+    if(tf && (r.badges&&r.badges[0])!==tf) return false;
+    if(classFilter && (r.class||'wallet')!==classFilter) return false;
+    for(const c of cohFilters) if(!(r.cohorts||[]).includes(c)) return false;
+    if(!passMap(r)) return false;
+    return true;
+  });
+  rows.sort((a,b)=>{ let x=a[sortKey],y=b[sortKey]; if(x==null)x=sortDir<0?-Infinity:Infinity; if(y==null)y=sortDir<0?-Infinity:Infinity; return (x<y?-1:x>y?1:0)*sortDir; });
+  window.__lastRows=rows;
+  $('rows').innerHTML=rows.slice(0,CAP).map((r,i)=>{const dom=domainOf(r);const ty=typeOf(r);const ti=tierOf(r);const bs=badgesOf(r);return `<tr data-a="${r.address}">
+    <td class="mut">${r.rank??(i+1)}</td>
+    <td class="mono">${dom?('<span class="sns">'+dom+'</span> '):''}${trunc(r.address)}${exLink(r.cite)}</td>
+    <td><span class="typ ${ty.cls}" title="basis: ${ty.basis}">${ty.label}</span></td>
+    <td class="r">${ti?`<span class="tier" title="${ti.l}">${ti.g}</span>`:''}${fmtT(r.balance)}</td>
+    <td class="r">${(r.pct??0).toFixed(2)}%</td>
+    <td>${bs.length?bs.map(x=>`<span class="badge" title="${x.l}">${x.g}</span>`).join(''):'<span class="mut">—</span>'}</td>
+  </tr>`}).join('');
+  $('rows').querySelectorAll('tr').forEach(tr=>tr.onclick=()=>openWallet(tr.dataset.a));
+  const scopeLbl = BASE?(focus==='ever'?'ever-touched':'holders + tagged'):'featured';
+  $('lbcount').textContent=`${rows.length.toLocaleString()} of ${H.length.toLocaleString()} ${scopeLbl}${rows.length>CAP?(' · showing first '+CAP):''}${classFilter?(' · class='+classFilter):''}${cohFilters.size?(' · cohort='+[...cohFilters].join('+')):''}${mapFilter?(' · map='+mapFilter):''}`;
+}
+function lbSub(){
+  const n=BASE?BASE.length.toLocaleString():'…';
+  const dfc=BASE?BASE.filter(r=>r.holder||r.tagged).length.toLocaleString():'…';
+  $('lbsub').innerHTML=`Complete base of <b>${n}</b> addresses that ever touched TOKE. <b>Default</b> = current holders + any tagged wallet (airdrops · voted · DANK) = <b>${dfc}</b>; toggle <b>Ever touched</b> for all ${n}. Filter by class (wallet / AMM / program / CEX / infra) or cohort. Anonymous — every row links to chain.`;
+}
+
+// ---------- WALLET DRAWER ----------
+function sparkline(series){
+  if(!series||series.length<2) return '';
+  const vals=series.map(p=>p[1]); const min=Math.min(...vals),max=Math.max(...vals); const rng=(max-min)||1;
+  const W=280,Hh=46,step=W/(series.length-1);
+  const pts=series.map((p,i)=>`${(i*step).toFixed(1)},${(Hh-3-((p[1]-min)/rng)*(Hh-8)).toFixed(1)}`).join(' ');
+  const zy=(Hh-3-((0-min)/rng)*(Hh-8)).toFixed(1);
+  return `<svg width="100%" viewBox="0 0 ${W} ${Hh}" preserveAspectRatio="none" style="display:block;margin:6px 0">
+    <line x1="0" y1="${zy}" x2="${W}" y2="${zy}" stroke="var(--line2)" stroke-width="1" stroke-dasharray="3 3"/>
+    <polyline points="${pts}" fill="none" stroke="var(--accent2)" stroke-width="1.6"/></svg>`;
+}
+function openWallet(a){
+  const r=(get('holders')||[]).find(x=>x.address===a) || (BASE&&BASE.find(x=>x.address===a)); if(!r)return;
+  window.__curWallet=a; const cite=r.cite||{type:'account',ref:r.address}; const u=citeURL(cite); const dom=domainOf(r); const ty=typeOf(r); const ti=tierOf(r); const bs=badgesOf(r);
+  let wh=(get('wallet_history')||{})[r.address] || (window.__whAll?window.__whAll[r.address]:undefined);
+  $('drawer').innerHTML=`<span class="x" onclick="closeW()">×</span>
+    <div class="vis" style="margin-bottom:6px">anonymous wallet</div>
+    <h3 class="mono" style="word-break:break-all">${r.address}</h3>
+    ${u?`<a href="${u}" target="_blank" rel="noopener">Open on ${EXP} ↗</a>`:''}
+    <span class="chip exp" style="margin-left:8px" onclick="openWrapped('${r.address}')">🎴 Wrapped card</span>
+    <div style="margin:14px 0">${ti?`<span class="pill" title="balance tier">${ti.g} ${ti.l}</span>`:''}${bs.map(x=>`<span class="pill" title="badge">${x.g} ${x.l}</span>`).join('')}</div>
+    <div class="kv"><span class="k">Rank</span><span>#${r.rank??'—'}</span></div>
+    <div class="kv"><span class="k">Balance</span><span>${ti?ti.g+' ':''}${fmtT(r.balance)} TOKE</span></div>
+    <div class="kv"><span class="k">Share of supply</span><span>${(r.pct??0).toFixed(4)}%</span></div>
+    <div class="kv"><span class="k">Type</span><span class="typ ${ty.cls}">${ty.label}</span></div>
+    <div class="kv"><span class="k">Type basis</span><span style="font-size:11px;color:var(--mut);text-align:right;max-width:62%">${ty.basis}</span></div>
+    ${(r.cohorts&&r.cohorts.length)?`<div class="kv"><span class="k">Cohorts / tags</span><span style="text-align:right;max-width:64%">${r.cohorts.map(k=>'<span class="ctag">'+cohLabel(k)+'</span>').join(' ')}</span></div>`:''}
+    ${(r.holder===false&&r.recv)?`<div class="kv"><span class="k">Status</span><span style="color:var(--mut)">former holder — received then exited (0 now)</span></div>`:''}
+    ${ty.pair?`<div class="kv"><span class="k">Pool</span><span>${ty.pool} ${exLink({type:'account',ref:ty.pair},'pair ↗')}</span></div>`:''}
+    ${dom?`<div class="kv"><span class="k">SNS / domain (public)</span><span class="sns mono">${dom}</span></div>`:''}
+    <div class="kv"><span class="k">Provenance</span><span>${r.cite?.type||'on-chain'} ${exLink(r.cite,'verify ↗')}</span></div>
+    ${wh?`<div style="margin-top:16px"><div class="vis" style="margin-bottom:2px">balance history · transfer-net (indicative)</div>${sparkline(wh.series)}
+      <div class="kv"><span class="k">Active</span><span>${wh.first||'—'} → ${wh.last||'—'} · ${wh.legs} legs</span></div>
+      <div class="kv"><span class="k">Lifetime in / out</span><span>${fmtT(wh.in_toke)} / ${fmtT(wh.out_toke)}</span></div>
+      <p class="sub" style="margin:10px 0 4px">Top counterparties (anonymous)</p>
+      ${(wh.counterparties||[]).map(c=>`<div class="kv"><span class="mono">${c.dir==='in'?'↓ from':'↑ to'} ${trunc(c.address)}${exLink(c.cite)}</span><span>${fmtT(Math.abs(c.net))}</span></div>`).join('')}</div>`:`<p class="sub" id="whLoad" style="margin-top:14px">${window.__whAll?'No transfer history (never moved, or closed before snapshot).':'Loading history…'}</p>`}
+    <p class="sub" style="margin-top:12px">History series = cumulative transfer-NET (indicative); the snapshot balance above is authoritative. Identity sealed (L4) — anonymous.</p>`;
+  $('drawer').classList.add('on'); $('scrim').classList.add('on');
+  if(!wh && !window.__whAll) loadAllHist(a);
+}
+function loadAllHist(addr){ if(window.__whLoading) return; window.__whLoading=true;
+  fetch('api/v1/wallet_history_all.json',{cache:'force-cache'}).then(r=>r.json()).then(j=>{ window.__whAll=j.data; window.__whLoading=false;
+    if($('drawer').classList.contains('on') && window.__curWallet===addr) openWallet(addr); })
+   .catch(()=>{ window.__whLoading=false; const e=$('whLoad'); if(e)e.textContent='history unavailable (serve over http)'; }); }
+function closeW(){ $('drawer').classList.remove('on'); $('scrim').classList.remove('on'); }
+$('scrim').onclick=closeW; window.closeW=closeW;
+
+// ---------- TOKE WRAPPED (shareable anonymous card) ----------
+function wrappedSVG(r,wh){
+  const ti=tierOf(r), bs=badgesOf(r), dom=domainOf(r); const W=600,H=340;
+  const badgeStr=bs.map(b=>b.g).join('   ')||'—';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="ui-sans-serif,system-ui,sans-serif">
+   <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0c10"/><stop offset="1" stop-color="#13161d"/></linearGradient></defs>
+   <rect width="${W}" height="${H}" rx="18" fill="url(#bg)"/><rect width="${W}" height="6" fill="#5ad1b3"/>
+   <text x="30" y="48" fill="#e7eaef" font-size="21" font-weight="800">$TOKE Wrapped</text>
+   <text x="30" y="69" fill="#8b94a3" font-size="12">explorer.mctoken.xyz · anonymous</text>
+   <text x="30" y="116" fill="#8b94a3" font-size="11">WALLET</text>
+   <text x="30" y="139" fill="#e7eaef" font-size="17" font-family="ui-monospace,monospace">${trunc(r.address)}${dom?('   '+dom):''}</text>
+   <text x="30" y="198" fill="#5ad1b3" font-size="40" font-weight="800">${fmtT(r.balance)}</text>
+   <text x="30" y="219" fill="#8b94a3" font-size="12">TOKE · ${(r.pct||0).toFixed(3)}% of supply · rank #${r.rank||'—'}</text>
+   <text x="30" y="266" fill="#8b94a3" font-size="11">TIER</text>
+   <text x="30" y="289" fill="#e7eaef" font-size="16">${ti?ti.g+' '+ti.l:'—'}</text>
+   <text x="330" y="266" fill="#8b94a3" font-size="11">BADGES</text>
+   <text x="330" y="291" font-size="22">${badgeStr}</text>
+   ${wh?`<text x="330" y="116" fill="#8b94a3" font-size="11">ACTIVE</text><text x="330" y="138" fill="#e7eaef" font-size="13">${wh.first||''} → ${wh.last||''}</text><text x="330" y="166" fill="#8b94a3" font-size="11">TRANSFER LEGS</text><text x="330" y="188" fill="#e7eaef" font-size="13">${wh.legs}</text>`:''}
+   <text x="30" y="320" fill="#5b6472" font-size="10">Verifiable on-chain · L4 identity sealed · not financial advice</text>
+  </svg>`;
+}
+function openWrapped(addr){ const r=(get('holders')||[]).find(x=>x.address===addr)||(BASE&&BASE.find(x=>x.address===addr)); if(!r)return; const wh=(get('wallet_history')||{})[addr]||(window.__whAll?window.__whAll[addr]:undefined);
+  window.__wrapSVG=wrappedSVG(r,wh); window.__wrapName='toke-wrapped-'+addr.slice(0,4); $('wrapCard').innerHTML=window.__wrapSVG; $('wrapModal').classList.add('on'); }
+function closeWrap(){ $('wrapModal').classList.remove('on'); }
+function downloadWrapped(fmt){ const svg=window.__wrapSVG; if(!svg)return; const name=window.__wrapName||'toke-wrapped';
+  if(fmt==='svg'){ dl(name+'.svg',svg,'image/svg+xml'); return; }
+  const img=new Image(); img.onload=()=>{ const c=document.createElement('canvas'); c.width=1200;c.height=680; const x=c.getContext('2d'); x.drawImage(img,0,0,c.width,c.height); c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name+'.png';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);},'image/png'); };
+  img.onerror=()=>dl(name+'.svg',svg,'image/svg+xml'); img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+}
+window.openWrapped=openWrapped; window.closeWrap=closeWrap; window.downloadWrapped=downloadWrapped;
+
+// ---------- LIQUIDITY ----------
+function liq(){
+  const l=get('liquidity'); const P=get('pools')||[]; const o=oracleNow(); if(!l){$('liq').textContent='—';return;}
+  const liqUsd=(o&&o.total_pool_liquidity_usd)||l.true_liquidity_vs_fdv.liquidity_usd;
+  const mc=(o&&o.implied_mcap_usd)||l.true_liquidity_vs_fdv.mcap_usd; const ratio=mc?liqUsd/mc:0;
+  $('liq').innerHTML=`<div class="kv"><span class="k">Pool liquidity</span><span>${usd(liqUsd)}${liveState==='live'?' <span style="color:var(--accent);font-size:9px">live</span>':''}</span></div>
+    <div class="kv"><span class="k">Implied mcap</span><span>${usd(mc)}</span></div>
+    <div class="kv"><span class="k">Liquidity ÷ mcap</span><span style="color:var(--warn)">${(ratio*100).toFixed(1)}%</span></div>
+    <p class="sub" style="margin:14px 0 6px">Pools — pair details</p>
+    ${P.map(p=>`<div class="kv"><span>${p.dex}${p.label?(' '+p.label):''} · ${p.quote} ${exLink({type:'account',ref:p.pair},'pair ↗')}</span><span>${usd(p.liquidity_usd)}</span></div>`).join('')}
+    <p class="sub" style="margin:14px 0 6px">Raydium LP holders (anonymous)</p>
+    ${l.raydium_lp_holders.slice(0,6).map(h=>`<div class="kv"><span class="mono">${trunc(h.address)}${exLink(h.cite)}</span><span>${h.share_pct.toFixed(2)}%</span></div>`).join('')}
+    <p class="sub" style="margin-top:10px">${l.note||''}</p>`;
+}
+
+// ---------- LORE (L3) ----------
+function lore(){
+  const l=get('lore'); if(!l){return;}
+  $('lore').innerHTML=l.saga.map(s=>`<div class="loreCard"><h4>${s.title}</h4><p>${s.blurb}</p></div>`).join('')
+    + `<div class="loreCard"><h4>🏛️ Hall of Fame</h4><p>${(l.hall_of_fame||[]).map(e=>'#'+e.exhibit+' '+e.title+' ('+e.status+')').join(' · ')}</p></div>`;
+}
+
+// ---------- foot ----------
+function foot(){
+  const t=get('token');
+  $('foot').innerHTML=`Public Data Contract <b>v1</b> · L1 chain + L2 derived (anonymous) · <b>L4 identity sealed — never published</b>.
+    Every figure links to chain via your chosen explorer. Mint <span class="mono">${t?t.mint:''}</span>. Snapshot-based; not financial advice.`;
+}
+
+// ---------- COHORTS + AIRDROP EXPORT ----------
+function cohortCards(){
+  const c=get('cohorts'); if(!c){return;}
+  const ord={primary:0,secondary:1,badge:2};
+  const entries=Object.entries(c).sort((a,b)=>((ord[a[1].tier]??9)-(ord[b[1].tier]??9))||(b[1].count||0)-(a[1].count||0));
+  $('cohortCards').innerHTML=entries.map(([k,v])=>{const tg=v.tier==='primary'?' · PRIMARY':v.tier==='badge'?' · BADGE':' · subsequent airdrop';return `<div class="card cohortCard" data-coh="${k}"><div class="cc-n">${v.label}${tg}</div><div class="cc-v">${(v.count||0).toLocaleString()}</div><div class="cc-r">${v.date||'membership group'}</div></div>`;}).join('');
+  document.querySelectorAll('.cohortCard').forEach(el=>el.onclick=()=>{ const k=el.dataset.coh; loadBase(()=>{ cohFilters.clear(); cohFilters.add(k); syncCohUI(); draw(); $('rows').scrollIntoView({behavior:'smooth'}); }); });
+}
+function scopeDesc(){ const q=$('q').value,tf=$('ftier').value,co=[...cohFilters].join('+'); return [tf&&('tier='+tf),co&&('cohort='+co),q&&('search='+q),mapFilter&&('map='+mapFilter)].filter(Boolean).join(' ∩ ')||'all featured'; }
+function dl(name,content,type){ const b=new Blob([content],{type}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=name; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href); }
+function expJSON(){ const rows=window.__lastRows||[]; const t=get('token');
+  const payload={generated_at:new Date().toISOString(),source:'explorer.mctoken.xyz',contract:'v1',mint:t&&t.mint,as_of:(D.holders&&D.holders.as_of),scope:scopeDesc(),count:rows.length,
+    note:'Anonymous addresses only. Snapshot — re-pull before executing an airdrop; verify balances on-chain.',
+    wallets:rows.map(r=>({address:r.address,balance:r.balance,pct:r.pct,tier:(r.badges&&r.badges[0]),class:r.class||'wallet',holder:r.holder!==false,ever_received:!!r.recv,badges:badgesOf(r).map(x=>x.l),cohorts:r.cohorts}))};
+  dl('toke-cohort-'+rows.length+'-'+Date.now()+'.json',JSON.stringify(payload,null,2),'application/json'); }
+function expCSV(){ const rows=window.__lastRows||[]; const head='address,balance_toke,pct,tier,class,holder,badges,cohorts\n';
+  const body=rows.map(r=>[r.address,r.balance,r.pct,((r.badges&&r.badges[0])||''),(r.class||'wallet'),(r.holder!==false?1:0),'"'+badgesOf(r).map(x=>x.l).join('|')+'"','"'+((r.cohorts||[]).join('|'))+'"'].join(',')).join('\n');
+  dl('toke-cohort-'+rows.length+'-'+Date.now()+'.csv',head+body,'text/csv'); }
+
+// ---------- GOVERNANCE ----------
+const PSTATE={0:'Draft',1:'SigningOff',2:'Voting',3:'Succeeded',4:'Executing',5:'Completed',6:'Cancelled',7:'Defeated',8:'Vetoed'};
+function gov(){
+  const g=get('governance'); if(!g){return;}
+  const ps=(g.proposals||[]).slice().sort((a,b)=>(b.turnout_pct||0)-(a.turnout_pct||0));
+  $('govt').innerHTML='<tr><th>Proposal</th><th class="r">Turnout</th><th class="r">Voters</th><th>State</th></tr>'+
+    ps.map(p=>`<tr><td class="mono">${trunc(p.id)} ${exLink(p.cite)}</td><td class="r">${(p.turnout_pct??0)}%</td><td class="r">${p.voters??'—'}</td><td>${PSTATE[p.state]||p.state}</td></tr>`).join('')+
+    `<tr><td colspan="4" class="sub" style="border:0">${(g.proposals||[]).length} proposals · ${g.participant_count||0} participants · the three annual 4/20 Great McVotes resolve here.</td></tr>`;
+}
+
+// ---------- FLOWS ----------
+function flows(){
+  const f=get('flows'); if(!f){return;}
+  $('flows').innerHTML=f.map(s=>`<div style="margin-bottom:12px"><b>${s.title}</b><p class="sub" style="margin:4px 0 8px">${s.blurb}</p>`+
+    s.edges.map(e=>{const fn=(s.nodes.find(n=>n.id===e.from)||{}).label||e.from; const tn=(s.nodes.find(n=>n.id===e.to)||{}).label||e.to;
+      return `<div class="flowrow"><span class="node">${fn}</span><span class="arrow">→ ${fmtT(e.amount)}${e.count?(' ×'+e.count):''} →</span><span class="node">${tn}</span>${exLink(e.cite,'tx ↗')}</div>`;}).join('')+`</div>`).join('');
+}
+
+// ---------- ACTIVITY (live) ----------
+function activity(){
+  const a=$('activity'); if(!a)return; let h='';
+  if(live24){ h+=`<div class="kv"><span class="k">24h volume</span><span>${usd(live24.vol)}</span></div>
+    <div class="kv"><span class="k">24h trades</span><span>${live24.buys+live24.sells} · ${live24.buys} buy / ${live24.sells} sell</span></div>
+    <div class="kv"><span class="k">24h price change</span><span class="${live24.chg>=0?'up':'down'}">${live24.chg.toFixed(2)}%</span></div>`; }
+  else { h+=`<p class="sub">Live 24h market stats load from Dexscreener on open — click the live indicator in the header to refresh.</p>`; }
+  if(window.TOKE_API){ h+=`<p class="sub" style="margin-top:10px">Recent transactions: <span id="txfeed">…</span></p>`; }
+  else { h+=`<p class="sub" style="margin-top:10px">Per-transaction feed streams from the live TOKE API (Helius, key server-side) — deploy <span class="mono">live/worker.js</span> and set <span class="mono">window.TOKE_API</span>.</p>`; }
+  a.innerHTML=h;
+  if(window.TOKE_API){ fetch(window.TOKE_API.replace(/\/+$/,'')+'/api/v1/activity').then(r=>r.json()).then(j=>{const rows=((j.data&&j.data.recent)||[]).slice(0,15); const e=$('txfeed'); if(e)e.innerHTML='<br>'+(rows.map(t=>`<div class="flowrow"><span class="ctag">${t.type}</span> ${t.desc?('<span>'+t.desc+'</span>'):('<span class="mono">'+trunc(t.from)+'→'+trunc(t.to)+'</span> '+fmtT(t.amount))} ${exLink(t.cite,'↗')}</div>`).join('')||'none');}).catch(()=>{const e=$('txfeed'); if(e)e.textContent='unavailable';}); }
+}
+
+// ---------- init ----------
+$('exp').onchange=e=>{EXP=e.target.value; kpis(); draw(); liq(); gov(); flows(); activity(); };
+$('expJson').onclick=expJSON; $('expCsv').onclick=expCSV;
+$('livestat').onclick=goLive;
+if(D){ kpis(); map(); populateFilters(); lbControls(); lbSub(); draw(); liq(); cohortCards(); gov(); flows(); activity(); foot(); renderLiveDot(); goLive();
+  loadBase(); }  // auto-load the complete base so the default "holders + tagged" focus fills in
+window.addEventListener('resize',()=>{clearTimeout(window.__rz);window.__rz=setTimeout(()=>{ if(D)map(); },200);});
+</script>
+</body>
+</html>

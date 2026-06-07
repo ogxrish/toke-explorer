@@ -1,0 +1,44 @@
+{
+  "dataset": "health",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "01-token/token.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l2",
+  "data": {
+    "authorities": {
+      "mint": "revoked",
+      "freeze": "none",
+      "metadata": "mutable"
+    },
+    "lp_locked_pct": 0.0,
+    "top10_pct": 61.04,
+    "flags": [
+      {
+        "key": "lp_unlocked",
+        "severity": "high",
+        "detail": "LP 0% locked",
+        "cite": {
+          "type": "token",
+          "ref": "AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo"
+        }
+      },
+      {
+        "key": "metadata_mutable",
+        "severity": "medium",
+        "detail": "Update authority active; metadata mutable"
+      },
+      {
+        "key": "concentration",
+        "severity": "medium",
+        "detail": "Top-10 = 61.04%"
+      }
+    ],
+    "rugcheck": "53/100 (Danger): LP 100% unlocked, top10>50%, mutable metadata"
+  }
+}

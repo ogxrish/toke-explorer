@@ -1,0 +1,35 @@
+{
+  "universe": 22633,
+  "holders": 13002,
+  "tagged": 15669,
+  "default_focus": 16990,
+  "ever_touched": 22633,
+  "by_class": {
+    "wallet": 21326,
+    "infra": 1069,
+    "amm": 64,
+    "bot": 166,
+    "distributor": 5,
+    "treasury": 1,
+    "program": 1,
+    "flagged": 1
+  },
+  "by_cohort": {
+    "pollen": 1868,
+    "mobile": 11199,
+    "genesis-71": 71,
+    "depioneers": 1731,
+    "mcdegens": 58,
+    "pixel-illiquid": 103,
+    "depin-happy-hour": 236,
+    "entropy-r1": 179,
+    "entropy-r2": 162,
+    "pixel-corrected": 115,
+    "hot-heads": 64,
+    "voter": 79,
+    "dewicats": 53,
+    "dank": 77
+  },
+  "top10_pct": 60.99,
+  "top25_pct": 82.34
+}

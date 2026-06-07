@@ -1,0 +1,96 @@
+{
+  "dataset": "supply",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "analysis/illiquid_supply.json",
+      "snapshots/holders_20260530.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l2",
+  "data": {
+    "buckets": [
+      {
+        "key": "active_lt1yr",
+        "label": "Active (<1yr)",
+        "wallets": 270,
+        "toke": 361255340,
+        "pct": 86.0132,
+        "cite": {
+          "type": "computed",
+          "method": "snapshot bucket: active_lt1yr"
+        }
+      },
+      {
+        "key": "dormant_gt1yr",
+        "label": "Dormant (>1yr)",
+        "wallets": 12708,
+        "toke": 55071361,
+        "pct": 13.1122,
+        "cite": {
+          "type": "computed",
+          "method": "snapshot bucket: dormant_gt1yr"
+        }
+      },
+      {
+        "key": "untouched_genesis",
+        "label": "Untouched genesis bags",
+        "wallets": 3,
+        "toke": 17746482,
+        "pct": 4.2254,
+        "cite": {
+          "type": "computed",
+          "method": "snapshot bucket: untouched_genesis"
+        }
+      },
+      {
+        "key": "routing_infra",
+        "label": "Routing / infra",
+        "wallets": 60,
+        "toke": 3371695,
+        "pct": 0.8028,
+        "cite": {
+          "type": "computed",
+          "method": "snapshot bucket: routing_infra"
+        }
+      },
+      {
+        "key": "dust_lt1",
+        "label": "Dust (<1 TOKE)",
+        "wallets": 74,
+        "toke": 29.82,
+        "pct": 0.0,
+        "cite": {
+          "type": "computed",
+          "method": "snapshot bucket: dust_lt1"
+        }
+      },
+      {
+        "key": "burned",
+        "label": "Burned",
+        "wallets": null,
+        "toke": 301673,
+        "pct": 0.0718,
+        "cite": {
+          "type": "computed",
+          "method": "snapshot bucket: burned"
+        }
+      }
+    ],
+    "concentration": {
+      "top10_pct": 60.99,
+      "cite": {
+        "type": "computed",
+        "method": "sum(top10 balances)/supply"
+      },
+      "top25_pct": 82.34
+    },
+    "holders_count": 13002,
+    "max_supply": 420000069.0,
+    "total_held": 419698396
+  },
+  "notes": "Universe = all 13,003 holders, counted here. The Map renders these buckets."
+}

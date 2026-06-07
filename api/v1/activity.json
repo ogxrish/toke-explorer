@@ -1,0 +1,17 @@
+{
+  "dataset": "activity",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "snapshots/holders_20260530.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l1",
+  "data": {
+    "recent": [],
+    "note": "M0 placeholder \u2014 live transfer/swap feed wired in M3 (Dexscreener/Helius)."
+  }
+}

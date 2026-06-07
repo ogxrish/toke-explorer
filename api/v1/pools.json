@@ -1,0 +1,55 @@
+{
+  "dataset": "pools",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "01-token/token.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l1",
+  "data": [
+    {
+      "dex": "raydium",
+      "pair": "HCRty6J2toqf8EAiQSNpAeG21Qd1p8bymJpWWkBkAXkz",
+      "quote": "SOL",
+      "created": "2023-07-07T14:45:47Z",
+      "liquidity_usd": 624.78,
+      "label": null,
+      "note": "Original pool",
+      "cite": {
+        "type": "account",
+        "ref": "HCRty6J2toqf8EAiQSNpAeG21Qd1p8bymJpWWkBkAXkz"
+      }
+    },
+    {
+      "dex": "meteora",
+      "pair": "6cVMwWp6gmz697WyX9JedHu6Mxey8hV5ct8BhJNVdCwg",
+      "quote": "SOL",
+      "created": "2025-09-03T19:19:13Z",
+      "liquidity_usd": 15941.35,
+      "label": "DYN2",
+      "note": "Largest pool",
+      "cite": {
+        "type": "account",
+        "ref": "6cVMwWp6gmz697WyX9JedHu6Mxey8hV5ct8BhJNVdCwg"
+      }
+    },
+    {
+      "dex": "meteora",
+      "pair": "Ad6NEGrxHSBAGwfSTtBSHmKQgedHotCJZyFwCgRRAXc9",
+      "quote": "USDC",
+      "created": "2025-06-22T16:00:41Z",
+      "liquidity_usd": 1719.93,
+      "label": "DYN2",
+      "note": null,
+      "cite": {
+        "type": "account",
+        "ref": "Ad6NEGrxHSBAGwfSTtBSHmKQgedHotCJZyFwCgRRAXc9"
+      }
+    }
+  ],
+  "notes": "DePIN LP pairs (TOKE-HNT/IOT) excluded per owner."
+}

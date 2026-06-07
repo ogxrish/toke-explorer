@@ -1,0 +1,58 @@
+{
+  "built": [
+    [
+      "token",
+      556
+    ],
+    [
+      "oracle",
+      844
+    ],
+    [
+      "pools",
+      824
+    ],
+    [
+      "supply",
+      1229
+    ],
+    [
+      "holders",
+      32021
+    ],
+    [
+      "cohorts",
+      1209
+    ],
+    [
+      "governance",
+      34327
+    ],
+    [
+      "badges",
+      927
+    ],
+    [
+      "liquidity",
+      789
+    ],
+    [
+      "flows",
+      515
+    ],
+    [
+      "lore",
+      660
+    ],
+    [
+      "health",
+      543
+    ],
+    [
+      "activity",
+      105
+    ]
+  ],
+  "featured_count": 79,
+  "leak_guard": "build-side: forbidden L4 files never opened"
+}

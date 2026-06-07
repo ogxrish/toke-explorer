@@ -1,0 +1,49 @@
+{
+  "dataset": "liquidity",
+  "version": "v1",
+  "as_of": "2026-05-30T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "snapshots/lp_holders_20260530.json",
+      "analysis/oracle_20260530.json"
+    ],
+    "confidence": "confirmed"
+  },
+  "visibility": "l2",
+  "data": {
+    "true_liquidity_vs_fdv": {
+      "liquidity_usd": 18286.06,
+      "mcap_usd": 61721,
+      "ratio": 0.2963
+    },
+    "raydium_lp_holders": [
+      {
+        "address": "6Kq3SZZQWPzvaQ1Asp5maZHfgXafxd2Em3Hu2Z26jNiq",
+        "share_pct": 98.7464,
+        "cite": {
+          "type": "account",
+          "ref": "6Kq3SZZQWPzvaQ1Asp5maZHfgXafxd2Em3Hu2Z26jNiq"
+        }
+      },
+      {
+        "address": "G1mnQHKX5TP7oqdSBFTrjwb1wnH62tg9EhaTScVXmMpc",
+        "share_pct": 1.1353,
+        "cite": {
+          "type": "account",
+          "ref": "G1mnQHKX5TP7oqdSBFTrjwb1wnH62tg9EhaTScVXmMpc"
+        }
+      },
+      {
+        "address": "GBZgSHKBMKAtHgpFKgraM3ZCvGqEjBoKoGZQaYifaw8a",
+        "share_pct": 0.1183,
+        "cite": {
+          "type": "account",
+          "ref": "GBZgSHKBMKAtHgpFKgraM3ZCvGqEjBoKoGZQaYifaw8a"
+        }
+      }
+    ],
+    "raydium_pool": "HCRty6J2toqf8EAiQSNpAeG21Qd1p8bymJpWWkBkAXkz",
+    "note": "Meteora DLMM position liquidity is off-Dexscreener; full per-bin depth lands via owner-run DAS (M2)."
+  }
+}
