@@ -6,9 +6,11 @@ Every figure links to chain. No wallet is ever tied to a human identity.
 
 - **Mint:** `AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo` · 3 decimals · max 420,000,069
 - **Data contract:** `/api/v1/*.json` — versioned, anonymous; each record carries a `cite` to chain
-- **Focus modes:** *Holders + Tagged* (default) · *Ever touched* (every address that ever held or moved TOKE)
-- **Classes & cohorts:** addresses are labeled (wallet / AMM / program / CEX / distributor / infra) and
-  grouped into airdrop cohorts (Genesis-71 primary; subsequent airdrops secondary) — all filterable.
+- **Staged rollout:** `index.html` is the **lean MVP** — every wallet that ever touched TOKE (address,
+  balance, first/last seen, legs), gate-aware. `app.html` is the full feature-complete explorer (map,
+  focus modes, classes, cohorts, governance), promoted layer by layer.
+- **Reliability gate:** the homepage reads `reliability.json` and shows a "Preview" banner until the
+  ledger passes the full Gate-A audit (full + fresh, reconciled to source), then "Verified base".
 
 This repository is the **published static bundle only**. The source knowledge base (and any identity data)
 is private and never included here; published datasets are anonymous by design. Not financial advice.

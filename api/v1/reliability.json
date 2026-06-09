@@ -1,0 +1,56 @@
+{
+  "gate_a": "RED",
+  "publish_allowed": false,
+  "generated": "2026-06-09T23:31:50.773646Z",
+  "as_of": "2026-05-30T02:56:34Z",
+  "lag_hours": 260.5,
+  "checks": [
+    {
+      "check": "I1 genesis mint",
+      "group": "FULL",
+      "status": "pass"
+    },
+    {
+      "check": "I2 supply",
+      "group": "FULL",
+      "status": "pass"
+    },
+    {
+      "check": "I3 flow==state",
+      "group": "FULL",
+      "status": "fail"
+    },
+    {
+      "check": "F3 leg-less classified",
+      "group": "FULL",
+      "status": "pending"
+    },
+    {
+      "check": "F1 helius re-pull",
+      "group": "FULL",
+      "status": "pending"
+    },
+    {
+      "check": "F2 cross-index",
+      "group": "FULL",
+      "status": "pending"
+    },
+    {
+      "check": "R1 lag <= SLA",
+      "group": "FRESH",
+      "status": "pending"
+    },
+    {
+      "check": "R2 as_of derived",
+      "group": "FRESH",
+      "status": "pass"
+    }
+  ],
+  "punch_list": [
+    "I3 flow==state",
+    "F3 leg-less classified",
+    "F1 helius re-pull",
+    "F2 cross-index",
+    "R1 lag <= SLA"
+  ]
+}
