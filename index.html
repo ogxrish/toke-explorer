@@ -136,11 +136,10 @@
       <div class="stat"><div class="l">TOKE</div><div class="v acc" id="s-price">—</div></div>
       <div class="stat"><div class="l">Market cap</div><div class="v" id="s-mcap">—</div></div>
       <div class="stat"><div class="l">Vol 24h</div><div class="v" id="s-vol">—</div></div>
-      <div class="stat"><div class="l">◎ SOL</div><div class="v sol" id="s-sol">—</div></div>
-      <div class="stat"><div class="l">Epoch</div><div class="v" id="s-epoch">—</div></div>
       <div class="stat"><div class="l">Age</div><div class="v" id="s-age">—</div></div>
-      <div class="stat"><div class="l">Data as of</div><div class="v" id="s-asof">—</div></div>
+      <div class="stat"><div class="l">Date</div><div class="v" id="s-asof">—</div></div>
       <div class="stat"><div class="l"><span class="live"></span>UTC</div><div class="v mono" id="s-utc">—</div></div>
+      <div class="stat"><div class="l">◎ SOL</div><div class="v sol" id="s-sol">—</div></div>
     </div>
   </div>
 </header>
@@ -158,7 +157,7 @@
   <div class="kpis" id="kpis"></div>
 
   <div class="lbctrl">
-    <input type="search" id="q" placeholder="Search address…" autocomplete="off">
+    <input type="search" id="q" placeholder="Search address or .sol name…" autocomplete="off">
     <div class="seg2">
       <button class="segb on" data-focus="all">All wallets</button>
       <button class="segb" data-focus="holders">Current holders</button>
@@ -217,7 +216,7 @@ const fmt=(n,d=3)=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFracti
 const trunc=a=>a?a.slice(0,4)+'…'+a.slice(-4):'';
 const orb=a=>'https://orbmarkets.io/address/'+a;
 const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(1)+'K':'$'+Number(n).toPrecision(3));
-let ALL=[], TAGS={tags:{},assign:{},detail:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null;
+let ALL=[], TAGS={tags:{},assign:{},detail:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null, TOKE_PRICE=null;
 
 $('mintlink').href='https://orbmarkets.io/address/'+MINT;
 $('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MINT);$('mintcopy').textContent='✓';setTimeout(()=>$('mintcopy').textContent='⧉',900);};
@@ -226,6 +225,7 @@ $('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MI
 setInterval(()=>{ $('s-utc').textContent=new Date().toISOString().slice(11,19); },1000);
 const MINT_DATE=Date.parse('2023-06-22T18:03:43Z');   // genesis first block
 $('s-age').textContent=((Date.now()-MINT_DATE)/(365.25*864e5)).toFixed(2)+' yr';
+$('s-asof').textContent=new Date().toISOString().slice(0,10);   // today (UTC)
 
 // ── reliability banner ──
 fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
@@ -252,7 +252,7 @@ fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
 fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).then(j=>{
   const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd);
   if(!ps.length)return; const p=ps[0];
-  $('s-price').textContent='$'+Number(p.priceUsd).toPrecision(3);
+  $('s-price').textContent='$'+Number(p.priceUsd).toPrecision(3); TOKE_PRICE=+p.priceUsd;
   const mc=p.marketCap||p.fdv; if(mc)$('s-mcap').textContent=usd(+mc);
   const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0); $('s-vol').textContent=vol?usd(vol):'—';
   const img=(p.info&&p.info.imageUrl)||(j.pairs[0].info&&j.pairs[0].info.imageUrl);
@@ -268,10 +268,6 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=us
       const p=(j.pairs||[]).filter(x=>+(x.liquidity&&x.liquidity.usd||0)>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd)[0];
       if(p)$('s-sol').textContent='$'+fmt(+p.priceUsd,2); }).catch(()=>{}); });
 
-// ── current Solana epoch (public RPC, keyless) ──
-fetch('https://solana-rpc.publicnode.com',{method:'POST',headers:{'content-type':'application/json'},
-  body:JSON.stringify({jsonrpc:'2.0',id:1,method:'getEpochInfo',params:[]})}).then(r=>r.json())
-  .then(j=>{ if(j.result)$('s-epoch').textContent=j.result.epoch; }).catch(()=>{});
 
 // ── base listing + tags ──
 Promise.all([
@@ -279,7 +275,6 @@ Promise.all([
   fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{},detail:{}}}))
 ]).then(([base,tags])=>{
   ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{},detail:{}};
-  $('s-asof').textContent=(base.as_of||'').slice(0,10);
   buildKpis(); apply();
   const f=base.freshness||{};
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
@@ -305,7 +300,7 @@ function apply(){
   view=ALL.filter(r=>{
     if(focus==='holders'&&!(r.balance>0))return false;
     if(focus==='tagged'&&!tagsFor(r.address).length)return false;
-    if(q&&!r.address.toLowerCase().includes(q))return false;
+    if(q){ const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))).toLowerCase(); if(!hay.includes(q))return false; }
     return true;
   });
   view.sort((a,b)=>{ let x=a[sortKey],y=b[sortKey];
@@ -344,6 +339,7 @@ function openDrawer(r){
   $('dw-solscan').href=orb(r.address);
   $('dw-copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(r.address);$('dw-copy').textContent='Copied ✓';setTimeout(()=>$('dw-copy').textContent='Copy address ⧉',1000);};
   $('dw-kvs').innerHTML=[
+    ['Value', TOKE_PRICE==null?'—':usd(r.balance*TOKE_PRICE)],
     ['Balance', r.balance>0?fmt(r.balance)+' TOKE':'0'],
     ['Supply %', r.balance>0?fmt(r.pct,4)+'%':'—'],
     ['First seen', r.first_seen||'—'],
