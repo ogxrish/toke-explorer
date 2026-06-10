@@ -1,0 +1,132 @@
+{
+  "dataset": "collections",
+  "version": "v1",
+  "as_of": "2026-06-10T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "TOKE-KB/01-token/onchain-ledger/snapshots/mcvote_resolved_20260610.json",
+      "TOKE-KB/01-token/onchain-ledger/analysis/realms_audit.json",
+      "TOKE-KB/01-token/onchain-ledger/analysis/mcvote_nft_audit_2026-06-10.json"
+    ],
+    "confidence": "confirmed",
+    "reference_wallet_basis": "wallet holding all three official medals (address-only)"
+  },
+  "visibility": "l2",
+  "notes": "The Great McVote NFT set \u2014 three commemorative cNFTs (one per annual 4/20 Great McVote), set CLOSED. Verified via live DAS pull anchored on the reference wallet that holds all three. Addresses + aggregate counts only; per-holder identity is L4 (KB-only). Two non-canonical look-alike mints were ruled out.",
+  "data": {
+    "set_status": "closed \u2014 three official medals; no further McVote NFTs will be minted",
+    "set_certification": "verified-pending \u2014 first-owner (recipient) proof outstanding before PROVEN",
+    "series": [
+      {
+        "year": 2024,
+        "theme": "Genesis",
+        "type": "compressed-nft",
+        "seed_asset": "HnNUu957gEi2knbrh5Wk7mtMnTSrYJEi8VTy4YhVezzN",
+        "merkle_tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq",
+        "collection_group": null,
+        "update_authority": "3eD2VZ84PyYKcYei46JdUNAci6ykp6GWraTUDJPNzcrE",
+        "royalty_pct": 0.0,
+        "medals": 34,
+        "holders": 34,
+        "vote": {
+          "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+          "voters": 34,
+          "weight_toke": 161217299.864,
+          "turnout_pct": 38.39
+        },
+        "reconciliation": {
+          "voters": 34,
+          "medals": 34,
+          "holders": 34,
+          "voters_holding_medal": 10,
+          "voters_owed_medal": 24,
+          "holders_not_voters": 24
+        },
+        "certification": "verified-pending",
+        "cite": {
+          "type": "account",
+          "ref": "3eD2VZ84PyYKcYei46JdUNAci6ykp6GWraTUDJPNzcrE"
+        }
+      },
+      {
+        "year": 2025,
+        "theme": "Ecosystem",
+        "type": "compressed-nft",
+        "seed_asset": "HtyL3SQNFgQj6kpcjHA3h7XLUk8Ah52E3GE9KsoTqizD",
+        "merkle_tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr",
+        "collection_group": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3",
+        "update_authority": "AXSR5PJcEGSbcqWxY2v3yod8WB6fic4KABJWtM9BV4Ny",
+        "royalty_pct": 0.0,
+        "medals": 124,
+        "holders": 83,
+        "vote": {
+          "proposal": "GHq9epLWw5",
+          "voters": 47,
+          "weight_toke": 199567947.0,
+          "turnout_pct": 47.5
+        },
+        "reconciliation": {
+          "voters": 47,
+          "medals": 124,
+          "holders": 83,
+          "voters_holding_medal": 28,
+          "voters_owed_medal": 19,
+          "holders_not_voters": 55
+        },
+        "certification": "verified-pending",
+        "cite": {
+          "type": "account",
+          "ref": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3"
+        }
+      },
+      {
+        "year": 2026,
+        "theme": "Community",
+        "type": "compressed-nft",
+        "seed_asset": "3oHKTsWq4HD4g4DD6YKvqBDKsQ5agHqf5rPe2do29AsY",
+        "merkle_tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ",
+        "collection_group": null,
+        "update_authority": "2idL3W94KfbAZhWRGtyLnAbSTAzARjdmg8m3pDfCtYi4",
+        "royalty_pct": 0.0,
+        "medals": 9,
+        "holders": 9,
+        "vote": {
+          "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+          "voters": 44,
+          "weight_toke": 287440439.373,
+          "turnout_pct": 68.44
+        },
+        "reconciliation": {
+          "voters": 44,
+          "medals": 9,
+          "holders": 9,
+          "voters_holding_medal": 5,
+          "voters_owed_medal": 39,
+          "holders_not_voters": 4
+        },
+        "certification": "verified-pending",
+        "cite": {
+          "type": "account",
+          "ref": "2idL3W94KfbAZhWRGtyLnAbSTAzARjdmg8m3pDfCtYi4"
+        }
+      }
+    ],
+    "decoys_ruled_out": [
+      "6Ua6KvZBQQZp6SGjk6DFs9aS4aMtjSRp1VAq1qDkbgks",
+      "EHFoSn98qN2TmA1T9cR3fuyt14Mbd44qKjwtaDcBerir"
+    ],
+    "genesis_lineage": {
+      "collection": "Taste of Mycelium",
+      "collection_group": "CWA9WzdomEXojowMDg6kubs8HCXAAbFTFUy7H65mUA8s",
+      "medals": 86,
+      "holders": 71,
+      "role": "100% of TOKE airdropped to these holders at genesis (2023-06-22)",
+      "cite": {
+        "type": "account",
+        "ref": "CWA9WzdomEXojowMDg6kubs8HCXAAbFTFUy7H65mUA8s"
+      }
+    },
+    "open_action": "2026 airdrop incomplete: 9 of 44 voters hold a medal; 35 medals undistributed; 4 issued to non-voters"
+  }
+}

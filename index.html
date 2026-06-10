@@ -77,6 +77,10 @@
   tbody tr{cursor:pointer}tbody tr:hover{background:var(--panel2)}
   .rank{color:var(--mut2);font-size:11px;width:36px}
   .bal{font-weight:700}.pct{color:var(--mut);font-size:11.5px}.zero{color:var(--mut2)}
+  td.addr .sns{color:var(--gold);font-weight:600;font-size:12px;margin-left:9px}
+  .snsrow{font-size:13px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+  .snsrow.pri{color:var(--gold);font-weight:700}
+  .prilab{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut2);border:1px solid var(--line2);border-radius:4px;padding:1px 5px;margin-left:6px}
   .tagcell{font-size:14px;white-space:nowrap;letter-spacing:1px}
   .tagcell .none{color:var(--mut2);font-size:11px}
   .chev{color:var(--mut2);font-size:11px}
@@ -102,7 +106,13 @@
   .tagitem .em{font-size:20px;line-height:1}
   .tagitem .tl{font-size:13px;font-weight:700}
   .tagitem .td{font-size:11.5px;color:var(--mut);margin-top:2px}
-  .tagitem .tr{font-size:10px;color:var(--mut2);margin-top:4px}
+  .tagitem .tr{font-size:10px;color:var(--mut2);margin-top:6px}
+  .tdet{margin:7px 0 2px;border-top:1px solid var(--line);padding-top:5px}
+  .tdetrow{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;padding:3px 0;color:var(--mut)}
+  .tdetrow .ty{color:var(--txt);font-weight:700;min-width:40px}
+  .tdetrow .tw{flex:1;text-align:right;font-family:ui-monospace,Menlo,monospace}
+  .tdetrow .tv{min-width:34px;text-align:right;font-weight:700}
+  .tdetrow .tv.y{color:var(--accent)} .tdetrow .tv.n{color:var(--warn)}
   .notag{font-size:12px;color:var(--mut)}
 
   .foot{margin-top:30px;border-top:1px solid var(--line);padding-top:16px;font-size:11px;color:var(--mut);line-height:1.7}
@@ -190,6 +200,8 @@
     <span class="dw-btn" id="dw-copy">Copy address ⧉</span>
   </div>
   <div id="dw-kvs"></div>
+  <div class="dw-sec">Domains (SNS)</div>
+  <div id="dw-sns"></div>
   <div class="dw-sec">Tags</div>
   <div id="dw-tags"></div>
 </aside>
@@ -202,7 +214,7 @@ const fmt=(n,d=3)=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFracti
 const trunc=a=>a?a.slice(0,4)+'…'+a.slice(-4):'';
 const orb=a=>'https://orbmarkets.io/address/'+a;
 const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(1)+'K':'$'+Number(n).toPrecision(3));
-let ALL=[], TAGS={tags:{},assign:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null;
+let ALL=[], TAGS={tags:{},assign:{},detail:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null;
 
 $('mintlink').href='https://orbmarkets.io/address/'+MINT;
 $('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MINT);$('mintcopy').textContent='✓';setTimeout(()=>$('mintcopy').textContent='⧉',900);};
@@ -258,9 +270,9 @@ fetch('https://solana-rpc.publicnode.com',{method:'POST',headers:{'content-type'
 // ── base listing + tags ──
 Promise.all([
   fetch('api/v1/base_lean.json').then(r=>r.json()),
-  fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{}}}))
+  fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{},detail:{}}}))
 ]).then(([base,tags])=>{
-  ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{}};
+  ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{},detail:{}};
   $('s-asof').textContent=(base.as_of||'').slice(0,10);
   buildKpis(); apply();
   const f=base.freshness||{};
@@ -302,7 +314,7 @@ function draw(){
     const tg=tagsFor(r.address); const em=tg.map(k=>(TAGS.tags[k]||{}).emoji||'').join(' ');
     return `<tr data-i="${start+i}">
       <td class="rank">${start+i+1}</td>
-      <td class="addr mono">${trunc(r.address)}</td>
+      <td class="addr"><span class="mono">${trunc(r.address)}</span>${r.sns?`<span class="sns">${r.sns}</span>`:''}</td>
       <td class="r">${bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
@@ -330,11 +342,21 @@ function openDrawer(r){
     ['Last seen', r.last_seen||'—'],
     ['Transfer legs', fmt(r.legs,0)],
   ].map(kv=>`<div class="kv"><span class="k">${kv[0]}</span><span class="v">${kv[1]}</span></div>`).join('');
-  const tg=tagsFor(r.address);
-  $('dw-tags').innerHTML = tg.length ? tg.map(k=>{const t=TAGS.tags[k]||{};
-      return `<div class="tagitem"><div class="em">${t.emoji||'•'}</div><div><div class="tl">${t.label||k}</div>
-        <div class="td">${t.desc||''}</div><div class="tr">Proof: ${t.rule||''} · ${t.source||''}</div></div></div>`;}).join('')
-    : '<div class="notag">No tags yet. Tags are published only when official and proven on-chain.</div>';
+  const doms=r.sns_all||[];
+  $('dw-sns').innerHTML = doms.length
+    ? doms.map(d=>`<div class="snsrow${d===r.sns?' pri':''}">${d}${d===r.sns?'<span class="prilab">primary</span>':''}</div>`).join('')
+    : '<div class="notag">No .sol domains held.</div>';
+  const tg=tagsFor(r.address); const det=(TAGS.detail&&TAGS.detail[r.address])||{};
+  $('dw-tags').innerHTML = tg.length ? tg.map(k=>{
+    const t=TAGS.tags[k]||{};
+    let dh='';
+    const dd=det[k];
+    if(dd && dd.length){
+      dh='<div class="tdet">'+dd.map(e=>`<div class="tdetrow"><span class="ty">${e.year}</span><span class="tw">${fmt(e.weight,0)} TOKE</span><span class="tv ${e.vote==='Yes'?'y':e.vote==='No'?'n':''}">${e.vote}</span></div>`).join('')+'</div>';
+    }
+    return `<div class="tagitem"><div class="em">${t.emoji||'•'}</div><div style="flex:1"><div class="tl">${t.label||k}</div>
+      <div class="td">${t.desc||''}</div>${dh}<div class="tr">Proof: ${t.rule||''} · ${t.source||''}</div></div></div>`;
+  }).join('') : '<div class="notag">No tags yet. Tags are published only when official and proven on-chain.</div>';
   $('scrim').classList.add('on'); $('drawer').classList.add('on');
 }
 function closeDrawer(){ $('scrim').classList.remove('on'); $('drawer').classList.remove('on'); }

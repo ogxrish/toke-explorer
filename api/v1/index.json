@@ -8,7 +8,7 @@
   },
   "data": {
     "contract_version": "v1",
-    "generated_at": "2026-06-07T22:28:05.723574Z",
+    "generated_at": "2026-06-10T14:16:55.596927Z",
     "datasets": [
       "token",
       "oracle",
@@ -22,7 +22,8 @@
       "flows",
       "lore",
       "health",
-      "activity"
+      "activity",
+      "collections"
     ],
     "subject": {
       "symbol": "TOKE",
