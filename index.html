@@ -77,6 +77,7 @@
   tbody tr{cursor:pointer}tbody tr:hover{background:var(--panel2)}
   .rank{color:var(--mut2);font-size:11px;width:36px}
   .bal{font-weight:700}.pct{color:var(--mut);font-size:11.5px}.zero{color:var(--mut2)}
+  td.label{color:var(--mut);font-size:12px}
   td.addr .sns{color:var(--gold);font-weight:600;font-size:12px;margin-left:9px}
   .snsrow{font-size:13px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--mut)}
   .snsrow.pri{color:var(--gold);font-weight:700}
@@ -134,12 +135,13 @@
     <div class="stats" id="stats">
       <div class="stat"><div class="l">TOKE</div><div class="v acc" id="s-price">—</div></div>
       <div class="stat"><div class="l">Market cap</div><div class="v" id="s-mcap">—</div></div>
+      <div class="stat"><div class="l">Vol 24h</div><div class="v" id="s-vol">—</div></div>
       <div class="stat"><div class="l">◎ SOL</div><div class="v sol" id="s-sol">—</div></div>
       <div class="stat"><div class="l">Epoch</div><div class="v" id="s-epoch">—</div></div>
+      <div class="stat"><div class="l">Age</div><div class="v" id="s-age">—</div></div>
       <div class="stat"><div class="l">Data as of</div><div class="v" id="s-asof">—</div></div>
       <div class="stat"><div class="l"><span class="live"></span>UTC</div><div class="v mono" id="s-utc">—</div></div>
     </div>
-    <a class="navlink" href="app.html" title="The full feature-complete explorer (staged rollout)">Full →</a>
   </div>
 </header>
 
@@ -170,6 +172,7 @@
       <thead><tr>
         <th class="rank">#</th>
         <th data-sort="address">Address</th>
+        <th class="hide-sm">Label</th>
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
         <th class="c">Tags</th>
@@ -185,8 +188,8 @@
        <b>Verifiable.</b> Every row links to Orb; tags are published only when proven on-chain.
        <b>Tiered.</b> This page publishes L1 on-chain facts only.</div>
     <div id="srcline" style="margin-top:6px"></div>
-    <div style="margin-top:6px">Mint <span class="mono">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069 ·
-       <a href="app.html">full explorer (staged)</a></div>
+    <div style="margin-top:6px">Mint <span class="mono">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069</div>
+    <div style="margin-top:8px"><a href="app.html" style="color:var(--mut2)">full explorer (staged) →</a></div>
   </div>
 </div>
 
@@ -219,8 +222,10 @@ let ALL=[], TAGS={tags:{},assign:{},detail:{}}, view=[], focus='all', sortKey='b
 $('mintlink').href='https://orbmarkets.io/address/'+MINT;
 $('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MINT);$('mintcopy').textContent='✓';setTimeout(()=>$('mintcopy').textContent='⧉',900);};
 
-// ── live UTC clock ──
+// ── live UTC clock + token age (since genesis mint) ──
 setInterval(()=>{ $('s-utc').textContent=new Date().toISOString().slice(11,19); },1000);
+const MINT_DATE=Date.parse('2023-06-22T18:03:43Z');   // genesis first block
+$('s-age').textContent=((Date.now()-MINT_DATE)/(365.25*864e5)).toFixed(2)+' yr';
 
 // ── reliability banner ──
 fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
@@ -249,6 +254,7 @@ fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).t
   if(!ps.length)return; const p=ps[0];
   $('s-price').textContent='$'+Number(p.priceUsd).toPrecision(3);
   const mc=p.marketCap||p.fdv; if(mc)$('s-mcap').textContent=usd(+mc);
+  const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0); $('s-vol').textContent=vol?usd(vol):'—';
   const img=(p.info&&p.info.imageUrl)||(j.pairs[0].info&&j.pairs[0].info.imageUrl);
   if(img)$('tokimg').src=img;
   const bt=p.baseToken&&p.baseToken.address===MINT?p.baseToken:(p.quoteToken||{});
@@ -279,7 +285,7 @@ Promise.all([
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
     ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
     (f.first_block_time||'').slice(0,10)+' → '+(base.as_of||'').replace('T',' ').replace('Z',' UTC')+'.';
-}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="6" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
+}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="7" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
 
 const tagsFor=a=>TAGS.assign[a]||[];
 function buildKpis(){
@@ -287,9 +293,10 @@ function buildKpis(){
   const supply=ALL.reduce((s,r)=>s+(r.balance||0),0);
   const tot=(ENV&&ENV.totals)||{};
   const legs=tot.legs!=null?tot.legs:Math.round(ALL.reduce((s,r)=>s+(r.legs||0),0)/2);
+  const MAX=420000069, burnedPct=(MAX-supply)/MAX*100;
   const k=[['Current holders',fmt(holders,0),'wallets holding TOKE now'],
            ['Wallets ever touched',fmt(ALL.length,0),'distinct addresses, all-time'],
-           ['Current supply',fmt(supply,0),'TOKE in circulation'],
+           ['Current supply',fmt(supply,0),'of '+fmt(MAX,0)+' max · '+burnedPct.toFixed(3)+'% burned'],
            ['Transfer legs',fmt(legs,0),'on-chain TOKE movements']];
   $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="v">${x[1]}</div><div class="n">${x[2]}</div></div>`).join('');
 }
@@ -315,11 +322,12 @@ function draw(){
     return `<tr data-i="${start+i}">
       <td class="rank">${start+i+1}</td>
       <td class="addr"><span class="mono">${trunc(r.address)}</span>${r.sns?`<span class="sns">${r.sns}</span>`:''}</td>
+      <td class="label hide-sm">${r.label||''}</td>
       <td class="r">${bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="c chev">›</td></tr>`;
-  }).join('')||'<tr><td colspan="6" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+  }).join('')||'<tr><td colspan="7" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
   $('pager').innerHTML=`<button class="pgb" id="prev" ${page<=0?'disabled':''}>← Prev</button>
     <span>Page ${page+1} / ${fmt(pages,0)}</span>
