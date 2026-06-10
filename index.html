@@ -53,10 +53,12 @@
 
   .lede{margin:22px 0 4px;font-size:21px;font-weight:800;letter-spacing:.2px}.lede .x{color:var(--accent)}
   .sub{font-size:13px;color:var(--mut);margin:0 0 18px;max-width:680px}
-  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0 22px}
-  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 26px}
+  .kpi{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:15px;padding:15px 16px;box-shadow:0 12px 30px -12px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.03);transition:transform .15s ease,box-shadow .15s ease}
+  .kpi:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(0,0,0,.75)}
   .kpi .l{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut)}
-  .kpi .v{font-size:21px;font-weight:800;margin-top:4px}.kpi .n{font-size:10.5px;color:var(--mut);margin-top:2px}
+  .kpi .v{font-size:23px;font-weight:800;margin-top:5px}.kpi .n{font-size:10.5px;color:var(--mut);margin-top:2px}
+  @media(max-width:680px){.kpis{grid-template-columns:repeat(2,1fr)}}
 
   .lbctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
   input[type=search]{background:var(--panel2);border:1px solid var(--line2);border-radius:8px;color:var(--txt);padding:8px 12px;font-size:13px;min-width:260px;flex:1}
@@ -115,7 +117,7 @@
       <div class="brand">
         <b id="ticker">$TOKE</b><span class="stage">MVP · base</span>
         <div class="mintchip"><span class="mono" id="mint">Amg…mCpo</span><span class="copy" id="mintcopy" title="copy mint">⧉</span>
-          <a id="mintlink" target="_blank" rel="noopener" title="view token on Solscan">↗</a></div>
+          <a id="mintlink" target="_blank" rel="noopener" title="view token on Orb">↗</a></div>
       </div>
     </div>
     <div class="spacer"></div>
@@ -158,9 +160,9 @@
       <thead><tr>
         <th class="rank">#</th>
         <th data-sort="address">Address</th>
-        <th class="c">Tags</th>
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
+        <th class="c">Tags</th>
         <th class="c" style="width:26px"></th>
       </tr></thead>
       <tbody id="rows"></tbody>
@@ -170,7 +172,7 @@
 
   <div class="foot" id="foot">
     <div><b>Anonymous.</b> Addresses only — no wallet is tied to a person here.
-       <b>Verifiable.</b> Every row links to Solscan; tags are published only when proven on-chain.
+       <b>Verifiable.</b> Every row links to Orb; tags are published only when proven on-chain.
        <b>Tiered.</b> This page publishes L1 on-chain facts only.</div>
     <div id="srcline" style="margin-top:6px"></div>
     <div style="margin-top:6px">Mint <span class="mono">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069 ·
@@ -184,7 +186,7 @@
   <div class="dw-rank" id="dw-rank"></div>
   <div class="dw-addr mono" id="dw-addr"></div>
   <div class="dw-actions">
-    <a class="dw-btn" id="dw-solscan" target="_blank" rel="noopener">View on Solscan ↗</a>
+    <a class="dw-btn" id="dw-solscan" target="_blank" rel="noopener">View on Orb ↗</a>
     <span class="dw-btn" id="dw-copy">Copy address ⧉</span>
   </div>
   <div id="dw-kvs"></div>
@@ -198,11 +200,11 @@ const SOL_MINT="So11111111111111111111111111111111111111112";
 const $=id=>document.getElementById(id);
 const fmt=(n,d=3)=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFractionDigits:d});
 const trunc=a=>a?a.slice(0,4)+'…'+a.slice(-4):'';
-const sol=a=>'https://solscan.io/account/'+a;
+const orb=a=>'https://orbmarkets.io/address/'+a;
 const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(1)+'K':'$'+Number(n).toPrecision(3));
 let ALL=[], TAGS={tags:{},assign:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null;
 
-$('mintlink').href='https://solscan.io/token/'+MINT;
+$('mintlink').href='https://orbmarkets.io/address/'+MINT;
 $('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MINT);$('mintcopy').textContent='✓';setTimeout(()=>$('mintcopy').textContent='⧉',900);};
 
 // ── live UTC clock ──
@@ -269,11 +271,14 @@ Promise.all([
 
 const tagsFor=a=>TAGS.assign[a]||[];
 function buildKpis(){
-  const holders=ALL.filter(r=>r.balance>0).length, tagged=Object.keys(TAGS.assign).length;
-  const k=[['Wallets ever touched',fmt(ALL.length,0),'distinct addresses in a TOKE transfer'],
-           ['Current holders',fmt(holders,0),'balance &gt; 0'],
-           ['Tagged wallets',fmt(tagged,0),'on-chain-proven tags'],
-           ['Max supply','420,000,069','3 decimals']];
+  const holders=ALL.filter(r=>r.balance>0).length;
+  const supply=ALL.reduce((s,r)=>s+(r.balance||0),0);
+  const tot=(ENV&&ENV.totals)||{};
+  const legs=tot.legs!=null?tot.legs:Math.round(ALL.reduce((s,r)=>s+(r.legs||0),0)/2);
+  const k=[['Current holders',fmt(holders,0),'wallets holding TOKE now'],
+           ['Wallets ever touched',fmt(ALL.length,0),'distinct addresses, all-time'],
+           ['Current supply',fmt(supply,0),'TOKE in circulation'],
+           ['Transfer legs',fmt(legs,0),'on-chain TOKE movements']];
   $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="v">${x[1]}</div><div class="n">${x[2]}</div></div>`).join('');
 }
 function apply(){
@@ -298,9 +303,9 @@ function draw(){
     return `<tr data-i="${start+i}">
       <td class="rank">${start+i+1}</td>
       <td class="addr mono">${trunc(r.address)}</td>
-      <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="r">${bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
+      <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="c chev">›</td></tr>`;
   }).join('')||'<tr><td colspan="6" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
@@ -316,7 +321,7 @@ function openDrawer(r){
   if(!r)return;
   $('dw-rank').textContent=r.balance>0&&r.rank?('Rank #'+r.rank+' · holder'):(r.balance>0?'Current holder':'Former / zero balance');
   $('dw-addr').textContent=r.address;
-  $('dw-solscan').href=sol(r.address);
+  $('dw-solscan').href=orb(r.address);
   $('dw-copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(r.address);$('dw-copy').textContent='Copied ✓';setTimeout(()=>$('dw-copy').textContent='Copy address ⧉',1000);};
   $('dw-kvs').innerHTML=[
     ['Balance', r.balance>0?fmt(r.balance)+' TOKE':'0'],

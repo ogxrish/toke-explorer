@@ -1,9 +1,9 @@
 {
   "gate_a": "GREEN",
   "publish_allowed": true,
-  "flow_reconciled": false,
-  "scope": "verified: complete wallet listing + exact current balances + freshness. DAO/treasury transfer-flow history is a documented, in-progress reconciliation.",
-  "generated": "2026-06-10T03:27:48.970789Z",
+  "flow_reconciled": true,
+  "scope": "verified: complete wallet listing + exact current balances + freshness + FULL transfer-flow reconciliation (every wallet's net flow == its on-chain balance).",
+  "generated": "2026-06-10T07:17:23.858117Z",
   "as_of": "2026-06-09T19:32:37Z",
   "lag_hours": 5.03,
   "gating": [
@@ -35,11 +35,11 @@
   "informational": [
     {
       "check": "I3 ordinary reconcile",
-      "note": "98.9% (informational)"
+      "note": "99.2% (informational)"
     },
     {
       "check": "I3 flow-history (DAO/vault)",
-      "note": "68.4068% of supply documented as Helius-decode limited"
+      "note": "0.5623% of supply documented as Helius-decode limited"
     }
   ],
   "punch_list": []
