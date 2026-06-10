@@ -257,8 +257,8 @@ fetch('https://solana-rpc.publicnode.com',{method:'POST',headers:{'content-type'
 
 // ── base listing + tags ──
 Promise.all([
-  fetch('api/v1/base_lean.json',{cache:'force-cache'}).then(r=>r.json()),
-  fetch('api/v1/tags.json',{cache:'force-cache'}).then(r=>r.json()).catch(()=>({data:{tags:{},assign:{}}}))
+  fetch('api/v1/base_lean.json').then(r=>r.json()),
+  fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{}}}))
 ]).then(([base,tags])=>{
   ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{}};
   $('s-asof').textContent=(base.as_of||'').slice(0,10);
