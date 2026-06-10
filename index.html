@@ -18,114 +18,137 @@
   body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased}
   a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
   .mono{font-family:ui-monospace,Menlo,monospace}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 90px}
 
-  header{position:sticky;top:0;z-index:30;background:rgba(10,12,16,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .hbar{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .logo{width:38px;height:38px;border-radius:10px;display:block;object-fit:cover}
+  /* ── live status bar ── */
+  header{position:sticky;top:0;z-index:30;background:rgba(10,12,16,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hbar{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .brandgrp{display:flex;align-items:center;gap:11px;min-width:0}
+  .logo{width:36px;height:36px;border-radius:9px;display:block;object-fit:cover;background:var(--panel2)}
   .brand b{font-size:16px;letter-spacing:.3px}
-  .brand .s{font-size:11px;color:var(--mut)}
+  .brand .mintchip{font-size:10.5px;color:var(--mut);display:flex;align-items:center;gap:5px;margin-top:1px}
+  .stage{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold);border:1px solid var(--line2);border-radius:5px;padding:1px 5px;margin-left:6px;vertical-align:middle}
+  .copy{cursor:pointer;color:var(--mut2);font-size:11px;user-select:none}
+  .copy:hover{color:var(--accent)}
   .spacer{flex:1}
-  .hprice{font-size:11.5px;color:var(--mut);text-align:right;line-height:1.35}
-  .hprice b{color:var(--accent);font-size:15px}
+  .stats{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:5px 9px;line-height:1.15;min-width:62px}
+  .stat .l{font-size:8.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut)}
+  .stat .v{font-size:12.5px;font-weight:700;margin-top:1px;white-space:nowrap}
+  .stat .v.acc{color:var(--accent)} .stat .v.sol{color:var(--purple)}
   .navlink{font-size:12px;color:var(--mut);border:1px solid var(--line2);border-radius:8px;padding:6px 11px}
   .navlink:hover{color:var(--txt);text-decoration:none;border-color:var(--accent)}
+  .live{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:4px;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* reliability banner — the honesty surface */
-  .relbanner{margin:18px 0 0;border:1px solid var(--line2);border-left-width:4px;border-radius:var(--r);
-             background:var(--panel);padding:13px 16px;display:flex;gap:13px;align-items:flex-start}
+  /* ── reliability banner ── */
+  .relbanner{margin:18px 0 0;border:1px solid var(--line2);border-left-width:4px;border-radius:var(--r);background:var(--panel);padding:13px 16px;display:flex;gap:13px;align-items:flex-start}
   .relbanner .ic{font-size:17px;line-height:1.2}
-  .relbanner .t{font-size:13px}
-  .relbanner .t b{font-weight:700}
+  .relbanner .t{font-size:13px}.relbanner .t b{font-weight:700}
   .relbanner .meta{font-size:11.5px;color:var(--mut);margin-top:3px}
-  .rel-green{border-left-color:var(--accent)}
-  .rel-amber{border-left-color:var(--gold)}
-  .rel-red{border-left-color:var(--warn)}
-  .relbanner.rel-red .t b{color:var(--warn)}
-  .relbanner.rel-amber .t b{color:var(--gold)}
-  .relbanner.rel-green .t b{color:var(--accent)}
+  .rel-green{border-left-color:var(--accent)}.rel-amber{border-left-color:var(--gold)}.rel-red{border-left-color:var(--warn)}
+  .relbanner.rel-red .t b{color:var(--warn)}.relbanner.rel-amber .t b{color:var(--gold)}.relbanner.rel-green .t b{color:var(--accent)}
   .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
   .dot.g{background:var(--accent)}.dot.a{background:var(--gold)}.dot.r{background:var(--warn)}
 
-  .lede{margin:22px 0 4px;font-size:21px;font-weight:800;letter-spacing:.2px}
-  .lede .x{color:var(--accent)}
+  .lede{margin:22px 0 4px;font-size:21px;font-weight:800;letter-spacing:.2px}.lede .x{color:var(--accent)}
   .sub{font-size:13px;color:var(--mut);margin:0 0 18px;max-width:680px}
-
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0 22px}
   .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
   .kpi .l{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut)}
-  .kpi .v{font-size:21px;font-weight:800;margin-top:4px}
-  .kpi .n{font-size:10.5px;color:var(--mut);margin-top:2px}
-  .kpi .v.sm{font-size:15px}
+  .kpi .v{font-size:21px;font-weight:800;margin-top:4px}.kpi .n{font-size:10.5px;color:var(--mut);margin-top:2px}
 
   .lbctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
   input[type=search]{background:var(--panel2);border:1px solid var(--line2);border-radius:8px;color:var(--txt);padding:8px 12px;font-size:13px;min-width:260px;flex:1}
   .seg2{display:inline-flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden}
   .segb{background:var(--panel2);color:var(--mut);border:0;padding:7px 13px;font-size:12px;cursor:pointer;font-family:inherit}
-  .segb.on{background:rgba(90,209,179,.16);color:var(--accent)}
-  .segb+.segb{border-left:1px solid var(--line2)}
+  .segb.on{background:rgba(90,209,179,.16);color:var(--accent)}.segb+.segb{border-left:1px solid var(--line2)}
   .count{font-size:11.5px;color:var(--mut)}
 
   .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
   table{width:100%;border-collapse:collapse;font-size:13px}
   thead th{background:var(--panel2)}
-  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
   th{color:var(--mut);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;user-select:none;white-space:nowrap}
-  th.r,td.r{text-align:right}
+  th.r,td.r{text-align:right}th.c,td.c{text-align:center}
   th .ar{opacity:.5;font-size:9px;margin-left:2px}
-  tbody tr:hover{background:var(--panel2)}
-  td.addr{white-space:nowrap}
-  .rank{color:var(--mut2);font-size:11px;width:34px}
-  .bal{font-weight:700}
-  .pct{color:var(--mut);font-size:11.5px}
-  .zero{color:var(--mut2)}
-  .alink{font-size:10px;color:var(--mut);margin-left:7px}
-  .copy{cursor:pointer;color:var(--mut2);font-size:11px;margin-left:6px;user-select:none}
-  .copy:hover{color:var(--accent)}
+  tbody tr{cursor:pointer}tbody tr:hover{background:var(--panel2)}
+  .rank{color:var(--mut2);font-size:11px;width:36px}
+  .bal{font-weight:700}.pct{color:var(--mut);font-size:11.5px}.zero{color:var(--mut2)}
+  .tagcell{font-size:14px;white-space:nowrap;letter-spacing:1px}
+  .tagcell .none{color:var(--mut2);font-size:11px}
+  .chev{color:var(--mut2);font-size:11px}
   .pager{display:flex;gap:8px;align-items:center;justify-content:center;padding:14px;font-size:12px;color:var(--mut)}
   .pgb{background:var(--panel2);border:1px solid var(--line2);border-radius:7px;color:var(--txt);padding:5px 11px;cursor:pointer;font-size:12px}
   .pgb:disabled{opacity:.4;cursor:default}
 
+  /* ── drawer (drilldown) ── */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.2s;z-index:40}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:430px;max-width:94vw;background:var(--panel);border-left:1px solid var(--line2);transform:translateX(100%);transition:transform .22s ease;z-index:50;overflow-y:auto;padding:22px}
+  .drawer.on{transform:none}
+  .drawer .x{position:absolute;top:14px;right:16px;cursor:pointer;color:var(--mut);font-size:22px;line-height:1}
+  .dw-rank{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px}
+  .dw-addr{font-size:14px;word-break:break-all;margin:3px 0 2px}
+  .dw-actions{display:flex;gap:8px;margin:10px 0 18px;flex-wrap:wrap}
+  .dw-btn{font-size:12px;border:1px solid var(--line2);border-radius:8px;padding:6px 11px;color:var(--txt);background:var(--panel2);cursor:pointer}
+  .dw-btn:hover{border-color:var(--accent);text-decoration:none}
+  .kv{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .kv .k{color:var(--mut)}.kv .v{font-weight:600;text-align:right}
+  .dw-sec{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:#aeb6c2;margin:20px 0 8px;font-weight:700}
+  .tagitem{display:flex;gap:11px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+  .tagitem .em{font-size:20px;line-height:1}
+  .tagitem .tl{font-size:13px;font-weight:700}
+  .tagitem .td{font-size:11.5px;color:var(--mut);margin-top:2px}
+  .tagitem .tr{font-size:10px;color:var(--mut2);margin-top:4px}
+  .notag{font-size:12px;color:var(--mut)}
+
   .foot{margin-top:30px;border-top:1px solid var(--line);padding-top:16px;font-size:11px;color:var(--mut);line-height:1.7}
-  .foot b{color:var(--mut)}
-  .stage{display:inline-block;font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold);border:1px solid var(--line2);border-radius:5px;padding:1px 6px;margin-left:6px}
-  @media(max-width:680px){.hide-sm{display:none}thead th{top:56px}}
+  @media(max-width:760px){.hide-sm{display:none}.stats{width:100%;justify-content:flex-start}.drawer{width:100%}}
 </style>
 </head>
 <body>
 <header>
   <div class="hbar">
-    <img src="assets/toke-logo.png" class="logo" alt="TOKE" onerror="this.style.display='none'">
-    <div class="brand"><b>$TOKE Explorer</b><span class="stage">MVP · base</span><div class="s">explorer.mctoken.xyz</div></div>
+    <div class="brandgrp">
+      <img src="assets/toke-logo.png" id="tokimg" class="logo" alt="TOKE" onerror="this.src='assets/toke-logo.png'">
+      <div class="brand">
+        <b id="ticker">$TOKE</b><span class="stage">MVP · base</span>
+        <div class="mintchip"><span class="mono" id="mint">Amg…mCpo</span><span class="copy" id="mintcopy" title="copy mint">⧉</span>
+          <a id="mintlink" target="_blank" rel="noopener" title="view token on Solscan">↗</a></div>
+      </div>
+    </div>
     <div class="spacer"></div>
-    <div class="hprice" id="price">—</div>
-    <a class="navlink" href="app.html" title="The full feature-complete explorer (in staged rollout)">Full explorer →</a>
+    <div class="stats" id="stats">
+      <div class="stat"><div class="l">TOKE</div><div class="v acc" id="s-price">—</div></div>
+      <div class="stat"><div class="l">Market cap</div><div class="v" id="s-mcap">—</div></div>
+      <div class="stat"><div class="l">◎ SOL</div><div class="v sol" id="s-sol">—</div></div>
+      <div class="stat"><div class="l">Epoch</div><div class="v" id="s-epoch">—</div></div>
+      <div class="stat"><div class="l">Data as of</div><div class="v" id="s-asof">—</div></div>
+      <div class="stat"><div class="l"><span class="live"></span>UTC</div><div class="v mono" id="s-utc">—</div></div>
+    </div>
+    <a class="navlink" href="app.html" title="The full feature-complete explorer (staged rollout)">Full →</a>
   </div>
 </header>
 
 <div class="wrap">
-
-  <!-- reliability banner (filled by JS from reliability.json) -->
   <div id="relbanner" class="relbanner rel-amber">
     <div class="ic">⏳</div>
-    <div>
-      <div class="t"><b>Loading reliability status…</b></div>
-      <div class="meta" id="relmeta"></div>
-    </div>
+    <div><div class="t"><b>Loading reliability status…</b></div><div class="meta" id="relmeta"></div></div>
   </div>
 
   <div class="lede">Every wallet that ever touched <span class="x">$TOKE</span>.</div>
-  <p class="sub">The complete base: all addresses that have appeared in a TOKE transfer since genesis,
-     with current balance and activity. Anonymous and verifiable — every address links to chain.
-     Cohorts, classifications, P&amp;L and the map are staged feature layers on top of this base.</p>
+  <p class="sub">The complete base: all addresses that have appeared in a TOKE transfer since genesis, with
+     current balance, activity, and on-chain-proven tags. Anonymous and verifiable — click any wallet to drill in.</p>
 
   <div class="kpis" id="kpis"></div>
 
   <div class="lbctrl">
     <input type="search" id="q" placeholder="Search address…" autocomplete="off">
     <div class="seg2">
-      <button class="segb on" data-focus="all" id="f-all">All wallets</button>
-      <button class="segb" data-focus="holders" id="f-hold">Current holders</button>
+      <button class="segb on" data-focus="all">All wallets</button>
+      <button class="segb" data-focus="holders">Current holders</button>
+      <button class="segb" data-focus="tagged">Tagged</button>
     </div>
     <span class="count" id="count"></span>
   </div>
@@ -135,11 +158,10 @@
       <thead><tr>
         <th class="rank">#</th>
         <th data-sort="address">Address</th>
+        <th class="c">Tags</th>
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
-        <th class="r hide-sm" data-sort="first_seen">First seen <span class="ar" id="ar-first_seen"></span></th>
-        <th class="r hide-sm" data-sort="last_seen">Last seen <span class="ar" id="ar-last_seen"></span></th>
-        <th class="r" data-sort="legs">Legs <span class="ar" id="ar-legs"></span></th>
+        <th class="c" style="width:26px"></th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -148,119 +170,179 @@
 
   <div class="foot" id="foot">
     <div><b>Anonymous.</b> Addresses only — no wallet is tied to a person here.
-       <b>Verifiable.</b> Every row links to Solscan. <b>Tiered.</b> This page publishes L1 on-chain facts only.</div>
+       <b>Verifiable.</b> Every row links to Solscan; tags are published only when proven on-chain.
+       <b>Tiered.</b> This page publishes L1 on-chain facts only.</div>
     <div id="srcline" style="margin-top:6px"></div>
-    <div style="margin-top:6px">Mint <span class="mono" id="mint">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069 ·
+    <div style="margin-top:6px">Mint <span class="mono">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069 ·
        <a href="app.html">full explorer (staged)</a></div>
   </div>
 </div>
 
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="x" id="dwx">×</div>
+  <div class="dw-rank" id="dw-rank"></div>
+  <div class="dw-addr mono" id="dw-addr"></div>
+  <div class="dw-actions">
+    <a class="dw-btn" id="dw-solscan" target="_blank" rel="noopener">View on Solscan ↗</a>
+    <span class="dw-btn" id="dw-copy">Copy address ⧉</span>
+  </div>
+  <div id="dw-kvs"></div>
+  <div class="dw-sec">Tags</div>
+  <div id="dw-tags"></div>
+</aside>
+
 <script>
 const MINT="AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo";
+const SOL_MINT="So11111111111111111111111111111111111111112";
 const $=id=>document.getElementById(id);
 const fmt=(n,d=3)=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFractionDigits:d});
 const trunc=a=>a?a.slice(0,4)+'…'+a.slice(-4):'';
 const sol=a=>'https://solscan.io/account/'+a;
-let ALL=[], view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null;
+const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(1)+'K':'$'+Number(n).toPrecision(3));
+let ALL=[], TAGS={tags:{},assign:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null;
 
-// ---- reliability banner ----
+$('mintlink').href='https://solscan.io/token/'+MINT;
+$('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MINT);$('mintcopy').textContent='✓';setTimeout(()=>$('mintcopy').textContent='⧉',900);};
+
+// ── live UTC clock ──
+setInterval(()=>{ $('s-utc').textContent=new Date().toISOString().slice(11,19); },1000);
+
+// ── reliability banner ──
 fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
-  const b=$('relbanner'), m=$('relmeta');
-  const st=(R.gate_a||'').toUpperCase();
-  const lag=R.lag_hours!=null?(R.lag_hours>=48?(Math.round(R.lag_hours/24)+' days'):(Math.round(R.lag_hours)+'h')):'?';
+  const b=$('relbanner'), m=$('relmeta'); const st=(R.gate_a||'').toUpperCase();
+  const lag=R.lag_hours!=null?(R.lag_hours>=48?Math.round(R.lag_hours/24)+' days':Math.round(R.lag_hours)+'h'):'?';
   const asof=R.as_of?R.as_of.slice(0,10):'—';
   if(st==='GREEN'){
     b.className='relbanner rel-green'; b.querySelector('.ic').textContent='✓';
-    b.querySelector('.t').innerHTML='<b><span class="dot g"></span>Verified base</b> — complete wallet listing with exact on-chain balances. Genesis, supply, and an independent supply cross-check all reconcile.';
-    m.textContent='Data as of '+asof+' · lag ~'+lag+' · listing + balances verified. DAO/treasury transfer-flow history is still being reconciled.';
+    if(R.flow_reconciled){
+      b.querySelector('.t').innerHTML='<b><span class="dot g"></span>Fully reconciled</b> — complete listing, exact balances, and every wallet’s net transfer flow matches its on-chain balance. Genesis, supply, and an independent supply cross-check all verify.';
+      m.textContent='Data as of '+asof+' · lag ~'+lag+' · listing + balances + transfer-flow fully reconciled to chain.';
+    }else{
+      b.querySelector('.t').innerHTML='<b><span class="dot g"></span>Verified base</b> — complete wallet listing with exact on-chain balances. Genesis, supply, and an independent supply cross-check all reconcile.';
+      m.textContent='Data as of '+asof+' · lag ~'+lag+' · listing + balances verified. DAO/treasury transfer-flow history is still being reconciled.';
+    }
   }else{
     const red=st==='RED'; b.className='relbanner '+(red?'rel-red':'rel-amber'); b.querySelector('.ic').textContent='⚠';
-    b.querySelector('.t').innerHTML='<b><span class="dot '+(red?'r':'a')+'"></span>Preview — data not yet certified</b> '+
-      'This listing is built from the '+asof+' ledger snapshot and has <b>not</b> passed the full reliability audit (Gate A: '+st+'). Figures may change.';
-    const pend=(R.punch_list||[]).join(', ');
-    m.textContent='Data as of '+asof+' · lag ~'+lag+'h · open audit items: '+(pend||'—');
+    b.querySelector('.t').innerHTML='<b><span class="dot '+(red?'r':'a')+'"></span>Preview — data not yet certified</b> Built from the '+asof+' ledger snapshot; has <b>not</b> passed the full reliability audit (Gate A: '+st+'). Figures may change.';
+    m.textContent='Data as of '+asof+' · lag ~'+lag+' · open audit items: '+((R.punch_list||[]).join(', ')||'—');
   }
 }).catch(()=>{ $('relbanner').style.display='none'; });
 
-// ---- live price (Dexscreener, keyless, non-blocking) ----
+// ── live market data (Dexscreener: TOKE price, mcap, token image) ──
 fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).then(j=>{
   const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd);
   if(!ps.length)return; const p=ps[0];
-  $('price').innerHTML='<b>$'+Number(p.priceUsd).toPrecision(3)+'</b><br>liq $'+fmt(+p.liquidity.usd,0);
+  $('s-price').textContent='$'+Number(p.priceUsd).toPrecision(3);
+  const mc=p.marketCap||p.fdv; if(mc)$('s-mcap').textContent=usd(+mc);
+  const img=(p.info&&p.info.imageUrl)||(j.pairs[0].info&&j.pairs[0].info.imageUrl);
+  if(img)$('tokimg').src=img;
+  const bt=p.baseToken&&p.baseToken.address===MINT?p.baseToken:(p.quoteToken||{});
+  if(bt&&bt.symbol)$('ticker').textContent='$'+bt.symbol;
 }).catch(()=>{});
 
-// ---- base listing ----
-fetch('api/v1/base_lean.json',{cache:'force-cache'}).then(r=>r.json()).then(j=>{
-  ENV=j; ALL=j.data; buildKpis(); apply();
-  const f=j.freshness||{}; const asof=(j.as_of||'').replace('T',' ').replace('Z',' UTC');
-  $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · '+
-    'built '+ (ENV.source&&ENV.source.pipeline||'build_base_lean.py') +' · ledger spans '+
-    (f.first_block_time||'').slice(0,10)+' → '+asof+'.';
-}).catch(e=>{ $('rows').innerHTML='<tr><td colspan="7" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
+// ── SOL price (CoinGecko) ──
+fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd').then(r=>r.json())
+  .then(j=>{ if(j.solana&&j.solana.usd)$('s-sol').textContent='$'+fmt(j.solana.usd,2); })
+  .catch(()=>{ fetch('https://api.dexscreener.com/latest/dex/tokens/'+SOL_MINT).then(r=>r.json()).then(j=>{
+      const p=(j.pairs||[]).filter(x=>+(x.liquidity&&x.liquidity.usd||0)>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd)[0];
+      if(p)$('s-sol').textContent='$'+fmt(+p.priceUsd,2); }).catch(()=>{}); });
 
+// ── current Solana epoch (public RPC, keyless) ──
+fetch('https://solana-rpc.publicnode.com',{method:'POST',headers:{'content-type':'application/json'},
+  body:JSON.stringify({jsonrpc:'2.0',id:1,method:'getEpochInfo',params:[]})}).then(r=>r.json())
+  .then(j=>{ if(j.result)$('s-epoch').textContent=j.result.epoch; }).catch(()=>{});
+
+// ── base listing + tags ──
+Promise.all([
+  fetch('api/v1/base_lean.json',{cache:'force-cache'}).then(r=>r.json()),
+  fetch('api/v1/tags.json',{cache:'force-cache'}).then(r=>r.json()).catch(()=>({data:{tags:{},assign:{}}}))
+]).then(([base,tags])=>{
+  ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{}};
+  $('s-asof').textContent=(base.as_of||'').slice(0,10);
+  buildKpis(); apply();
+  const f=base.freshness||{};
+  $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
+    ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
+    (f.first_block_time||'').slice(0,10)+' → '+(base.as_of||'').replace('T',' ').replace('Z',' UTC')+'.';
+}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="6" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
+
+const tagsFor=a=>TAGS.assign[a]||[];
 function buildKpis(){
-  const holders=ALL.filter(r=>r.balance>0).length;
-  const k=[
-    ['Wallets ever touched', fmt(ALL.length,0), 'distinct addresses in a TOKE transfer'],
-    ['Current holders', fmt(holders,0), 'balance &gt; 0'],
-    ['Max supply', '420,000,069', '3 decimals'],
-    ['Data as of', (ENV.as_of||'').slice(0,10), 'derived from latest block'],
-  ];
-  $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="v ${x[1].length>11?'sm':''}">${x[1]}</div><div class="n">${x[2]}</div></div>`).join('');
+  const holders=ALL.filter(r=>r.balance>0).length, tagged=Object.keys(TAGS.assign).length;
+  const k=[['Wallets ever touched',fmt(ALL.length,0),'distinct addresses in a TOKE transfer'],
+           ['Current holders',fmt(holders,0),'balance &gt; 0'],
+           ['Tagged wallets',fmt(tagged,0),'on-chain-proven tags'],
+           ['Max supply','420,000,069','3 decimals']];
+  $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="v">${x[1]}</div><div class="n">${x[2]}</div></div>`).join('');
 }
-
 function apply(){
   const q=$('q').value.trim().toLowerCase();
   view=ALL.filter(r=>{
     if(focus==='holders'&&!(r.balance>0))return false;
+    if(focus==='tagged'&&!tagsFor(r.address).length)return false;
     if(q&&!r.address.toLowerCase().includes(q))return false;
     return true;
   });
-  view.sort((a,b)=>{
-    let x=a[sortKey],y=b[sortKey];
-    if(sortKey==='address'){x=a.address;y=b.address;return sortDir*(x<y?-1:x>y?1:0);}
-    if(sortKey==='first_seen'||sortKey==='last_seen'){x=x||'';y=y||'';return sortDir*(x<y?-1:x>y?1:0);}
-    return sortDir*((x||0)-(y||0));
-  });
+  view.sort((a,b)=>{ let x=a[sortKey],y=b[sortKey];
+    if(sortKey==='address')return sortDir*((a.address<b.address)?-1:(a.address>b.address)?1:0);
+    return sortDir*((x||0)-(y||0)); });
   page=0; draw();
 }
 function draw(){
-  const n=view.length, pages=Math.max(1,Math.ceil(n/PER)), start=page*PER;
-  const slice=view.slice(start,start+PER);
+  const n=view.length, pages=Math.max(1,Math.ceil(n/PER)), start=page*PER, slice=view.slice(start,start+PER);
   $('count').textContent=fmt(n,0)+' wallet'+(n===1?'':'s');
   $('rows').innerHTML=slice.map((r,i)=>{
     const bal=r.balance>0?`<span class="bal">${fmt(r.balance)}</span>`:`<span class="zero">0</span>`;
-    return `<tr>
+    const tg=tagsFor(r.address); const em=tg.map(k=>(TAGS.tags[k]||{}).emoji||'').join(' ');
+    return `<tr data-i="${start+i}">
       <td class="rank">${start+i+1}</td>
-      <td class="addr"><a class="mono" href="${sol(r.address)}" target="_blank" rel="noopener">${trunc(r.address)}</a>
-        <span class="copy" data-a="${r.address}" title="copy">⧉</span></td>
+      <td class="addr mono">${trunc(r.address)}</td>
+      <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="r">${bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
-      <td class="r hide-sm" style="color:var(--mut);font-size:11.5px">${r.first_seen||'—'}</td>
-      <td class="r hide-sm" style="color:var(--mut);font-size:11.5px">${r.last_seen||'—'}</td>
-      <td class="r">${fmt(r.legs,0)}</td>
-    </tr>`;
-  }).join('')||'<tr><td colspan="7" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+      <td class="c chev">›</td></tr>`;
+  }).join('')||'<tr><td colspan="6" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+  [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
   $('pager').innerHTML=`<button class="pgb" id="prev" ${page<=0?'disabled':''}>← Prev</button>
     <span>Page ${page+1} / ${fmt(pages,0)}</span>
     <button class="pgb" id="next" ${page>=pages-1?'disabled':''}>Next →</button>`;
   $('prev').onclick=()=>{if(page>0){page--;draw();window.scrollTo({top:0,behavior:'smooth'});}};
   $('next').onclick=()=>{if(page<pages-1){page++;draw();window.scrollTo({top:0,behavior:'smooth'});}};
-  document.querySelectorAll('.copy').forEach(c=>c.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(c.dataset.a);c.textContent='✓';setTimeout(()=>c.textContent='⧉',900);});
 }
+
+// ── drilldown drawer ──
+function openDrawer(r){
+  if(!r)return;
+  $('dw-rank').textContent=r.balance>0&&r.rank?('Rank #'+r.rank+' · holder'):(r.balance>0?'Current holder':'Former / zero balance');
+  $('dw-addr').textContent=r.address;
+  $('dw-solscan').href=sol(r.address);
+  $('dw-copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(r.address);$('dw-copy').textContent='Copied ✓';setTimeout(()=>$('dw-copy').textContent='Copy address ⧉',1000);};
+  $('dw-kvs').innerHTML=[
+    ['Balance', r.balance>0?fmt(r.balance)+' TOKE':'0'],
+    ['Supply %', r.balance>0?fmt(r.pct,4)+'%':'—'],
+    ['First seen', r.first_seen||'—'],
+    ['Last seen', r.last_seen||'—'],
+    ['Transfer legs', fmt(r.legs,0)],
+  ].map(kv=>`<div class="kv"><span class="k">${kv[0]}</span><span class="v">${kv[1]}</span></div>`).join('');
+  const tg=tagsFor(r.address);
+  $('dw-tags').innerHTML = tg.length ? tg.map(k=>{const t=TAGS.tags[k]||{};
+      return `<div class="tagitem"><div class="em">${t.emoji||'•'}</div><div><div class="tl">${t.label||k}</div>
+        <div class="td">${t.desc||''}</div><div class="tr">Proof: ${t.rule||''} · ${t.source||''}</div></div></div>`;}).join('')
+    : '<div class="notag">No tags yet. Tags are published only when official and proven on-chain.</div>';
+  $('scrim').classList.add('on'); $('drawer').classList.add('on');
+}
+function closeDrawer(){ $('scrim').classList.remove('on'); $('drawer').classList.remove('on'); }
+$('dwx').onclick=closeDrawer; $('scrim').onclick=closeDrawer;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+
 // controls
 $('q').addEventListener('input',()=>{clearTimeout(window.__t);window.__t=setTimeout(apply,160);});
 document.querySelectorAll('.segb').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('.segb').forEach(x=>x.classList.remove('on'));b.classList.add('on');
-  focus=b.dataset.focus;apply();
-});
+  document.querySelectorAll('.segb').forEach(x=>x.classList.remove('on'));b.classList.add('on');focus=b.dataset.focus;apply();});
 document.querySelectorAll('th[data-sort]').forEach(th=>th.onclick=()=>{
-  const k=th.dataset.sort;
-  if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=(k==='address'||k==='first_seen'||k==='last_seen')?1:-1;}
-  document.querySelectorAll('.ar').forEach(a=>a.textContent='');
-  const ar=$('ar-'+k); if(ar)ar.textContent=sortDir<0?'▼':'▲';
-  apply();
-});
+  const k=th.dataset.sort; if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=(k==='address')?1:-1;}
+  document.querySelectorAll('.ar').forEach(a=>a.textContent=''); const ar=$('ar-'+k); if(ar)ar.textContent=sortDir<0?'▼':'▲'; apply();});
 </script>
 </body>
 </html>

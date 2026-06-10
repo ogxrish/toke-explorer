@@ -1,8 +1,9 @@
 {
   "gate_a": "GREEN",
   "publish_allowed": true,
+  "flow_reconciled": false,
   "scope": "verified: complete wallet listing + exact current balances + freshness. DAO/treasury transfer-flow history is a documented, in-progress reconciliation.",
-  "generated": "2026-06-10T02:34:19.528438Z",
+  "generated": "2026-06-10T03:27:48.970789Z",
   "as_of": "2026-06-09T19:32:37Z",
   "lag_hours": 5.03,
   "gating": [
