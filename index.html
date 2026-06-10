@@ -171,8 +171,8 @@ fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
   const asof=R.as_of?R.as_of.slice(0,10):'—';
   if(st==='GREEN'){
     b.className='relbanner rel-green'; b.querySelector('.ic').textContent='✓';
-    b.querySelector('.t').innerHTML='<b><span class="dot g"></span>Verified base</b> — passed the full reliability audit (Gate A).';
-    m.textContent='Data as of '+asof+' · lag ~'+lag+' · independently reconciled against source.';
+    b.querySelector('.t').innerHTML='<b><span class="dot g"></span>Verified base</b> — complete wallet listing with exact on-chain balances. Genesis, supply, and an independent supply cross-check all reconcile.';
+    m.textContent='Data as of '+asof+' · lag ~'+lag+' · listing + balances verified. DAO/treasury transfer-flow history is still being reconciled.';
   }else{
     const red=st==='RED'; b.className='relbanner '+(red?'rel-red':'rel-amber'); b.querySelector('.ic').textContent='⚠';
     b.querySelector('.t').innerHTML='<b><span class="dot '+(red?'r':'a')+'"></span>Preview — data not yet certified</b> '+
