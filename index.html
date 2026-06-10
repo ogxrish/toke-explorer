@@ -6,6 +6,16 @@
 <title>$TOKE Explorer · explorer.mctoken.xyz</title>
 <meta name="description" content="Every wallet that ever touched $TOKE — anonymous, verifiable, on-chain.">
 <link rel="icon" type="image/png" href="assets/toke-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="$TOKE Explorer">
+<meta property="og:title" content="$TOKE Explorer — every wallet, verified on-chain">
+<meta property="og:description" content="The complete base of every wallet that ever touched $TOKE. Anonymous, verifiable, reconciled to the chain.">
+<meta property="og:url" content="https://explorer.mctoken.xyz">
+<meta property="og:image" content="https://explorer.mctoken.xyz/assets/toke-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="$TOKE Explorer — every wallet, verified on-chain">
+<meta name="twitter:description" content="The complete base of every wallet that ever touched $TOKE. Anonymous, verifiable, reconciled to the chain.">
+<meta name="twitter:image" content="https://explorer.mctoken.xyz/assets/toke-logo.png">
 <style>
   :root{
     --bg:#0a0c10;--panel:#13161d;--panel2:#181c24;--line:#242a33;--line2:#2e3540;
@@ -117,6 +127,15 @@
   .notag{font-size:12px;color:var(--mut)}
 
   .foot{margin-top:30px;border-top:1px solid var(--line);padding-top:16px;font-size:11px;color:var(--mut);line-height:1.7}
+  .method{margin-top:10px}
+  .method summary{cursor:pointer;color:var(--accent2);font-size:11px;list-style:none;display:inline-block}
+  .method summary::-webkit-details-marker{display:none}
+  .method summary:hover{text-decoration:underline}
+  .method[open] summary{color:var(--mut);margin-bottom:6px}
+  .methodbody{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;max-width:680px}
+  .methodbody ul{margin:8px 0 4px;padding-left:18px}
+  .methodbody li{margin:4px 0}
+  .disclaimer{color:var(--mut2);font-size:10.5px;max-width:680px}
   @media(max-width:760px){.hide-sm{display:none}.stats{width:100%;justify-content:flex-start}.drawer{width:100%}}
 </style>
 </head>
@@ -126,7 +145,7 @@
     <div class="brandgrp">
       <img src="assets/toke-logo.png" id="tokimg" class="logo" alt="TOKE" onerror="this.src='assets/toke-logo.png'">
       <div class="brand">
-        <b id="ticker">$TOKE</b><span class="stage">MVP · base</span>
+        <b id="ticker">$TOKE</b><span class="stage">Beta</span>
         <div class="mintchip"><span class="mono" id="mint">Amg…mCpo</span><span class="copy" id="mintcopy" title="copy mint">⧉</span>
           <a id="mintlink" target="_blank" rel="noopener" title="view token on Orb">↗</a></div>
       </div>
@@ -177,7 +196,7 @@
         <th class="c">Tags</th>
         <th class="c" style="width:26px"></th>
       </tr></thead>
-      <tbody id="rows"></tbody>
+      <tbody id="rows"><tr><td colspan="7" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
     </table>
     <div class="pager" id="pager"></div>
   </div>
@@ -186,9 +205,22 @@
     <div><b>Anonymous.</b> Addresses only — no wallet is tied to a person here.
        <b>Verifiable.</b> Every row links to Orb; tags are published only when proven on-chain.
        <b>Tiered.</b> This page publishes L1 on-chain facts only.</div>
+    <details class="method">
+      <summary>How we verify →</summary>
+      <div class="methodbody">
+        Every figure is checked against the chain before it ships:
+        <ul>
+          <li><b>Genesis.</b> Total supply reconciles to the original mint — 420,000,069 TOKE, 71 equal genesis airdrops.</li>
+          <li><b>Balances.</b> The sum of every wallet's balance equals on-chain supply, to the grain.</li>
+          <li><b>Independent cross-check.</b> Holder count and supply are re-derived from a direct on-chain account scan on a public RPC — a provider independent of our data pipeline — and must match exactly.</li>
+          <li><b>Transfer flow.</b> Each wallet's net of all transfers in and out is reconciled against its current balance, to within a small, documented tolerance on legacy DAO/vault accounts.</li>
+        </ul>
+        Data is published only when these checks pass. The banner above reflects the current verification state.
+      </div>
+    </details>
     <div id="srcline" style="margin-top:6px"></div>
     <div style="margin-top:6px">Mint <span class="mono">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069</div>
-    <div style="margin-top:8px"><a href="app.html" style="color:var(--mut2)">full explorer (staged) →</a></div>
+    <div class="disclaimer" style="margin-top:10px">Informational only — not financial advice. On-chain data may lag; always verify independently on-chain. $TOKE figures are sourced from public market data and may be delayed.</div>
   </div>
 </div>
 
@@ -227,6 +259,17 @@ const MINT_DATE=Date.parse('2023-06-22T18:03:43Z');   // genesis first block
 $('s-age').textContent=((Date.now()-MINT_DATE)/(365.25*864e5)).toFixed(2)+' yr';
 $('s-asof').textContent=new Date().toISOString().slice(0,10);   // today (UTC)
 
+// ── cached last-good prices (avoids a blank header if a market API is slow/rate-limited) ──
+const PXKEY='toke_px_v1';
+const pxLoad=()=>{ try{return JSON.parse(localStorage.getItem(PXKEY)||'{}');}catch(e){return {};} };
+const pxSave=o=>{ try{localStorage.setItem(PXKEY,JSON.stringify(Object.assign(pxLoad(),o)));}catch(e){} };
+(function seedPx(){ const c=pxLoad();
+  if(c.price!=null){ $('s-price').textContent='$'+Number(c.price).toPrecision(3); TOKE_PRICE=+c.price; }
+  if(c.mcap!=null) $('s-mcap').textContent=usd(+c.mcap);
+  if(c.vol!=null)  $('s-vol').textContent=c.vol?usd(+c.vol):'—';
+  if(c.sol!=null)  $('s-sol').textContent='$'+fmt(+c.sol,2);
+})();
+
 // ── reliability banner ──
 fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
   const b=$('relbanner'), m=$('relmeta'); const st=(R.gate_a||'').toUpperCase();
@@ -255,6 +298,7 @@ fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).t
   $('s-price').textContent='$'+Number(p.priceUsd).toPrecision(3); TOKE_PRICE=+p.priceUsd;
   const mc=p.marketCap||p.fdv; if(mc)$('s-mcap').textContent=usd(+mc);
   const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0); $('s-vol').textContent=vol?usd(vol):'—';
+  pxSave({price:+p.priceUsd, mcap:mc?+mc:null, vol:vol||0});
   const img=(p.info&&p.info.imageUrl)||(j.pairs[0].info&&j.pairs[0].info.imageUrl);
   if(img)$('tokimg').src=img;
   const bt=p.baseToken&&p.baseToken.address===MINT?p.baseToken:(p.quoteToken||{});
@@ -263,10 +307,10 @@ fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).t
 
 // ── SOL price (CoinGecko) ──
 fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd').then(r=>r.json())
-  .then(j=>{ if(j.solana&&j.solana.usd)$('s-sol').textContent='$'+fmt(j.solana.usd,2); })
+  .then(j=>{ if(j.solana&&j.solana.usd){$('s-sol').textContent='$'+fmt(j.solana.usd,2); pxSave({sol:+j.solana.usd});} })
   .catch(()=>{ fetch('https://api.dexscreener.com/latest/dex/tokens/'+SOL_MINT).then(r=>r.json()).then(j=>{
       const p=(j.pairs||[]).filter(x=>+(x.liquidity&&x.liquidity.usd||0)>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd)[0];
-      if(p)$('s-sol').textContent='$'+fmt(+p.priceUsd,2); }).catch(()=>{}); });
+      if(p){$('s-sol').textContent='$'+fmt(+p.priceUsd,2); pxSave({sol:+p.priceUsd});} }).catch(()=>{}); });
 
 
 // ── base listing + tags ──
