@@ -21,6 +21,7 @@
     --bg:#0a0c10;--panel:#13161d;--panel2:#181c24;--line:#242a33;--line2:#2e3540;
     --txt:#e7eaef;--mut:#8b94a3;--mut2:#5b6472;
     --accent:#5ad1b3;--accent2:#4aa3ff;--warn:#ff6b6b;--gold:#e7b84a;--purple:#9b8cff;
+    --toke:#4aa3ff;--g:#9b8cff;
     --r:13px;
   }
   *{box-sizing:border-box}
@@ -36,7 +37,8 @@
   .brandgrp{display:flex;align-items:center;gap:11px;min-width:0}
   .logo{width:36px;height:36px;border-radius:9px;display:block;object-fit:cover;background:var(--panel2)}
   .brand b{font-size:16px;letter-spacing:.3px}
-  .brand .mintchip{font-size:10.5px;color:var(--mut);display:flex;align-items:center;gap:5px;margin-top:1px}
+  .brand .mintchip{font-size:10px;color:var(--mut);display:flex;align-items:center;gap:5px;margin-top:2px;flex-wrap:wrap}
+  .brand .mintchip #mint{word-break:break-all;line-height:1.35}
   .stage{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold);border:1px solid var(--line2);border-radius:5px;padding:1px 5px;margin-left:6px;vertical-align:middle}
   .copy{cursor:pointer;color:var(--mut2);font-size:11px;user-select:none}
   .copy:hover{color:var(--accent)}
@@ -45,7 +47,7 @@
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:5px 9px;line-height:1.15;min-width:62px}
   .stat .l{font-size:8.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut)}
   .stat .v{font-size:12.5px;font-weight:700;margin-top:1px;white-space:nowrap}
-  .stat .v.acc{color:var(--accent)} .stat .v.sol{color:var(--purple)}
+  .stat .v.acc{color:var(--accent)} .stat .v.sol{color:var(--purple)} .stat .v.toke{color:var(--toke)}
   .navlink{font-size:12px;color:var(--mut);border:1px solid var(--line2);border-radius:8px;padding:6px 11px}
   .navlink:hover{color:var(--txt);text-decoration:none;border-color:var(--accent)}
   .live{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:4px;animation:pulse 2s infinite}
@@ -87,6 +89,7 @@
   tbody tr{cursor:pointer}tbody tr:hover{background:var(--panel2)}
   .rank{color:var(--mut2);font-size:11px;width:36px}
   .bal{font-weight:700}.pct{color:var(--mut);font-size:11.5px}.zero{color:var(--mut2)}
+  .g{color:var(--g);cursor:help}   /* the 3 TOKE decimals = grams (0.001 TOKE each) */
   td.label{color:var(--mut);font-size:12px}
   .lblchip{display:inline-block;font-size:11px;padding:2px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--line2);color:var(--mut);white-space:nowrap}
   .lblchip.lbl-liquidity-pool{color:var(--accent);border-color:rgba(90,209,179,.35)}
@@ -157,13 +160,11 @@
     </div>
     <div class="spacer"></div>
     <div class="stats" id="stats">
-      <div class="stat"><div class="l">TOKE</div><div class="v acc" id="s-price">—</div></div>
+      <div class="stat"><div class="l">TOKE</div><div class="v toke" id="s-price">—</div></div>
       <div class="stat"><div class="l">Market cap</div><div class="v" id="s-mcap">—</div></div>
       <div class="stat"><div class="l">Vol 24h</div><div class="v" id="s-vol">—</div></div>
       <div class="stat"><div class="l">Age</div><div class="v" id="s-age">—</div></div>
-      <div class="stat"><div class="l">Date</div><div class="v" id="s-asof">—</div></div>
-      <div class="stat"><div class="l"><span class="live"></span>UTC</div><div class="v mono" id="s-utc">—</div></div>
-      <div class="stat"><div class="l">◎ SOL</div><div class="v sol" id="s-sol">—</div></div>
+      <div class="stat" style="min-width:150px"><div class="l"><span class="live"></span>UTC · date &amp; time</div><div class="v mono" id="s-datetime">—</div></div>
     </div>
   </div>
 </header>
@@ -185,6 +186,7 @@
     <div class="seg2">
       <button class="segb on" data-focus="all">All wallets</button>
       <button class="segb" data-focus="holders">Current holders</button>
+      <button class="segb" data-focus="labeled">Labeled</button>
       <button class="segb" data-focus="tagged">Tagged</button>
     </div>
     <span class="count" id="count"></span>
@@ -225,6 +227,7 @@
     </details>
     <div id="srcline" style="margin-top:6px"></div>
     <div style="margin-top:6px">Mint <span class="mono">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069</div>
+    <div style="margin-top:6px">Each TOKE divides into 1,000 <span class="g">grams (g)</span> — the smallest unit (0.001 TOKE). Every balance is shown to the grain, with the <span class="g">g</span> portion in colour.</div>
     <div class="disclaimer" style="margin-top:10px">Informational only — not financial advice. On-chain data may lag; always verify independently on-chain. $TOKE figures are sourced from public market data and may be delayed.</div>
   </div>
 </div>
@@ -254,17 +257,24 @@ const fmt=(n,d=3)=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFracti
 const trunc=a=>a?a.slice(0,4)+'…'+a.slice(-4):'';
 const orb=a=>'https://orbmarkets.io/address/'+a;
 const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(1)+'K':'$'+Number(n).toPrecision(3));
+// TOKE always shows full units to the grain: integer part + 3 decimals (= grams, 0.001 TOKE each) coloured.
+const tokeHtml=n=>{ if(n==null)return '—'; const neg=n<0; let v=Math.abs(+n);
+  let I=Math.floor(v), G=Math.round((v-I)*1000); if(G>=1000){I++;G=0;}
+  return (neg?'-':'')+I.toLocaleString('en-US')+'<span class="g" title="grams · 0.001 TOKE each">.'+String(G).padStart(3,'0')+'</span>'; };
 let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null, TOKE_PRICE=null;
 const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
 
+$('mint').textContent=MINT;   // full mint address for verifiability
 $('mintlink').href='https://orbmarkets.io/address/'+MINT;
 $('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MINT);$('mintcopy').textContent='✓';setTimeout(()=>$('mintcopy').textContent='⧉',900);};
 
-// ── live UTC clock + token age (since genesis mint) ──
-setInterval(()=>{ $('s-utc').textContent=new Date().toISOString().slice(11,19); },1000);
+// ── live UTC date+time (one box) + token age in yr + days ──
 const MINT_DATE=Date.parse('2023-06-22T18:03:43Z');   // genesis first block
-$('s-age').textContent=((Date.now()-MINT_DATE)/(365.25*864e5)).toFixed(2)+' yr';
-$('s-asof').textContent=new Date().toISOString().slice(0,10);   // today (UTC)
+function tick(){ const s=new Date().toISOString(); $('s-datetime').textContent=s.slice(0,10)+' '+s.slice(11,19); }
+tick(); setInterval(tick,1000);
+(function age(){ const days=Math.floor((Date.now()-MINT_DATE)/864e5);
+  const yr=Math.floor(days/365.25), d=days-Math.round(yr*365.25);
+  $('s-age').textContent=yr+' yr '+d+' d'; })();
 
 // ── cached last-good prices (avoids a blank header if a market API is slow/rate-limited) ──
 const PXKEY='toke_px_v1';
@@ -274,7 +284,6 @@ const pxSave=o=>{ try{localStorage.setItem(PXKEY,JSON.stringify(Object.assign(px
   if(c.price!=null){ $('s-price').textContent='$'+Number(c.price).toPrecision(3); TOKE_PRICE=+c.price; }
   if(c.mcap!=null) $('s-mcap').textContent=usd(+c.mcap);
   if(c.vol!=null)  $('s-vol').textContent=c.vol?usd(+c.vol):'—';
-  if(c.sol!=null)  $('s-sol').textContent='$'+fmt(+c.sol,2);
 })();
 
 // ── reliability banner ──
@@ -307,17 +316,10 @@ fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).t
   const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0); $('s-vol').textContent=vol?usd(vol):'—';
   pxSave({price:+p.priceUsd, mcap:mc?+mc:null, vol:vol||0});
   const img=(p.info&&p.info.imageUrl)||(j.pairs[0].info&&j.pairs[0].info.imageUrl);
-  if(img)$('tokimg').src=img;
+  if(img){ $('tokimg').src=img; const fav=document.querySelector('link[rel="icon"]'); if(fav)fav.href=img; }
   const bt=p.baseToken&&p.baseToken.address===MINT?p.baseToken:(p.quoteToken||{});
   if(bt&&bt.symbol)$('ticker').textContent='$'+bt.symbol;
 }).catch(()=>{});
-
-// ── SOL price (CoinGecko) ──
-fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd').then(r=>r.json())
-  .then(j=>{ if(j.solana&&j.solana.usd){$('s-sol').textContent='$'+fmt(j.solana.usd,2); pxSave({sol:+j.solana.usd});} })
-  .catch(()=>{ fetch('https://api.dexscreener.com/latest/dex/tokens/'+SOL_MINT).then(r=>r.json()).then(j=>{
-      const p=(j.pairs||[]).filter(x=>+(x.liquidity&&x.liquidity.usd||0)>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd)[0];
-      if(p){$('s-sol').textContent='$'+fmt(+p.priceUsd,2); pxSave({sol:+p.priceUsd});} }).catch(()=>{}); });
 
 
 // ── base listing + tags ──
@@ -344,7 +346,7 @@ function buildKpis(){
   const MAX=420000069, burnedPct=(MAX-supply)/MAX*100;
   const k=[['Current holders',fmt(holders,0),'wallets holding TOKE now'],
            ['Wallets ever touched',fmt(ALL.length,0),'distinct addresses, all-time'],
-           ['Current supply',fmt(supply,0),'of '+fmt(MAX,0)+' max · '+burnedPct.toFixed(3)+'% burned'],
+           ['Current supply',tokeHtml(supply),'of '+fmt(MAX,0)+' max · '+burnedPct.toFixed(3)+'% burned'],
            ['Transfer legs',fmt(legs,0),'on-chain TOKE movements']];
   $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="v">${x[1]}</div><div class="n">${x[2]}</div></div>`).join('');
 }
@@ -352,6 +354,7 @@ function apply(){
   const q=$('q').value.trim().toLowerCase();
   view=ALL.filter(r=>{
     if(focus==='holders'&&!(r.balance>0))return false;
+    if(focus==='labeled'&&!labelFor(r.address))return false;
     if(focus==='tagged'&&!tagsFor(r.address).length)return false;
     if(q){ const lb=labelFor(r.address); const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))+' '+((lb&&lb.display)||'')+' '+((lb&&lb.name)||'')).toLowerCase(); if(!hay.includes(q))return false; }
     return true;
@@ -365,7 +368,7 @@ function draw(){
   const n=view.length, pages=Math.max(1,Math.ceil(n/PER)), start=page*PER, slice=view.slice(start,start+PER);
   $('count').textContent=fmt(n,0)+' wallet'+(n===1?'':'s');
   $('rows').innerHTML=slice.map((r,i)=>{
-    const bal=r.balance>0?`<span class="bal">${fmt(r.balance)}</span>`:`<span class="zero">0</span>`;
+    const bal=r.balance>0?`<span class="bal">${tokeHtml(r.balance)}</span>`:`<span class="zero">0<span class="g">.000</span></span>`;
     const tg=tagsFor(r.address); const em=tg.map(k=>(TAGS.tags[k]||{}).emoji||'').join(' ');
     const lb=labelFor(r.address);
     return `<tr data-i="${start+i}">
@@ -394,7 +397,7 @@ function openDrawer(r){
   $('dw-copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(r.address);$('dw-copy').textContent='Copied ✓';setTimeout(()=>$('dw-copy').textContent='Copy address ⧉',1000);};
   $('dw-kvs').innerHTML=[
     ['Value', TOKE_PRICE==null?'—':usd(r.balance*TOKE_PRICE)],
-    ['Balance', r.balance>0?fmt(r.balance)+' TOKE':'0'],
+    ['Balance', (r.balance>0?tokeHtml(r.balance):'0<span class="g">.000</span>')+' TOKE'],
     ['Supply %', r.balance>0?fmt(r.pct,4)+'%':'—'],
     ['First seen', r.first_seen||'—'],
     ['Last seen', r.last_seen||'—'],
