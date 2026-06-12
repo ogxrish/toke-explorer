@@ -88,6 +88,11 @@
   .rank{color:var(--mut2);font-size:11px;width:36px}
   .bal{font-weight:700}.pct{color:var(--mut);font-size:11.5px}.zero{color:var(--mut2)}
   td.label{color:var(--mut);font-size:12px}
+  .lblchip{display:inline-block;font-size:11px;padding:2px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--line2);color:var(--mut);white-space:nowrap}
+  .lblchip.lbl-liquidity-pool{color:var(--accent);border-color:rgba(90,209,179,.35)}
+  .lblchip.lbl-governance{color:var(--purple);border-color:rgba(155,140,255,.35)}
+  .lblchip.lbl-program{color:var(--accent2);border-color:rgba(74,163,255,.35)}
+  .lblchip.lbl-treasury,.lblchip.lbl-distributor,.lblchip.lbl-dao,.lblchip.lbl-project{color:var(--gold);border-color:rgba(231,184,74,.35)}
   td.addr .sns{color:var(--gold);font-weight:600;font-size:12px;margin-left:9px}
   .snsrow{font-size:13px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--mut)}
   .snsrow.pri{color:var(--gold);font-weight:700}
@@ -203,7 +208,7 @@
 
   <div class="foot" id="foot">
     <div><b>Anonymous.</b> Addresses only — no wallet is tied to a person here.
-       <b>Verifiable.</b> Every row links to Orb; tags are published only when proven on-chain.
+       <b>Verifiable.</b> Every row links to Orb; tags and labels are published only when proven on-chain.
        <b>Tiered.</b> This page publishes L1 on-chain facts only.</div>
     <details class="method">
       <summary>How we verify →</summary>
@@ -234,6 +239,7 @@
     <span class="dw-btn" id="dw-copy">Copy address ⧉</span>
   </div>
   <div id="dw-kvs"></div>
+  <div id="dw-label-sec"></div>
   <div class="dw-sec">Domains (SNS)</div>
   <div id="dw-sns"></div>
   <div class="dw-sec">Tags</div>
@@ -248,7 +254,8 @@ const fmt=(n,d=3)=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFracti
 const trunc=a=>a?a.slice(0,4)+'…'+a.slice(-4):'';
 const orb=a=>'https://orbmarkets.io/address/'+a;
 const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+(n/1e3).toFixed(1)+'K':'$'+Number(n).toPrecision(3));
-let ALL=[], TAGS={tags:{},assign:{},detail:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null, TOKE_PRICE=null;
+let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null, TOKE_PRICE=null;
+const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
 
 $('mintlink').href='https://orbmarkets.io/address/'+MINT;
 $('mintcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(MINT);$('mintcopy').textContent='✓';setTimeout(()=>$('mintcopy').textContent='⧉',900);};
@@ -316,9 +323,10 @@ fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=us
 // ── base listing + tags ──
 Promise.all([
   fetch('api/v1/base_lean.json').then(r=>r.json()),
-  fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{},detail:{}}}))
-]).then(([base,tags])=>{
-  ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{},detail:{}};
+  fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{},detail:{}}})),
+  fetch('api/v1/labels.json').then(r=>r.json()).catch(()=>({data:{categories:{},assign:{}}}))
+]).then(([base,tags,labels])=>{
+  ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{},detail:{}}; LABELS=labels.data||{categories:{},assign:{}};
   buildKpis(); apply();
   const f=base.freshness||{};
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
@@ -327,6 +335,7 @@ Promise.all([
 }).catch(()=>{ $('rows').innerHTML='<tr><td colspan="7" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
 
 const tagsFor=a=>TAGS.assign[a]||[];
+const labelFor=a=>LABELS.assign[a]||null;
 function buildKpis(){
   const holders=ALL.filter(r=>r.balance>0).length;
   const supply=ALL.reduce((s,r)=>s+(r.balance||0),0);
@@ -344,7 +353,7 @@ function apply(){
   view=ALL.filter(r=>{
     if(focus==='holders'&&!(r.balance>0))return false;
     if(focus==='tagged'&&!tagsFor(r.address).length)return false;
-    if(q){ const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))).toLowerCase(); if(!hay.includes(q))return false; }
+    if(q){ const lb=labelFor(r.address); const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))+' '+((lb&&lb.display)||'')+' '+((lb&&lb.name)||'')).toLowerCase(); if(!hay.includes(q))return false; }
     return true;
   });
   view.sort((a,b)=>{ let x=a[sortKey],y=b[sortKey];
@@ -358,10 +367,11 @@ function draw(){
   $('rows').innerHTML=slice.map((r,i)=>{
     const bal=r.balance>0?`<span class="bal">${fmt(r.balance)}</span>`:`<span class="zero">0</span>`;
     const tg=tagsFor(r.address); const em=tg.map(k=>(TAGS.tags[k]||{}).emoji||'').join(' ');
+    const lb=labelFor(r.address);
     return `<tr data-i="${start+i}">
       <td class="rank">${start+i+1}</td>
       <td class="addr"><span class="mono">${trunc(r.address)}</span>${r.sns?`<span class="sns">${r.sns}</span>`:''}</td>
-      <td class="label hide-sm">${r.label||''}</td>
+      <td class="label hide-sm">${lb?`<span class="lblchip lbl-${(lb.category||'').replace(/[^a-z-]/g,'')}">${lb.display||''}</span>`:''}</td>
       <td class="r">${bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
@@ -390,6 +400,15 @@ function openDrawer(r){
     ['Last seen', r.last_seen||'—'],
     ['Transfer legs', fmt(r.legs,0)],
   ].map(kv=>`<div class="kv"><span class="k">${kv[0]}</span><span class="v">${kv[1]}</span></div>`).join('');
+  const lb=labelFor(r.address);
+  $('dw-label-sec').innerHTML = lb ? (
+    '<div class="dw-sec">Label</div>'+
+    `<div class="tagitem"><div class="em">${CATEM[lb.category]||'🏷️'}</div><div style="flex:1">`+
+    `<div class="tl">${lb.display||lb.name||''}</div>`+
+    (lb.name&&lb.name!==lb.display?`<div class="td">${lb.name}</div>`:'')+
+    `<div class="tr">${lb.confidence||''} · proven on-chain · <a href="${orb((lb.cite&&lb.cite.ref)||r.address)}" target="_blank" rel="noopener">cite ↗</a></div>`+
+    '</div></div>'
+  ) : '';
   const doms=r.sns_all||[];
   $('dw-sns').innerHTML = doms.length
     ? doms.map(d=>`<div class="snsrow${d===r.sns?' pri':''}">${d}${d===r.sns?'<span class="prilab">primary</span>':''}</div>`).join('')
