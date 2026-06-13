@@ -39,7 +39,9 @@
   .brand b{font-size:16px;letter-spacing:.3px}
   .brand .mintchip{font-size:10px;color:var(--mut);display:flex;align-items:center;gap:5px;margin-top:2px;flex-wrap:wrap}
   .brand .mintchip #mint{word-break:break-all;line-height:1.35}
-  .stage{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold);border:1px solid var(--line2);border-radius:5px;padding:1px 5px;margin-left:6px;vertical-align:middle}
+  .mcname{font-size:11px;color:var(--mut);font-weight:600;margin-left:8px;vertical-align:middle}
+  .stage{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold);border:1px solid var(--line2);border-radius:5px;padding:1px 5px;margin-left:7px;vertical-align:middle}
+  a.logolink{display:block;line-height:0}
   .copy{cursor:pointer;color:var(--mut2);font-size:11px;user-select:none}
   .copy:hover{color:var(--accent)}
   .spacer{flex:1}
@@ -53,14 +55,12 @@
   .live{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:4px;animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* ── reliability banner ── */
-  .relbanner{margin:18px 0 0;border:1px solid var(--line2);border-left-width:4px;border-radius:var(--r);background:var(--panel);padding:13px 16px;display:flex;gap:13px;align-items:flex-start}
-  .relbanner .ic{font-size:17px;line-height:1.2}
-  .relbanner .t{font-size:13px}.relbanner .t b{font-weight:700}
-  .relbanner .meta{font-size:11.5px;color:var(--mut);margin-top:3px}
-  .rel-green{border-left-color:var(--accent)}.rel-amber{border-left-color:var(--gold)}.rel-red{border-left-color:var(--warn)}
-  .relbanner.rel-red .t b{color:var(--warn)}.relbanner.rel-amber .t b{color:var(--gold)}.relbanner.rel-green .t b{color:var(--accent)}
-  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+  /* ── header status line (reconciliation — bumped up from the old body banner) ── */
+  .statusbar{max-width:1180px;margin:0 auto;padding:0 20px 9px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;font-size:11.5px;line-height:1.4}
+  .relpill{display:inline-flex;align-items:center;gap:6px;font-weight:700}
+  .relpill.rel-green{color:var(--accent)}.relpill.rel-amber{color:var(--gold)}.relpill.rel-red{color:var(--warn)}
+  .relstamp{color:var(--mut)}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:0;vertical-align:middle}
   .dot.g{background:var(--accent)}.dot.a{background:var(--gold)}.dot.r{background:var(--warn)}
 
   .lede{margin:22px 0 4px;font-size:21px;font-weight:800;letter-spacing:.2px}.lede .x{color:var(--accent)}
@@ -103,7 +103,11 @@
   .tagcell{font-size:14px;white-space:nowrap;letter-spacing:1px}
   .tagcell .none{color:var(--mut2);font-size:11px}
   .chev{color:var(--mut2);font-size:11px}
-  .pager{display:flex;gap:8px;align-items:center;justify-content:center;padding:14px;font-size:12px;color:var(--mut)}
+  .pager{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:12px 14px;font-size:12px;color:var(--mut)}
+  .pgnav{display:inline-flex;gap:8px;align-items:center}
+  .pgsz{color:var(--mut);display:inline-flex;align-items:center;gap:5px}
+  .pgsz select{background:var(--panel2);color:var(--txt);border:1px solid var(--line2);border-radius:7px;padding:4px 7px;font-size:12px;cursor:pointer}
+  @media(max-width:520px){.pager{flex-direction:column-reverse;gap:10px}}
   .pgb{background:var(--panel2);border:1px solid var(--line2);border-radius:7px;color:var(--txt);padding:5px 11px;cursor:pointer;font-size:12px}
   .pgb:disabled{opacity:.4;cursor:default}
 
@@ -202,9 +206,9 @@
 <header>
   <div class="hbar">
     <div class="brandgrp">
-      <img src="assets/toke-logo.png" id="tokimg" class="logo" alt="TOKE" onerror="this.src='assets/toke-logo.png'">
+      <a class="logolink" href="https://mctoken.xyz" target="_blank" rel="noopener" title="mctoken.xyz — home"><img src="assets/toke-logo.png" id="tokimg" class="logo" alt="McToken"></a>
       <div class="brand">
-        <b id="ticker">$TOKE</b><span class="stage">Beta</span>
+        <b id="ticker">$TOKE</b><span class="mcname">McToken</span><span class="stage">Beta</span>
         <div class="mintchip"><span class="mono" id="mint">Amg…mCpo</span><span class="copy" id="mintcopy" title="copy mint">⧉</span>
           <a id="mintlink" target="_blank" rel="noopener" title="view token on Orb">↗</a></div>
       </div>
@@ -213,19 +217,19 @@
     <div class="stats" id="stats">
       <div class="stat"><div class="l">TOKE</div><div class="v toke" id="s-price">—</div></div>
       <div class="stat"><div class="l">Market cap</div><div class="v" id="s-mcap">—</div></div>
+      <div class="stat"><div class="l">TVL</div><div class="v" id="s-tvl">—</div></div>
       <div class="stat"><div class="l">Vol 24h</div><div class="v" id="s-vol">—</div></div>
       <div class="stat"><div class="l">Age</div><div class="v" id="s-age">—</div></div>
-      <div class="stat" style="min-width:150px"><div class="l"><span class="live"></span>UTC · date &amp; time</div><div class="v mono" id="s-datetime">—</div></div>
+      <div class="stat" style="min-width:148px"><div class="l"><span class="live"></span>UTC · date &amp; time</div><div class="v mono" id="s-datetime">—</div></div>
     </div>
+  </div>
+  <div class="statusbar">
+    <span class="relpill rel-amber" id="relstatus"><span class="dot a"></span>Loading status…</span>
+    <span class="relstamp" id="relstamp"></span>
   </div>
 </header>
 
 <div class="wrap">
-  <div id="relbanner" class="relbanner rel-amber">
-    <div class="ic">⏳</div>
-    <div><div class="t"><b>Loading reliability status…</b></div><div class="meta" id="relmeta"></div></div>
-  </div>
-
   <div class="lede">Every wallet that ever touched <span class="x">$TOKE</span>.</div>
   <p class="sub">The complete base: all addresses that have appeared in a TOKE transfer since genesis, with
      current balance, activity, and on-chain-proven tags. Anonymous and verifiable — click any wallet to drill in.</p>
@@ -281,13 +285,13 @@
           <li><b>Independent cross-check.</b> Holder count and supply are re-derived from a direct on-chain account scan on a public RPC — a provider independent of our data pipeline — and must match exactly.</li>
           <li><b>Transfer flow.</b> Each wallet's net of all transfers in and out is reconciled against its current balance, to within a small, documented tolerance on legacy DAO/vault accounts.</li>
         </ul>
-        Data is published only when these checks pass. The banner above reflects the current verification state.
+        Data is published only when these checks pass. The status in the header reflects the current verification state.
       </div>
     </details>
     <div id="srcline" style="margin-top:6px"></div>
-    <div style="margin-top:6px">Mint <span class="mono">AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</span> · 3 decimals · max 420,000,069</div>
     <div style="margin-top:6px">Each TOKE divides into 1,000 <span class="g">grams (g)</span> — the smallest unit (0.001 TOKE). Every balance is shown to the grain, with the <span class="g">g</span> portion in colour.</div>
-    <div class="disclaimer" style="margin-top:10px">Informational only — not financial advice. On-chain data may lag; always verify independently on-chain. $TOKE figures are sourced from public market data and may be delayed.</div>
+    <div style="margin-top:10px">Toke Explorer is built &amp; maintained by <b>SUPERTOKE</b>. · <a href="https://mctoken.xyz" target="_blank" rel="noopener">mctoken.xyz ↗</a></div>
+    <div class="disclaimer" style="margin-top:8px">Informational only — not financial advice. On-chain data may lag; always verify independently on-chain. $TOKE figures are sourced from public market data and may be delayed.</div>
   </div>
 </div>
 
@@ -321,7 +325,7 @@ const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6)
 const tokeHtml=n=>{ if(n==null)return '—'; const neg=n<0; let v=Math.abs(+n);
   let I=Math.floor(v), G=Math.round((v-I)*1000); if(G>=1000){I++;G=0;}
   return (neg?'-':'')+I.toLocaleString('en-US')+'<span class="g" title="grams · 0.001 TOKE each">.'+String(G).padStart(3,'0')+'</span>'; };
-let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null, TOKE_PRICE=null;
+let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=20, ENV=null, TOKE_PRICE=null;
 const MCV_YEARS=['2024','2025','2026'];
 const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
 
@@ -344,38 +348,36 @@ const pxSave=o=>{ try{localStorage.setItem(PXKEY,JSON.stringify(Object.assign(px
 (function seedPx(){ const c=pxLoad();
   if(c.price!=null){ $('s-price').textContent='$'+Number(c.price).toPrecision(3); TOKE_PRICE=+c.price; }
   if(c.mcap!=null) $('s-mcap').textContent=usd(+c.mcap);
+  if(c.tvl!=null)  $('s-tvl').textContent=c.tvl?usd(+c.tvl):'—';
   if(c.vol!=null)  $('s-vol').textContent=c.vol?usd(+c.vol):'—';
 })();
 
-// ── reliability banner ──
+// ── reliability status (in the header bar) ──
 fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
-  const b=$('relbanner'), m=$('relmeta'); const st=(R.gate_a||'').toUpperCase();
+  const p=$('relstatus'), m=$('relstamp'); const st=(R.gate_a||'').toUpperCase();
   const lag=R.lag_hours!=null?(R.lag_hours>=48?Math.round(R.lag_hours/24)+' days':Math.round(R.lag_hours)+'h'):'?';
   const asof=R.as_of?R.as_of.slice(0,10):'—';
   if(st==='GREEN'){
-    b.className='relbanner rel-green'; b.querySelector('.ic').textContent='✓';
-    if(R.flow_reconciled){
-      b.querySelector('.t').innerHTML='<b><span class="dot g"></span>Fully reconciled</b> — complete listing, exact balances, and every wallet’s net transfer flow matches its on-chain balance. Genesis, supply, and an independent supply cross-check all verify.';
-      m.textContent='Data as of '+asof+' · lag ~'+lag+' · listing + balances + transfer-flow fully reconciled to chain.';
-    }else{
-      b.querySelector('.t').innerHTML='<b><span class="dot g"></span>Verified base</b> — complete wallet listing with exact on-chain balances. Genesis, supply, and an independent supply cross-check all reconcile.';
-      m.textContent='Data as of '+asof+' · lag ~'+lag+' · listing + balances verified. DAO/treasury transfer-flow history is still being reconciled.';
-    }
+    const full=R.flow_reconciled;
+    p.className='relpill rel-green';
+    p.innerHTML='<span class="dot g"></span>'+(full?'Fully reconciled':'Verified base');
+    m.textContent='as of '+asof+' · lag ~'+lag+' · '+(full?'listing + balances + transfer-flow reconciled to chain':'listing + balances verified; DAO/treasury flow reconciling');
   }else{
-    const red=st==='RED'; b.className='relbanner '+(red?'rel-red':'rel-amber'); b.querySelector('.ic').textContent='⚠';
-    b.querySelector('.t').innerHTML='<b><span class="dot '+(red?'r':'a')+'"></span>Preview — data not yet certified</b> Built from the '+asof+' ledger snapshot; has <b>not</b> passed the full reliability audit (Gate A: '+st+'). Figures may change.';
-    m.textContent='Data as of '+asof+' · lag ~'+lag+' · open audit items: '+((R.punch_list||[]).join(', ')||'—');
+    const red=st==='RED'; p.className='relpill '+(red?'rel-red':'rel-amber');
+    p.innerHTML='<span class="dot '+(red?'r':'a')+'"></span>Preview — not yet certified';
+    m.textContent='as of '+asof+' · lag ~'+lag+' · Gate A: '+st+((R.punch_list&&R.punch_list.length)?(' · '+R.punch_list.join(', ')):'');
   }
-}).catch(()=>{ $('relbanner').style.display='none'; });
+}).catch(()=>{ const s=document.querySelector('.statusbar'); if(s)s.style.display='none'; });
 
-// ── live market data (Dexscreener: TOKE price, mcap, token image) ──
+// ── live market data (Dexscreener: TOKE price, mcap, TVL, vol, token image) ──
 fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).then(j=>{
   const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd);
   if(!ps.length)return; const p=ps[0];
   $('s-price').textContent='$'+Number(p.priceUsd).toPrecision(3); TOKE_PRICE=+p.priceUsd;
   const mc=p.marketCap||p.fdv; if(mc)$('s-mcap').textContent=usd(+mc);
+  const tvl=(j.pairs||[]).reduce((s,x)=>s+(+((x.liquidity&&x.liquidity.usd)||0)),0); $('s-tvl').textContent=tvl?usd(tvl):'—';
   const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0); $('s-vol').textContent=vol?usd(vol):'—';
-  pxSave({price:+p.priceUsd, mcap:mc?+mc:null, vol:vol||0});
+  pxSave({price:+p.priceUsd, mcap:mc?+mc:null, tvl:tvl||0, vol:vol||0});
   const img=(p.info&&p.info.imageUrl)||(j.pairs[0].info&&j.pairs[0].info.imageUrl);
   if(img){ $('tokimg').src=img; const fav=document.querySelector('link[rel="icon"]'); if(fav)fav.href=img; }
   const bt=p.baseToken&&p.baseToken.address===MINT?p.baseToken:(p.quoteToken||{});
@@ -493,9 +495,11 @@ function draw(){
       <td class="c chev">›</td></tr>`;
   }).join('')||'<tr><td colspan="8" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
-  $('pager').innerHTML=`<button class="pgb" id="prev" ${page<=0?'disabled':''}>← Prev</button>
-    <span>Page ${page+1} / ${fmt(pages,0)}</span>
-    <button class="pgb" id="next" ${page>=pages-1?'disabled':''}>Next →</button>`;
+  $('pager').innerHTML=`<span class="pgsz">Rows <select id="pgsize">${[10,20,50,100].map(o=>`<option value="${o}"${o===PER?' selected':''}>${o}</option>`).join('')}</select></span>`+
+    `<span class="pgnav"><button class="pgb" id="prev" ${page<=0?'disabled':''}>← Prev</button>`+
+    `<span>Page ${page+1} / ${fmt(pages,0)}</span>`+
+    `<button class="pgb" id="next" ${page>=pages-1?'disabled':''}>Next →</button></span>`;
+  $('pgsize').onchange=e=>{ PER=+e.target.value; page=0; draw(); window.scrollTo({top:0,behavior:'smooth'}); };
   $('prev').onclick=()=>{if(page>0){page--;draw();window.scrollTo({top:0,behavior:'smooth'});}};
   $('next').onclick=()=>{if(page<pages-1){page++;draw();window.scrollTo({top:0,behavior:'smooth'});}};
 }
