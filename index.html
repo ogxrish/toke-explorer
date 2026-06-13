@@ -96,6 +96,12 @@
   .lblchip.lbl-governance{color:var(--purple);border-color:rgba(155,140,255,.35)}
   .lblchip.lbl-program{color:var(--accent2);border-color:rgba(74,163,255,.35)}
   .lblchip.lbl-treasury,.lblchip.lbl-distributor,.lblchip.lbl-dao,.lblchip.lbl-project{color:var(--gold);border-color:rgba(231,184,74,.35)}
+  td.cls{color:var(--mut2)}
+  /* entity logo icon — branded monogram circle; drop a real logo into assets/entities/<slug>.png to auto-override */
+  td.ent-cell{white-space:nowrap}
+  .ent{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;position:relative;overflow:hidden;background:var(--ec,#2e3540);color:var(--et,#0a0c10);font-size:11px;font-weight:800;line-height:1;vertical-align:middle;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+  .ent img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ent .em{position:relative;z-index:0}
   td.addr .sns{color:var(--gold);font-weight:600;font-size:12px;margin-left:9px}
   .snsrow{font-size:13px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--mut)}
   .snsrow.pri{color:var(--gold);font-weight:700}
@@ -174,9 +180,7 @@
   .medal.has.y2025 .qty{color:var(--accent);border-color:rgba(90,209,179,.5)}
   .medal.has.y2026 .qty{color:var(--purple);border-color:rgba(155,140,255,.5)}
   .medals .none{color:var(--mut2);font-size:12px}
-  /* complete set — soft gold background glow behind the trio (no border, no animation). Absolute
-     pseudo, so it never changes the row height. */
-  .medals.primo::before{content:"";position:absolute;inset:-12px -18px;z-index:0;border-radius:18px;background:radial-gradient(ellipse at center,rgba(231,184,74,.40),rgba(231,184,74,.12) 52%,rgba(231,184,74,0) 74%);filter:blur(3px)}
+  /* complete set — no background glow (removed); medals render flat like every other row. */
   .medals.primo .medal{z-index:1}
   .mcvnote{font-size:11.5px;color:var(--mut);margin:-4px 0 12px}
   .mcvnote .k{display:inline-flex;align-items:center;gap:5px;margin-right:12px;white-space:nowrap}
@@ -251,7 +255,7 @@
     <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#f4d273,#8f7016)"></span>2024 Genesis</span>
     <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#79e7cd,#15715d)"></span>2025 Ecosystem</span>
     <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#bcb0ff,#544aa6)"></span>2026 Community</span>
-    <span class="k">embossed frame = complete set</span>
+    <span class="k">all three years = complete set</span>
   </div>
 
   <div class="card">
@@ -259,14 +263,16 @@
       <thead><tr>
         <th class="rank">#</th>
         <th data-sort="address">Address</th>
-        <th class="hide-sm">Label</th>
+        <th class="hide-sm" title="Per-address class — coming soon">Class</th>
+        <th class="hide-sm" title="What kind of on-chain account this is (from the proven label).">Type</th>
+        <th class="hide-sm" title="The protocol / entity this account belongs to.">Entity</th>
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
         <th class="c">Tags</th>
-        <th class="c" data-sort="mcv" title="Great McVote NFTs — three commemorative medals, one per annual 4/20 vote (2024 · 2025 · 2026). A slot fills when the wallet holds that year; a complete set gets an embossed frame.">NFT <span class="ar" id="ar-mcv"></span></th>
+        <th class="c" data-sort="mcv" title="Great McVote NFTs — three commemorative medals, one per annual 4/20 vote (2024 · 2025 · 2026). A slot fills when the wallet holds that year; holding all three is a complete set.">NFT <span class="ar" id="ar-mcv"></span></th>
         <th class="c" style="width:26px"></th>
       </tr></thead>
-      <tbody id="rows"><tr><td colspan="8" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
+      <tbody id="rows"><tr><td colspan="10" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
     </table>
     <div class="pager" id="pager"></div>
   </div>
@@ -328,6 +334,18 @@ const tokeHtml=n=>{ if(n==null)return '—'; const neg=n<0; let v=Math.abs(+n);
 let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=20, ENV=null, TOKE_PRICE=null;
 const MCV_YEARS=['2024','2025','2026'];
 const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
+// Type (category) display labels and per-entity logo-icon colours (monogram fallback when no logo file exists).
+const CATLABEL={'liquidity-pool':'Liquidity Pool','program':'Program','governance':'Governance','distributor':'Distributor','treasury':'Treasury','dao':'DAO','project':'Project'};
+const ENTITY={Jupiter:{c:'#1aa873',t:'#ffffff'},Orca:{c:'#14b8a6',t:'#04231f'},Raydium:{c:'#5666f0',t:'#ffffff'},Meteora:{c:'#7c3aed',t:'#ffffff'},Realms:{c:'#2dd4bf',t:'#04231d'},Align:{c:'#1f242c',t:'#ffffff'}};
+function entityIcon(name){
+  if(!name) return '';
+  const e=ENTITY[name]||{c:'#2e3540',t:'#e7eaef'};
+  const slug=String(name).toLowerCase().replace(/[^a-z0-9]/g,'');
+  const mono=String(name).slice(0,1).toUpperCase();
+  return `<span class="ent" title="${name}" aria-label="${name}" style="--ec:${e.c};--et:${e.t}">`+
+    `<img loading="lazy" src="assets/entities/${slug}.svg" alt="" onerror="this.remove()">`+
+    `<span class="em">${mono}</span></span>`;
+}
 
 $('mint').textContent=MINT;   // full mint address for verifiability
 $('mintlink').href='https://orbmarkets.io/address/'+MINT;
@@ -400,7 +418,7 @@ Promise.all([
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
     ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
     (f.first_block_time||'').slice(0,10)+' → '+(base.as_of||'').replace('T',' ').replace('Z',' UTC')+'.';
-}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="8" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
+}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="10" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
 
 const tagsFor=a=>TAGS.assign[a]||[];
 const labelFor=a=>LABELS.assign[a]||null;
@@ -469,7 +487,7 @@ function apply(){
     if(focus==='labeled'&&!labelFor(r.address))return false;
     if(focus==='tagged'&&!tagsFor(r.address).length)return false;
     if(focus==='medals'&&!(r.mcv>0))return false;
-    if(q){ const lb=labelFor(r.address); const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))+' '+((lb&&lb.display)||'')+' '+((lb&&lb.name)||'')).toLowerCase(); if(!hay.includes(q))return false; }
+    if(q){ const lb=labelFor(r.address); const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))+' '+((lb&&lb.display)||'')+' '+((lb&&lb.name)||'')+' '+((lb&&lb.protocol)||'')).toLowerCase(); if(!hay.includes(q))return false; }
     return true;
   });
   view.sort((a,b)=>{ let x=a[sortKey],y=b[sortKey];
@@ -484,24 +502,34 @@ function draw(){
     const bal=r.balance>0?`<span class="bal">${tokeHtml(r.balance)}</span>`:`<span class="zero">0<span class="g">.000</span></span>`;
     const tg=tagsFor(r.address); const em=tg.map(k=>(TAGS.tags[k]||{}).emoji||'').join(' ');
     const lb=labelFor(r.address);
+    const cat=(lb&&lb.category||'').replace(/[^a-z-]/g,'');
+    const typeHtml=lb?`<span class="lblchip lbl-${cat}">${CATLABEL[lb.category]||lb.category||''}</span>`:'';
+    const entHtml=lb?entityIcon(lb.protocol||(lb.display||'').split('·').pop().trim()):'';
     return `<tr data-i="${start+i}">
       <td class="rank">${start+i+1}</td>
       <td class="addr"><span class="mono">${trunc(r.address)}</span>${r.sns?`<span class="sns">${r.sns}</span>`:''}</td>
-      <td class="label hide-sm">${lb?`<span class="lblchip lbl-${(lb.category||'').replace(/[^a-z-]/g,'')}">${lb.display||''}</span>`:''}</td>
+      <td class="cls hide-sm"></td>
+      <td class="label hide-sm">${typeHtml}</td>
+      <td class="ent-cell hide-sm">${entHtml}</td>
       <td class="r">${bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="c">${medalsHtml(r.address)}</td>
       <td class="c chev">›</td></tr>`;
-  }).join('')||'<tr><td colspan="8" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+  }).join('')||'<tr><td colspan="10" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
   $('pager').innerHTML=`<span class="pgsz">Rows <select id="pgsize">${[10,20,50,100].map(o=>`<option value="${o}"${o===PER?' selected':''}>${o}</option>`).join('')}</select></span>`+
-    `<span class="pgnav"><button class="pgb" id="prev" ${page<=0?'disabled':''}>← Prev</button>`+
+    `<span class="pgnav"><button class="pgb" id="first" ${page<=0?'disabled':''}>« First</button>`+
+    `<button class="pgb" id="prev" ${page<=0?'disabled':''}>← Prev</button>`+
     `<span>Page ${page+1} / ${fmt(pages,0)}</span>`+
-    `<button class="pgb" id="next" ${page>=pages-1?'disabled':''}>Next →</button></span>`;
+    `<button class="pgb" id="next" ${page>=pages-1?'disabled':''}>Next →</button>`+
+    `<button class="pgb" id="last" ${page>=pages-1?'disabled':''}>Last »</button></span>`;
   $('pgsize').onchange=e=>{ PER=+e.target.value; page=0; draw(); window.scrollTo({top:0,behavior:'smooth'}); };
-  $('prev').onclick=()=>{if(page>0){page--;draw();window.scrollTo({top:0,behavior:'smooth'});}};
-  $('next').onclick=()=>{if(page<pages-1){page++;draw();window.scrollTo({top:0,behavior:'smooth'});}};
+  const goto=p=>{ const np=Math.max(0,Math.min(pages-1,p)); if(np!==page){ page=np; draw(); window.scrollTo({top:0,behavior:'smooth'}); } };
+  $('first').onclick=()=>goto(0);
+  $('prev').onclick=()=>goto(page-1);
+  $('next').onclick=()=>goto(page+1);
+  $('last').onclick=()=>goto(pages-1);
 }
 
 // ── drilldown drawer ──

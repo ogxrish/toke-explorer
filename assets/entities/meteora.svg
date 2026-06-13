@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Meteora">
+  <rect width="48" height="48" fill="#241742"/>
+  <defs>
+    <linearGradient id="mtra" x1="32" y1="16" x2="15" y2="33" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd5a8"/>
+      <stop offset="1" stop-color="#fb923c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M31 17 16 32" stroke="url(#mtra)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="31" cy="17" r="5.4" fill="#fb923c"/>
+  <circle cx="31" cy="17" r="2.2" fill="#fff3e6"/>
+</svg>
