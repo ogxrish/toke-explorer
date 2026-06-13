@@ -1,114 +1,120 @@
 {
   "dataset": "collections",
   "version": "v1",
-  "as_of": "2026-06-10T00:00:00Z",
+  "as_of": "2026-06-12T00:00:00Z",
   "chain": "solana-mainnet",
   "source": {
     "kb_files": [
-      "TOKE-KB/01-token/onchain-ledger/snapshots/mcvote_resolved_20260610.json",
+      "TOKE-KB/01-token/onchain-ledger/snapshots/mcvote_official_20260612.json",
       "TOKE-KB/01-token/onchain-ledger/analysis/realms_audit.json",
-      "TOKE-KB/01-token/onchain-ledger/analysis/mcvote_nft_audit_2026-06-10.json"
+      "TOKE-KB/01-token/onchain-ledger/snapshots/mcvote_collections_canonical_20260612.json"
     ],
     "confidence": "confirmed",
     "reference_wallet_basis": "wallet holding all three official medals (address-only)"
   },
   "visibility": "l2",
-  "notes": "The Great McVote NFT set \u2014 three commemorative cNFTs (one per annual 4/20 Great McVote), set CLOSED. Verified via live DAS pull anchored on the reference wallet that holds all three. Addresses + aggregate counts only; per-holder identity is L4 (KB-only). Two non-canonical look-alike mints were ruled out.",
+  "notes": "The Great McVote NFT set \u2014 three commemorative cNFTs (one per annual 4/20 Great McVote), set CLOSED. Verified via DAS 2026-06-12. Addresses + aggregate counts only; per-holder identity is L4 (KB-only). Two non-canonical look-alike mints were ruled out. Supersedes the 2026-06-10 figures (see data.correction).",
   "data": {
     "set_status": "closed \u2014 three official medals; no further McVote NFTs will be minted",
-    "set_certification": "verified-pending \u2014 first-owner (recipient) proof outstanding before PROVEN",
+    "set_certification": "verified \u2014 215 medals, 5 trees, 0 burns, reconciled to voter rolls 2026-06-12",
+    "totals": {
+      "medals": 215,
+      "owners": 106,
+      "trees": 5,
+      "burns": 0,
+      "complete_sets": 26
+    },
     "series": [
       {
         "year": 2024,
         "theme": "Genesis",
         "type": "compressed-nft",
-        "seed_asset": "HnNUu957gEi2knbrh5Wk7mtMnTSrYJEi8VTy4YhVezzN",
-        "merkle_tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq",
-        "collection_group": null,
-        "update_authority": "3eD2VZ84PyYKcYei46JdUNAci6ykp6GWraTUDJPNzcrE",
-        "royalty_pct": 0.0,
-        "medals": 34,
-        "holders": 34,
+        "trees": [
+          "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        ],
+        "collection": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3",
+        "medals": 124,
+        "holders": 83,
         "vote": {
           "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
           "voters": 34,
           "weight_toke": 161217299.864,
-          "turnout_pct": 38.39
+          "turnout_pct": 38.39,
+          "state": "Defeated"
         },
-        "reconciliation": {
-          "voters": 34,
-          "medals": 34,
-          "holders": 34,
-          "voters_holding_medal": 10,
-          "voters_owed_medal": 24,
-          "holders_not_voters": 24
+        "art": {
+          "name": "The Great McVote",
+          "symbol": "TOKE",
+          "image": "https://updg8.storage.googleapis.com/815de0be-ef9c-4da9-a096-ab5fca4db69b",
+          "metadata_uri": "https://updg8.storage.googleapis.com/9b5251d2-1904-4dfd-859d-47c19e4d40ab"
         },
-        "certification": "verified-pending",
-        "cite": {
-          "type": "account",
-          "ref": "3eD2VZ84PyYKcYei46JdUNAci6ykp6GWraTUDJPNzcrE"
-        }
-      },
-      {
-        "year": 2025,
-        "theme": "Ecosystem",
-        "type": "compressed-nft",
-        "seed_asset": "HtyL3SQNFgQj6kpcjHA3h7XLUk8Ah52E3GE9KsoTqizD",
-        "merkle_tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr",
-        "collection_group": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3",
-        "update_authority": "AXSR5PJcEGSbcqWxY2v3yod8WB6fic4KABJWtM9BV4Ny",
-        "royalty_pct": 0.0,
-        "medals": 124,
-        "holders": 83,
-        "vote": {
-          "proposal": "GHq9epLWw5",
-          "voters": 47,
-          "weight_toke": 199567947.0,
-          "turnout_pct": 47.5
-        },
-        "reconciliation": {
-          "voters": 47,
-          "medals": 124,
-          "holders": 83,
-          "voters_holding_medal": 28,
-          "voters_owed_medal": 19,
-          "holders_not_voters": 55
-        },
-        "certification": "verified-pending",
+        "accent": "#e7b84a",
+        "certification": "verified",
         "cite": {
           "type": "account",
           "ref": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3"
         }
       },
       {
+        "year": 2025,
+        "theme": "Ecosystem",
+        "type": "compressed-nft",
+        "trees": [
+          "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ",
+          "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        ],
+        "collection": null,
+        "medals": 47,
+        "holders": 46,
+        "vote": {
+          "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+          "voters": 47,
+          "weight_toke": 199567947.0,
+          "turnout_pct": 47.52,
+          "state": "Defeated"
+        },
+        "art": {
+          "name": "The Great McVote",
+          "symbol": "TOKE",
+          "image": "https://arweave.net/4Qppn6tHm8n0nRqvbgJNTp8L6r1sMg0IHqN35uNJAPQ",
+          "metadata_uri": "https://arweave.net/IvumJEPAAl7NwkIRrt8TGhdKc_zxry7uWCVduwr8oR4"
+        },
+        "accent": "#5ad1b3",
+        "certification": "verified",
+        "cite": {
+          "type": "account",
+          "ref": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        }
+      },
+      {
         "year": 2026,
         "theme": "Community",
         "type": "compressed-nft",
-        "seed_asset": "3oHKTsWq4HD4g4DD6YKvqBDKsQ5agHqf5rPe2do29AsY",
-        "merkle_tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ",
-        "collection_group": null,
-        "update_authority": "2idL3W94KfbAZhWRGtyLnAbSTAzARjdmg8m3pDfCtYi4",
-        "royalty_pct": 0.0,
-        "medals": 9,
-        "holders": 9,
+        "trees": [
+          "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq",
+          "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        ],
+        "collection": null,
+        "medals": 44,
+        "holders": 44,
         "vote": {
           "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
           "voters": 44,
           "weight_toke": 287440439.373,
-          "turnout_pct": 68.44
+          "turnout_pct": 68.44,
+          "state": "Completed"
         },
-        "reconciliation": {
-          "voters": 44,
-          "medals": 9,
-          "holders": 9,
-          "voters_holding_medal": 5,
-          "voters_owed_medal": 39,
-          "holders_not_voters": 4
+        "art": {
+          "name": "The Great McVote",
+          "symbol": "TOKE",
+          "image": "https://ipfs.io/ipfs/QmbQ7EUwVxMRvkERYbUhdXthjzUGXv7aqeh9gLNghWiMTz",
+          "metadata_uri": "https://ipfs.io/ipfs/QmNzd21jJ1dWo3SoGfPS9QbXPgPRTq55miiouk6cf8RhiQ"
         },
-        "certification": "verified-pending",
+        "accent": "#9b8cff",
+        "certification": "verified",
         "cite": {
           "type": "account",
-          "ref": "2idL3W94KfbAZhWRGtyLnAbSTAzARjdmg8m3pDfCtYi4"
+          "ref": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
         }
       }
     ],
@@ -127,6 +133,11 @@
         "ref": "CWA9WzdomEXojowMDg6kubs8HCXAAbFTFUy7H65mUA8s"
       }
     },
-    "open_action": "2026 airdrop incomplete: 9 of 44 voters hold a medal; 35 medals undistributed; 4 issued to non-voters"
+    "correction": {
+      "supersedes": "2026-06-10 collections snapshot",
+      "what_changed": "Per-year medal counts + which tree maps to which year. The prior snapshot read 34/124/9 and mislabeled trees; bucketing by the on-chain Year attribute and counting only the verified 2024 collection gives 124/47/44 = 215.",
+      "verified": "2026-06-12 via DAS (getAssetsByGroup + searchAssets) + tree-decode burn check (0 burns)."
+    },
+    "open_action": "2024 medals (124) exceed 2024 voters (34): a participation drop, multiples per holder."
   }
 }

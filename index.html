@@ -145,6 +145,54 @@
   .methodbody li{margin:4px 0}
   .disclaimer{color:var(--mut2);font-size:10.5px;max-width:680px}
   @media(max-width:760px){.hide-sm{display:none}.stats{width:100%;justify-content:flex-start}.drawer{width:100%}}
+
+  /* ── NFT column · Great McVote medals (3 year-posters: 2024 · 2025 · 2026) ──
+     Slot boxes mirror the real on-chain poster aspect EXACTLY (2024 1080×1450 · 2025 1583×2048 ·
+     2026 1242×1640). --mcvh is tuned so the medals never make the table rows taller than text. */
+  /* container height is pinned to the text line (--mcvbox) so the row never grows; the posters
+     themselves are taller (--mcvh) and overflow symmetrically into the cell padding. */
+  .medals{display:inline-flex;gap:6px;align-items:center;justify-content:center;position:relative;vertical-align:middle;height:var(--mcvbox);overflow:visible;--mcvbox:20px;--mcvh:30px}
+  .medal{position:relative;height:var(--mcvh);aspect-ratio:1080/1450;flex:0 0 auto;border-radius:4px}
+  .medal.y2025{aspect-ratio:1583/2048}
+  .medal.y2026{aspect-ratio:1242/1640}
+  .medal .face{position:absolute;inset:0;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#0a0c10}
+  .medal .face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0a0c10}
+  /* filled (held) — real on-chain poster over a themed fallback (shows if a gateway is slow) */
+  .medal.has .face{box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+  .medal.has.y2024 .face{background:radial-gradient(circle at 50% 30%,#f4d273,#8f7016)}
+  .medal.has.y2025 .face{background:radial-gradient(circle at 50% 30%,#79e7cd,#15715d)}
+  .medal.has.y2026 .face{background:radial-gradient(circle at 50% 30%,#bcb0ff,#544aa6)}
+  /* empty / waiting — dashed, quiet; same poster box, so held & unheld align exactly */
+  .medal.waiting .face{background:repeating-linear-gradient(45deg,#14171e,#14171e 3px,#0f1218 3px,#0f1218 6px);box-shadow:inset 0 0 0 1px var(--line2)}
+  .medal.waiting .face::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--mut2);opacity:.4}
+  .medal .qty{position:absolute;right:-4px;bottom:-4px;z-index:4;font-size:8px;line-height:1;font-weight:800;background:var(--bg);color:var(--txt);border:1px solid var(--line2);border-radius:5px;padding:0 3px}
+  .medal.has.y2024 .qty{color:var(--gold);border-color:rgba(231,184,74,.5)}
+  .medal.has.y2025 .qty{color:var(--accent);border-color:rgba(90,209,179,.5)}
+  .medal.has.y2026 .qty{color:var(--purple);border-color:rgba(155,140,255,.5)}
+  .medals .none{color:var(--mut2);font-size:12px}
+  /* complete set — soft gold background glow behind the trio (no border, no animation). Absolute
+     pseudo, so it never changes the row height. */
+  .medals.primo::before{content:"";position:absolute;inset:-12px -18px;z-index:0;border-radius:18px;background:radial-gradient(ellipse at center,rgba(231,184,74,.40),rgba(231,184,74,.12) 52%,rgba(231,184,74,0) 74%);filter:blur(3px)}
+  .medals.primo .medal{z-index:1}
+  .mcvnote{font-size:11.5px;color:var(--mut);margin:-4px 0 12px}
+  .mcvnote .k{display:inline-flex;align-items:center;gap:5px;margin-right:12px;white-space:nowrap}
+  .mcvnote .sw{height:15px;aspect-ratio:1080/1450;border-radius:2px;display:inline-block;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+
+  /* ── drawer: Great McVote collection (full poster-dimension art) ── */
+  .mcvsum{font-size:12.5px;color:var(--mut);margin:2px 0 10px}.mcvsum b{color:var(--txt)}.mcvsum .set{color:var(--gold);font-weight:700}
+  .mcvrow{display:flex;gap:12px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+  .mcvrow.miss{opacity:.5}
+  .mcvthumb{height:74px;aspect-ratio:1080/1450;border-radius:7px;flex:0 0 auto;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#0a0c10;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+  .mcvthumb.y2025{aspect-ratio:1583/2048}
+  .mcvthumb.y2026{aspect-ratio:1242/1640}
+  .mcvthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0a0c10}
+  .mcvthumb.y2024{background:radial-gradient(circle at 50% 30%,#f4d273,#8f7016)}
+  .mcvthumb.y2025{background:radial-gradient(circle at 50% 30%,#79e7cd,#15715d)}
+  .mcvthumb.y2026{background:radial-gradient(circle at 50% 30%,#bcb0ff,#544aa6)}
+  .mcvrow .mt{flex:1;min-width:0}.mcvrow .mt b{font-size:13px}.mcvrow .mt .s{font-size:11px;color:var(--mut);margin-top:1px}
+  .mcvrow .mq{text-align:right;flex:0 0 auto}
+  .mcvrow .mq .you{font-weight:800;font-size:16px;line-height:1.1}
+  .mcvrow .mq .of{color:var(--mut);font-size:10px}
 </style>
 </head>
 <body>
@@ -188,8 +236,15 @@
       <button class="segb" data-focus="holders">Current holders</button>
       <button class="segb" data-focus="labeled">Labeled</button>
       <button class="segb" data-focus="tagged">Tagged</button>
+      <button class="segb" data-focus="medals" title="Wallets holding ≥1 Great McVote medal">McVote</button>
     </div>
     <span class="count" id="count"></span>
+  </div>
+  <div class="mcvnote" id="mcvnote" style="display:none">
+    <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#f4d273,#8f7016)"></span>2024 Genesis</span>
+    <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#79e7cd,#15715d)"></span>2025 Ecosystem</span>
+    <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#bcb0ff,#544aa6)"></span>2026 Community</span>
+    <span class="k">embossed frame = complete set</span>
   </div>
 
   <div class="card">
@@ -201,9 +256,10 @@
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
         <th class="c">Tags</th>
+        <th class="c" data-sort="mcv" title="Great McVote NFTs — three commemorative medals, one per annual 4/20 vote (2024 · 2025 · 2026). A slot fills when the wallet holds that year; a complete set gets an embossed frame.">NFT <span class="ar" id="ar-mcv"></span></th>
         <th class="c" style="width:26px"></th>
       </tr></thead>
-      <tbody id="rows"><tr><td colspan="7" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
+      <tbody id="rows"><tr><td colspan="8" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
     </table>
     <div class="pager" id="pager"></div>
   </div>
@@ -243,6 +299,7 @@
   </div>
   <div id="dw-kvs"></div>
   <div id="dw-label-sec"></div>
+  <div id="dw-mcv"></div>
   <div class="dw-sec">Domains (SNS)</div>
   <div id="dw-sns"></div>
   <div class="dw-sec">Tags</div>
@@ -261,7 +318,8 @@ const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6)
 const tokeHtml=n=>{ if(n==null)return '—'; const neg=n<0; let v=Math.abs(+n);
   let I=Math.floor(v), G=Math.round((v-I)*1000); if(G>=1000){I++;G=0;}
   return (neg?'-':'')+I.toLocaleString('en-US')+'<span class="g" title="grams · 0.001 TOKE each">.'+String(G).padStart(3,'0')+'</span>'; };
-let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null, TOKE_PRICE=null;
+let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=100, ENV=null, TOKE_PRICE=null;
+const MCV_YEARS=['2024','2025','2026'];
 const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
 
 $('mint').textContent=MINT;   // full mint address for verifiability
@@ -326,18 +384,60 @@ fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).t
 Promise.all([
   fetch('api/v1/base_lean.json').then(r=>r.json()),
   fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{},detail:{}}})),
-  fetch('api/v1/labels.json').then(r=>r.json()).catch(()=>({data:{categories:{},assign:{}}}))
-]).then(([base,tags,labels])=>{
-  ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{},detail:{}}; LABELS=labels.data||{categories:{},assign:{}};
+  fetch('api/v1/labels.json').then(r=>r.json()).catch(()=>({data:{categories:{},assign:{}}})),
+  fetch('api/v1/mcvote_nfts.json').then(r=>r.json()).catch(()=>({data:{}}))
+]).then(([base,tags,labels,nft])=>{
+  ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{},detail:{}}; LABELS=labels.data||{categories:{},assign:{}}; NFT=nft.data||{};
+  // annotate each row with its Great McVote medal total so the column sorts/filters like any other field
+  if(NFT.hold) ALL.forEach(r=>{ const h=NFT.hold[r.address]; r.mcv=h?h.total:0; });
   buildKpis(); apply();
   const f=base.freshness||{};
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
     ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
     (f.first_block_time||'').slice(0,10)+' → '+(base.as_of||'').replace('T',' ').replace('Z',' UTC')+'.';
-}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="7" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
+}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="8" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
 
 const tagsFor=a=>TAGS.assign[a]||[];
 const labelFor=a=>LABELS.assign[a]||null;
+
+// ── Great McVote medals ──
+const nftFor=a=>(NFT.hold&&NFT.hold[a])||null;
+const mcvYear=y=>(NFT.years&&NFT.years[y])||{};
+function medalSlot(y,qty){
+  const yr=mcvYear(y), img=yr.art&&yr.art.image, tag=y.slice(2);
+  if(qty>0){
+    const im=img?`<img loading="lazy" src="${img}" alt="Great McVote ${y}" onerror="this.style.display='none'">`:'';
+    return `<span class="medal has y${y}" title="Great McVote ${y}${yr.theme?(' · '+yr.theme):''} — holds ${qty}"><span class="face">${tag}${im}</span></span>`;
+  }
+  return `<span class="medal waiting y${y}" title="Great McVote ${y}${yr.theme?(' · '+yr.theme):''} — not held"><span class="face"></span></span>`;
+}
+function medalsHtml(a){
+  if(!NFT.years) return '<span class="none">—</span>';
+  const h=nftFor(a), complete=!!(h&&h.complete);
+  const slots=MCV_YEARS.map(y=>medalSlot(y,h?h.y[y]:0)).join('');
+  const ttl=complete?' title="Complete set — all three Great McVotes"':'';
+  return `<span class="medals${complete?' primo':''}"${ttl}>${slots}</span>`;
+}
+function medalDrawer(r){
+  const Y=NFT.years; if(!Y) return '';
+  const order=NFT.order||MCV_YEARS, h=nftFor(r.address);
+  const held=h?h.years_held:0, total=h?h.total:0;
+  const sum=h
+    ? `<div class="mcvsum">Holds <b>${held}/3</b> year${held===1?'':'s'} · <b>${total}</b> medal${total===1?'':'s'}`+(h.complete?' · <span class="set">complete set</span>':'')+`</div>`
+    : `<div class="mcvsum">No Great McVote medals held.</div>`;
+  const rows=order.map(y=>{
+    const yr=Y[y]||{}, qty=h?h.y[y]:0, tot=yr.total_minted, img=yr.art&&yr.art.image, cite=yr.cite&&yr.cite.ref;
+    const thumb=`<span class="mcvthumb y${y}">${y.slice(2)}${img?`<img loading="lazy" src="${img}" onerror="this.style.display='none'">`:''}</span>`;
+    const right=qty>0
+      ? `<div class="mq"><div class="you" style="color:${yr.accent||'var(--txt)'}">×${qty}</div><div class="of">of ${fmt(tot,0)} minted</div></div>`
+      : `<div class="mq"><div class="you" style="color:var(--mut2)">—</div><div class="of">${fmt(tot,0)} minted</div></div>`;
+    return `<div class="mcvrow${qty>0?'':' miss'}">${thumb}<div class="mt"><b>${y} · ${yr.theme||''}</b>`+
+           `<div class="s">${yr.shape||''}${cite?` · <a href="${orb(cite)}" target="_blank" rel="noopener">verify ↗</a>`:''}</div></div>${right}</div>`;
+  }).join('');
+  const t=(NFT.totals)||{}, by=t.medals||215;
+  const foot=`<div class="mcvsum" style="margin-top:2px">Set closed · <b>${by}</b> medals across 2024–26 (124 · 47 · 44) · ${t.complete_sets!=null?t.complete_sets:26} complete sets · 0 burns.</div>`;
+  return '<div class="dw-sec">Great McVote NFTs</div>'+sum+rows+foot;
+}
 function buildKpis(){
   const holders=ALL.filter(r=>r.balance>0).length;
   const supply=ALL.reduce((s,r)=>s+(r.balance||0),0);
@@ -352,10 +452,12 @@ function buildKpis(){
 }
 function apply(){
   const q=$('q').value.trim().toLowerCase();
+  const mn=$('mcvnote'); if(mn) mn.style.display=(focus==='medals')?'block':'none';
   view=ALL.filter(r=>{
     if(focus==='holders'&&!(r.balance>0))return false;
     if(focus==='labeled'&&!labelFor(r.address))return false;
     if(focus==='tagged'&&!tagsFor(r.address).length)return false;
+    if(focus==='medals'&&!(r.mcv>0))return false;
     if(q){ const lb=labelFor(r.address); const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))+' '+((lb&&lb.display)||'')+' '+((lb&&lb.name)||'')).toLowerCase(); if(!hay.includes(q))return false; }
     return true;
   });
@@ -378,8 +480,9 @@ function draw(){
       <td class="r">${bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
+      <td class="c">${medalsHtml(r.address)}</td>
       <td class="c chev">›</td></tr>`;
-  }).join('')||'<tr><td colspan="7" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+  }).join('')||'<tr><td colspan="8" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
   $('pager').innerHTML=`<button class="pgb" id="prev" ${page<=0?'disabled':''}>← Prev</button>
     <span>Page ${page+1} / ${fmt(pages,0)}</span>
@@ -412,6 +515,7 @@ function openDrawer(r){
     `<div class="tr">${lb.confidence||''} · proven on-chain · <a href="${orb((lb.cite&&lb.cite.ref)||r.address)}" target="_blank" rel="noopener">cite ↗</a></div>`+
     '</div></div>'
   ) : '';
+  $('dw-mcv').innerHTML=medalDrawer(r);
   const doms=r.sns_all||[];
   $('dw-sns').innerHTML = doms.length
     ? doms.map(d=>`<div class="snsrow${d===r.sns?' pri':''}">${d}${d===r.sns?'<span class="prilab">primary</span>':''}</div>`).join('')

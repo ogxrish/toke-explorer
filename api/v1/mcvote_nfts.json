@@ -1,0 +1,2557 @@
+{
+  "dataset": "mcvote_nfts",
+  "version": "v1",
+  "as_of": "2026-06-12T00:00:00Z",
+  "chain": "solana-mainnet",
+  "source": {
+    "kb_files": [
+      "TOKE-KB/01-token/onchain-ledger/snapshots/mcvote_official_20260612.json",
+      "TOKE-KB/01-token/onchain-ledger/snapshots/mcvote_census_20260612.json",
+      "TOKE-KB/01-token/onchain-ledger/snapshots/mcvote_collections_canonical_20260612.json"
+    ],
+    "confidence": "confirmed",
+    "method": "DAS verified-collection (2024) + verified-creator (2025/26), bucketed by on-chain Year attribute; owners resolved live; reconciled to Realms voter rolls; tree-decode burn check"
+  },
+  "visibility": "l2",
+  "notes": "The Great McVote \u2014 three commemorative cNFT medals, one per annual 4/20 Great McVote. 215 medals across 106 wallets, set CLOSED, 0 burns. Fully verified on-chain 2026-06-12. Anonymous: addresses + counts only (identity is L4, never published). Supersedes the 2026-06-10 figures \u2014 year/tree labels corrected; per-year counts are 124/47/44.",
+  "data": {
+    "set_status": "closed \u2014 three official medals; no further McVote NFTs will be minted",
+    "order": [
+      "2024",
+      "2025",
+      "2026"
+    ],
+    "totals": {
+      "medals": 215,
+      "owners": 106,
+      "trees": 5,
+      "burns": 0,
+      "complete_sets": 26
+    },
+    "years": {
+      "2024": {
+        "year": 2024,
+        "theme": "Genesis",
+        "date": "2024-04-20",
+        "tagline": "Year One \u2014 the first Great McVote.",
+        "type": "compressed-nft",
+        "total_minted": 124,
+        "owners": 83,
+        "collection": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3",
+        "trees": [
+          "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        ],
+        "enumerated_via": "verified collection (getAssetsByGroup)",
+        "shape": "participation drop \u2014 medals to year-one participants; some holders carry multiples",
+        "vote": {
+          "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
+          "voters": 34,
+          "weight_toke": 161217299.864,
+          "turnout_pct": 38.39,
+          "state": "Defeated"
+        },
+        "accent": "#e7b84a",
+        "art": {
+          "name": "The Great McVote",
+          "symbol": "TOKE",
+          "image": "https://updg8.storage.googleapis.com/815de0be-ef9c-4da9-a096-ab5fca4db69b",
+          "metadata_uri": "https://updg8.storage.googleapis.com/9b5251d2-1904-4dfd-859d-47c19e4d40ab"
+        },
+        "cite": {
+          "type": "account",
+          "ref": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3"
+        }
+      },
+      "2025": {
+        "year": 2025,
+        "theme": "Ecosystem",
+        "date": "2025-04-20",
+        "tagline": "Year Two \u2014 the ecosystem votes.",
+        "type": "compressed-nft",
+        "total_minted": 47,
+        "owners": 46,
+        "collection": null,
+        "trees": [
+          "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ",
+          "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        ],
+        "enumerated_via": "verified creator (searchAssets)",
+        "shape": "strict \u2014 exactly one medal per voter",
+        "vote": {
+          "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
+          "voters": 47,
+          "weight_toke": 199567947.0,
+          "turnout_pct": 47.52,
+          "state": "Defeated"
+        },
+        "accent": "#5ad1b3",
+        "art": {
+          "name": "The Great McVote",
+          "symbol": "TOKE",
+          "image": "https://arweave.net/4Qppn6tHm8n0nRqvbgJNTp8L6r1sMg0IHqN35uNJAPQ",
+          "metadata_uri": "https://arweave.net/IvumJEPAAl7NwkIRrt8TGhdKc_zxry7uWCVduwr8oR4"
+        },
+        "cite": {
+          "type": "account",
+          "ref": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        }
+      },
+      "2026": {
+        "year": 2026,
+        "theme": "Community",
+        "date": "2026-04-20",
+        "tagline": "Year Three \u2014 record turnout.",
+        "type": "compressed-nft",
+        "total_minted": 44,
+        "owners": 44,
+        "collection": null,
+        "trees": [
+          "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq",
+          "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        ],
+        "enumerated_via": "verified creator (searchAssets)",
+        "shape": "strict \u2014 exactly one medal per voter",
+        "vote": {
+          "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
+          "voters": 44,
+          "weight_toke": 287440439.373,
+          "turnout_pct": 68.44,
+          "state": "Completed"
+        },
+        "accent": "#9b8cff",
+        "art": {
+          "name": "The Great McVote",
+          "symbol": "TOKE",
+          "image": "https://ipfs.io/ipfs/QmbQ7EUwVxMRvkERYbUhdXthjzUGXv7aqeh9gLNghWiMTz",
+          "metadata_uri": "https://ipfs.io/ipfs/QmNzd21jJ1dWo3SoGfPS9QbXPgPRTq55miiouk6cf8RhiQ"
+        },
+        "cite": {
+          "type": "account",
+          "ref": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        }
+      }
+    },
+    "hold": {
+      "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5": {
+        "y": {
+          "2024": 4,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 6,
+        "years_held": 3,
+        "complete": true
+      },
+      "411NsBymTGeD594RYEkh6bCzRiyNTm5Ayq5LcgYChuuQ": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "DaKSMXkaaeDZ99ZLn3o7KiLFUmx78P7fzFYRehNJjz1m": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "CxrTwzWEUE6uSuUBE8hGnH88VjMN1aJKQL3YqyEaSCmD": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K": {
+        "y": {
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 4,
+        "years_held": 3,
+        "complete": true
+      },
+      "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA": {
+        "y": {
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 4,
+        "years_held": 3,
+        "complete": true
+      },
+      "2aSJBUGpWWUZty3dafov1Z8Edw3YPA6Z1e2X3aqXu27i": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "6QeaREJcvRJrUhRj1JL5pqTSz7UBKdPNJDYUSJogZTR2": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646": {
+        "y": {
+          "2024": 4,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 5,
+        "years_held": 2,
+        "complete": false
+      },
+      "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go": {
+        "y": {
+          "2024": 3,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 5,
+        "years_held": 3,
+        "complete": true
+      },
+      "FHXFaDZu48UCaDEzXYf9ybvdVeErnKtMZv6TFYPo7xkM": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 2,
+        "complete": false
+      },
+      "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c": {
+        "y": {
+          "2024": 4,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 6,
+        "years_held": 3,
+        "complete": true
+      },
+      "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU": {
+        "y": {
+          "2024": 3,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 3,
+        "years_held": 1,
+        "complete": false
+      },
+      "8aL9B4zEjgqivTEt2uNezhTTJ2sp5MaLAQwYPcX8pWvC": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 1,
+        "complete": false
+      },
+      "vxuWh92uw7vHDFGBMz5KL66Qk5nDnmkcD6TJr9C8zy6": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "3hMeUoMJvXGQGrppKNrMR8CmSA1fj6EDqogbJqkoxPCA": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 1,
+        "complete": false
+      },
+      "33BBxsdcfUhxHt5NkPdhUiUkMihCcjpwRZJ6CrQHiZZd": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "emzmZ5H4mKst5RNVJyxXkfa8QVmPvvVAAuYG1wVdFwM": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG": {
+        "y": {
+          "2024": 4,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 4,
+        "years_held": 1,
+        "complete": false
+      },
+      "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr": {
+        "y": {
+          "2024": 3,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 5,
+        "years_held": 3,
+        "complete": true
+      },
+      "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt": {
+        "y": {
+          "2024": 2,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 3,
+        "years_held": 2,
+        "complete": false
+      },
+      "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "WcxMZyxxV7Z7LfsSvEZdWpPzghT6xhzuBudz66F4H1Z": {
+        "y": {
+          "2024": 3,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 3,
+        "years_held": 1,
+        "complete": false
+      },
+      "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV": {
+        "y": {
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 4,
+        "years_held": 3,
+        "complete": true
+      },
+      "Do997onhx5SMsKWzPFK7uALLCCi4gRkJdvFyai5ptLWb": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "GPdNoppD6mygiW5Sj9rH3zfPKsbcnzLATc1ibDyZeqKc": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "5H3k8cjdR5vGSzy1mxYGyx4BThxbEe5ETAZx7NYPAw78": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt": {
+        "y": {
+          "2024": 2,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 3,
+        "years_held": 2,
+        "complete": false
+      },
+      "2yEDMU9F8WytgSxpChBzP7UWfvHCoQzRrKuVqdCLkk9Z": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "6jALdWLnwxLyPDL81xgcNDbm7jrEJTbE9gfNYUWvWuHD": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "uJjZUwKDUzyA1npZLj21sxWPvNjdKuH7qFFKfkWpyKe": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "4HssuFX9jPrcjHcG7JknVg2kbME5FHwWEQcX6e8skHvt": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "262TD6WsmfNzNynJvdeeUjpRb6TKRpv7qvZWaqg9y9BY": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "5V6en6Y8fRUhV2E47JCTcuPNdY2wsah2Xq95Ssp7kRtp": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "3ywduXQCCXyixW97ZyZXuMJaomWR8kCKjfdkM2WUkrGk": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "EUQvUBiwxw98CU319tSc6oEnCm6RR3EZJruxsz9GGZG7": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "BjeJFDFzASyJF76jWgpcWmbr5dAr4MTtK19Uvs117hcU": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 1,
+        "complete": false
+      },
+      "89WVHa1aWgQhUzn7QbzgRqftiN6g7XzG7kVzHejkvozb": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "3NQmnSXfGqtgxFTZ82gS7Pwt2btn3fEPb6EiX5ax5bvr": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg": {
+        "y": {
+          "2024": 3,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 5,
+        "years_held": 3,
+        "complete": true
+      },
+      "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "H3ezH7DEipUKR8pnknHBQt8nRkzPxkow9HDP4YF1imBH": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 1,
+        "complete": false
+      },
+      "AdfSAwXu4eCJZzSHf9yKAQc8Wi5vzEd5SdEek76CMYtu": {
+        "y": {
+          "2024": 3,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 3,
+        "years_held": 1,
+        "complete": false
+      },
+      "4STmnWqgndnQreDtBV4o1SB9FN7zj4CBT4FHLPquj9V7": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "DovvHfpL3YjLM415bNb41MtFrnuRWEANwm8Ui5Lcdw1L": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "7YancRyNQyp9s6G7YNwx9H93UqswoKWqF9GuNJPufyvW": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "2FBFg4Xr7xRvJ7Ubju6iF9tQvbgo1MuDpDw4Kqh9eufY": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i": {
+        "y": {
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 4,
+        "years_held": 3,
+        "complete": true
+      },
+      "44wmXvwxVf3kSie93PHUyhKWM3yRnAh9aRLZtRwC257r": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "HgmHfEbXuHf7GDxGY9rCH28q8XQGxJxR7ajFKjwKR7KT": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 1,
+        "complete": false
+      },
+      "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E": {
+        "y": {
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 4,
+        "years_held": 3,
+        "complete": true
+      },
+      "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi": {
+        "y": {
+          "2024": 3,
+          "2025": 2,
+          "2026": 1
+        },
+        "total": 6,
+        "years_held": 3,
+        "complete": true
+      },
+      "Cn3Fg8bhXoyAT8EZvuV4MxLBmCSP9rrMFiCWm9cMFTef": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "D6iPfDbw5YfEd6pxhtbz6gEcb2wE4K9qurF2pHz8fN3h": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "8RVonbcszVJeL9RXr9kb3PvpTe91XXDbKJRQLfMQuTZR": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "7F7Th1McdngsN6KeuzBtN1shphxgLe5to8RXBeL4ivwW": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 1,
+        "complete": false
+      },
+      "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "4Uuay8hqDH9j9rNu9dRscDckQfXvJHCxJ1e11bjbvk1m": {
+        "y": {
+          "2024": 2,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 1,
+        "complete": false
+      },
+      "7QTVDSypfDiubj6tqBqXTZUMBAxy8DTpkCxZjLy4cAA8": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "DEFYP5GexHE7ptQrcYvry3YUAeHTg5u5ugMxPA11mDmj": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "EH1j1RU2gMZih9Y2ARQFpSZ4zDiGvmindi2FfdQac8tf": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "DZN28uyEDrgZSPjXbpcxArLRpT42q2cS3TbswhKbiJ4d": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "CSovdZP3ondsYbRjeNdhdVGtReW52qjbLRBpp5cLnHt4": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "374kGN9QsjV9BNytMByAbKbyABR5ydkWdJMub5JcRjtW": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "Ezz4b5jzMVGN2q1wFHZtYqbRxaEr6LXr47TceNJF5CQN": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "HanrHyrBDRfLjSs9xfg8z73kkcWwzAV3G4dPw3fVGW5C": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "4vds2WZaa1jpxMvuG6ujBnjQV7MoMx8WS17pmdQqd87u": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "DqYPB9uTWXEU7NKQbZG5cg4T5SBc3VbPocpjssDvZNxr": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "BfVHFudvbfYf34YGe2n5Cri1UWTi3eSWPXFurb99JJY2": {
+        "y": {
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR": {
+        "y": {
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 3,
+        "years_held": 3,
+        "complete": true
+      },
+      "8Yjy7sGuKW7qDRHnnLPETPfH637PZas6Q59JoBwN3wAp": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "5svWrR4y3QSNjnnxR2DRZEzfrWakaFkBzYEJMdYKHasj": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "E6dXjnXU2FC6LYp9ycWryxTm5mYURTPSHRPvaKX65gCP": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "EKRFSydvScPyPV8Ek5sLuZQtyhiaJQRCvUd985D6ZTY4": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "FNp1aBZsucPh1Bg8RdtRpGQDNJQmkXQQxQXotqtykpcF": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "B5MPVkznqUNrB7BM62eTf8PKsGx5YHBq84d6RAcTGkDN": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ": {
+        "y": {
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "total": 2,
+        "years_held": 2,
+        "complete": false
+      },
+      "96tzHrW9WyUeNWfRSL6WHnRMUGcs57f6vvZqcYnr8Fxy": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "BeWdDLTddmeeGYPJ1DUFLBmBT7rZinLrpmztd7bC3kyT": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "CNYZVtjWmxAReY5cDZ1pGMKVbpGpzFX9M5UmUxDJJ8zb": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "9Tr2n1FgSdVbVSbZMbzWeEUcD38vPnZUeT49Rn5WMsjg": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "BUUpQKV29s7ETEDDHSR61gATqFe9FZAaCGmtLFNkTYm7": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "75e8V3dgRuhWgJhzBAGHCzp5cQkWmwDKsJgbo98PdGJH": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "3wNQnr98nRfcbNEjfvq88J5mv8BdJKKqEzyibFfhCvoA": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      },
+      "8iCxDXSnsdvWszSwsF4yWFaMHePxJkr3U7796KgQKr5D": {
+        "y": {
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "total": 1,
+        "years_held": 1,
+        "complete": false
+      }
+    },
+    "aggregates": {
+      "by_year": {
+        "2024": {
+          "medals": 124,
+          "owners": 83
+        },
+        "2025": {
+          "medals": 47,
+          "owners": 46
+        },
+        "2026": {
+          "medals": 44,
+          "owners": 44
+        }
+      },
+      "combos": {
+        "2024": 49,
+        "2024+2025+2026": 26,
+        "2026": 9,
+        "2025": 7,
+        "2025+2026": 7,
+        "2024+2025": 6,
+        "2024+2026": 2
+      },
+      "multiples_count": 26,
+      "multiples": [
+        {
+          "address": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+          "y": {
+            "2024": 4,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 6
+        },
+        {
+          "address": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+          "y": {
+            "2024": 4,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 6
+        },
+        {
+          "address": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+          "y": {
+            "2024": 3,
+            "2025": 2,
+            "2026": 1
+          },
+          "total": 6
+        },
+        {
+          "address": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+          "y": {
+            "2024": 4,
+            "2025": 0,
+            "2026": 1
+          },
+          "total": 5
+        },
+        {
+          "address": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+          "y": {
+            "2024": 3,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 5
+        },
+        {
+          "address": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
+          "y": {
+            "2024": 3,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 5
+        },
+        {
+          "address": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+          "y": {
+            "2024": 3,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 5
+        },
+        {
+          "address": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+          "y": {
+            "2024": 2,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 4
+        },
+        {
+          "address": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+          "y": {
+            "2024": 2,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 4
+        },
+        {
+          "address": "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG",
+          "y": {
+            "2024": 4,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 4
+        },
+        {
+          "address": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+          "y": {
+            "2024": 2,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 4
+        },
+        {
+          "address": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+          "y": {
+            "2024": 2,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 4
+        },
+        {
+          "address": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+          "y": {
+            "2024": 2,
+            "2025": 1,
+            "2026": 1
+          },
+          "total": 4
+        },
+        {
+          "address": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 1
+          },
+          "total": 3
+        },
+        {
+          "address": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU",
+          "y": {
+            "2024": 3,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 3
+        },
+        {
+          "address": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt",
+          "y": {
+            "2024": 2,
+            "2025": 1,
+            "2026": 0
+          },
+          "total": 3
+        },
+        {
+          "address": "WcxMZyxxV7Z7LfsSvEZdWpPzghT6xhzuBudz66F4H1Z",
+          "y": {
+            "2024": 3,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 3
+        },
+        {
+          "address": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt",
+          "y": {
+            "2024": 2,
+            "2025": 1,
+            "2026": 0
+          },
+          "total": 3
+        },
+        {
+          "address": "AdfSAwXu4eCJZzSHf9yKAQc8Wi5vzEd5SdEek76CMYtu",
+          "y": {
+            "2024": 3,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 3
+        },
+        {
+          "address": "8aL9B4zEjgqivTEt2uNezhTTJ2sp5MaLAQwYPcX8pWvC",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 2
+        },
+        {
+          "address": "3hMeUoMJvXGQGrppKNrMR8CmSA1fj6EDqogbJqkoxPCA",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 2
+        },
+        {
+          "address": "BjeJFDFzASyJF76jWgpcWmbr5dAr4MTtK19Uvs117hcU",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 2
+        },
+        {
+          "address": "H3ezH7DEipUKR8pnknHBQt8nRkzPxkow9HDP4YF1imBH",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 2
+        },
+        {
+          "address": "HgmHfEbXuHf7GDxGY9rCH28q8XQGxJxR7ajFKjwKR7KT",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 2
+        },
+        {
+          "address": "7F7Th1McdngsN6KeuzBtN1shphxgLe5to8RXBeL4ivwW",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 2
+        },
+        {
+          "address": "4Uuay8hqDH9j9rNu9dRscDckQfXvJHCxJ1e11bjbvk1m",
+          "y": {
+            "2024": 2,
+            "2025": 0,
+            "2026": 0
+          },
+          "total": 2
+        }
+      ]
+    },
+    "assets": {
+      "2024": [
+        {
+          "asset": "JBfWSRjM772Wn1id9Yu92BmWjhRxEcKNr35R7SiwKnff",
+          "owner": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "JAeKSHNyiLmCBckRqpPJjnSNkpNZhyR2MxF1JDMRABW5",
+          "owner": "411NsBymTGeD594RYEkh6bCzRiyNTm5Ayq5LcgYChuuQ",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "J5K9U9pRtzoY5iWBnf8NHkYBtDLVzNq6EB972a1pLVgn",
+          "owner": "DaKSMXkaaeDZ99ZLn3o7KiLFUmx78P7fzFYRehNJjz1m",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Hus3eAX84cETZXbGTY2U7kWfnjXPAPgm8TqWRCj6Xhnr",
+          "owner": "CxrTwzWEUE6uSuUBE8hGnH88VjMN1aJKQL3YqyEaSCmD",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "HtyL3SQNFgQj6kpcjHA3h7XLUk8Ah52E3GE9KsoTqizD",
+          "owner": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "HLzYspsVnsUy7Xsz6qWwfgArhs3dkX8xGjBBCt2mSZve",
+          "owner": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "H1jEZiVM82mXXvh75ewTPtM6Hev76Vqk58ah8edgDuFF",
+          "owner": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Gmr7jD7gjqao21QgPtLxkyufL6BriZmmQGqXjnKRT4eu",
+          "owner": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "GkdBmWH5p6hTMhrvXuf4yzCYqz6BmZM43CgderhMyZL9",
+          "owner": "2aSJBUGpWWUZty3dafov1Z8Edw3YPA6Z1e2X3aqXu27i",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "GY3B7f6BkysiEo3bzdAJPNg3Kb3Ht3pP6SAvmuwAPvru",
+          "owner": "6QeaREJcvRJrUhRj1JL5pqTSz7UBKdPNJDYUSJogZTR2",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FxVxYh8aTni951njr2s7va3Yp8gDJaCbqrUMybnQX2Na",
+          "owner": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FveVoGoQRzncyDA4mGVQarYEL2vyt4MD59HfxVcHpvd5",
+          "owner": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FvK5f8xMW6pdr9jvGkB4yAx1Nax1RbHCwwWxRT2GLMtd",
+          "owner": "FHXFaDZu48UCaDEzXYf9ybvdVeErnKtMZv6TFYPo7xkM",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FkPPcMreZJMKP4th3bVKuUHx3yNUTNKzLDzkagvKBirc",
+          "owner": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Fcod6JHGAUN8qzNLgtT2geHrhbv7GtxaCZgraiVNc71s",
+          "owner": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FbGeUyv6AvgQFsBrfT7JkxnSL3H9ACmowPpf5jXP1Ppv",
+          "owner": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FR7rUmbpfpEMdqE3Z5PLAzY4nDFxh5gwcG4zRUEp2Yuz",
+          "owner": "8aL9B4zEjgqivTEt2uNezhTTJ2sp5MaLAQwYPcX8pWvC",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FQRgSdCdu4nyJijAwoxbVZdF89dzfYhMRKPNiSC4qANY",
+          "owner": "vxuWh92uw7vHDFGBMz5KL66Qk5nDnmkcD6TJr9C8zy6",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FPHSJJB1eZ84VoKmGrPDSayDJSfbSJND7SGVckV5wRB5",
+          "owner": "3hMeUoMJvXGQGrppKNrMR8CmSA1fj6EDqogbJqkoxPCA",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FKMKNhFj7DHHfcKL7ogJcDHLbxrPnxW8pHu9yyb9Hy2R",
+          "owner": "33BBxsdcfUhxHt5NkPdhUiUkMihCcjpwRZJ6CrQHiZZd",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "FH77Q19SEBtjLsq8TxDdPfVv2TJo3dMN9HwsLURsKTRu",
+          "owner": "emzmZ5H4mKst5RNVJyxXkfa8QVmPvvVAAuYG1wVdFwM",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Esxxkw4Cb7mon1Yrad4b31sjSHH8xet7eAMk34WUQxaa",
+          "owner": "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "EqkUYjpturEZC3NeZN6Mej2hMcXyoxgaoS97kSuc5hUK",
+          "owner": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "EgG89w8x2uFsu13C8RsYsMAN2yPDb3Ej791gXEgB2B5F",
+          "owner": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "EfupArJD1LoWeZguL8CPWexqPkw3877eGFWgPbJRQVzy",
+          "owner": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "EXrDMt94xUuwwCSs7hYuA2uFbxhz9nL6To8qMRBCwACU",
+          "owner": "WcxMZyxxV7Z7LfsSvEZdWpPzghT6xhzuBudz66F4H1Z",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "EWUFzVusaQe4CrA8xHwsoqP3PUEXY33cMPeWJygG9w78",
+          "owner": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "ERqY9MXmAiNrKdpajnpHFmsR5XTUuCZpKu6593wadCrx",
+          "owner": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DuNCsLrNhRiVyESv1rk3g1Xf33G89zZGvLiQ6CDu9pmC",
+          "owner": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DqejxNRkKSMCGFqwfHMPw15pfFgCdBE77WfZ38AP3dpX",
+          "owner": "Do997onhx5SMsKWzPFK7uALLCCi4gRkJdvFyai5ptLWb",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Dan7H5iQKmj3R7mrT19QKWvqrdoMUrrLA6vHGuDkeL2f",
+          "owner": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DZuanHb1atkUSjdi8PJiXzJpYsywu1GFVEQPuVPfDC1Z",
+          "owner": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DRe5zYXbVJcXgANfoZNjJ48644U6vMPJrg5MLVACfFaK",
+          "owner": "8aL9B4zEjgqivTEt2uNezhTTJ2sp5MaLAQwYPcX8pWvC",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DNP32RBtGaiQTwmwAMC8M2H5utBLdG9AFKaYqhRFVqST",
+          "owner": "GPdNoppD6mygiW5Sj9rH3zfPKsbcnzLATc1ibDyZeqKc",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DL5dnitDggZxfetdvYE8xf2oPQqUN7ZuGh36EMApBvVH",
+          "owner": "3hMeUoMJvXGQGrppKNrMR8CmSA1fj6EDqogbJqkoxPCA",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DJMeaGvZy8ef5aYBCZDTB4Lv4QiSSpzuGFkRYU4Z2FVP",
+          "owner": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "DEu43hPUB8cUbYuGLU1zcmpcB64h2ZEc5WGCVJ4m1j97",
+          "owner": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CqjXEwiie7pLu5aFCfGd1YANXFqqqPkECsvQPmTdbw4C",
+          "owner": "5H3k8cjdR5vGSzy1mxYGyx4BThxbEe5ETAZx7NYPAw78",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CnE3bYSxQ2mGpxSEPKGFriRwnyS1EM2sgxtbJx7uTJBQ",
+          "owner": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Cm7RJGPY4fAvBQXqvvU9McAdn7m2a71rETW2X1qnbHqZ",
+          "owner": "2yEDMU9F8WytgSxpChBzP7UWfvHCoQzRrKuVqdCLkk9Z",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Chk5QZhwhnpUENuPiX8Ab4yr775DuvjeiEZDWGoJpvtr",
+          "owner": "6jALdWLnwxLyPDL81xgcNDbm7jrEJTbE9gfNYUWvWuHD",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CdG7HRVKxfrwxNK7dTRhPcMixu6YjPxep51aPcZTzB84",
+          "owner": "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CYEbdvbRCdHzxJAQ3MbgAyKE5Y9EYopzUJKgtEMu1QeN",
+          "owner": "uJjZUwKDUzyA1npZLj21sxWPvNjdKuH7qFFKfkWpyKe",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CUoaajNAPeUq7VbRRTcp6TqE7tfYmVfc5o8KMMoHxWcU",
+          "owner": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CQ1QKafNmX2HJoQHHesjdgP693dKZMTT7gQnzvSQDdzj",
+          "owner": "4HssuFX9jPrcjHcG7JknVg2kbME5FHwWEQcX6e8skHvt",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CFt4m71WXxZpzPTgtTUZm8Yp3EfcKMfYRqQPEsnxv4QG",
+          "owner": "262TD6WsmfNzNynJvdeeUjpRb6TKRpv7qvZWaqg9y9BY",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "CAUqjBZi2U79pAVDGmEmfoZnNv89nE84pV16fSNo42G4",
+          "owner": "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "BjhVvH8qqv6sWKfhNCn8WTUSL1HAMJtGmcdgKMo2PS59",
+          "owner": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Bj1JJfDMabZzZo7LcoN7YqyrrzyAvASUdJp4EbkNMUtK",
+          "owner": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Bhs72MHcScA4L494j93s8C1cZ1A3wG1w7wQCuiosvRjY",
+          "owner": "5V6en6Y8fRUhV2E47JCTcuPNdY2wsah2Xq95Ssp7kRtp",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "BgS4Sn7DfQUCwLH3zzY27uVpDopZ8pPrVbQtnjLuRMpV",
+          "owner": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Beg36ZjACM1XSVq1vMY7Fjb4BzBZJAM8c6MZKFsHHfyk",
+          "owner": "3ywduXQCCXyixW97ZyZXuMJaomWR8kCKjfdkM2WUkrGk",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "BSuNHLAdTBwKooRighXg6bnANnXMnu2tCSw54ik23H9T",
+          "owner": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "BR1os1RhkzLRGh43Kej96Wn3moQYSePZdzXXpaEQGPof",
+          "owner": "EUQvUBiwxw98CU319tSc6oEnCm6RR3EZJruxsz9GGZG7",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "BQA7wSSpvM1rpRPnnQWq44E11qgSKGLGiocxVBQH8Nfg",
+          "owner": "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "BFjmLBHT7HHAKEseoUXQXzJZNPRTAKJ7PdNjNnNT7D15",
+          "owner": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "AaJbuS5VrfrP3BH1F9DcxA2bqFLqwMjvt31QbLBwezp3",
+          "owner": "BjeJFDFzASyJF76jWgpcWmbr5dAr4MTtK19Uvs117hcU",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "ATtJKHL7XUHJg8NsRCDXRFqvNnYxokLJoad4ysasQMea",
+          "owner": "89WVHa1aWgQhUzn7QbzgRqftiN6g7XzG7kVzHejkvozb",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "A8bPcbZY93rgeyaVZe6Bu8CpEV8UtEDScgZBYgVQiRjN",
+          "owner": "WcxMZyxxV7Z7LfsSvEZdWpPzghT6xhzuBudz66F4H1Z",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "9bZSEuknXq2hsafuwnFwhQMMoR8GcgHEZQQNtUQScL15",
+          "owner": "3NQmnSXfGqtgxFTZ82gS7Pwt2btn3fEPb6EiX5ax5bvr",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "9ZQJMDsEneacYuso9qjmg1pHYrRZEPQ98kXST6XCvupp",
+          "owner": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "9U2d99Ymtm9UFkh4GNZYzzeXnJ7fxKMmBWxcerN1rnrv",
+          "owner": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "9QHdrdfhHJWJsirrj5rX6taxFp4gasNAHFuRSbJajEpq",
+          "owner": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "9GHkLHK6YiVyV7gciBvM7nyQ2LyuBX2pTbnUnHkR8VLr",
+          "owner": "H3ezH7DEipUKR8pnknHBQt8nRkzPxkow9HDP4YF1imBH",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "913FrX3xZW7oJdDvStuRe7GgPrcfcZbHi6jaqRWUshtT",
+          "owner": "AdfSAwXu4eCJZzSHf9yKAQc8Wi5vzEd5SdEek76CMYtu",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "8AjLUdfAFCkh9Zje8orQD5ZiArhUwsmMFuYys26ckpXx",
+          "owner": "BjeJFDFzASyJF76jWgpcWmbr5dAr4MTtK19Uvs117hcU",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "7fKgPiH2ebnZsoQ7yXdTmisjYSRBz1p8wNU8KGgYCKJs",
+          "owner": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "7YjhKe6iccU8N15AjUGdhEHvqs1T86Ga7SVJAyXhSWkU",
+          "owner": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "7PNKiFRQTJTsf5VRCVMeVXMDwcnttoyKj5Kk89YWRZ5f",
+          "owner": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "7JQ82ZTnfMwjLSjkdyzBN8Y3WECefKTJC7qndNv7Nh9R",
+          "owner": "4STmnWqgndnQreDtBV4o1SB9FN7zj4CBT4FHLPquj9V7",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "7EiZLRoWNzYjM9erRQ2aE986PXc2UELcRGFNPN3J7i44",
+          "owner": "DovvHfpL3YjLM415bNb41MtFrnuRWEANwm8Ui5Lcdw1L",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "7B6Tmqk88QBCgKHrgVWL59mXFqZ8bYscH82vGoM3USf7",
+          "owner": "7YancRyNQyp9s6G7YNwx9H93UqswoKWqF9GuNJPufyvW",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "799GACUEd4h4QBbA5RJsgirofcZKFZJkJaDbeqhA9Nkj",
+          "owner": "2FBFg4Xr7xRvJ7Ubju6iF9tQvbgo1MuDpDw4Kqh9eufY",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "6kDmqKCscPterbaNmuk2tvDY9ARGx9zvCKk2GaUPq35h",
+          "owner": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "6k8WTvbneH1hJHUWEff4VQn2wbD4WxuNxVy7UsT88oCP",
+          "owner": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "6byJpnVy32ZebdUzFWmPE8zttTDgQN1cq4h8qz2U6TA1",
+          "owner": "44wmXvwxVf3kSie93PHUyhKWM3yRnAh9aRLZtRwC257r",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "6bvawwxn26nYYFsRJaVQ6zynFM7KtQii4Tkr3ZvzcTpu",
+          "owner": "HgmHfEbXuHf7GDxGY9rCH28q8XQGxJxR7ajFKjwKR7KT",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "6YrnariDuUNXZZBG14goPLf2NVuooepaYHArbMYJvrwq",
+          "owner": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "6SSijxepqzYDK5srkx8oPfbnnAkj7YhPVJE9jwwyJ9aB",
+          "owner": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "6RZzcTdPLF1g1vsfnCkT8CqEa8XfYVMBduhqFP91U6qB",
+          "owner": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "5vUkwkn1Sf3qTaq8UGL8ByEedtsNSP77C7aXhDrdmiyo",
+          "owner": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "5ktCdEJxS8jrFoeemzLr7VaZ7yBHeAyYKnRsyj6aYDiv",
+          "owner": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "5TmtFCKKg8VcENnngvWHa6ifz6CVgxBodrtciJVd7rLz",
+          "owner": "Cn3Fg8bhXoyAT8EZvuV4MxLBmCSP9rrMFiCWm9cMFTef",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "5J33GYZkgZvTW9VCzAzLGqUBBWMKAXRJDWGGG6zhgspZ",
+          "owner": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "5HrUXtSaBKYc8k7ZAWnJvVEzeWK4GQKKfJrSoUxtCLPC",
+          "owner": "D6iPfDbw5YfEd6pxhtbz6gEcb2wE4K9qurF2pHz8fN3h",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "57CvUaFyHuaduVxLoKRq75c2HLcYjtEo7WSNDFX8hXv3",
+          "owner": "8SqvDTrKdZVGw9KN8scsnfMnPoShjena7o3tzLsTLGuG",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "5689mJQzysK8QnmJbrXQbqjJDe2THsUXzWqQtS1bztxb",
+          "owner": "8RVonbcszVJeL9RXr9kb3PvpTe91XXDbKJRQLfMQuTZR",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "4zyxx6tfw5xv5uKcaiLJxKf6gaTTm3DyUgqrxBacyNDj",
+          "owner": "7F7Th1McdngsN6KeuzBtN1shphxgLe5to8RXBeL4ivwW",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "4x1KzVETvQDrBYHSkFPaQqacSN3be56ZzDUPgt8CX8aV",
+          "owner": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "4qjNcD3smuVQ2GUzRd2dfZtzQ6tb26sMg4DxWZs2K4AS",
+          "owner": "4Uuay8hqDH9j9rNu9dRscDckQfXvJHCxJ1e11bjbvk1m",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "4gMFbWKYmvqC745taLMsNBFx4Aceasq6YaYGSTY3K4sk",
+          "owner": "WcxMZyxxV7Z7LfsSvEZdWpPzghT6xhzuBudz66F4H1Z",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "4bZ56Krvt2soCYu4sciohrdYqCFFanEyaTNYt9NTgvft",
+          "owner": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "4PKybDWnjWfDKoSbs5HsaYn48FR2PkhtWz58rxHindN1",
+          "owner": "H3ezH7DEipUKR8pnknHBQt8nRkzPxkow9HDP4YF1imBH",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "47DiQHCYBgqpkthJq3vWeHJBHcTa4o4QYduzNYAJaniT",
+          "owner": "7QTVDSypfDiubj6tqBqXTZUMBAxy8DTpkCxZjLy4cAA8",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "44MpFrUuxfRCKJ6dfRQBVHsn5PVTUGeJN1mtiogYdkMu",
+          "owner": "DEFYP5GexHE7ptQrcYvry3YUAeHTg5u5ugMxPA11mDmj",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "41FfzJyHaSDmYQxCz6NzzJKnUZYwMxH66R3VZXcrWBQb",
+          "owner": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3s34VHRwc3Fu6z9N8eUtQ1ac8qqGtBZKKTFUfZgLu5BH",
+          "owner": "EH1j1RU2gMZih9Y2ARQFpSZ4zDiGvmindi2FfdQac8tf",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3rpEW5bHNGpxXa3KpSF8FMH26QoFkrxNoLTwdDSezUk7",
+          "owner": "DZN28uyEDrgZSPjXbpcxArLRpT42q2cS3TbswhKbiJ4d",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3p6RN4ysBLFwS12W3fF4PLzf47jpHyTAiffwrWugdQZD",
+          "owner": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3onWmZbDvFWBBKRE8Lgb26C89BEosTm6n1Cvt7oJo4aK",
+          "owner": "7F7Th1McdngsN6KeuzBtN1shphxgLe5to8RXBeL4ivwW",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3fPFFB5qQByyQJX7z9VVBxfs9UhHDrhBZxESv7vh6uPW",
+          "owner": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3dLjkieLBtVx6yPFDZxXbjekEPAZpmPSXxjyU2pgWv1U",
+          "owner": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3Ry26rK8U33SwJqigBiDjbhvKtWcZ3QpwpLdx1JTK6e8",
+          "owner": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "3CDYjwwWaHMTKgx5VdxTgfpMM9oLn9zgx8sJ94YGR7za",
+          "owner": "CSovdZP3ondsYbRjeNdhdVGtReW52qjbLRBpp5cLnHt4",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2wbeZwNNXxs9mCSaKME1AG7XzmHYRPrRwayjw9TFNcK9",
+          "owner": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2omyzypfqxKKDgQHoUqPzbNFfgxaowAHz5gkVzxdyaJG",
+          "owner": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2nv8w2QR9mC5LVaskYxxc7AXnoeH9APUbpAuFeRpXUVw",
+          "owner": "374kGN9QsjV9BNytMByAbKbyABR5ydkWdJMub5JcRjtW",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2gPsiCCGbG2M1nZmF6Jnw44pZjipy7K9qH32BZDpnJHR",
+          "owner": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2gCk7VmtDYbjk9hEue8qBhkmLJXeMNNDxEMwx5rND8iz",
+          "owner": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2YB8BcC8rHfBXhrNibsMUpPqwQCF99gYe6PsTfcUxAt9",
+          "owner": "HgmHfEbXuHf7GDxGY9rCH28q8XQGxJxR7ajFKjwKR7KT",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2Ts46Pdmet3QpSJ1qh9UEqr5BPHnpbdw4G6xC4xXH8cn",
+          "owner": "Ezz4b5jzMVGN2q1wFHZtYqbRxaEr6LXr47TceNJF5CQN",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2NYncr94zfWm7h5dwXfxvHaRKJ1iHHHVMZtW7cK6HqXC",
+          "owner": "HanrHyrBDRfLjSs9xfg8z73kkcWwzAV3G4dPw3fVGW5C",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2L4QyC5voYbnnZ4p4muKwVQuZkQVX6SGdxf8N8oJZe1n",
+          "owner": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "2H7h3sYsepUo49rVKdxHN1E5jXdau5h3Y7UgTnQAPZKG",
+          "owner": "4vds2WZaa1jpxMvuG6ujBnjQV7MoMx8WS17pmdQqd87u",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "27VhTMeuSFCzsPFPLDxW7UkMqMNFusnje2iWSFzCKqtX",
+          "owner": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "262aJfw2SdFPpfBVYZtzbY1MS7G1xHTT93NoicfL8GAy",
+          "owner": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "23gQpma7dFPrWmQascW9jYp5DW2swVuW1iGBg8mQXwnD",
+          "owner": "AdfSAwXu4eCJZzSHf9yKAQc8Wi5vzEd5SdEek76CMYtu",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "22Q71rfq966L1yU674STPvUkHD7rhDzmukT5QFAjC1Ne",
+          "owner": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "Zj2RrpobACQcvcmhX3yqi5nFB57kt51Rs3131WQATKq",
+          "owner": "4Uuay8hqDH9j9rNu9dRscDckQfXvJHCxJ1e11bjbvk1m",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "UuAUPU9za2Q1u61pyZB8vShULyWM1F9SVHYVVVEtB1T",
+          "owner": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "SW1JFe4a47zer4Q4tDgPeF2LpmH2jBHTasGwsQxwnjN",
+          "owner": "AdfSAwXu4eCJZzSHf9yKAQc8Wi5vzEd5SdEek76CMYtu",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "RhYcmnkEkrfofNzqABUrqLAL4KUugXvriPmvn4SrHVQ",
+          "owner": "DqYPB9uTWXEU7NKQbZG5cg4T5SBc3VbPocpjssDvZNxr",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "N2NuT7STUoS366jXyUBsiAZpbiwU4sAerpQwFYmaWPs",
+          "owner": "BfVHFudvbfYf34YGe2n5Cri1UWTi3eSWPXFurb99JJY2",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        },
+        {
+          "asset": "BChnrHN6AzrpSS9hjjer8fWEc3i64TKAkNBfQf6dksf",
+          "owner": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR",
+          "tree": "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
+        }
+      ],
+      "2025": [
+        {
+          "asset": "Hk4LW3XcEcQSHVAvvEWcUZfcHbtPY2ARYtk7FCTNERD7",
+          "owner": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "HJGNKbkwBxhEiZ3UVDP4e9dfFvi1NkCcEJXwfS6ieNcY",
+          "owner": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "FLsRtid8nZ1CQ7S8qmSkUfs4D3HctFX2G7uQ2d7VxqT2",
+          "owner": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "FB8EEKuxoMGF77ffCtTqwmH4RnPM84aCx2CJGKyLUz9S",
+          "owner": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "EmU7ibwStTEc6jfHfB9gtDENH98ZpmY4X32vJXFemwr6",
+          "owner": "8Yjy7sGuKW7qDRHnnLPETPfH637PZas6Q59JoBwN3wAp",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "ETuf5g64jRZfPguJ93tzZo9rUQqivAJ9j7qP6RTL6gk3",
+          "owner": "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "DhbiAsXeCuqPA1ppQYUJfPi3eRvFwZycmj51ETYmSFjk",
+          "owner": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "DMkZFUq7R1ieXXK1nZrFZ9BVi1Yufx69gR63hTjcV96Q",
+          "owner": "9a2P1xDroPV5vVoq9cLNiJLuywCWt5thd3sG2gUHGknt",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "D6X3rKtGJqZYoG7fqVf6TcN2s8yxmGXn6vtyYLoRKczY",
+          "owner": "5svWrR4y3QSNjnnxR2DRZEzfrWakaFkBzYEJMdYKHasj",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "Cw79fpN1RiNtMQcFrJNJLqP8drx8zDsTrZhirv1LiD5i",
+          "owner": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "CGREJL9ze8PwZ645pkwnabxVhhmHNdKPoxeNwvpk4Qci",
+          "owner": "E6dXjnXU2FC6LYp9ycWryxTm5mYURTPSHRPvaKX65gCP",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "C3eJDRGnHfmrSiapoveC7h8ibXkjUyo4tM3dWQsWDYG5",
+          "owner": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "BuckkUa9oTWg8vYhvUyHKxC1FEJLMqhiNJZLHk1zg9SA",
+          "owner": "EUQvUBiwxw98CU319tSc6oEnCm6RR3EZJruxsz9GGZG7",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "BmfYiNYvjMYoB1JGbCJsttWE65fYkFbvdw2pqCeTkgYo",
+          "owner": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "BjS8RQA3bYkjJqz5d9TRmt2Yq23yTWrwZuSggVQxriCV",
+          "owner": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "BWXbcpcbwa9sSY2FbDrSoc2LrwdfTxw29zjJVgHKh29V",
+          "owner": "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "BQHoWNjZKw92DqXiaPGcguTMBGXkk6xihxdJPjV7smHW",
+          "owner": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "BGGn5WkQwkmPEbRJzoXBzM2wuuKHEWQsUdMPDqrJJAoZ",
+          "owner": "DaKSMXkaaeDZ99ZLn3o7KiLFUmx78P7fzFYRehNJjz1m",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "BE9NQvMZJY71R66SCZzvu6ibvSBSvp3Gv1spquDzFKeY",
+          "owner": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "B3baJxdMTsngrL59NBHzgXPMnrt1qpVDZ82nS8UhqNC9",
+          "owner": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "AMQhQfLEK9F6U8JmEPTfHaNCHyitF5bDeym3XKJQrUcp",
+          "owner": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "AFi5BPnSAEV9wmgVSiGGjZ9f8GvLorRFQAyvvP1nKCos",
+          "owner": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "8GNzq853hKF3aHsdY6UMkCwGzqVuh2ZPqsPjFi4v1vtQ",
+          "owner": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "7YbvYv2sR1w4UzChZhFpU3UjefT5n5eq7GxbHcpEGzwk",
+          "owner": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "7UHLy2ZVzPefT3xqHMKerZnnEVUrBZMSXpfZcPpVA1DW",
+          "owner": "EKRFSydvScPyPV8Ek5sLuZQtyhiaJQRCvUd985D6ZTY4",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "7SSh2RsnJMD2wyP4eSNqQk9geCfTaSfDB3kmBee8W9kn",
+          "owner": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "7B9E1D5446i1ok9RG5ZBwMx3hN3Lyu3uVzBBr1oT8gVM",
+          "owner": "FNp1aBZsucPh1Bg8RdtRpGQDNJQmkXQQxQXotqtykpcF",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "77iQ2W32SG5RXuPi629TfUcNDVof1Rm6BbuobfFKU8PL",
+          "owner": "B5MPVkznqUNrB7BM62eTf8PKsGx5YHBq84d6RAcTGkDN",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "6inyMAxSGiFAkoCEaCU6JG67oVXKwDQ2LEAsYGtCAhgj",
+          "owner": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "6augTc1Y4MwfqQmmE2GTQdomvwJmA7Pvoc4n8VMcQ837",
+          "owner": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "6a8qNJ6kfNXs7qJ2PCgv8ND7NgHnVi2SZCkET5hDsU2y",
+          "owner": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "6Ua6KvZBQQZp6SGjk6DFs9aS4aMtjSRp1VAq1qDkbgks",
+          "owner": "8RVonbcszVJeL9RXr9kb3PvpTe91XXDbKJRQLfMQuTZR",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "6LvJdGx4XNJA9PAN9CwfCrkiR8sN5yEtDXetc136x5Wm",
+          "owner": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "6AkR2ka3Ex9mNC8Za6Rz23V57brNooCEPWvWXv6giaA9",
+          "owner": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "66oawmk1EmPiPZVndwVNtQUqiGbN1AZ5ZMqGiGusi6CD",
+          "owner": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "5Zcpi7EFLeEeBZoNvs3XL2Ps2bzDkgdW2VayK7aUxfhv",
+          "owner": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "56ved4c96MdxzbbPCYW3w3tUCuqznQDFMGmKmYbYa7bt",
+          "owner": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "3vumLwhgD4PKXdgnydpFV3AKfxKL1uTKRPgTKYgyKzet",
+          "owner": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "3oHKTsWq4HD4g4DD6YKvqBDKsQ5agHqf5rPe2do29AsY",
+          "owner": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "3fT2QBEUtsmKSgth6azRo88Hiut8VJkGcSxt78YT2gE6",
+          "owner": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "2vGgUXhBMyjNfFNB824QdRiEtkyF6h15KtXZkHQ3EJt2",
+          "owner": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "2NhgJgw9CnijnHhKzS1mPvU5pX7zYRba7GoixCbt5jmz",
+          "owner": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "23vid7QppkcBtkFntrWhB5dQDcLvQoi1r6xf3xYVXYxP",
+          "owner": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "23MKYfmV1e3G6TvBqYeh2Cxk6a9QtzoV3uLWXE1uhg3x",
+          "owner": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "URiKNWo4DwgncvLkPsQssQxAqH87Nubhtyk4XGvQPHc",
+          "owner": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        },
+        {
+          "asset": "6LuvwDsgjFkSBSeDAi3vFgWTFJ7QeGacqtARsXTKiy1",
+          "owner": "DEFYP5GexHE7ptQrcYvry3YUAeHTg5u5ugMxPA11mDmj",
+          "tree": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        {
+          "asset": "53aNcU6CCZ2ondAVwJUhQkYrarw8PwVeUyyTWsMdQHu",
+          "owner": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w",
+          "tree": "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
+        }
+      ],
+      "2026": [
+        {
+          "asset": "HnNUu957gEi2knbrh5Wk7mtMnTSrYJEi8VTy4YhVezzN",
+          "owner": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "HTS2CUikVjY9NYZfiwiZQKbDobYYEUys3XxRix1VuD3b",
+          "owner": "96tzHrW9WyUeNWfRSL6WHnRMUGcs57f6vvZqcYnr8Fxy",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "HCS9Tzd7SsKoPzSAvc31Bi2NdjD3sY2CqKR9qfKgLFCS",
+          "owner": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "HBZC51pNN76uhWVDbxLzq4CPGawLgyDQNwH1hfdRAnuS",
+          "owner": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "HAnvR9jdKfgxrbzEJLmJzLc5qKnZ5VWKhfcdqXE7tCFH",
+          "owner": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "H9ry5pxedwZ13y3eZerLodqu1uAfqKpEpbBmJxFqfXto",
+          "owner": "BeWdDLTddmeeGYPJ1DUFLBmBT7rZinLrpmztd7bC3kyT",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "GwJSKLPZ5WBAKRyXCodQUtyyCV2G6px6BLU3nW4u4UPj",
+          "owner": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "GZQizfehfmgnkxcc4UjhtMYpTr2pZXE2mxp6g8A17uft",
+          "owner": "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "G77Y5ZVVRH6uYgWZXWb4H8DEPHjfSS3kbnK2pK1DD4VT",
+          "owner": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "FS6yyY1rMt2mjag91dRxeFTWhnusfceQ78cGrE5JRo9H",
+          "owner": "CNYZVtjWmxAReY5cDZ1pGMKVbpGpzFX9M5UmUxDJJ8zb",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "FA2w8sqyfZ56P5hA3Kuv5fM8nuVmWjc48eRunzWzDFUs",
+          "owner": "9Tr2n1FgSdVbVSbZMbzWeEUcD38vPnZUeT49Rn5WMsjg",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "E4M8VZ3koc4XM9nRWMQAwbQ2sLoA29g1LJ1BjrzU3Z6k",
+          "owner": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "DZHVCfL7UsAQRYyb9wjxNwk4tyVrYNMbCBrb6rUNGAAk",
+          "owner": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "DTEHjTdCzKSPNZ7yTZfteTszykWbgXQn9CSW2BDVQDxP",
+          "owner": "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "D5Us9wQtKScFYd1LhrPiW4M4LafAojUfWJ1e522ECc4n",
+          "owner": "BUUpQKV29s7ETEDDHSR61gATqFe9FZAaCGmtLFNkTYm7",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "ChwMEbCjBRDZoY6adJX2qpXnd3pwS1CJQ7hioarnctUA",
+          "owner": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "CedsmrpbfrhdZutHq9WoHm3Un3ak7rbUuqa552zJz2zt",
+          "owner": "75e8V3dgRuhWgJhzBAGHCzp5cQkWmwDKsJgbo98PdGJH",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "CPREWLtrJXoTDHcc6c8nmNtgKBu74tWaFjpmc5z1vYgu",
+          "owner": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "CGMHYrWpB2pZPAgozo23L5RHyjZq5vupYaG8p4jEjSL8",
+          "owner": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "CALmCV6qDwJenKnPMye7V5BuHcsvaAMEddbHKdh8pu46",
+          "owner": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "C3JixiDWmAe3njYvQmrmdyArXEKdpXxD6heuKeQwypbL",
+          "owner": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "BmUXiEAFKTA8cjw2MHeRwzNAtdmbPkkNqpsnqDsin2rA",
+          "owner": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "BEDFnr7SSDwcZanvNncNEiwao2MbwWJhJWzVotAaUAb4",
+          "owner": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "AqFiaa1zwMsdSgnSTfwczF1bLtbLANe2rehgE5QX1ENR",
+          "owner": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "A9MZiZwfW82Bxuu9frzJLBfaR5QaXUkwJ7cGkY29GX6q",
+          "owner": "3wNQnr98nRfcbNEjfvq88J5mv8BdJKKqEzyibFfhCvoA",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "9ydvRsxvRGQLdSbmQWMAqCixjECAnFr5Fp7swspR9gHU",
+          "owner": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "9yVNnh2cPMon8RZSW28P1wkJLEsYEk1XTo9y73PkcBaq",
+          "owner": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "9vG3pR9pWmEW3nKd5wo4oeb2p3gMeupXoM9r15XRSgcp",
+          "owner": "9Y9WF5omR1NBJDrBcE6XDdhuRoyFWjVihbdkMHvjAfv5",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "9HZWPvpNUE5wwgCiJuYdUFBpKkhtCpiEKHJic5VwgXBK",
+          "owner": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "8xikSFg7k67CDVz84hKUTaYFGqRuQn3SVPa7FKBw3xvt",
+          "owner": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "8weD4f5eW1Eyk8QjqZhxeDsRuxZ3VSXbzxZ9zbubXKcL",
+          "owner": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "8rqX7gbCqtFbsniipD96E8j98YWtVv4GVdYjwZnzvVEg",
+          "owner": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "7wh9sPTWDXAUPKxHeZWVopGesn4wmWfhy6oZFG3L5NRC",
+          "owner": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "7FUNwYxbSY47V1iSqE7fSH4BJAvji1Myd7HtoWZ2s4zU",
+          "owner": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "6EyCak9Xiv4pER7gsep82pxq1UgUNUbzxiBVot7PveTC",
+          "owner": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "65Y3rznBKpUvfVCrdd8T8RX51FWbGJ9546KDZJtLiRi8",
+          "owner": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "5sznN66DuKgGi5EE4zjqKgGbsLbZ3kH8WWbXmcEsAsS2",
+          "owner": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "5R4hJJhWbFkk2fv9HxUjHmp9muUWJcxEn7Gz7up5hons",
+          "owner": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "5Kh4dENY2y4vZUwEV8EAocQcXRQdjBxkB33ZFmzz588z",
+          "owner": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR",
+          "tree": "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
+        },
+        {
+          "asset": "5HY3Z3oitxsSMfPLmxXtTeH9ew9DNxzYfKSviHwZMHMk",
+          "owner": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "4PK2JakSALEMxj3mDwz4MnfPnczc2Qj7LJ9W6ZyfT8fN",
+          "owner": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "3rS3BRnPSNFiehZZKcuMr2LWQDG6yF2dRkQ4dqwokyx7",
+          "owner": "8iCxDXSnsdvWszSwsF4yWFaMHePxJkr3U7796KgQKr5D",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "avdzuiaAfG55j5JwmfTVSaqtxJNo28fcUygDBbu5pTF",
+          "owner": "D566TT3KVmtqDSokyogCiCCw35nFgKzvJ38fUMTYR6cD",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        {
+          "asset": "A5pvu9YetArbiukB9epGpc5WgfyWsNG3Wf8WZS5WMj9",
+          "owner": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
+          "tree": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        }
+      ]
+    },
+    "decoys_ruled_out": [
+      "6Ua6KvZBQQZp6SGjk6DFs9aS4aMtjSRp1VAq1qDkbgks",
+      "EHFoSn98qN2TmA1T9cR3fuyt14Mbd44qKjwtaDcBerir"
+    ],
+    "genesis_lineage": {
+      "collection": "Taste of Mycelium",
+      "collection_group": "CWA9WzdomEXojowMDg6kubs8HCXAAbFTFUy7H65mUA8s",
+      "medals": 86,
+      "holders": 71,
+      "role": "100% of TOKE airdropped to these holders at genesis (2023-06-22)",
+      "cite": {
+        "type": "account",
+        "ref": "CWA9WzdomEXojowMDg6kubs8HCXAAbFTFUy7H65mUA8s"
+      }
+    }
+  }
+}
