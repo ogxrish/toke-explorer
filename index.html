@@ -151,7 +151,7 @@
      2026 1242×1640). --mcvh is tuned so the medals never make the table rows taller than text. */
   /* container height is pinned to the text line (--mcvbox) so the row never grows; the posters
      themselves are taller (--mcvh) and overflow symmetrically into the cell padding. */
-  .medals{display:inline-flex;gap:6px;align-items:center;justify-content:center;position:relative;vertical-align:middle;height:var(--mcvbox);overflow:visible;--mcvbox:20px;--mcvh:30px}
+  .medals{display:inline-flex;gap:2.5px;align-items:center;justify-content:center;position:relative;vertical-align:middle;height:var(--mcvbox);overflow:visible;--mcvbox:20px;--mcvh:21px}
   .medal{position:relative;height:var(--mcvh);aspect-ratio:1080/1450;flex:0 0 auto;border-radius:4px}
   .medal.y2025{aspect-ratio:1583/2048}
   .medal.y2026{aspect-ratio:1242/1640}
@@ -178,21 +178,24 @@
   .mcvnote .k{display:inline-flex;align-items:center;gap:5px;margin-right:12px;white-space:nowrap}
   .mcvnote .sw{height:15px;aspect-ratio:1080/1450;border-radius:2px;display:inline-block;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
 
-  /* ── drawer: Great McVote collection (full poster-dimension art) ── */
-  .mcvsum{font-size:12.5px;color:var(--mut);margin:2px 0 10px}.mcvsum b{color:var(--txt)}.mcvsum .set{color:var(--gold);font-weight:700}
-  .mcvrow{display:flex;gap:12px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
-  .mcvrow.miss{opacity:.5}
-  .mcvthumb{height:74px;aspect-ratio:1080/1450;border-radius:7px;flex:0 0 auto;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#0a0c10;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
-  .mcvthumb.y2025{aspect-ratio:1583/2048}
-  .mcvthumb.y2026{aspect-ratio:1242/1640}
+  /* ── drawer: Great McVote — one condensed card (matches the tag card), art small on one line ── */
+  .mcvcard{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+  .mcvstrip{display:flex;gap:4px;align-items:center;flex-wrap:nowrap}
+  .mcvstrip .hold{margin-left:8px;font-size:12px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mcvstrip .hold b{color:var(--txt)}.mcvstrip .hold .set{color:var(--gold);font-weight:700}
+  .mcvthumb{height:30px;aspect-ratio:1080/1450;border-radius:4px;flex:0 0 auto;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#0a0c10;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+  .mcvthumb.y2025{aspect-ratio:1583/2048}.mcvthumb.y2026{aspect-ratio:1242/1640}
   .mcvthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0a0c10}
   .mcvthumb.y2024{background:radial-gradient(circle at 50% 30%,#f4d273,#8f7016)}
   .mcvthumb.y2025{background:radial-gradient(circle at 50% 30%,#79e7cd,#15715d)}
   .mcvthumb.y2026{background:radial-gradient(circle at 50% 30%,#bcb0ff,#544aa6)}
-  .mcvrow .mt{flex:1;min-width:0}.mcvrow .mt b{font-size:13px}.mcvrow .mt .s{font-size:11px;color:var(--mut);margin-top:1px}
-  .mcvrow .mq{text-align:right;flex:0 0 auto}
-  .mcvrow .mq .you{font-weight:800;font-size:16px;line-height:1.1}
-  .mcvrow .mq .of{color:var(--mut);font-size:10px}
+  .mcvthumb.miss{background:repeating-linear-gradient(45deg,#14171e,#14171e 3px,#0f1218 3px,#0f1218 6px);box-shadow:inset 0 0 0 1px var(--line2);opacity:.6}
+  .mcvcard .td{font-size:11.5px;color:var(--mut);margin:9px 0 2px}
+  .mcvcard .tdet{margin:6px 0 2px;border-top:1px solid var(--line);padding-top:6px}
+  .mcvcard .tmid{flex:1;color:var(--mut);font-size:11.5px;text-align:left}
+  .mcvcard .tv .of{color:var(--mut2);font-weight:400}
+  .mcvcard .tv.none{color:var(--mut2)}
+  .mcvcard .tr{font-size:10px;color:var(--mut2);margin-top:7px}
 </style>
 </head>
 <body>
@@ -299,11 +302,11 @@
   </div>
   <div id="dw-kvs"></div>
   <div id="dw-label-sec"></div>
-  <div id="dw-mcv"></div>
   <div class="dw-sec">Domains (SNS)</div>
   <div id="dw-sns"></div>
   <div class="dw-sec">Tags</div>
   <div id="dw-tags"></div>
+  <div id="dw-mcv"></div>
 </aside>
 
 <script>
@@ -422,21 +425,27 @@ function medalDrawer(r){
   const Y=NFT.years; if(!Y) return '';
   const order=NFT.order||MCV_YEARS, h=nftFor(r.address);
   const held=h?h.years_held:0, total=h?h.total:0;
-  const sum=h
-    ? `<div class="mcvsum">Holds <b>${held}/3</b> year${held===1?'':'s'} · <b>${total}</b> medal${total===1?'':'s'}`+(h.complete?' · <span class="set">complete set</span>':'')+`</div>`
-    : `<div class="mcvsum">No Great McVote medals held.</div>`;
-  const rows=order.map(y=>{
-    const yr=Y[y]||{}, qty=h?h.y[y]:0, tot=yr.total_minted, img=yr.art&&yr.art.image, cite=yr.cite&&yr.cite.ref;
-    const thumb=`<span class="mcvthumb y${y}">${y.slice(2)}${img?`<img loading="lazy" src="${img}" onerror="this.style.display='none'">`:''}</span>`;
-    const right=qty>0
-      ? `<div class="mq"><div class="you" style="color:${yr.accent||'var(--txt)'}">×${qty}</div><div class="of">of ${fmt(tot,0)} minted</div></div>`
-      : `<div class="mq"><div class="you" style="color:var(--mut2)">—</div><div class="of">${fmt(tot,0)} minted</div></div>`;
-    return `<div class="mcvrow${qty>0?'':' miss'}">${thumb}<div class="mt"><b>${y} · ${yr.theme||''}</b>`+
-           `<div class="s">${yr.shape||''}${cite?` · <a href="${orb(cite)}" target="_blank" rel="noopener">verify ↗</a>`:''}</div></div>${right}</div>`;
+  const strip=order.map(y=>{
+    const yr=Y[y]||{}, qty=h?h.y[y]:0, img=yr.art&&yr.art.image, miss=qty>0?'':' miss';
+    const im=(qty>0&&img)?`<img loading="lazy" src="${img}" onerror="this.style.display='none'">`:'';
+    return `<span class="mcvthumb y${y}${miss}" title="${y} · ${yr.theme||''}${qty>0?(' — holds '+qty):' — not held'}">${qty>0?y.slice(2):''}${im}</span>`;
   }).join('');
-  const t=(NFT.totals)||{}, by=t.medals||215;
-  const foot=`<div class="mcvsum" style="margin-top:2px">Set closed · <b>${by}</b> medals across 2024–26 (124 · 47 · 44) · ${t.complete_sets!=null?t.complete_sets:26} complete sets · 0 burns.</div>`;
-  return '<div class="dw-sec">Great McVote NFTs</div>'+sum+rows+foot;
+  const hold=h
+    ? `<span class="hold"><b>${held}/3</b> years · <b>${total}</b> medal${total===1?'':'s'}${h.complete?'<span class="set"> · complete set</span>':''}</span>`
+    : `<span class="hold">none held</span>`;
+  const rows=order.map(y=>{
+    const yr=Y[y]||{}, qty=h?h.y[y]:0, tot=fmt(yr.total_minted,0);
+    const tv=qty>0?`<span class="tv has">×${qty} <span class="of">/ ${tot}</span></span>`:`<span class="tv none">— <span class="of">/ ${tot}</span></span>`;
+    return `<div class="tdetrow"><span class="ty">${y}</span><span class="tmid">${yr.theme||''}</span>${tv}</div>`;
+  }).join('');
+  const t=(NFT.totals)||{}, by=t.medals||215, cs=(t.complete_sets!=null?t.complete_sets:26);
+  return '<div class="dw-sec">Great McVote NFTs</div>'+
+    '<div class="mcvcard">'+
+      '<div class="mcvstrip">'+strip+hold+'</div>'+
+      '<div class="td">Three commemorative medals — one per annual 4/20 Great McVote. Quantity held / total minted:</div>'+
+      '<div class="tdet">'+rows+'</div>'+
+      `<div class="tr">${by} medals across 2024–26 (124 · 47 · 44) · ${cs} complete sets · 0 burns</div>`+
+    '</div>';
 }
 function buildKpis(){
   const holders=ALL.filter(r=>r.balance>0).length;
