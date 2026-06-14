@@ -246,7 +246,7 @@
   <div class="kpis" id="kpis"></div>
 
   <div class="lbctrl">
-    <input type="search" id="q" placeholder="Search address or .sol name…" autocomplete="off">
+    <input type="search" id="q" placeholder="Search address or domain (.sol, .skr, …)" autocomplete="off">
     <div class="seg2">
       <button class="segb on" data-focus="all">All wallets</button>
       <button class="segb" data-focus="holders">Current holders</button>
@@ -343,14 +343,24 @@ const MCV_YEARS=['2024','2025','2026'];
 const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
 // Type (category) display labels and per-entity logo-icon colours (monogram fallback when no logo file exists).
 const CATLABEL={'liquidity-pool':'Liquidity Pool','program':'Program','governance':'Governance','distributor':'Distributor','treasury':'Treasury','dao':'DAO','project':'Project'};
-const ENTITY={Jupiter:{c:'#1aa873',t:'#ffffff'},Orca:{c:'#14b8a6',t:'#04231f'},Raydium:{c:'#5666f0',t:'#ffffff'},Meteora:{c:'#7c3aed',t:'#ffffff'},Realms:{c:'#2dd4bf',t:'#04231d'},Align:{c:'#1f242c',t:'#ffffff'}};
+const ENTITY={
+  Jupiter:{c:'#1aa873',t:'#ffffff',logo:'https://icons.llama.fi/jupiter-aggregator.jpg'},
+  Orca:{c:'#14b8a6',t:'#04231f',logo:'https://icons.llama.fi/orca-dex.jpg'},
+  Raydium:{c:'#5666f0',t:'#ffffff',logo:'https://icons.llama.fi/raydium.jpg'},
+  Meteora:{c:'#7c3aed',t:'#ffffff',logo:'https://icons.llama.fi/meteora.png'},
+  Realms:{c:'#2dd4bf',t:'#04231d',logo:'https://icons.llama.fi/realms.png'},
+  Align:{c:'#1f242c',t:'#ffffff'}};
 function entityIcon(name){
   if(!name) return '';
   const e=ENTITY[name]||{c:'#2e3540',t:'#e7eaef'};
   const slug=String(name).toLowerCase().replace(/[^a-z0-9]/g,'');
   const mono=String(name).slice(0,1).toUpperCase();
+  const localSvg=`assets/entities/${slug}.svg`;
+  // official logo first → authored SVG → monogram. (e.logo = real brand logo; absent for entities we couldn't source.)
+  const src=e.logo||localSvg;
+  const onerr=e.logo?`this.onerror=null;this.src='${localSvg}'`:`this.onerror=null;this.remove()`;
   return `<span class="ent" title="${name}" aria-label="${name}" style="--ec:${e.c};--et:${e.t}">`+
-    `<img loading="lazy" src="assets/entities/${slug}.svg" alt="" onerror="this.remove()">`+
+    `<img loading="lazy" src="${src}" alt="" onerror="${onerr}">`+
     `<span class="em">${mono}</span></span>`;
 }
 
@@ -482,7 +492,8 @@ const dankFor=a=>(DANK.hold&&DANK.hold[a])||0;
 function dankHtml(a){
   const amt=dankFor(a);
   if(!(amt>0)) return '<span class="none">—</span>';
-  return `<span class="dankicon" title="Holds ${fmt(amt,3)} $DANK"><img src="assets/dank.svg" alt="DANK" loading="lazy" onerror="this.replaceWith(document.createTextNode('🌿'))"></span>`;
+  const src=DANK.image||'assets/dank.svg';   // real on-chain Token-2022 logo; authored herb SVG as fallback
+  return `<span class="dankicon" title="Holds ${fmt(amt,3)} $DANK"><img src="${src}" alt="DANK" loading="lazy" onerror="this.onerror=null;this.src='assets/dank.svg'"></span>`;
 }
 function dankDrawer(r){
   if(!DANK||!DANK.mint) return '';
@@ -501,7 +512,7 @@ function dankDrawer(r){
     : '';
   return '<div class="dw-sec">$DANK</div>'+
     '<div class="mcvcard">'+
-      '<div class="mcvstrip"><span class="dankthumb"><img src="assets/dank.svg" alt="DANK" onerror="this.replaceWith(document.createTextNode(\'🌿\'))"></span>'+head+'</div>'+
+      '<div class="mcvstrip"><span class="dankthumb"><img src="'+(DANK.image||'assets/dank.svg')+'" alt="DANK" onerror="this.onerror=null;this.src=\'assets/dank.svg\'"></span>'+head+'</div>'+
       `<div class="td">$DANK — Token-2022 (<span class="mono">${mintShort}</span>), ${DANK.decimals} decimals. Any non-zero balance counts as an active holding.</div>`+
       body+
       `<div class="tr">${fmt(t.holders||0,0)} holders · ${fmt(sup,0)} DANK supply · TGE ${DANK.tge_date||''}</div>`+
@@ -602,7 +613,7 @@ function openDrawer(r){
   const doms=r.sns_all||[];
   $('dw-sns').innerHTML = doms.length
     ? doms.map(d=>`<div class="snsrow${d===r.sns?' pri':''}">${d}${d===r.sns?'<span class="prilab">primary</span>':''}</div>`).join('')
-    : '<div class="notag">No .sol domains held.</div>';
+    : '<div class="notag">No domains held.</div>';
   const tg=tagsFor(r.address); const det=(TAGS.detail&&TAGS.detail[r.address])||{};
   $('dw-tags').innerHTML = tg.length ? tg.map(k=>{
     const t=TAGS.tags[k]||{};
