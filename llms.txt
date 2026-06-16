@@ -1,0 +1,41 @@
+# $TOKE Explorer — TOKE API (v1)
+
+> Anonymous, on-chain-verifiable intelligence for the $TOKE / McToken token on Solana. This is the
+> machine-readable interface ("TOKE API v1"): versioned, public, CORS-open JSON under `/api/v1/`. Every
+> figure carries a `cite` to its on-chain source (tx / account / program) and a `visibility` tier
+> (l1 = on-chain truth, l2 = derived analytics, l3 = curated lore). Wallet identity (l4) is never published —
+> addresses only, never a wallet-to-human mapping.
+
+- Token: **$TOKE** (McToken) · chain: **solana-mainnet**
+- Mint: `AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo` · decimals: 3 · max supply: 420,000,069
+- Base URL: `https://explorer.mctoken.xyz/api/v1/`
+- Auth: none (public `GET`, `Access-Control-Allow-Origin: *`). Data auto-refreshes; read each file's `as_of`.
+- Every dataset is wrapped in a common envelope: `{ dataset, version, as_of, chain, source, visibility, data }`.
+
+## Start here
+- [Dataset catalog](https://explorer.mctoken.xyz/api/v1/index.json): machine-readable list of every dataset + the subject (symbol, mint, chain).
+- [Reliability / freshness](https://explorer.mctoken.xyz/api/v1/reliability.json): the Gate-A audit verdict and data `as_of` — how each publish is verified before it goes live.
+
+## Core datasets
+- [base_lean.json](https://explorer.mctoken.xyz/api/v1/base_lean.json): every wallet that ever touched $TOKE — address, balance, supply %, primary domain, label, tags. (The main table.)
+- [token.json](https://explorer.mctoken.xyz/api/v1/token.json): canonical token facts — supply, burn, mint/freeze authorities, holders count, pools.
+- [oracle.json](https://explorer.mctoken.xyz/api/v1/oracle.json): liquidity-weighted price, implied market cap, per-pool prices.
+- [supply.json](https://explorer.mctoken.xyz/api/v1/supply.json): supply disposition buckets (active / dormant / genesis / routing / burned) + concentration (top-10 / top-25).
+- [holders.json](https://explorer.mctoken.xyz/api/v1/holders.json): featured-holder leaderboard (>=1M TOKE or cohort members).
+- [pools.json](https://explorer.mctoken.xyz/api/v1/pools.json) · [liquidity.json](https://explorer.mctoken.xyz/api/v1/liquidity.json): material DEX pools + reserves and anonymous LP holders.
+
+## Labels, cohorts & collections (owner-curated, on-chain-proven)
+- [tags.json](https://explorer.mctoken.xyz/api/v1/tags.json) · [labels.json](https://explorer.mctoken.xyz/api/v1/labels.json) · [cohorts.json](https://explorer.mctoken.xyz/api/v1/cohorts.json) · [governance.json](https://explorer.mctoken.xyz/api/v1/governance.json)
+- [dank.json](https://explorer.mctoken.xyz/api/v1/dank.json) (Token-2022 $DANK holdings) · [mcvote_nfts.json](https://explorer.mctoken.xyz/api/v1/mcvote_nfts.json) · [collections.json](https://explorer.mctoken.xyz/api/v1/collections.json) (Great McVote medal trilogy)
+
+## How the data is verified
+Every record is **anonymous** (addresses only), **verifiable** (each figure cites a tx / account / program ref,
+or a `method` + `inputs` for computed values), and **tier-gated**. Before any publish, the pipeline runs a
+reliability audit (Gate-A: genesis mint, exact balances, independent cross-index, freshness) and an L4 redaction
+gate; data ships **only** on a GREEN verdict. The current verdict + `as_of` live in `reliability.json`.
+
+## Notes
+- Backend is static JSON today; a live edge backend may serve the identical contract later — same paths, same
+  shapes, no consumer change.
+- This is read-only public data. No API key, no rate limit published; please cache (files send short
+  `Cache-Control` with `stale-while-revalidate`).

@@ -16,6 +16,29 @@
 <meta name="twitter:title" content="$TOKE Explorer — every wallet, verified on-chain">
 <meta name="twitter:description" content="The complete base of every wallet that ever touched $TOKE. Anonymous, verifiable, reconciled to the chain.">
 <meta name="twitter:image" content="https://explorer.mctoken.xyz/assets/toke-logo.png">
+<link rel="canonical" href="https://explorer.mctoken.xyz/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "$TOKE Explorer — TOKE API (v1)",
+  "description": "Anonymous, on-chain-verifiable data for the $TOKE / McToken token on Solana: every wallet that ever touched $TOKE, supply disposition, liquidity, holders and labels. Public versioned JSON; every figure cites its on-chain source.",
+  "url": "https://explorer.mctoken.xyz/",
+  "sameAs": "https://mctoken.xyz",
+  "license": "https://explorer.mctoken.xyz/",
+  "isAccessibleForFree": true,
+  "keywords": ["Solana", "TOKE", "McToken", "token holders", "on-chain analytics", "SPL token", "AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo"],
+  "creator": { "@type": "Organization", "name": "Mycelium Networks", "url": "https://mctoken.xyz" },
+  "variableMeasured": ["holder balances", "supply disposition", "liquidity", "price (liquidity-weighted)", "on-chain labels"],
+  "distribution": [
+    { "@type": "DataDownload", "name": "Dataset catalog", "encodingFormat": "application/json", "contentUrl": "https://explorer.mctoken.xyz/api/v1/index.json" },
+    { "@type": "DataDownload", "name": "All wallets that touched $TOKE", "encodingFormat": "application/json", "contentUrl": "https://explorer.mctoken.xyz/api/v1/base_lean.json" },
+    { "@type": "DataDownload", "name": "Canonical token facts", "encodingFormat": "application/json", "contentUrl": "https://explorer.mctoken.xyz/api/v1/token.json" },
+    { "@type": "DataDownload", "name": "Price / market cap oracle", "encodingFormat": "application/json", "contentUrl": "https://explorer.mctoken.xyz/api/v1/oracle.json" },
+    { "@type": "DataDownload", "name": "Reliability / freshness verdict", "encodingFormat": "application/json", "contentUrl": "https://explorer.mctoken.xyz/api/v1/reliability.json" }
+  ]
+}
+</script>
 <style>
   :root{
     --bg:#0a0c10;--panel:#13161d;--panel2:#181c24;--line:#242a33;--line2:#2e3540;
@@ -212,6 +235,23 @@
 </style>
 </head>
 <body>
+<noscript>
+  <section style="max-width:760px;margin:24px auto;padding:0 18px;line-height:1.5">
+    <h1>$TOKE Explorer — TOKE API (v1)</h1>
+    <p>Anonymous, on-chain-verifiable data for the <strong>$TOKE / McToken</strong> token on Solana
+    (mint <code>AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo</code>, 3 decimals, max supply 420,000,069).
+    The interactive table needs JavaScript, but all data is available as public JSON — no key required.</p>
+    <p><strong>Machine-readable API:</strong></p>
+    <ul>
+      <li><a href="/llms.txt">/llms.txt</a> — agent guide to every dataset</li>
+      <li><a href="/api/v1/index.json">/api/v1/index.json</a> — dataset catalog</li>
+      <li><a href="/api/v1/base_lean.json">/api/v1/base_lean.json</a> — every wallet that ever touched $TOKE</li>
+      <li><a href="/api/v1/token.json">/api/v1/token.json</a> — supply, burn, authorities, pools</li>
+      <li><a href="/api/v1/reliability.json">/api/v1/reliability.json</a> — how the data is verified (Gate-A audit + freshness)</li>
+    </ul>
+    <p>Every figure cites its on-chain source; wallet identity is never published.</p>
+  </section>
+</noscript>
 <header>
   <div class="hbar">
     <div class="brandgrp">

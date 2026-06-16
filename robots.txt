@@ -1,0 +1,9 @@
+# $TOKE Explorer — public, anonymous, on-chain-verifiable data. Crawlers + AI agents welcome.
+User-agent: *
+Allow: /
+
+# Machine-readable API + agent guide:
+#   Data catalog:  https://explorer.mctoken.xyz/api/v1/index.json
+#   Agent guide:   https://explorer.mctoken.xyz/llms.txt
+
+Sitemap: https://explorer.mctoken.xyz/sitemap.xml
