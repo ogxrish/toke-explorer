@@ -1,14 +1,22 @@
 {
   "dataset": "index",
   "version": "v1",
-  "as_of": "2026-05-30T00:00:00Z",
+  "as_of": "2026-06-16T00:00:00Z",
   "visibility": "l1",
   "source": {
     "kb_files": []
   },
   "data": {
     "contract_version": "v1",
-    "generated_at": "2026-06-10T14:16:55.596927Z",
+    "generated_at": "2026-06-16T00:09:33.202423Z",
+    "base_url": "https://explorer.mctoken.xyz/api/v1/",
+    "docs": "https://explorer.mctoken.xyz/api/v1/contract.md",
+    "agent_guide": "https://explorer.mctoken.xyz/llms.txt",
+    "subject": {
+      "symbol": "TOKE",
+      "mint": "AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo",
+      "chain": "solana-mainnet"
+    },
     "datasets": [
       "token",
       "oracle",
@@ -25,10 +33,133 @@
       "activity",
       "collections"
     ],
-    "subject": {
-      "symbol": "TOKE",
-      "mint": "AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo",
-      "chain": "solana-mainnet"
-    }
+    "endpoints": [
+      {
+        "name": "base_lean",
+        "url": "https://explorer.mctoken.xyz/api/v1/base_lean.json",
+        "visibility": "l2",
+        "description": "Every wallet that ever touched $TOKE \u2014 address, balance, supply %, primary domain, label, tags. The main table."
+      },
+      {
+        "name": "token",
+        "url": "https://explorer.mctoken.xyz/api/v1/token.json",
+        "visibility": "l1+l2",
+        "description": "Canonical token facts \u2014 supply, burn, mint/freeze authorities, holders count, pools."
+      },
+      {
+        "name": "oracle",
+        "url": "https://explorer.mctoken.xyz/api/v1/oracle.json",
+        "visibility": "l2",
+        "description": "Liquidity-weighted price, implied market cap, per-pool prices."
+      },
+      {
+        "name": "supply",
+        "url": "https://explorer.mctoken.xyz/api/v1/supply.json",
+        "visibility": "l2",
+        "description": "Supply disposition buckets (active/dormant/genesis/routing/burned) + concentration (top10/top25)."
+      },
+      {
+        "name": "holders",
+        "url": "https://explorer.mctoken.xyz/api/v1/holders.json",
+        "visibility": "l1+l2",
+        "description": "Featured-holder leaderboard (>=1M TOKE or cohort members)."
+      },
+      {
+        "name": "pools",
+        "url": "https://explorer.mctoken.xyz/api/v1/pools.json",
+        "visibility": "l1",
+        "description": "Material DEX pools (Meteora DYN2 SOL/USDC, Raydium SOL)."
+      },
+      {
+        "name": "liquidity",
+        "url": "https://explorer.mctoken.xyz/api/v1/liquidity.json",
+        "visibility": "l1+l2",
+        "description": "Per-pool reserves, depth, anonymous LP holders, true-liquidity-vs-FDV."
+      },
+      {
+        "name": "cohorts",
+        "url": "https://explorer.mctoken.xyz/api/v1/cohorts.json",
+        "visibility": "l2",
+        "description": "Cohort taxonomy (genesis-71, airdrops, voters, dank) with on-chain rules + live counts."
+      },
+      {
+        "name": "governance",
+        "url": "https://explorer.mctoken.xyz/api/v1/governance.json",
+        "visibility": "l1+l2",
+        "description": "Proposals, McVotes, anonymous vote rolls, TIP-4 dividend."
+      },
+      {
+        "name": "badges",
+        "url": "https://explorer.mctoken.xyz/api/v1/badges.json",
+        "visibility": "l2+l3",
+        "description": "Badge system \u2014 thresholds + culture (mcwhale, 1pct-club, dank, ...)."
+      },
+      {
+        "name": "labels",
+        "url": "https://explorer.mctoken.xyz/api/v1/labels.json",
+        "visibility": "l2",
+        "description": "Owner-curated, on-chain-proven infra labels (LP / program / governance / treasury)."
+      },
+      {
+        "name": "tags",
+        "url": "https://explorer.mctoken.xyz/api/v1/tags.json",
+        "visibility": "l2+l3",
+        "description": "Owner-controlled, on-chain-proven wallet tags (genesis-og, mcvoter)."
+      },
+      {
+        "name": "dank",
+        "url": "https://explorer.mctoken.xyz/api/v1/dank.json",
+        "visibility": "l2",
+        "description": "Token-2022 $DANK holdings per wallet (active holders)."
+      },
+      {
+        "name": "mcvote_nfts",
+        "url": "https://explorer.mctoken.xyz/api/v1/mcvote_nfts.json",
+        "visibility": "l2",
+        "description": "The Great McVote medal trilogy (2024-2026) per wallet."
+      },
+      {
+        "name": "collections",
+        "url": "https://explorer.mctoken.xyz/api/v1/collections.json",
+        "visibility": "l1",
+        "description": "Great McVote NFT collections + super-collection metadata."
+      },
+      {
+        "name": "lore",
+        "url": "https://explorer.mctoken.xyz/api/v1/lore.json",
+        "visibility": "l3",
+        "description": "Narrative + epithets (address-keyed, zero names)."
+      },
+      {
+        "name": "health",
+        "url": "https://explorer.mctoken.xyz/api/v1/health.json",
+        "visibility": "l1+l2",
+        "description": "Integrity posture \u2014 authorities, LP lock, concentration, score + grade."
+      },
+      {
+        "name": "flows",
+        "url": "https://explorer.mctoken.xyz/api/v1/flows.json",
+        "visibility": "l1+l3",
+        "description": "Curated flow stories \u2014 every edge cites a signature."
+      },
+      {
+        "name": "activity",
+        "url": "https://explorer.mctoken.xyz/api/v1/activity.json",
+        "visibility": "l1",
+        "description": "Recent on-chain activity tail (refreshed live client-side)."
+      },
+      {
+        "name": "reliability",
+        "url": "https://explorer.mctoken.xyz/api/v1/reliability.json",
+        "visibility": "audit",
+        "description": "Gate-A audit verdict + freshness \u2014 how each publish is verified before it ships."
+      },
+      {
+        "name": "base_all",
+        "url": "https://explorer.mctoken.xyz/api/v1/base_all.json",
+        "visibility": "l2",
+        "description": "The COMPLETE base (~22.6k addresses), large / on-demand."
+      }
+    ]
   }
 }

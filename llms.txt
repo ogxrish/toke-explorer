@@ -13,7 +13,8 @@
 - Every dataset is wrapped in a common envelope: `{ dataset, version, as_of, chain, source, visibility, data }`.
 
 ## Start here
-- [Dataset catalog](https://explorer.mctoken.xyz/api/v1/index.json): machine-readable list of every dataset + the subject (symbol, mint, chain).
+- [Dataset catalog](https://explorer.mctoken.xyz/api/v1/index.json): self-navigating list of every endpoint (URL + description + visibility) + the subject (symbol, mint, chain).
+- [Contract spec](https://explorer.mctoken.xyz/api/v1/contract.md): the full Public Data Contract — the envelope, the `cite` provenance object, the visibility tiers, and each dataset's shape.
 - [Reliability / freshness](https://explorer.mctoken.xyz/api/v1/reliability.json): the Gate-A audit verdict and data `as_of` — how each publish is verified before it goes live.
 
 ## Core datasets
