@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>$TOKE Explorer · explorer.mctoken.xyz</title>
 <meta name="description" content="Every wallet that ever touched $TOKE — anonymous, verifiable, on-chain.">
-<link rel="icon" type="image/png" href="assets/toke-logo.png">
+<link rel="icon" type="image/png" href="assets/moonman.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="$TOKE Explorer">
 <meta property="og:title" content="$TOKE Explorer — every wallet, verified on-chain">
@@ -296,6 +299,27 @@
   /* Quick views (the retired segment bar's utility filters, kept lightweight) */
   .qvlab{font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut2);margin-right:1px}
   @media(max-width:680px){.ecard{grid-template-columns:1fr}.eposter{width:90px;margin:0 auto}.pvspacer{display:none}.pvtoggles{width:100%}}
+
+  /* ══ brand cohesion with mctoken.xyz — blue-led, Space Grotesk, mono numbers ══ */
+  :root{ --blue:#5aa2ff; --display:'Space Grotesk',ui-sans-serif,system-ui,sans-serif; --sans:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --accent2:#5aa2ff; --toke:#5aa2ff; }
+  body{font-family:var(--sans)}
+  .mono{font-family:var(--mono)}
+  a{color:var(--blue)}
+  #ticker,.brand b,.mcname,.lede,.pvtitle,.provhead h2{font-family:var(--display)}
+  .lede .x{color:var(--blue)}
+  .kpi{background:var(--panel);border:1px solid var(--line);box-shadow:none;border-radius:14px}
+  .kpi:hover{transform:none;box-shadow:none;border-color:var(--line2)}
+  .kpi .l,.stat .l{font-family:var(--mono)}
+  .kpi .v,.stat .v{font-family:var(--mono)}
+  .copy:hover{color:var(--blue)}
+  .navlink:hover{border-color:var(--blue)}
+  .segb.on{background:rgba(90,162,255,.16);color:var(--blue)}
+  .pchip.on{background:rgba(90,162,255,.14);color:var(--blue);border-color:rgba(90,162,255,.5)}
+  .pchip.on .ct{color:var(--blue)}
+  .xnav{display:flex;gap:18px;align-items:center;margin-left:6px;font-size:13px}
+  .xnav a{color:var(--mut);text-decoration:none}.xnav a:hover{color:var(--txt)}
+  .xnav a.on{color:var(--blue);font-weight:600}
+  @media(max-width:760px){.xnav{display:none}}
 </style>
 </head>
 <body>
@@ -319,13 +343,19 @@
 <header>
   <div class="hbar">
     <div class="brandgrp">
-      <a class="logolink" href="https://mctoken.xyz" target="_blank" rel="noopener" title="mctoken.xyz — home"><img src="assets/toke-logo.png" id="tokimg" class="logo" alt="McToken"></a>
+      <a class="logolink" href="https://mctoken.xyz" title="mctoken.xyz — home"><img src="assets/moonman.png" id="tokimg" class="logo" alt="McToken"></a>
       <div class="brand">
         <b id="ticker">$TOKE</b><span class="mcname">McToken</span><span class="stage">Beta</span>
         <div class="mintchip"><span class="mono" id="mint">Amg…mCpo</span><span class="copy" id="mintcopy" title="copy mint">⧉</span>
           <a id="mintlink" target="_blank" rel="noopener" title="view token on Orb">↗</a></div>
       </div>
     </div>
+    <nav class="xnav">
+      <a href="https://mctoken.xyz">Home</a>
+      <a href="https://explorer.mctoken.xyz" class="on" aria-current="page">Explorer</a>
+      <a href="https://jup.ag/tokens/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" target="_blank" rel="noopener">Buy</a>
+      <a href="https://x.com/TokeCommunity" target="_blank" rel="noopener">X</a>
+    </nav>
     <div class="spacer"></div>
     <div class="stats" id="stats">
       <div class="stat"><div class="l">TOKE</div><div class="v toke" id="s-price">—</div></div>
@@ -557,8 +587,7 @@ fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).t
   const tvl=(j.pairs||[]).reduce((s,x)=>s+(+((x.liquidity&&x.liquidity.usd)||0)),0); $('s-tvl').textContent=tvl?usd(tvl):'—';
   const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0); $('s-vol').textContent=vol?usd(vol):'—';
   pxSave({price:+p.priceUsd, mcap:mc?+mc:null, tvl:tvl||0, vol:vol||0});
-  const img=(p.info&&p.info.imageUrl)||(j.pairs[0].info&&j.pairs[0].info.imageUrl);
-  if(img){ $('tokimg').src=img; const fav=document.querySelector('link[rel="icon"]'); if(fav)fav.href=img; }
+  /* brand mark + favicon stay Moon Man (cohesion with mctoken.xyz) — not overwritten by market data */
   const bt=p.baseToken&&p.baseToken.address===MINT?p.baseToken:(p.quoteToken||{});
   if(bt&&bt.symbol)$('ticker').textContent='$'+bt.symbol;
 }).catch(()=>{});
