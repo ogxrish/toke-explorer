@@ -44,7 +44,7 @@
     --bg:#0a0c10;--panel:#13161d;--panel2:#181c24;--line:#242a33;--line2:#2e3540;
     --txt:#e7eaef;--mut:#8b94a3;--mut2:#5b6472;
     --accent:#5ad1b3;--accent2:#4aa3ff;--warn:#ff6b6b;--gold:#e7b84a;--purple:#9b8cff;
-    --toke:#4aa3ff;--g:#9b8cff;
+    --toke:#4aa3ff;--g:#9b8cff;--emerald:#34d399;
     --r:13px;
   }
   *{box-sizing:border-box}
@@ -232,6 +232,70 @@
   .mcvcard .tv .of{color:var(--mut2);font-weight:400}
   .mcvcard .tv.none{color:var(--mut2)}
   .mcvcard .tr{font-size:10px;color:var(--mut2);margin-top:7px}
+
+  /* ══ PROVENANCE rail · time-capsule modules (additive — sits above the control bar) ══ */
+  .provhead{display:flex;align-items:baseline;gap:10px;margin:6px 0 10px}
+  .provhead h2{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:#aeb6c2;margin:0;font-weight:700}
+  .provhead .ps{font-size:11.5px;color:var(--mut);margin:0}
+  .pvmodule{background:var(--panel);border:1px solid var(--line2);border-radius:14px;overflow:hidden;margin-bottom:16px}
+  .pvrow{display:flex;align-items:center;gap:14px;padding:12px 15px;flex-wrap:wrap}
+  .pvicon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;background:rgba(155,140,255,.14);flex:0 0 auto}
+  .pvtitle{font-size:14px;font-weight:700;line-height:1.2}
+  .pvsyn{font-size:11.5px;color:var(--mut)}
+  .pvspacer{flex:1;min-width:8px}
+  .pvtoggles{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .tgrp{display:flex;align-items:center;gap:6px}
+  .tglab{font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut2);margin-right:1px}
+  .pchip{font-size:11.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--line2);background:var(--panel2);color:var(--mut);cursor:pointer;user-select:none;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;transition:border-color .12s,color .12s,background .12s}
+  .pchip:hover{border-color:var(--mut)}
+  .pchip .ct{font-size:9px;color:var(--mut2);font-weight:700}
+  .pchip.on{color:var(--accent);border-color:rgba(90,209,179,.5);background:rgba(90,209,179,.14)}
+  .pchip.on .ct{color:var(--accent)}
+  .pchip.setc.on{color:var(--gold);border-color:rgba(231,184,74,.5);background:rgba(231,184,74,.14)}
+  .pchip.setc.on .ct{color:var(--gold)}
+  .pvdetails{font-size:11.5px;color:var(--mut);border:1px solid var(--line2);border-radius:8px;padding:5px 10px;cursor:pointer;background:var(--panel2);white-space:nowrap}
+  .pvdetails:hover{color:var(--txt);border-color:var(--accent)}
+  .pvstory{border-top:1px solid var(--line);padding:16px;display:none}
+  .pvstory.on{display:block}
+  .pvintro{font-size:12.5px;color:var(--mut);max-width:680px;margin:0 auto 16px;text-align:center;line-height:1.6}
+  .pvintro b{color:var(--txt)}
+  .ecards{display:grid;grid-template-columns:1fr;gap:10px}
+  .ecard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px;display:grid;grid-template-columns:1fr 64px;gap:14px;align-items:center}
+  .ecard .ehead{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .ecard .eyr{font-size:15px;font-weight:800;font-family:ui-monospace,Menlo,monospace}
+  .ecard .eera{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut)}
+  .ecard .egmv{font-size:11px;color:var(--mut2);margin-left:auto}
+  .ec24 .eyr{color:var(--gold)} .ec25 .eyr{color:var(--accent)} .ec26 .eyr{color:var(--purple)}
+  .qbar{position:relative;height:13px;border-radius:7px;background:var(--panel);border:1px solid var(--line2);overflow:hidden;margin:14px 0 4px}
+  .qbar .qyes{position:absolute;left:0;top:0;bottom:0;background:var(--warn);opacity:.85}
+  .qbar.qpass .qyes{background:var(--emerald)}
+  .qmark{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--txt);left:60%;z-index:3}
+  .qmark::after{content:"60% quorum";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:8.5px;color:var(--mut);white-space:nowrap}
+  .qleg{display:flex;gap:14px;font-size:10.5px;color:var(--mut);margin-top:9px;flex-wrap:wrap}
+  .qleg .qd{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:5px;vertical-align:middle}
+  .eres{font-size:12px;color:var(--mut);margin-top:9px}
+  .eres b{color:var(--txt)}
+  .epass{color:var(--emerald);font-weight:700}.efail{color:var(--warn);font-weight:700}
+  .eposter{width:64px;aspect-ratio:1080/1450;border-radius:7px;overflow:hidden;background:#0a0c10;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);position:relative}
+  .eposter.ec25{aspect-ratio:1583/2048}.eposter.ec26{aspect-ratio:1242/1640}
+  .eposter img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .eposter.ec24{background:radial-gradient(circle at 50% 30%,#f4d273,#8f7016)}
+  .eposter.ec25{background:radial-gradient(circle at 50% 30%,#79e7cd,#15715d)}
+  .eposter.ec26{background:radial-gradient(circle at 50% 30%,#bcb0ff,#544aa6)}
+  .eposter .emint{position:absolute;left:0;right:0;bottom:0;font-size:8px;text-align:center;background:rgba(10,12,16,.78);color:var(--mut);padding:1px 0}
+  .scfoot{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:11.5px;color:var(--mut);display:flex;gap:7px;flex-wrap:wrap;align-items:center;justify-content:center;text-align:center}
+  .scfoot b{color:var(--txt)} .scfoot .closed{color:var(--gold);font-weight:700}
+  .scunlock{margin-top:8px;font-size:11.5px;color:var(--emerald);text-align:center}
+  /* active-filter chip (above table; reflects the composed filter so the table is never a mystery) */
+  .afilter{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:rgba(90,209,179,.08);border:1px solid rgba(90,209,179,.3);border-radius:10px;padding:8px 13px;margin:0 0 12px;font-size:12px}
+  .afilter.idle{display:none}
+  .afilter .aflab{color:var(--mut);text-transform:uppercase;letter-spacing:.5px;font-size:9.5px}
+  .afilter .afval{color:var(--accent);font-weight:700}
+  .afilter .afclear{margin-left:auto;color:var(--mut);cursor:pointer;border:1px solid var(--line2);border-radius:7px;padding:3px 9px;font-size:11px}
+  .afilter .afclear:hover{color:var(--warn);border-color:var(--warn)}
+  /* Quick views (the retired segment bar's utility filters, kept lightweight) */
+  .qvlab{font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut2);margin-right:1px}
+  @media(max-width:680px){.ecard{grid-template-columns:1fr}.eposter{width:90px;margin:0 auto}.pvspacer{display:none}.pvtoggles{width:100%}}
 </style>
 </head>
 <body>
@@ -285,23 +349,60 @@
 
   <div class="kpis" id="kpis"></div>
 
+  <div class="provhead">
+    <h2>Provenance</h2>
+    <p class="ps">Time capsules — groups of wallets, with their story and on-chain proof.</p>
+  </div>
+  <div class="pvmodule" id="pv-mcvault">
+    <div class="pvrow">
+      <div class="pvicon">🗳️</div>
+      <div>
+        <div class="pvtitle">McVault Era</div>
+        <div class="pvsyn">The vault that took three Great McVotes to crack.</div>
+      </div>
+      <div class="pvspacer"></div>
+      <div class="pvtoggles" id="mcv-toggles">
+        <div class="tgrp">
+          <span class="tglab">Voted</span>
+          <span class="pchip" data-k="voted" data-y="2024">1st ’24 <span class="ct" id="cv24">·—</span></span>
+          <span class="pchip" data-k="voted" data-y="2025">2nd ’25 <span class="ct" id="cv25">·—</span></span>
+          <span class="pchip" data-k="voted" data-y="2026">3rd ’26 <span class="ct" id="cv26">·—</span></span>
+        </div>
+        <div class="tgrp">
+          <span class="tglab">NFT</span>
+          <span class="pchip" data-k="nft" data-y="2024">1st <span class="ct" id="cn24">·—</span></span>
+          <span class="pchip" data-k="nft" data-y="2025">2nd <span class="ct" id="cn25">·—</span></span>
+          <span class="pchip" data-k="nft" data-y="2026">3rd <span class="ct" id="cn26">·—</span></span>
+          <span class="pchip setc" data-k="set">✦ set <span class="ct" id="cset">·—</span></span>
+        </div>
+      </div>
+      <div class="pvdetails" id="mcv-details">details ▾</div>
+    </div>
+    <div class="pvstory" id="mcv-story">
+      <p class="pvintro">A critical mistake once left <b>~7% of $TOKE</b> locked on-chain. Unlocking it required a full <b>60% of supply</b> to vote Yes during the annual <b>4/20 Great McVote</b>. In the third year, the McVault was finally cracked.</p>
+      <div class="ecards" id="mcv-ecards"></div>
+      <div class="scfoot" id="mcv-scfoot"></div>
+      <div class="scunlock" id="mcv-unlock"></div>
+    </div>
+  </div>
+
+  <div class="afilter idle" id="afilter">
+    <span class="aflab">Active filter</span>
+    <span class="afval" id="afval"></span>
+    <span class="afclear" id="afclear">clear ✕</span>
+  </div>
+
   <div class="lbctrl">
     <input type="search" id="q" placeholder="Search address or domain (.sol, .skr, …)" autocomplete="off">
     <div class="seg2">
+      <span class="qvlab" style="align-self:center;padding:0 8px">Quick views</span>
       <button class="segb on" data-focus="all">All wallets</button>
       <button class="segb" data-focus="holders">Current holders</button>
       <button class="segb" data-focus="labeled">Labeled</button>
       <button class="segb" data-focus="tagged">Tagged</button>
-      <button class="segb" data-focus="medals" title="Wallets holding ≥1 Great McVote medal">McVote</button>
       <button class="segb" data-focus="dank" title="Wallets actively holding $DANK">DANK</button>
     </div>
     <span class="count" id="count"></span>
-  </div>
-  <div class="mcvnote" id="mcvnote" style="display:none">
-    <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#f4d273,#8f7016)"></span>2024 Genesis</span>
-    <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#79e7cd,#15715d)"></span>2025 Ecosystem</span>
-    <span class="k"><span class="sw" style="background:radial-gradient(circle at 50% 30%,#bcb0ff,#544aa6)"></span>2026 Community</span>
-    <span class="k">all three years = complete set</span>
   </div>
 
   <div class="card">
@@ -380,6 +481,9 @@ const tokeHtml=n=>{ if(n==null)return '—'; const neg=n<0; let v=Math.abs(+n);
   return (neg?'-':'')+I.toLocaleString('en-US')+'<span class="g" title="grams · 0.001 TOKE each">.'+String(G).padStart(3,'0')+'</span>'; };
 let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, DANK={}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=20, ENV=null, TOKE_PRICE=null;
 const MCV_YEARS=['2024','2025','2026'];
+// ── Provenance module · McVault Era filter state (facets compose with quick-view focus + search) ──
+const MCV={voted:new Set(),nft:new Set(),set:false};
+const mcvActive=()=>MCV.voted.size||MCV.nft.size||MCV.set;
 const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
 // Type (category) display labels and per-entity logo-icon colours (monogram fallback when no logo file exists).
 const CATLABEL={'liquidity-pool':'Liquidity Pool','program':'Program','governance':'Governance','distributor':'Distributor','treasury':'Treasury','dao':'DAO','project':'Project'};
@@ -473,7 +577,7 @@ Promise.all([
   if(NFT.hold) ALL.forEach(r=>{ const h=NFT.hold[r.address]; r.mcv=h?h.total:0; });
   // annotate each row with its $DANK balance so the column sorts/filters like any other field
   if(DANK.hold) ALL.forEach(r=>{ r.dank=DANK.hold[r.address]||0; });
-  buildKpis(); apply();
+  buildKpis(); renderMcvault(); apply();
   const f=base.freshness||{};
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
     ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
@@ -558,6 +662,67 @@ function dankDrawer(r){
       `<div class="tr">${fmt(t.holders||0,0)} holders · ${fmt(sup,0)} DANK supply · TGE ${DANK.tge_date||''}</div>`+
     '</div>';
 }
+// ── Provenance · McVault Era module (renders from mcvote_nfts + tags; counts are live from the full base) ──
+const ERA_META={
+  '2024':{cls:'ec24',era:'Genesis',gmv:'Great McVote #1',yesPct:37,minted:124,extra:'155,775,874 Yes / 5,441,425 No'},
+  '2025':{cls:'ec25',era:'Ecosystem',gmv:'Great McVote #2',yesPct:48,minted:47,extra:'Yes/No split pending data-enrich'},
+  '2026':{cls:'ec26',era:'Community',gmv:'Great McVote #3',yesPct:69,minted:44,extra:'cracked the vault'}
+};
+const PSTATE_LABEL={5:'Completed',6:'Cancelled',7:'Defeated'};
+function votedYears(a){ const d=(TAGS.detail&&TAGS.detail[a]&&TAGS.detail[a].mcvoter)||null; return d?d.map(e=>+e.year):[]; }
+function mcvHold(a){ return (NFT.hold&&NFT.hold[a])||null; }
+function mcvCounts(){
+  const c={voted:{2024:0,2025:0,2026:0},nft:{2024:0,2025:0,2026:0},set:0};
+  if(TAGS.detail) for(const a in TAGS.detail){ votedYears(a).forEach(y=>{ if(c.voted[y]!=null)c.voted[y]++; }); }
+  if(NFT.hold) for(const a in NFT.hold){ const h=NFT.hold[a]; MCV_YEARS.forEach(y=>{ if(h.y&&h.y[y]>0)c.nft[+y]++; }); if(h.complete)c.set++; }
+  return c;
+}
+function renderMcvault(){
+  if(!NFT.years){ const m=$('pv-mcvault'); if(m)m.style.display='none'; return; }
+  const C=mcvCounts();
+  $('cv24').textContent='·'+C.voted[2024]; $('cv25').textContent='·'+C.voted[2025]; $('cv26').textContent='·'+C.voted[2026];
+  $('cn24').textContent='·'+C.nft[2024]; $('cn25').textContent='·'+C.nft[2025]; $('cn26').textContent='·'+C.nft[2026];
+  $('cset').textContent='·'+((NFT.totals&&NFT.totals.complete_sets)!=null?NFT.totals.complete_sets:C.set);
+  // story cards
+  const M=n=>n>=1e6?(n/1e6).toFixed(1)+'M':fmt(n,0);
+  $('mcv-ecards').innerHTML=MCV_YEARS.map(y=>{
+    const m=ERA_META[y], yr=(NFT.years&&NFT.years[y])||{}, v=yr.vote||{}, res=yr.result||null;
+    const turnout=(v.turnout_pct!=null?v.turnout_pct:0);
+    const yesPct=res?res.yes_pct_of_supply:m.yesPct;
+    const pass=res?!!res.passed:(turnout>=60||/complete/i.test(v.state||''));
+    const state=v.state||PSTATE_LABEL[v.state]||'—', voters=v.voters!=null?v.voters:'—';
+    const wt=v.weight_toke!=null?M(v.weight_toke):'—';
+    const img=yr.art&&yr.art.image, notVoted=(100-turnout).toFixed(0);
+    const split=res?`Yes <b>${M(res.yes_toke)}</b> / No <b>${M(res.no_toke)}</b>`:m.extra;
+    return `<div class="ecard ${m.cls}">
+      <div>
+        <div class="ehead"><span class="eyr">${y}</span><span class="eera">${m.era}</span><span class="egmv">${m.gmv}</span></div>
+        <div class="qbar ${pass?'qpass':''}"><div class="qyes" style="width:${yesPct}%"></div><div class="qmark"></div></div>
+        <div class="qleg"><span><span class="qd" style="background:${pass?'var(--emerald)':'var(--warn)'}"></span>Yes ${yesPct}% of supply</span><span><span class="qd" style="background:var(--line2)"></span>Not voted ${notVoted}%</span></div>
+        <div class="eres">${split} · turnout <b>${turnout}%</b> · <b>${voters}</b> voters · <span class="${pass?'epass':'efail'}">${state}</span></div>
+      </div>
+      <div class="eposter ${m.cls}" title="Great McVote ${y} · ${m.era}">${img?`<img loading="lazy" src="${img}" alt="Great McVote ${y}" onerror="this.style.display='none'">`:''}<span class="emint">${m.minted} mint</span></div>
+    </div>`;
+  }).join('');
+  const t=NFT.totals||{};
+  $('mcv-scfoot').innerHTML=`<span><b>${t.medals||215}</b> medals</span><span>·</span><span><b>${t.owners||106}</b> owners</span><span>·</span><span><b>${t.trees||5}</b> trees</span><span>·</span><span><b>${t.complete_sets!=null?t.complete_sets:26}</b> complete sets</span><span>·</span><span><b>${t.burns||0}</b> burns</span><span>·</span><span class="closed">set CLOSED</span>`;
+  $('mcv-unlock').innerHTML='2026 pass → McVault <b>~28.47M TOKE (6.78%)</b> released to <span class="mono">tokecouncil.sol</span> via TIP-4.';
+  syncMcvChips();
+}
+function syncMcvChips(){
+  document.querySelectorAll('#mcv-toggles .pchip').forEach(c=>{
+    const k=c.dataset.k;
+    if(k==='set') c.classList.toggle('on',MCV.set);
+    else c.classList.toggle('on',MCV[k].has(+c.dataset.y));
+  });
+}
+function mcvLabel(){
+  const yl={2024:'’24',2025:'’25',2026:'’26'}, parts=[];
+  if(MCV.voted.size) parts.push('Voted '+[...MCV.voted].sort().map(y=>yl[y]).join('/'));
+  if(MCV.nft.size) parts.push('NFT '+[...MCV.nft].sort().map(y=>yl[y]).join('/'));
+  if(MCV.set) parts.push('complete set');
+  return parts.join('  ∩  ');
+}
 function buildKpis(){
   const holders=ALL.filter(r=>r.balance>0).length;
   const supply=ALL.reduce((s,r)=>s+(r.balance||0),0);
@@ -570,15 +735,27 @@ function buildKpis(){
            ['Transfer legs',fmt(legs,0),'on-chain TOKE movements']];
   $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="v">${x[1]}</div><div class="n">${x[2]}</div></div>`).join('');
 }
+function matchMcvault(r){
+  // facets compose: OR within Voted, OR within NFT, AND across Voted↔NFT↔set
+  if(MCV.voted.size){ const vy=votedYears(r.address); if(![...MCV.voted].some(y=>vy.includes(y)))return false; }
+  if(MCV.nft.size){ const h=mcvHold(r.address); if(!h||![...MCV.nft].some(y=>h.y&&h.y[y]>0))return false; }
+  if(MCV.set){ const h=mcvHold(r.address); if(!h||!h.complete)return false; }
+  return true;
+}
+function syncAfilter(){
+  const af=$('afilter'); if(!af)return; const on=mcvActive();
+  af.classList.toggle('idle',!on);
+  if(on) $('afval').textContent=mcvLabel();
+}
 function apply(){
   const q=$('q').value.trim().toLowerCase();
-  const mn=$('mcvnote'); if(mn) mn.style.display=(focus==='medals')?'block':'none';
+  syncMcvChips(); syncAfilter();
   view=ALL.filter(r=>{
     if(focus==='holders'&&!(r.balance>0))return false;
     if(focus==='labeled'&&!labelFor(r.address))return false;
     if(focus==='tagged'&&!tagsFor(r.address).length)return false;
-    if(focus==='medals'&&!(r.mcv>0))return false;
     if(focus==='dank'&&!(r.dank>0))return false;
+    if(!matchMcvault(r))return false;
     if(q){ const lb=labelFor(r.address); const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))+' '+((lb&&lb.display)||'')+' '+((lb&&lb.name)||'')+' '+((lb&&lb.protocol)||'')).toLowerCase(); if(!hay.includes(q))return false; }
     return true;
   });
@@ -678,6 +855,20 @@ document.querySelectorAll('.segb').forEach(b=>b.onclick=()=>{
 document.querySelectorAll('th[data-sort]').forEach(th=>th.onclick=()=>{
   const k=th.dataset.sort; if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=(k==='address')?1:-1;}
   document.querySelectorAll('.ar').forEach(a=>a.textContent=''); const ar=$('ar-'+k); if(ar)ar.textContent=sortDir<0?'▼':'▲'; apply();});
+
+// ── Provenance · McVault Era module controls ──
+document.querySelectorAll('#mcv-toggles .pchip').forEach(c=>c.onclick=()=>{
+  const k=c.dataset.k;
+  if(k==='set') MCV.set=!MCV.set;
+  else { const y=+c.dataset.y; MCV[k].has(y)?MCV[k].delete(y):MCV[k].add(y); }
+  page=0; apply();
+});
+const mcvDetailsBtn=$('mcv-details');
+if(mcvDetailsBtn) mcvDetailsBtn.onclick=()=>{ const s=$('mcv-story'); const open=s.classList.toggle('on'); mcvDetailsBtn.textContent=open?'details ▴':'details ▾'; };
+const afClearBtn=$('afclear');
+if(afClearBtn) afClearBtn.onclick=()=>{ MCV.voted.clear(); MCV.nft.clear(); MCV.set=false; page=0; apply(); };
+// deep-link: explorer.mctoken.xyz/#mcvault-era auto-expands the module
+if(/#(mcvault-era|pv-mcvault)/.test(location.hash)){ const s=$('mcv-story'); if(s){ s.classList.add('on'); const b=$('mcv-details'); if(b)b.textContent='details ▴'; $('pv-mcvault').scrollIntoView({behavior:'smooth'}); } }
 </script>
 </body>
 </html>

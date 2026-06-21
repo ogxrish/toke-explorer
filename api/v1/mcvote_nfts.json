@@ -13,9 +13,9 @@
     "method": "DAS verified-collection (2024) + verified-creator (2025/26), bucketed by on-chain Year attribute; owners resolved live; reconciled to Realms voter rolls; tree-decode burn check"
   },
   "visibility": "l2",
-  "notes": "The Great McVote \u2014 three commemorative cNFT medals, one per annual 4/20 Great McVote. 215 medals across 106 wallets, set CLOSED, 0 burns. Fully verified on-chain 2026-06-12. Anonymous: addresses + counts only (identity is L4, never published). Supersedes the 2026-06-10 figures \u2014 year/tree labels corrected; per-year counts are 124/47/44.",
+  "notes": "The Great McVote — three commemorative cNFT medals, one per annual 4/20 Great McVote. 215 medals across 106 wallets, set CLOSED, 0 burns. Fully verified on-chain 2026-06-12. Anonymous: addresses + counts only (identity is L4, never published). Supersedes the 2026-06-10 figures — year/tree labels corrected; per-year counts are 124/47/44.",
   "data": {
-    "set_status": "closed \u2014 three official medals; no further McVote NFTs will be minted",
+    "set_status": "closed — three official medals; no further McVote NFTs will be minted",
     "order": [
       "2024",
       "2025",
@@ -33,7 +33,7 @@
         "year": 2024,
         "theme": "Genesis",
         "date": "2024-04-20",
-        "tagline": "Year One \u2014 the first Great McVote.",
+        "tagline": "Year One — the first Great McVote.",
         "type": "compressed-nft",
         "total_minted": 124,
         "owners": 83,
@@ -42,7 +42,7 @@
           "JB3QhCnVXm5FWCipEZhkSETEiT1QuxVeq7STboUkF1Xr"
         ],
         "enumerated_via": "verified collection (getAssetsByGroup)",
-        "shape": "participation drop \u2014 medals to year-one participants; some holders carry multiples",
+        "shape": "participation drop — medals to year-one participants; some holders carry multiples",
         "vote": {
           "proposal": "9VzHbqA9WoiXnyw1DxBT9oDW6RTUcaEgU9gpPgCM3qJ5",
           "voters": 34,
@@ -60,13 +60,22 @@
         "cite": {
           "type": "account",
           "ref": "DyDRZ33j9pFoiHdCMadEj1zaYFYLRzGNm7gnjp6CRNv3"
+        },
+        "result": {
+          "yes_toke": 155775875,
+          "no_toke": 5441425,
+          "yes_pct_of_supply": 37.09,
+          "quorum_pct": 60,
+          "quorum_needed_toke": 252000041,
+          "passed": false,
+          "basis": "supply=420,000,069; Yes/No summed from on-chain voter rolls (tags.detail); reconciled to Realms turnout"
         }
       },
       "2025": {
         "year": 2025,
         "theme": "Ecosystem",
         "date": "2025-04-20",
-        "tagline": "Year Two \u2014 the ecosystem votes.",
+        "tagline": "Year Two — the ecosystem votes.",
         "type": "compressed-nft",
         "total_minted": 47,
         "owners": 46,
@@ -76,7 +85,7 @@
           "2MsfnW2m6URyHfviLx91Tc124ynAuJV9x7eQexLSixPe"
         ],
         "enumerated_via": "verified creator (searchAssets)",
-        "shape": "strict \u2014 exactly one medal per voter",
+        "shape": "strict — exactly one medal per voter",
         "vote": {
           "proposal": "GHq9epLWw5823Pwr8XGHmD6esrAq5FVzpaToYC1KxKKS",
           "voters": 47,
@@ -94,13 +103,22 @@
         "cite": {
           "type": "account",
           "ref": "CWab9zUwzrgL3Bnqhs45Rer7embArjLj1yARd2WSXroQ"
+        },
+        "result": {
+          "yes_toke": 199567947,
+          "no_toke": 0,
+          "yes_pct_of_supply": 47.52,
+          "quorum_pct": 60,
+          "quorum_needed_toke": 252000041,
+          "passed": false,
+          "basis": "supply=420,000,069; Yes/No summed from on-chain voter rolls (tags.detail); reconciled to Realms turnout"
         }
       },
       "2026": {
         "year": 2026,
         "theme": "Community",
         "date": "2026-04-20",
-        "tagline": "Year Three \u2014 record turnout.",
+        "tagline": "Year Three — record turnout.",
         "type": "compressed-nft",
         "total_minted": 44,
         "owners": 44,
@@ -110,7 +128,7 @@
           "8JAcMMp7dK2pCEQ8JhGX32AcqdWViwbkzuQw5HWctae9"
         ],
         "enumerated_via": "verified creator (searchAssets)",
-        "shape": "strict \u2014 exactly one medal per voter",
+        "shape": "strict — exactly one medal per voter",
         "vote": {
           "proposal": "5gJbKW2VsuPU2PmcVj9eJf6yW35CQksgvaz4viHAWA4z",
           "voters": 44,
@@ -128,6 +146,21 @@
         "cite": {
           "type": "account",
           "ref": "3oNZHvEeDo8LHCgxg5ZVMmWC4m6FpQQaf8TT1QXRkZGq"
+        },
+        "result": {
+          "yes_toke": 287440439,
+          "no_toke": 0,
+          "yes_pct_of_supply": 68.44,
+          "quorum_pct": 60,
+          "quorum_needed_toke": 252000041,
+          "passed": true,
+          "basis": "supply=420,000,069; Yes/No summed from on-chain voter rolls (tags.detail); reconciled to Realms turnout"
+        },
+        "unlock": {
+          "amount_toke": 28470000,
+          "pct_of_supply": 6.78,
+          "to": "tokecouncil.sol",
+          "mechanism": "TIP-4 follow-up treasury transfer after the 2026 Great McVote cleared 60% quorum"
         }
       }
     },
@@ -2552,6 +2585,11 @@
         "type": "account",
         "ref": "CWA9WzdomEXojowMDg6kubs8HCXAAbFTFUy7H65mUA8s"
       }
+    },
+    "quorum": {
+      "rule_pct": 60,
+      "needed_toke": 252000041,
+      "note": "60% of total supply must vote Yes to unlock the McVault."
     }
   }
 }
