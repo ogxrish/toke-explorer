@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Jupiter Plugin — in-page $TOKE swap (modal), preloaded so the first Buy click is instant. -->
+<script src="https://plugin.jup.ag/plugin-v1.js" data-preload defer></script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="$TOKE Explorer">
 <meta property="og:title" content="$TOKE Explorer — every wallet, verified on-chain">
@@ -301,7 +303,9 @@
   @media(max-width:680px){.ecard{grid-template-columns:1fr}.eposter{width:90px;margin:0 auto}.pvspacer{display:none}.pvtoggles{width:100%}}
 
   /* ══ brand cohesion with mctoken.xyz — blue-led, Space Grotesk, mono numbers ══ */
-  :root{ --blue:#5aa2ff; --display:'Space Grotesk',ui-sans-serif,system-ui,sans-serif; --sans:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --accent2:#5aa2ff; --toke:#5aa2ff; }
+  :root{ --blue:#5aa2ff; --display:'Space Grotesk',ui-sans-serif,system-ui,sans-serif; --sans:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --accent2:#5aa2ff; --toke:#5aa2ff;
+    /* Jupiter Plugin theme (RGB triplets) — match the McToken palette */
+    --jupiter-plugin-primary:90,162,255; --jupiter-plugin-background:10,12,16; --jupiter-plugin-primaryText:231,234,239; --jupiter-plugin-warning:231,184,74; --jupiter-plugin-interactive:24,28,36; --jupiter-plugin-module:19,22,29; }
   body{font-family:var(--sans)}
   .mono{font-family:var(--mono)}
   a{color:var(--blue)}
@@ -374,7 +378,7 @@
     <nav class="xnav">
       <a href="https://mctoken.xyz">Home</a>
       <a href="https://explorer.mctoken.xyz" class="on" aria-current="page">Explorer</a>
-      <a href="https://jup.ag/tokens/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" target="_blank" rel="noopener">Buy</a>
+      <a id="navbuy" href="https://jup.ag/tokens/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" target="_blank" rel="noopener">Buy</a>
       <a href="https://x.com/TokeCommunity" target="_blank" rel="noopener">X</a>
     </nav>
     <div class="spacer"></div>
@@ -533,6 +537,21 @@
 <script>
 const MINT="AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo";
 const SOL_MINT="So11111111111111111111111111111111111111112";
+const USDC_MINT="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+/* In-page $TOKE swap (Jupiter Plugin, modal). Defaults: pay ~$10 USDC → receive $TOKE.
+   To enable the ~1% fee, create a referral account at referral.jup.ag and paste its
+   pubkey into BUY_REFERRAL (empty = no fee, swap still works). */
+const BUY_REFERRAL=""; const BUY_FEE_BPS=100;
+let __jupInit=false;
+function openBuyToke(){
+  var J=window.Jupiter;
+  if(!J||typeof J.init!=='function'){window.open('https://jup.ag/tokens/'+MINT,'_blank','noopener');return;}
+  if(__jupInit){J.resume();return;}
+  var fp={initialInputMint:USDC_MINT,initialOutputMint:MINT,initialAmount:"10",fixedMint:MINT};
+  if(BUY_REFERRAL){fp.referralAccount=BUY_REFERRAL;fp.referralFee=BUY_FEE_BPS;}
+  J.init({displayMode:'modal',defaultExplorer:'Solscan',formProps:fp,branding:{name:'McToken',logoUri:'assets/moonman.png'}});
+  __jupInit=true;
+}
 const $=id=>document.getElementById(id);
 const fmt=(n,d=3)=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFractionDigits:d});
 const trunc=a=>a?a.slice(0,4)+'…'+a.slice(-4):'';
@@ -909,6 +928,7 @@ function openDrawer(r){
 function closeDrawer(){ $('scrim').classList.remove('on'); $('drawer').classList.remove('on'); }
 $('dwx').onclick=closeDrawer; $('scrim').onclick=closeDrawer;
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+(function(){var nb=document.getElementById('navbuy');if(nb)nb.addEventListener('click',function(e){e.preventDefault();openBuyToke();});})();
 
 // controls
 $('q').addEventListener('input',()=>{clearTimeout(window.__t);window.__t=setTimeout(apply,160);});
