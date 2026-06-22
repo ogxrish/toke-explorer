@@ -334,8 +334,12 @@
   .xfcol a{display:flex;align-items:center;gap:7px;color:var(--txt);font-size:13.5px;padding:5px 0;text-decoration:none}
   .xfcol a:hover{color:var(--blue)}
   .xfcol a svg{color:var(--mut);flex:0 0 auto}.xfcol a:hover svg{color:var(--blue)}
-  .xfoot-base{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:11.5px;color:var(--mut2)}
-  .xfoot-disc{max-width:640px}
+  .xfoot-base{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:11.5px;color:var(--mut2)}
+  .xfoot-disc{max-width:560px}
+  .xfoot-status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--mut);text-decoration:none;white-space:nowrap}
+  .xfoot-status:hover{color:var(--txt)}
+  .sdot{width:8px;height:8px;border-radius:50%;background:var(--mut2)}
+  .sdot.ok{background:#34d399}.sdot.warn{background:#e7b84a}.sdot.down{background:#ff6b6b}
   @media(max-width:760px){.xfoot-grid{grid-template-columns:1fr;gap:24px}.xfoot-cols{grid-template-columns:repeat(2,1fr)}.xfoot-disc{text-align:left}}
 </style>
 </head>
@@ -501,6 +505,7 @@
         <nav class="xfoot-cols" id="footcols" aria-label="Footer links"></nav>
       </div>
       <div class="xfoot-base">
+        <a class="xfoot-status" href="https://status.mctoken.xyz" target="_blank" rel="noopener" title="Ecosystem status"><span class="sdot" id="xsdot"></span>Status</a>
         <span class="xfoot-disc">Informational only — not financial advice. On-chain data may lag; always verify independently on-chain. $TOKE figures are sourced from public market data and may be delayed.</span>
       </div>
     </div>
@@ -939,6 +944,7 @@ if(/#(mcvault-era|pv-mcvault)/.test(location.hash)){ const s=$('mcv-story'); if(
   function paint(cols){var el=$('footcols');if(!el)return;el.innerHTML=cols.map(function(c){return '<div class="xfcol"><h4>'+c.title+'</h4>'+c.links.map(function(l){return '<a href="'+l.href+'" target="_blank" rel="noopener">'+(l.icon&&IC[l.icon]?IC[l.icon]:'')+'<span>'+l.label+'</span></a>';}).join('')+'</div>';}).join('');}
   paint(FB);
   fetch('api/v1/links.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(j){if(j&&j.footer&&j.footer.columns&&j.footer.columns.length)paint(j.footer.columns);}).catch(function(){});
+  fetch('https://status.mctoken.xyz/api/history',{cache:'no-store'}).then(function(r){return r.json();}).then(function(j){var d=$('xsdot');if(d&&j&&j.current&&j.current.overall)d.className='sdot '+j.current.overall;}).catch(function(){});
 })();
 </script>
 </body>

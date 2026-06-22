@@ -2,6 +2,7 @@
   "dataset": "links",
   "version": "v1",
   "note": "Canonical footer link directory shared by mctoken.xyz and explorer.mctoken.xyz. CORS-open; both footers fetch this with a built-in fallback.",
+  "status": { "label": "Status", "href": "https://status.mctoken.xyz", "api": "https://status.mctoken.xyz/api/history" },
   "footer": {
     "columns": [
       {
