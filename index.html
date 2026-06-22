@@ -547,7 +547,7 @@ function openBuyToke(){
   var J=window.Jupiter;
   if(!J||typeof J.init!=='function'){window.open('https://jup.ag/tokens/'+MINT,'_blank','noopener');return;}
   if(__jupInit){J.resume();return;}
-  var fp={initialInputMint:USDC_MINT,initialOutputMint:MINT,initialAmount:"10",fixedMint:MINT};
+  var fp={initialInputMint:USDC_MINT,initialOutputMint:MINT,initialAmount:"10000000",fixedMint:MINT};/* 10 USDC in base units (6 decimals) */
   if(BUY_REFERRAL){fp.referralAccount=BUY_REFERRAL;fp.referralFee=BUY_FEE_BPS;}
   J.init({displayMode:'modal',defaultExplorer:'Solscan',formProps:fp,branding:{name:'McToken',logoUri:'assets/moonman.png'}});
   __jupInit=true;
