@@ -320,6 +320,24 @@
   .xnav a{color:var(--mut);text-decoration:none}.xnav a:hover{color:var(--txt)}
   .xnav a.on{color:var(--blue);font-weight:600}
   @media(max-width:760px){.xnav{display:none}}
+  /* shared footer — twin of mctoken.xyz */
+  .xfoot{margin-top:22px;border-top:1px solid var(--line);padding-top:26px}
+  .xfoot-grid{display:grid;grid-template-columns:1.5fr 2.5fr;gap:40px}
+  .xfoot-lock{display:flex;align-items:center;gap:10px}
+  .xfoot-mark{width:34px;height:34px;border-radius:9px;object-fit:cover}
+  .xfoot-word{font-family:var(--display);font-weight:700;font-size:18px;color:var(--txt)}
+  .xfoot-tag{color:var(--mut);font-size:13px;line-height:1.6;margin:14px 0 12px;max-width:280px}
+  .xfoot-cross{font-family:var(--display);font-size:13px;color:var(--blue);font-weight:500;text-decoration:none}
+  .xfoot-cross:hover{color:#74b1ff}
+  .xfoot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .xfcol h4{font-family:var(--display);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:var(--mut);margin:0 0 12px}
+  .xfcol a{display:flex;align-items:center;gap:7px;color:var(--txt);font-size:13.5px;padding:5px 0;text-decoration:none}
+  .xfcol a:hover{color:var(--blue)}
+  .xfcol a svg{color:var(--mut);flex:0 0 auto}.xfcol a:hover svg{color:var(--blue)}
+  .xfoot-base{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:11.5px;color:var(--mut2)}
+  .xfoot-base b{color:var(--mut);font-weight:500}.xfoot-base a{color:var(--mut);text-decoration:none}.xfoot-base a:hover{color:var(--blue)}
+  .xfoot-disc{max-width:460px;text-align:right}
+  @media(max-width:760px){.xfoot-grid{grid-template-columns:1fr;gap:24px}.xfoot-cols{grid-template-columns:repeat(2,1fr)}.xfoot-disc{text-align:left}}
 </style>
 </head>
 <body>
@@ -474,8 +492,20 @@
     </details>
     <div id="srcline" style="margin-top:6px"></div>
     <div style="margin-top:6px">Each TOKE divides into 1,000 <span class="g">grams (g)</span> — the smallest unit (0.001 TOKE). Every balance is shown to the grain, with the <span class="g">g</span> portion in colour.</div>
-    <div style="margin-top:10px">Toke Explorer is built &amp; maintained by <b>SUPERTOKE</b>. · <a href="https://mctoken.xyz" target="_blank" rel="noopener">mctoken.xyz ↗</a></div>
-    <div class="disclaimer" style="margin-top:8px">Informational only — not financial advice. On-chain data may lag; always verify independently on-chain. $TOKE figures are sourced from public market data and may be delayed.</div>
+    <div class="xfoot">
+      <div class="xfoot-grid">
+        <div class="xfoot-brand">
+          <div class="xfoot-lock"><img src="assets/moonman.png" alt="" class="xfoot-mark"><span class="xfoot-word">McToken</span></div>
+          <p class="xfoot-tag">The honest memecoin on Solana — anonymous, verifiable, on-chain.</p>
+          <a class="xfoot-cross" href="https://mctoken.xyz">Back to mctoken.xyz ↗</a>
+        </div>
+        <nav class="xfoot-cols" id="footcols" aria-label="Footer links"></nav>
+      </div>
+      <div class="xfoot-base">
+        <span>Built &amp; maintained by <b>SUPERTOKE</b> · <a href="https://mctoken.xyz">mctoken.xyz</a></span>
+        <span class="xfoot-disc">Informational only — not financial advice. On-chain data may lag; always verify independently on-chain. $TOKE figures are sourced from public market data and may be delayed.</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -898,6 +928,20 @@ const afClearBtn=$('afclear');
 if(afClearBtn) afClearBtn.onclick=()=>{ MCV.voted.clear(); MCV.nft.clear(); MCV.set=false; page=0; apply(); };
 // deep-link: explorer.mctoken.xyz/#mcvault-era auto-expands the module
 if(/#(mcvault-era|pv-mcvault)/.test(location.hash)){ const s=$('mcv-story'); if(s){ s.classList.add('on'); const b=$('mcv-details'); if(b)b.textContent='details ▴'; $('pv-mcvault').scrollIntoView({behavior:'smooth'}); } }
+
+// ── shared footer links — single source api/v1/links.json (CORS-open), with embedded fallback ──
+(function footerLinks(){
+  const FB=[
+    {title:'Trade',links:[{label:'Jupiter',href:'https://jup.ag/tokens/'+MINT},{label:'Coinbase',href:'https://www.coinbase.com/price/mctoken-solana-amgumqeqw8h74trc8ukkjzzwtxbdps496wh4gly2mcpo-token'},{label:'OKX',href:'https://www.okx.com/en-us/trade-cedefi/solana/'+MINT}]},
+    {title:'Markets',links:[{label:'CoinMarketCap',href:'https://coinmarketcap.com/currencies/mctoken'},{label:'Dexscreener',href:'https://dexscreener.com/solana/ad6negrxhsbagwfsttbshmkqgedhotcjzyfwcgrraxc9'},{label:'Birdeye',href:'https://birdeye.so/token/'+MINT+'?chain=solana'}]},
+    {title:'Chain',links:[{label:'Solscan',href:'https://solscan.io/token/'+MINT},{label:'Orb',href:'https://orbmarkets.io/token/'+MINT},{label:'Solana Explorer',href:'https://explorer.solana.com/address/'+MINT}]},
+    {title:'Connect',links:[{label:'X',href:'https://x.com/TokeCommunity',icon:'x'},{label:'Discord',href:'https://discord.com/invite/gTYuUCthvC',icon:'discord'}]}
+  ];
+  const IC={x:'<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',discord:'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.6 12.6 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127c-.598.349-1.225.645-1.873.892a.076.076 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.028zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>'};
+  function paint(cols){var el=$('footcols');if(!el)return;el.innerHTML=cols.map(function(c){return '<div class="xfcol"><h4>'+c.title+'</h4>'+c.links.map(function(l){return '<a href="'+l.href+'" target="_blank" rel="noopener">'+(l.icon&&IC[l.icon]?IC[l.icon]:'')+'<span>'+l.label+'</span></a>';}).join('')+'</div>';}).join('');}
+  paint(FB);
+  fetch('api/v1/links.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(j){if(j&&j.footer&&j.footer.columns&&j.footer.columns.length)paint(j.footer.columns);}).catch(function(){});
+})();
 </script>
 </body>
 </html>
