@@ -2,7 +2,7 @@
   "universe": 22577,
   "holders": 12988,
   "as_of": "2026-06-27T01:55:58Z",
-  "lag_hours_at_build": 5.1,
+  "lag_hours_at_build": 11.1,
   "max_legs": 194033,
   "first_block_time": "2023-06-22T18:03:43Z"
 }
