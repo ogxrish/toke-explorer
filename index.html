@@ -136,6 +136,7 @@
   .dankthumb{width:30px;height:30px;border-radius:8px;overflow:hidden;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
   .dankthumb img{width:100%;height:100%;object-fit:cover;display:block}
   td.addr .sns{color:var(--gold);font-weight:600;font-size:12px;margin-left:9px}
+  .dmark{width:13px;height:13px;border-radius:4px;vertical-align:-2px;margin-right:5px;background:var(--panel2)}
   .snsrow{font-size:13px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--mut)}
   .snsrow.pri{color:var(--gold);font-weight:700}
   .prilab{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut2);border:1px solid var(--line2);border-radius:4px;padding:1px 5px;margin-left:6px}
@@ -320,6 +321,14 @@
   .segb.on{background:rgba(90,162,255,.16);color:var(--blue)}
   .pchip.on{background:rgba(90,162,255,.14);color:var(--blue);border-color:rgba(90,162,255,.5)}
   .pchip.on .ct{color:var(--blue)}
+  /* remaining teal-primary stragglers → blue (interactive) / emerald (status-ok, = homepage sdot.ok) */
+  .dw-btn:hover{border-color:var(--blue)}
+  .afilter{background:rgba(90,162,255,.08);border-color:rgba(90,162,255,.3)}
+  .afilter .afval{color:var(--blue)}
+  .relpill.rel-green{color:var(--emerald)}
+  .dot.g{background:var(--emerald)}
+  .live{background:var(--emerald)}
+  .tdetrow .tv.y{color:var(--emerald)}
   .xnav{display:flex;gap:18px;align-items:center;margin-left:6px;font-size:13px}
   .xnav a{color:var(--mut);text-decoration:none}.xnav a:hover{color:var(--txt)}
   .xnav a.on{color:var(--blue);font-weight:600}
@@ -527,7 +536,7 @@
   </div>
   <div id="dw-kvs"></div>
   <div id="dw-label-sec"></div>
-  <div class="dw-sec">Domains (SNS)</div>
+  <div class="dw-sec">Domains <span style="font-weight:400;text-transform:none;letter-spacing:0">· SNS + AllDomains</span></div>
   <div id="dw-sns"></div>
   <div class="dw-sec">Tags</div>
   <div id="dw-tags"></div>
@@ -570,24 +579,30 @@ const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','
 // Type (category) display labels and per-entity logo-icon colours (monogram fallback when no logo file exists).
 const CATLABEL={'liquidity-pool':'Liquidity Pool','program':'Program','governance':'Governance','distributor':'Distributor','treasury':'Treasury','dao':'DAO','project':'Project'};
 const ENTITY={
-  Jupiter:{c:'#1aa873',t:'#ffffff',logo:'https://icons.llama.fi/jupiter-aggregator.jpg'},
-  Orca:{c:'#14b8a6',t:'#04231f',logo:'https://icons.llama.fi/orca-dex.jpg'},
-  Raydium:{c:'#5666f0',t:'#ffffff',logo:'https://icons.llama.fi/raydium.jpg'},
-  Meteora:{c:'#7c3aed',t:'#ffffff',logo:'https://icons.llama.fi/meteora.png'},
-  Realms:{c:'#2dd4bf',t:'#04231d',logo:'https://icons.llama.fi/realms.png'},
+  Jupiter:{c:'#1aa873',t:'#ffffff'},
+  Orca:{c:'#14b8a6',t:'#04231f'},
+  Raydium:{c:'#5666f0',t:'#ffffff'},
+  Meteora:{c:'#7c3aed',t:'#ffffff'},
+  Realms:{c:'#2dd4bf',t:'#04231d'},
   Align:{c:'#1f242c',t:'#ffffff'}};
 function entityIcon(name){
   if(!name) return '';
   const e=ENTITY[name]||{c:'#2e3540',t:'#e7eaef'};
   const slug=String(name).toLowerCase().replace(/[^a-z0-9]/g,'');
   const mono=String(name).slice(0,1).toUpperCase();
-  const localSvg=`assets/entities/${slug}.svg`;
-  // official logo first → authored SVG → monogram. (e.logo = real brand logo; absent for entities we couldn't source.)
-  const src=e.logo||localSvg;
-  const onerr=e.logo?`this.onerror=null;this.src='${localSvg}'`:`this.onerror=null;this.remove()`;
+  // official self-hosted logo (assets/entities/<slug>.png) → authored SVG mark → monogram.
+  // No runtime CDN dependency — in keeping with the explorer's self-contained design.
+  const onerr=`if(!this.dataset.f){this.dataset.f=1;this.src='assets/entities/${slug}.svg'}else{this.onerror=null;this.remove()}`;
   return `<span class="ent" title="${name}" aria-label="${name}" style="--ec:${e.c};--et:${e.t}">`+
-    `<img loading="lazy" src="${src}" alt="" onerror="${onerr}">`+
+    `<img loading="lazy" src="assets/entities/${slug}.png" alt="" onerror="${onerr}">`+
     `<span class="em">${mono}</span></span>`;
+}
+// ── domain provenance marks — official SNS (.sol) / AllDomains (other TLDs) logos ──
+function domMark(d){
+  const sol=/\.sol$/i.test(String(d||''));
+  const src=sol?'assets/domains/sns.svg':'assets/domains/alldomains.svg';
+  const t=sol?'SNS — Solana Name Service':'AllDomains';
+  return `<img class="dmark" src="${src}" alt="${t}" title="${t}" loading="lazy" onerror="this.onerror=null;this.remove()">`;
 }
 
 $('mint').textContent=MINT;   // full mint address for verifiability
@@ -630,19 +645,31 @@ fetch('api/v1/reliability.json',{cache:'no-cache'}).then(r=>r.json()).then(R=>{
   }
 }).catch(()=>{ const s=document.querySelector('.statusbar'); if(s)s.style.display='none'; });
 
-// ── live market data (Dexscreener: TOKE price, mcap, TVL, vol, token image) ──
-fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).then(j=>{
-  const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd);
-  if(!ps.length)return; const p=ps[0];
-  $('s-price').textContent='$'+Number(p.priceUsd).toPrecision(3); TOKE_PRICE=+p.priceUsd;
-  const mc=p.marketCap||p.fdv; if(mc)$('s-mcap').textContent=usd(+mc);
-  const tvl=(j.pairs||[]).reduce((s,x)=>s+(+((x.liquidity&&x.liquidity.usd)||0)),0); $('s-tvl').textContent=tvl?usd(tvl):'—';
-  const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0); $('s-vol').textContent=vol?usd(vol):'—';
-  pxSave({price:+p.priceUsd, mcap:mc?+mc:null, tvl:tvl||0, vol:vol||0});
-  /* brand mark + favicon stay Moon Man (cohesion with mctoken.xyz) — not overwritten by market data */
-  const bt=p.baseToken&&p.baseToken.address===MINT?p.baseToken:(p.quoteToken||{});
-  if(bt&&bt.symbol)$('ticker').textContent='$'+bt.symbol;
-}).catch(()=>{});
+// ── live market data — canonical TOKE oracle first (api.mctoken.xyz/v1/oracle: the ONE
+//    price/mcap implementation, same numbers as mctoken.xyz), DexScreener as fallback only ──
+function paintMarket(px,mc,tvl,vol){
+  if(px>0){ $('s-price').textContent='$'+Number(px).toPrecision(3); TOKE_PRICE=+px; }
+  if(mc>0)$('s-mcap').textContent=usd(+mc);
+  $('s-tvl').textContent=tvl>0?usd(+tvl):'—';
+  $('s-vol').textContent=vol>0?usd(+vol):'—';
+  pxSave({price:px>0?+px:null, mcap:mc>0?+mc:null, tvl:tvl>0?+tvl:0, vol:vol>0?+vol:0});
+}
+function marketFallbackDex(){
+  fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).then(j=>{
+    const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd);
+    if(!ps.length)return; const p=ps[0];
+    const mc=p.marketCap||p.fdv;
+    const tvl=(j.pairs||[]).reduce((s,x)=>s+(+((x.liquidity&&x.liquidity.usd)||0)),0);
+    const vol=(j.pairs||[]).reduce((s,x)=>s+(+((x.volume&&x.volume.h24)||0)),0);
+    paintMarket(+p.priceUsd,mc?+mc:0,tvl,vol);
+  }).catch(()=>{});
+}
+/* brand mark + favicon + ticker stay Moon Man / $TOKE (cohesion with mctoken.xyz) — never overwritten by market data */
+fetch('https://api.mctoken.xyz/v1/oracle',{cache:'no-cache'}).then(r=>{ if(!r.ok)throw new Error('oracle '+r.status); return r.json(); }).then(j=>{
+  const d=j&&j.data;
+  if(!d||!(+d.liquidity_weighted_price_usd>0)) throw new Error('oracle empty');
+  paintMarket(+d.liquidity_weighted_price_usd, +d.implied_mcap_usd||0, +d.total_pool_liquidity_usd||0, +d.total_volume_h24_usd||0);
+}).catch(marketFallbackDex);
 
 
 // ── base listing + tags ──
@@ -857,7 +884,7 @@ function draw(){
     const entHtml=lb?entityIcon(lb.protocol||(lb.display||'').split('·').pop().trim()):'';
     return `<tr data-i="${start+i}">
       <td class="rank">${start+i+1}</td>
-      <td class="addr"><span class="mono">${trunc(r.address)}</span>${r.sns?`<span class="sns">${r.sns}</span>`:''}</td>
+      <td class="addr"><span class="mono">${trunc(r.address)}</span>${r.sns?`<span class="sns">${domMark(r.sns)}${r.sns}</span>`:''}</td>
       <td class="cls hide-sm"></td>
       <td class="label hide-sm">${typeHtml}</td>
       <td class="ent-cell hide-sm">${entHtml}</td>
@@ -910,7 +937,7 @@ function openDrawer(r){
   $('dw-mcv').innerHTML=medalDrawer(r)+dankDrawer(r);
   const doms=r.sns_all||[];
   $('dw-sns').innerHTML = doms.length
-    ? doms.map(d=>`<div class="snsrow${d===r.sns?' pri':''}">${d}${d===r.sns?'<span class="prilab">primary</span>':''}</div>`).join('')
+    ? doms.map(d=>`<div class="snsrow${d===r.sns?' pri':''}">${domMark(d)}${d}${d===r.sns?'<span class="prilab">primary</span>':''}</div>`).join('')
     : '<div class="notag">No domains held.</div>';
   const tg=tagsFor(r.address); const det=(TAGS.detail&&TAGS.detail[r.address])||{};
   $('dw-tags').innerHTML = tg.length ? tg.map(k=>{

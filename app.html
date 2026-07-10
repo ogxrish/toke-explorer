@@ -137,6 +137,15 @@
   .wrapBox .x{float:right;cursor:pointer;color:var(--mut);font-size:20px;line-height:1}
   .wrapBox svg{width:100%;height:auto;border-radius:12px;display:block}
   .wrapDl{display:flex;gap:8px;margin-top:12px}
+
+  /* ══ brand cohesion with mctoken.xyz — blue-led (mirror of index.html's override layer) ══ */
+  :root{--blue:#5aa2ff;--accent2:#5aa2ff}
+  a{color:var(--blue)}
+  .segb.on{background:rgba(90,162,255,.16);color:var(--blue)}
+  .chip.on{background:rgba(90,162,255,.16);color:var(--blue);border-color:rgba(90,162,255,.4)}
+  .exp{background:rgba(90,162,255,.14);color:var(--blue);border-color:rgba(90,162,255,.4)}
+  .cohortCard:hover{border-color:var(--blue)}
+  .arrow{color:var(--blue)}
 </style>
 </head>
 <body>

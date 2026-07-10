@@ -2,9 +2,14 @@
 
 The explorer's **Entity** column renders a small round logo icon per protocol.
 
-This folder ships clean, self-hosted SVG brand-marks (no external CDN / no runtime
-dependency — in keeping with the explorer's self-contained, verifiable design). The
-icon is masked to a circle by the `.ent` style in `index.html`.
+This folder ships self-hosted **official brand logos as `<slug>.png`** (64×64, optimized),
+with the authored `<slug>.svg` marks kept as offline fallback — no external CDN / no runtime
+dependency, in keeping with the explorer's self-contained, verifiable design. Resolution
+order in `entityIcon()`: official `.png` → authored `.svg` → branded monogram. The icon is
+masked to a circle by the `.ent` style in `index.html`.
+
+Official domain-provenance marks (SNS, AllDomains) live in `../domains/{sns,alldomains}.svg`
+and are rendered by `domMark()` next to every `.sol` / AllDomains shortname.
 
 ## Files
 
