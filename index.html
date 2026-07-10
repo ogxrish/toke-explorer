@@ -128,7 +128,7 @@
   /* entity logo icon — branded monogram circle; drop a real logo into assets/entities/<slug>.png to auto-override */
   td.ent-cell{white-space:nowrap}
   .ent{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;position:relative;overflow:hidden;background:var(--ec,#2e3540);color:var(--et,#0a0c10);font-size:11px;font-weight:800;line-height:1;vertical-align:middle;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
-  .ent img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ent img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}   /* logo paints ABOVE the monogram; on error the img is removed and the monogram shows */
   .ent .em{position:relative;z-index:0}
   /* $DANK token icon — cell badge + drawer thumb */
   .dankicon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;overflow:hidden;vertical-align:middle;box-shadow:inset 0 0 0 1px rgba(87,224,138,.35);font-size:13px}
