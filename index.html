@@ -585,6 +585,7 @@ const ENTITY={
   Meteora:{c:'#7c3aed',t:'#ffffff'},
   Realms:{c:'#2dd4bf',t:'#04231d'},
   Align:{c:'#1f242c',t:'#ffffff'}};
+const ASSET_V='2';   // bump to punch through the 24h /assets/* browser cache when icons change
 function entityIcon(name){
   if(!name) return '';
   const e=ENTITY[name]||{c:'#2e3540',t:'#e7eaef'};
@@ -592,15 +593,15 @@ function entityIcon(name){
   const mono=String(name).slice(0,1).toUpperCase();
   // official self-hosted logo (assets/entities/<slug>.png) → authored SVG mark → monogram.
   // No runtime CDN dependency — in keeping with the explorer's self-contained design.
-  const onerr=`if(!this.dataset.f){this.dataset.f=1;this.src='assets/entities/${slug}.svg'}else{this.onerror=null;this.remove()}`;
+  const onerr=`if(!this.dataset.f){this.dataset.f=1;this.src='assets/entities/${slug}.svg?v=${ASSET_V}'}else{this.onerror=null;this.remove()}`;
   return `<span class="ent" title="${name}" aria-label="${name}" style="--ec:${e.c};--et:${e.t}">`+
-    `<img loading="lazy" src="assets/entities/${slug}.png" alt="" onerror="${onerr}">`+
+    `<img loading="lazy" src="assets/entities/${slug}.png?v=${ASSET_V}" alt="" onerror="${onerr}">`+
     `<span class="em">${mono}</span></span>`;
 }
 // ── domain provenance marks — official SNS (.sol) / AllDomains (other TLDs) logos ──
 function domMark(d){
   const sol=/\.sol$/i.test(String(d||''));
-  const src=sol?'assets/domains/sns.svg':'assets/domains/alldomains.svg';
+  const src=(sol?'assets/domains/sns.svg':'assets/domains/alldomains.svg')+'?v='+ASSET_V;
   const t=sol?'SNS — Solana Name Service':'AllDomains';
   return `<img class="dmark" src="${src}" alt="${t}" title="${t}" loading="lazy" onerror="this.onerror=null;this.remove()">`;
 }
