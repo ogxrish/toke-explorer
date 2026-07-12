@@ -524,6 +524,7 @@
       <thead><tr>
         <th class="rank">#</th>
         <th data-sort="address" title="Address · domain shortname (wallets) or proven entity + type (infra — program accounts have no domains)">Address</th>
+        <th class="c hide-sm" title="Holder class by current balance — 🐳 McWhale 5M+ · 💰 McMillionaire 1M+ · 🎒 McBagger 100K+ · 💵 McStacker 10K+ · 🍔 McToker 1+ (infra accounts unclassed)">Class</th>
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
         <th class="c">Tags</th>
@@ -531,7 +532,7 @@
         <th class="c" data-sort="dank" title="$DANK — a Token-2022 SPL token. The icon shows when a wallet actively holds any amount; exact balance is in the wallet drawer.">DANK <span class="ar" id="ar-dank"></span></th>
         <th class="c" style="width:26px"></th>
       </tr></thead>
-      <tbody id="rows"><tr><td colspan="8" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
+      <tbody id="rows"><tr><td colspan="9" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
     </table>
     <div class="pager" id="pager"></div>
   </div>
@@ -625,6 +626,14 @@ const mcvActive=()=>MCV.voted.size||MCV.nft.size||MCV.set;
 // ── Provenance module · $DANK Drop filter state (soulbound airdropees vs current holders) ──
 const DNK={air:false,hold:false,gen:false};
 const dnkActive=()=>DNK.air||DNK.hold||DNK.gen;
+// ── holder class by current balance (mirrors the Discord holder roles) ──
+const CLASSES=[[5e6,'McWhale','🐳','5M+'],[1e6,'McMillionaire','💰','1M+'],[1e5,'McBagger','🎒','100K+'],[1e4,'McStacker','💵','10K+'],[1,'McToker','🍔','1+']];
+function classOf(r){
+  if(!(r.balance>=1)||labelFor(r.address)) return null;   // infra/program accounts aren't holders
+  for(const [min,name,em,thr] of CLASSES) if(r.balance>=min) return {name,em,thr};
+  return null;
+}
+const classHtml=r=>{ const c=classOf(r); return c?`<span title="${c.name} — ${c.thr} TOKE">${c.em}</span>`:'<span class="none">—</span>'; };
 // ── movement (1d/7d/30d) — rank arrows + balance deltas from api/v1/movers.json ──
 function moveHtml(r){
   const f=MOVERS&&MOVERS.frames&&MOVERS.frames[TF]; if(!f) return {rank:'',bal:''};
@@ -759,7 +768,7 @@ Promise.all([
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
     ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
     (f.first_block_time||'').slice(0,10)+' → '+(base.as_of||'').replace('T',' ').replace('Z',' UTC')+'.';
-}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="11" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
+}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="9" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
 
 const tagsFor=a=>TAGS.assign[a]||[];
 const labelFor=a=>LABELS.assign[a]||null;
@@ -1016,13 +1025,14 @@ function draw(){
     return `<tr data-i="${start+i}">
       <td class="rank">${r.balance>0&&r.rank?r.rank:start+i+1}${mv.rank}</td>
       <td class="addr"><span class="mono">${trunc(r.address)}</span>${idHtml}</td>
+      <td class="c hide-sm tagcell">${classHtml(r)}</td>
       <td class="r">${bal}${mv.bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="c">${medalsHtml(r.address)}</td>
       <td class="c">${dankHtml(r.address)}</td>
       <td class="c chev">›</td></tr>`;
-  }).join('')||'<tr><td colspan="8" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+  }).join('')||'<tr><td colspan="9" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
   $('pager').innerHTML=`<span class="pgsz">Rows <select id="pgsize">${[10,20,50,100].map(o=>`<option value="${o}"${o===PER?' selected':''}>${o}</option>`).join('')}</select></span>`+
     `<span class="pgnav"><button class="pgb" id="first" ${page<=0?'disabled':''}>« First</button>`+
@@ -1052,7 +1062,9 @@ function openDrawer(r){
     if(r.balance>0&&r.rank&&rt&&rt!==r.rank){ const d=rt-r.rank; parts.push(`${d>0?'▲':'▼'}${Math.abs(d)} (was #${rt})`); }
     else if(r.balance>0&&r.rank&&!rt) parts.push('entered rankings');
     return parts.length?[TF+' move', parts.join(' · ')]:null; })();
+  const dwCls=classOf(r);
   $('dw-kvs').innerHTML=[
+    ...(dwCls?[['Class', dwCls.em+' '+dwCls.name+' <span style="color:var(--mut2);font-weight:400">('+dwCls.thr+' TOKE)</span>']]:[]),
     ['Value', TOKE_PRICE==null?'—':usd(r.balance*TOKE_PRICE)],
     ['Balance', (r.balance>0?tokeHtml(r.balance):'0<span class="g">.000</span>')+' TOKE'],
     ['Supply %', r.balance>0?fmt(r.pct,4)+'%':'—'],
