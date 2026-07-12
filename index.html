@@ -732,7 +732,8 @@ function paintMarket(px,mc,tvl,vol){
 }
 function marketFallbackDex(){
   fetch('https://api.dexscreener.com/latest/dex/tokens/'+MINT).then(r=>r.json()).then(j=>{
-    const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd);
+    // price from TOKE-BASE pairs only (quote-side pairs like DANK/TOKE report the base token's price)
+    const ps=(j.pairs||[]).filter(p=>p.liquidity&&+p.liquidity.usd>0&&p.baseToken&&p.baseToken.address===MINT).sort((a,b)=>+b.liquidity.usd-+a.liquidity.usd);
     if(!ps.length)return; const p=ps[0];
     const mc=p.marketCap||p.fdv;
     const tvl=(j.pairs||[]).reduce((s,x)=>s+(+((x.liquidity&&x.liquidity.usd)||0)),0);
