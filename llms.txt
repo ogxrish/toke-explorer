@@ -27,7 +27,8 @@
 
 ## Labels, cohorts & collections (owner-curated, on-chain-proven)
 - [tags.json](https://explorer.mctoken.xyz/api/v1/tags.json) · [labels.json](https://explorer.mctoken.xyz/api/v1/labels.json) · [cohorts.json](https://explorer.mctoken.xyz/api/v1/cohorts.json) · [governance.json](https://explorer.mctoken.xyz/api/v1/governance.json)
-- [dank.json](https://explorer.mctoken.xyz/api/v1/dank.json) (Token-2022 $DANK holdings) · [mcvote_nfts.json](https://explorer.mctoken.xyz/api/v1/mcvote_nfts.json) · [collections.json](https://explorer.mctoken.xyz/api/v1/collections.json) (Great McVote medal trilogy)
+- [dank.json](https://explorer.mctoken.xyz/api/v1/dank.json) (Token-2022 $DANK: current holdings + `data.airdrop.recipients` = original TGE airdropees, soulbound fact) · [mcvote_nfts.json](https://explorer.mctoken.xyz/api/v1/mcvote_nfts.json) · [collections.json](https://explorer.mctoken.xyz/api/v1/collections.json) (Great McVote medal trilogy)
+- [movers.json](https://explorer.mctoken.xyz/api/v1/movers.json) — 1d/7d/30d movement: per-frame KPI aggregates + `moves.{address} = [balance_delta_toke, rank_then]`, exact backward replay of the transfer ledger
 
 ## How the data is verified
 Every record is **anonymous** (addresses only), **verifiable** (each figure cites a tx / account / program ref,

@@ -49,7 +49,7 @@
     --bg:#0a0c10;--panel:#13161d;--panel2:#181c24;--line:#242a33;--line2:#2e3540;
     --txt:#e7eaef;--mut:#8b94a3;--mut2:#5b6472;
     --accent:#5ad1b3;--accent2:#4aa3ff;--warn:#ff6b6b;--gold:#e7b84a;--purple:#9b8cff;
-    --toke:#4aa3ff;--g:#9b8cff;--emerald:#34d399;
+    --toke:#4aa3ff;--g:#34d399;--emerald:#34d399;   /* grams = green (purple is $DANK's colour) */
     --r:13px;
   }
   *{box-sizing:border-box}
@@ -136,6 +136,24 @@
   .dankthumb{width:30px;height:30px;border-radius:8px;overflow:hidden;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
   .dankthumb img{width:100%;height:100%;object-fit:cover;display:block}
   td.addr .sns{color:var(--gold);font-weight:600;font-size:12px;margin-left:9px}
+  /* infra identity in the address slot (program accounts have no domains) */
+  .entid{display:inline-flex;align-items:center;gap:6px;margin-left:9px;vertical-align:middle}
+  /* ── movement (1d/7d/30d) — rank arrows + balance deltas ── */
+  .mvr{display:inline-block;font-size:9.5px;font-weight:800;margin-left:4px;vertical-align:middle;white-space:nowrap}
+  .mvr.up{color:var(--emerald)} .mvr.dn{color:var(--warn)} .mvr.new{color:var(--blue,#5aa2ff);border:1px solid rgba(90,162,255,.45);border-radius:4px;padding:0 3px;font-size:8px;letter-spacing:.5px}
+  .mvb{display:block;font-size:10px;font-weight:600;line-height:1.2;margin-top:1px}
+  .mvb.up{color:var(--emerald)} .mvb.dn{color:var(--warn)}
+  .kpi .n .kd{white-space:nowrap;margin-right:7px}
+  .kpi .n .kd b.up{color:var(--emerald)} .kpi .n .kd b.dn{color:var(--warn)}
+  /* ── provenance-bar art (real on-chain NFT / token images in the collapsed row) ── */
+  .pvart{display:flex;gap:3px;align-items:center;flex:0 0 auto}
+  .pvthumb{height:36px;aspect-ratio:1080/1450;border-radius:5px;overflow:hidden;position:relative;background:var(--panel2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+  .pvthumb.y2025{aspect-ratio:1583/2048}.pvthumb.y2026{aspect-ratio:1242/1640}
+  .pvthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .pvcoin{width:36px;height:36px;border-radius:50%;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(155,140,255,.4);display:flex;align-items:center;justify-content:center;font-size:19px;background:var(--panel2)}
+  .pvcoin img{width:100%;height:100%;object-fit:cover;display:block}
+  .pchip.dankc.on{color:var(--purple);border-color:rgba(155,140,255,.5);background:rgba(155,140,255,.14)}
+  .pchip.dankc.on .ct{color:var(--purple)}
   .dmark{width:13px;height:13px;border-radius:4px;vertical-align:-2px;margin-right:5px;background:var(--panel2)}
   .snsrow{font-size:13px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--mut)}
   .snsrow.pri{color:var(--gold);font-weight:700}
@@ -419,7 +437,7 @@
   </div>
   <div class="pvmodule" id="pv-mcvault">
     <div class="pvrow">
-      <div class="pvicon">🗳️</div>
+      <div class="pvart" id="mcv-art"><div class="pvicon">🗳️</div></div>
       <div>
         <div class="pvtitle">McVault Era</div>
         <div class="pvsyn">The vault that took three Great McVotes to crack.</div>
@@ -450,6 +468,33 @@
     </div>
   </div>
 
+  <div class="pvmodule" id="pv-dank" style="display:none">
+    <div class="pvrow">
+      <div class="pvart"><span class="pvcoin" id="dank-art">🐶</span></div>
+      <div>
+        <div class="pvtitle">The $DANK Drop</div>
+        <div class="pvsyn">Airdropped to the McMillionaires at TGE — a very good boy.</div>
+      </div>
+      <div class="pvspacer"></div>
+      <div class="pvtoggles" id="dank-toggles">
+        <div class="tgrp">
+          <span class="tglab">Soulbound</span>
+          <span class="pchip dankc" data-k="air">Airdropped <span class="ct" id="cda">·—</span></span>
+        </div>
+        <div class="tgrp">
+          <span class="tglab">Holding</span>
+          <span class="pchip dankc" data-k="hold">$DANK <span class="ct" id="cdh">·—</span></span>
+          <span class="pchip setc" data-k="gen" title="Still holds the exact genesis airdrop unit — untouched since TGE">✦ genesis unit <span class="ct" id="cdg">·—</span></span>
+        </div>
+      </div>
+      <div class="pvdetails" id="dank-details">details ▾</div>
+    </div>
+    <div class="pvstory" id="dank-story">
+      <p class="pvintro" id="dank-intro"></p>
+      <div class="scfoot" id="dank-scfoot"></div>
+    </div>
+  </div>
+
   <div class="afilter idle" id="afilter">
     <span class="aflab">Active filter</span>
     <span class="afval" id="afval"></span>
@@ -464,7 +509,12 @@
       <button class="segb" data-focus="holders">Current holders</button>
       <button class="segb" data-focus="labeled">Labeled</button>
       <button class="segb" data-focus="tagged">Tagged</button>
-      <button class="segb" data-focus="dank" title="Wallets actively holding $DANK">DANK</button>
+    </div>
+    <div class="seg2" id="tfseg" title="Movement window — rank arrows + balance deltas vs this many days ago">
+      <span class="qvlab" style="align-self:center;padding:0 8px">Moves</span>
+      <button class="segb on" data-tf="1d">1d</button>
+      <button class="segb" data-tf="7d">7d</button>
+      <button class="segb" data-tf="30d">30d</button>
     </div>
     <span class="count" id="count"></span>
   </div>
@@ -473,10 +523,7 @@
     <table>
       <thead><tr>
         <th class="rank">#</th>
-        <th data-sort="address">Address</th>
-        <th class="hide-sm" title="Per-address class — coming soon">Class</th>
-        <th class="hide-sm" title="What kind of on-chain account this is (from the proven label).">Type</th>
-        <th class="hide-sm" title="The protocol / entity this account belongs to.">Entity</th>
+        <th data-sort="address" title="Address · domain shortname (wallets) or proven entity + type (infra — program accounts have no domains)">Address</th>
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
         <th class="c">Tags</th>
@@ -484,7 +531,7 @@
         <th class="c" data-sort="dank" title="$DANK — a Token-2022 SPL token. The icon shows when a wallet actively holds any amount; exact balance is in the wallet drawer.">DANK <span class="ar" id="ar-dank"></span></th>
         <th class="c" style="width:26px"></th>
       </tr></thead>
-      <tbody id="rows"><tr><td colspan="11" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
+      <tbody id="rows"><tr><td colspan="8" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
     </table>
     <div class="pager" id="pager"></div>
   </div>
@@ -570,11 +617,30 @@ const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6)
 const tokeHtml=n=>{ if(n==null)return '—'; const neg=n<0; let v=Math.abs(+n);
   let I=Math.floor(v), G=Math.round((v-I)*1000); if(G>=1000){I++;G=0;}
   return (neg?'-':'')+I.toLocaleString('en-US')+'<span class="g" title="grams · 0.001 TOKE each">.'+String(G).padStart(3,'0')+'</span>'; };
-let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, DANK={}, view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=20, ENV=null, TOKE_PRICE=null;
+let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, DANK={}, MOVERS=null, TF='1d', view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=20, ENV=null, TOKE_PRICE=null;
 const MCV_YEARS=['2024','2025','2026'];
 // ── Provenance module · McVault Era filter state (facets compose with quick-view focus + search) ──
 const MCV={voted:new Set(),nft:new Set(),set:false};
 const mcvActive=()=>MCV.voted.size||MCV.nft.size||MCV.set;
+// ── Provenance module · $DANK Drop filter state (soulbound airdropees vs current holders) ──
+const DNK={air:false,hold:false,gen:false};
+const dnkActive=()=>DNK.air||DNK.hold||DNK.gen;
+// ── movement (1d/7d/30d) — rank arrows + balance deltas from api/v1/movers.json ──
+function moveHtml(r){
+  const f=MOVERS&&MOVERS.frames&&MOVERS.frames[TF]; if(!f) return {rank:'',bal:''};
+  const m=f.moves[r.address]; if(!m) return {rank:'',bal:''};
+  const [bd,rt]=m; let rank='';
+  if(r.balance>0&&r.rank){
+    if(!rt) rank=' <span class="mvr new" title="entered the rankings inside this window">NEW</span>';
+    else{ const d=rt-r.rank;
+      if(d>0) rank=` <span class="mvr up" title="climbed ${d} place${d===1?'':'s'} in ${TF} (was #${rt})">▲${d}</span>`;
+      else if(d<0) rank=` <span class="mvr dn" title="slipped ${-d} place${d===-1?'':'s'} in ${TF} (was #${rt})">▼${-d}</span>`;
+    }
+  }
+  let bal='';
+  if(bd) bal=`<span class="mvb ${bd>0?'up':'dn'}" title="${TF} balance change">${bd>0?'+':''}${fmt(bd,0)}</span>`;
+  return {rank,bal};
+}
 const CATEM={'liquidity-pool':'💧','program':'⚙️','governance':'🏛️','distributor':'📤','treasury':'🏦','dao':'🟪','project':'★'};
 // Type (category) display labels and per-entity logo-icon colours (monogram fallback when no logo file exists).
 const CATLABEL={'liquidity-pool':'Liquidity Pool','program':'Program','governance':'Governance','distributor':'Distributor','treasury':'Treasury','dao':'DAO','project':'Project'};
@@ -679,14 +745,16 @@ Promise.all([
   fetch('api/v1/tags.json').then(r=>r.json()).catch(()=>({data:{tags:{},assign:{},detail:{}}})),
   fetch('api/v1/labels.json').then(r=>r.json()).catch(()=>({data:{categories:{},assign:{}}})),
   fetch('api/v1/mcvote_nfts.json').then(r=>r.json()).catch(()=>({data:{}})),
-  fetch('api/v1/dank.json').then(r=>r.json()).catch(()=>({data:{}}))
-]).then(([base,tags,labels,nft,dank])=>{
+  fetch('api/v1/dank.json').then(r=>r.json()).catch(()=>({data:{}})),
+  fetch('api/v1/movers.json').then(r=>r.json()).catch(()=>null)
+]).then(([base,tags,labels,nft,dank,movers])=>{
   ENV=base; ALL=base.data; TAGS=tags.data||{tags:{},assign:{},detail:{}}; LABELS=labels.data||{categories:{},assign:{}}; NFT=nft.data||{}; DANK=dank.data||{};
+  MOVERS=movers&&movers.data?movers.data:null;
   // annotate each row with its Great McVote medal total so the column sorts/filters like any other field
   if(NFT.hold) ALL.forEach(r=>{ const h=NFT.hold[r.address]; r.mcv=h?h.total:0; });
   // annotate each row with its $DANK balance so the column sorts/filters like any other field
   if(DANK.hold) ALL.forEach(r=>{ r.dank=DANK.hold[r.address]||0; });
-  buildKpis(); renderMcvault(); apply();
+  buildKpis(); renderMcvault(); renderDank(); apply();
   const f=base.freshness||{};
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
     ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
@@ -752,15 +820,18 @@ function dankDrawer(r){
   if(!DANK||!DANK.mint) return '';
   const amt=dankFor(r.address), sup=DANK.supply||0, pct=(sup&&amt)?(amt/sup*100):0;
   const unit=DANK.genesis_airdrop_unit, isGen=!!(unit&&Math.abs(amt-unit)<0.5);
+  const air=dankAirFor(r.address);
   const mintShort=DANK.mint.slice(0,4)+'…'+DANK.mint.slice(-4), t=DANK.totals||{};
   const pctTxt=pct?(pct<0.01?'<0.01':fmt(pct,2))+'%':'—';
+  if(!(amt>0)&&!(air>0)) return '<div class="dw-sec">$DANK</div><div class="mcvcard"><div class="mcvstrip"><span class="hold">none held · not an original airdropee</span></div></div>';
   const head=amt>0
     ? `<span class="hold"><b>${fmt(amt,3)}</b> $DANK · <b>${pctTxt}</b> of supply${isGen?'<span class="set"> · genesis airdrop unit</span>':''}</span>`
-    : `<span class="hold">none held</span>`;
-  const body=amt>0
+    : `<span class="hold">none held${air>0?' <span class="set">· original airdropee</span>':''}</span>`;
+  const body=(amt>0||air>0)
     ? '<div class="tdet">'+
-        `<div class="tdetrow"><span class="ty">Holds</span><span class="tmid">current balance</span><span class="tv has">${fmt(amt,3)}</span></div>`+
-        `<div class="tdetrow"><span class="ty">Share</span><span class="tmid">of ${fmt(sup,0)} DANK</span><span class="tv">${pctTxt}</span></div>`+
+        (air>0?`<div class="tdetrow"><span class="ty">Drop</span><span class="tmid">airdropped at TGE ${(DANK.airdrop&&DANK.airdrop.tge_date)||''} — soulbound fact</span><span class="tv has">${fmt(air,3)}</span></div>`:'')+
+        (amt>0?`<div class="tdetrow"><span class="ty">Holds</span><span class="tmid">current balance</span><span class="tv has">${fmt(amt,3)}</span></div>`:'')+
+        (amt>0?`<div class="tdetrow"><span class="ty">Share</span><span class="tmid">of ${fmt(sup,0)} DANK</span><span class="tv">${pctTxt}</span></div>`:'')+
       '</div>'
     : '';
   return '<div class="dw-sec">$DANK</div>'+
@@ -789,6 +860,10 @@ function mcvCounts(){
 function renderMcvault(){
   if(!NFT.years){ const m=$('pv-mcvault'); if(m)m.style.display='none'; return; }
   const C=mcvCounts();
+  // real on-chain medal art in the collapsed bar (replaces the emoji placeholder)
+  const art=MCV_YEARS.map(y=>{ const yr=mcvYear(y), img=yr.art&&yr.art.image;
+    return img?`<span class="pvthumb y${y}" title="Great McVote ${y}${yr.theme?(' · '+yr.theme):''}"><img loading="lazy" src="${img}" alt="Great McVote ${y}" onerror="this.parentNode.remove()"></span>`:''; }).join('');
+  if(art) $('mcv-art').innerHTML=art;
   $('cv24').textContent='·'+C.voted[2024]; $('cv25').textContent='·'+C.voted[2025]; $('cv26').textContent='·'+C.voted[2026];
   $('cn24').textContent='·'+C.nft[2024]; $('cn25').textContent='·'+C.nft[2025]; $('cn26').textContent='·'+C.nft[2026];
   $('cset').textContent='·'+((NFT.totals&&NFT.totals.complete_sets)!=null?NFT.totals.complete_sets:C.set);
@@ -838,10 +913,24 @@ function buildKpis(){
   const tot=(ENV&&ENV.totals)||{};
   const legs=tot.legs!=null?tot.legs:Math.round(ALL.reduce((s,r)=>s+(r.legs||0),0)/2);
   const MAX=420000069, burnedPct=(MAX-supply)/MAX*100;
-  const k=[['Current holders',fmt(holders,0),'wallets holding TOKE now'],
-           ['Wallets ever touched',fmt(ALL.length,0),'distinct addresses, all-time'],
-           ['Current supply',tokeHtml(supply),'of '+fmt(MAX,0)+' max · '+burnedPct.toFixed(3)+'% burned'],
-           ['Transfer legs',fmt(legs,0),'on-chain TOKE movements']];
+  // 1d/7d deltas from the movers replay (exact from the ledger — no warm-up)
+  const F=MOVERS&&MOVERS.frames;
+  const kd=(now,key,fmtFn)=>{ if(!F)return '';
+    const d1=F['1d']&&F['1d'].kpi, d7=F['7d']&&F['7d'].kpi;
+    const seg=(lbl,then)=>{ if(then==null)return ''; const d=now-then;
+      return `<span class="kd">${lbl} <b class="${d>0?'up':d<0?'dn':''}">${d>0?'+':''}${fmtFn(d)}</b></span>`; };
+    const s=(d1?seg('1d',d1[key]):'')+(d7?seg('7d',d7[key]):'');
+    return s?'<br>'+s:'';
+  };
+  const kdLegs=()=>{ if(!F)return ''; const d1=F['1d']&&F['1d'].kpi, d7=F['7d']&&F['7d'].kpi;
+    const seg=(lbl,v)=>v!=null?`<span class="kd">${lbl} <b class="${v>0?'up':''}">+${fmt(v,0)}</b></span>`:'';
+    const s=(d1?seg('1d',d1.legs_added):'')+(d7?seg('7d',d7.legs_added):'');
+    return s?'<br>'+s:'';
+  };
+  const k=[['Current holders',fmt(holders,0),'wallets holding TOKE now'+kd(holders,'holders_then',n=>fmt(n,0))],
+           ['Wallets ever touched',fmt(ALL.length,0),'distinct addresses, all-time'+kd(ALL.length,'wallets_then',n=>fmt(n,0))],
+           ['Current supply',tokeHtml(supply),'of '+fmt(MAX,0)+' max · '+burnedPct.toFixed(3)+'% burned'+kd(supply,'supply_then',n=>fmt(n,0))],
+           ['Transfer legs',fmt(legs,0),'on-chain TOKE movements'+kdLegs()]];
   $('kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="v">${x[1]}</div><div class="n">${x[2]}</div></div>`).join('');
 }
 function matchMcvault(r){
@@ -851,20 +940,57 @@ function matchMcvault(r){
   if(MCV.set){ const h=mcvHold(r.address); if(!h||!h.complete)return false; }
   return true;
 }
+// ── Provenance · $DANK Drop module (soulbound airdropees ∩ current holders ∩ genesis unit) ──
+const dankAirFor=a=>((DANK.airdrop&&DANK.airdrop.recipients)||{})[a]||0;
+function matchDank(r){
+  if(DNK.air && !(dankAirFor(r.address)>0)) return false;
+  if(DNK.hold && !(r.dank>0)) return false;
+  if(DNK.gen){ const u=DANK.genesis_airdrop_unit; if(!(u&&Math.abs((r.dank||0)-u)<0.5)) return false; }
+  return true;
+}
+function renderDank(){
+  const m=$('pv-dank'); if(!m) return;
+  if(!DANK.mint){ m.style.display='none'; return; }
+  m.style.display='';
+  if(DANK.image) $('dank-art').innerHTML=`<img src="${DANK.image}" alt="$DANK" loading="lazy" onerror="this.parentNode.textContent='🐶'">`;
+  const t=DANK.totals||{}, air=DANK.airdrop;
+  $('cdh').textContent='·'+(t.holders!=null?t.holders:'—');
+  $('cdg').textContent='·'+(t.genesis_unit_holders!=null?t.genesis_unit_holders:'—');
+  const airChip=document.querySelector('#dank-toggles [data-k="air"]');
+  if(air&&air.count){ $('cda').textContent='·'+air.count; }
+  else { if(airChip){airChip.style.opacity=.45;airChip.title='original-airdropee capture lands with the next data refresh';} $('cda').textContent='·…'; }
+  const M=n=>n==null?'—':Number(n).toLocaleString('en-US',{maximumFractionDigits:0});
+  $('dank-intro').innerHTML=`On <b>${(air&&air.tge_date)||DANK.tge_date||'TGE'}</b>, every <b>McMillionaire</b> (wallets holding ≥1M $TOKE) was airdropped <b>${M(DANK.genesis_airdrop_unit)}</b> $DANK — a Token-2022 companion token. Being airdropped is a <b>soulbound fact</b>: it never changes, no matter where the tokens went. Holding is the <b>live snapshot</b>.`;
+  $('dank-scfoot').innerHTML=
+    `<span><b>${air&&air.count!=null?air.count:'—'}</b> airdropees</span><span>·</span>`+
+    `<span><b>${t.holders!=null?t.holders:'—'}</b> holders now</span><span>·</span>`+
+    `<span><b>${t.genesis_unit_holders!=null?t.genesis_unit_holders:'—'}</b> untouched genesis units</span><span>·</span>`+
+    `<span><b>${M(DANK.supply)}</b> supply</span><span>·</span>`+
+    `<span class="closed">TGE ${DANK.tge_date||''}</span>`+
+    (air&&air.cite?` <span>·</span> <a href="${orb(air.cite.ref)}" target="_blank" rel="noopener">mint ↗</a>`:'');
+  syncDankChips();
+}
+function syncDankChips(){
+  document.querySelectorAll('#dank-toggles .pchip').forEach(c=>c.classList.toggle('on',!!DNK[c.dataset.k]));
+}
+function dankLabel(){
+  const p=[]; if(DNK.air)p.push('Airdropped $DANK'); if(DNK.hold)p.push('holds $DANK'); if(DNK.gen)p.push('genesis unit intact');
+  return p.join('  ∩  ');
+}
 function syncAfilter(){
-  const af=$('afilter'); if(!af)return; const on=mcvActive();
+  const af=$('afilter'); if(!af)return; const on=mcvActive()||dnkActive();
   af.classList.toggle('idle',!on);
-  if(on) $('afval').textContent=mcvLabel();
+  if(on) $('afval').textContent=[mcvLabel(),dankLabel()].filter(Boolean).join('  ∩  ');
 }
 function apply(){
   const q=$('q').value.trim().toLowerCase();
-  syncMcvChips(); syncAfilter();
+  syncMcvChips(); syncDankChips(); syncAfilter();
   view=ALL.filter(r=>{
     if(focus==='holders'&&!(r.balance>0))return false;
     if(focus==='labeled'&&!labelFor(r.address))return false;
     if(focus==='tagged'&&!tagsFor(r.address).length)return false;
-    if(focus==='dank'&&!(r.dank>0))return false;
     if(!matchMcvault(r))return false;
+    if(!matchDank(r))return false;
     if(q){ const lb=labelFor(r.address); const hay=(r.address+' '+(r.sns||'')+' '+((r.sns_all||[]).join(' '))+' '+((lb&&lb.display)||'')+' '+((lb&&lb.name)||'')+' '+((lb&&lb.protocol)||'')).toLowerCase(); if(!hay.includes(q))return false; }
     return true;
   });
@@ -881,21 +1007,22 @@ function draw(){
     const tg=tagsFor(r.address); const em=tg.map(k=>(TAGS.tags[k]||{}).emoji||'').join(' ');
     const lb=labelFor(r.address);
     const cat=(lb&&lb.category||'').replace(/[^a-z-]/g,'');
-    const typeHtml=lb?`<span class="lblchip lbl-${cat}">${CATLABEL[lb.category]||lb.category||''}</span>`:'';
-    const entHtml=lb?entityIcon(lb.protocol||(lb.display||'').split('·').pop().trim()):'';
+    // Address identity slot: wallets carry their domain shortname; infra (program accounts have
+    // no SNS/AllDomains names) carries its proven entity icon + type chip in the same slot.
+    const idHtml=r.sns
+      ? `<span class="sns">${domMark(r.sns)}${r.sns}</span>`
+      : lb ? `<span class="entid">${lb.protocol?entityIcon(lb.protocol):''}<span class="lblchip lbl-${cat}">${(lb.protocol?lb.protocol+' · ':'')+(CATLABEL[lb.category]||lb.category||'')}</span></span>` : '';
+    const mv=moveHtml(r);
     return `<tr data-i="${start+i}">
-      <td class="rank">${start+i+1}</td>
-      <td class="addr"><span class="mono">${trunc(r.address)}</span>${r.sns?`<span class="sns">${domMark(r.sns)}${r.sns}</span>`:''}</td>
-      <td class="cls hide-sm"></td>
-      <td class="label hide-sm">${typeHtml}</td>
-      <td class="ent-cell hide-sm">${entHtml}</td>
-      <td class="r">${bal}</td>
+      <td class="rank">${r.balance>0&&r.rank?r.rank:start+i+1}${mv.rank}</td>
+      <td class="addr"><span class="mono">${trunc(r.address)}</span>${idHtml}</td>
+      <td class="r">${bal}${mv.bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="c">${medalsHtml(r.address)}</td>
       <td class="c">${dankHtml(r.address)}</td>
       <td class="c chev">›</td></tr>`;
-  }).join('')||'<tr><td colspan="11" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+  }).join('')||'<tr><td colspan="8" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
   $('pager').innerHTML=`<span class="pgsz">Rows <select id="pgsize">${[10,20,50,100].map(o=>`<option value="${o}"${o===PER?' selected':''}>${o}</option>`).join('')}</select></span>`+
     `<span class="pgnav"><button class="pgb" id="first" ${page<=0?'disabled':''}>« First</button>`+
@@ -918,10 +1045,18 @@ function openDrawer(r){
   $('dw-addr').textContent=r.address;
   $('dw-solscan').href=orb(r.address);
   $('dw-copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(r.address);$('dw-copy').textContent='Copied ✓';setTimeout(()=>$('dw-copy').textContent='Copy address ⧉',1000);};
+  const mvKv=(()=>{ const f=MOVERS&&MOVERS.frames&&MOVERS.frames[TF]; const m=f&&f.moves[r.address];
+    if(!m||(!m[0]&&!m[1])) return null;
+    const [bd,rt]=m; const parts=[];
+    if(bd) parts.push(`<span style="color:${bd>0?'var(--emerald)':'var(--warn)'}">${bd>0?'+':''}${fmt(bd,0)} TOKE</span>`);
+    if(r.balance>0&&r.rank&&rt&&rt!==r.rank){ const d=rt-r.rank; parts.push(`${d>0?'▲':'▼'}${Math.abs(d)} (was #${rt})`); }
+    else if(r.balance>0&&r.rank&&!rt) parts.push('entered rankings');
+    return parts.length?[TF+' move', parts.join(' · ')]:null; })();
   $('dw-kvs').innerHTML=[
     ['Value', TOKE_PRICE==null?'—':usd(r.balance*TOKE_PRICE)],
     ['Balance', (r.balance>0?tokeHtml(r.balance):'0<span class="g">.000</span>')+' TOKE'],
     ['Supply %', r.balance>0?fmt(r.pct,4)+'%':'—'],
+    ...(mvKv?[mvKv]:[]),
     ['First seen', r.first_seen||'—'],
     ['Last seen', r.last_seen||'—'],
     ['Transfer legs', fmt(r.legs,0)],
@@ -939,7 +1074,7 @@ function openDrawer(r){
   const doms=r.sns_all||[];
   $('dw-sns').innerHTML = doms.length
     ? doms.map(d=>`<div class="snsrow${d===r.sns?' pri':''}">${domMark(d)}${d}${d===r.sns?'<span class="prilab">primary</span>':''}</div>`).join('')
-    : '<div class="notag">No domains held.</div>';
+    : (lb?'<div class="notag">Program-controlled account — domains don’t apply.</div>':'<div class="notag">No domains held.</div>');
   const tg=tagsFor(r.address); const det=(TAGS.detail&&TAGS.detail[r.address])||{};
   $('dw-tags').innerHTML = tg.length ? tg.map(k=>{
     const t=TAGS.tags[k]||{};
@@ -960,8 +1095,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
 
 // controls
 $('q').addEventListener('input',()=>{clearTimeout(window.__t);window.__t=setTimeout(apply,160);});
-document.querySelectorAll('.segb').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('.segb').forEach(x=>x.classList.remove('on'));b.classList.add('on');focus=b.dataset.focus;apply();});
+document.querySelectorAll('.segb[data-focus]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.segb[data-focus]').forEach(x=>x.classList.remove('on'));b.classList.add('on');focus=b.dataset.focus;apply();});
+// movement timeframe (1d/7d/30d) — re-render with the chosen window
+document.querySelectorAll('#tfseg .segb[data-tf]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#tfseg .segb[data-tf]').forEach(x=>x.classList.remove('on'));b.classList.add('on');TF=b.dataset.tf;buildKpis();draw();});
 document.querySelectorAll('th[data-sort]').forEach(th=>th.onclick=()=>{
   const k=th.dataset.sort; if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=(k==='address')?1:-1;}
   document.querySelectorAll('.ar').forEach(a=>a.textContent=''); const ar=$('ar-'+k); if(ar)ar.textContent=sortDir<0?'▼':'▲'; apply();});
@@ -975,8 +1113,12 @@ document.querySelectorAll('#mcv-toggles .pchip').forEach(c=>c.onclick=()=>{
 });
 const mcvDetailsBtn=$('mcv-details');
 if(mcvDetailsBtn) mcvDetailsBtn.onclick=()=>{ const s=$('mcv-story'); const open=s.classList.toggle('on'); mcvDetailsBtn.textContent=open?'details ▴':'details ▾'; };
+// ── Provenance · $DANK Drop module controls ──
+document.querySelectorAll('#dank-toggles .pchip').forEach(c=>c.onclick=()=>{ DNK[c.dataset.k]=!DNK[c.dataset.k]; page=0; apply(); });
+const dankDetailsBtn=$('dank-details');
+if(dankDetailsBtn) dankDetailsBtn.onclick=()=>{ const s=$('dank-story'); const open=s.classList.toggle('on'); dankDetailsBtn.textContent=open?'details ▴':'details ▾'; };
 const afClearBtn=$('afclear');
-if(afClearBtn) afClearBtn.onclick=()=>{ MCV.voted.clear(); MCV.nft.clear(); MCV.set=false; page=0; apply(); };
+if(afClearBtn) afClearBtn.onclick=()=>{ MCV.voted.clear(); MCV.nft.clear(); MCV.set=false; DNK.air=DNK.hold=DNK.gen=false; page=0; apply(); };
 // deep-link: explorer.mctoken.xyz/#mcvault-era auto-expands the module
 if(/#(mcvault-era|pv-mcvault)/.test(location.hash)){ const s=$('mcv-story'); if(s){ s.classList.add('on'); const b=$('mcv-details'); if(b)b.textContent='details ▴'; $('pv-mcvault').scrollIntoView({behavior:'smooth'}); } }
 

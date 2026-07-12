@@ -1,7 +1,7 @@
 {
   "dataset": "dank",
   "version": "v1",
-  "as_of": "2026-05-31",
+  "as_of": "2026-07-11",
   "chain": "solana-mainnet",
   "source": {
     "confidence": "confirmed",
@@ -30,8 +30,10 @@
     "totals": {
       "holders": 86,
       "supply": 68274668.976,
-      "genesis_unit_holders": 23
+      "genesis_unit_holders": 23,
+      "airdropees": null
     },
+    "airdrop": null,
     "hold": {
       "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC": 32083968.022,
       "8FSeN4nQZn1Rujp5ZgHsEvKm6j6dr7qA23vJX4R4vTLp": 7023927.85,
