@@ -1,39 +1,99 @@
 {
   "dataset": "links",
   "version": "v1",
-  "note": "Canonical footer link directory shared by mctoken.xyz and explorer.mctoken.xyz. CORS-open; both footers fetch this with a built-in fallback.",
-  "status": { "label": "Status", "href": "https://status.mctoken.xyz", "api": "https://status.mctoken.xyz/api/history" },
+  "note": "Canonical footer link directory shared by mctoken.xyz, explorer.mctoken.xyz and voyager.mctoken.xyz. CORS-open; consuming footers fetch this with a built-in fallback.",
+  "status": {
+    "label": "Status",
+    "href": "https://status.mctoken.xyz",
+    "api": "https://status.mctoken.xyz/api/history"
+  },
   "footer": {
     "columns": [
       {
+        "title": "Suite",
+        "links": [
+          {
+            "label": "Home",
+            "href": "https://mctoken.xyz"
+          },
+          {
+            "label": "The Explorer",
+            "href": "https://explorer.mctoken.xyz"
+          },
+          {
+            "label": "The Voyager",
+            "href": "https://voyager.mctoken.xyz"
+          },
+          {
+            "label": "The Story",
+            "href": "https://story.mctoken.xyz"
+          }
+        ]
+      },
+      {
         "title": "Trade",
         "links": [
-          { "label": "Jupiter", "href": "https://jup.ag/tokens/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" },
-          { "label": "Coinbase", "href": "https://www.coinbase.com/price/mctoken-solana-amgumqeqw8h74trc8ukkjzzwtxbdps496wh4gly2mcpo-token" },
-          { "label": "OKX", "href": "https://www.okx.com/en-us/trade-cedefi/solana/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" }
+          {
+            "label": "Jupiter",
+            "href": "https://jup.ag/tokens/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo"
+          },
+          {
+            "label": "Coinbase",
+            "href": "https://www.coinbase.com/price/mctoken-solana-amgumqeqw8h74trc8ukkjzzwtxbdps496wh4gly2mcpo-token"
+          },
+          {
+            "label": "OKX",
+            "href": "https://www.okx.com/en-us/trade-cedefi/solana/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo"
+          }
         ]
       },
       {
         "title": "Markets",
         "links": [
-          { "label": "CoinMarketCap", "href": "https://coinmarketcap.com/currencies/mctoken" },
-          { "label": "Dexscreener", "href": "https://dexscreener.com/solana/ad6negrxhsbagwfsttbshmkqgedhotcjzyfwcgrraxc9" },
-          { "label": "Birdeye", "href": "https://birdeye.so/token/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo?chain=solana" }
+          {
+            "label": "CoinMarketCap",
+            "href": "https://coinmarketcap.com/currencies/mctoken"
+          },
+          {
+            "label": "Dexscreener",
+            "href": "https://dexscreener.com/solana/ad6negrxhsbagwfsttbshmkqgedhotcjzyfwcgrraxc9"
+          },
+          {
+            "label": "Birdeye",
+            "href": "https://birdeye.so/token/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo?chain=solana"
+          }
         ]
       },
       {
         "title": "Chain",
         "links": [
-          { "label": "Solscan", "href": "https://solscan.io/token/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" },
-          { "label": "Orb", "href": "https://orbmarkets.io/token/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" },
-          { "label": "Solana Explorer", "href": "https://explorer.solana.com/address/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" }
+          {
+            "label": "Solscan",
+            "href": "https://solscan.io/token/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo"
+          },
+          {
+            "label": "Orb",
+            "href": "https://orbmarkets.io/token/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo"
+          },
+          {
+            "label": "Solana Explorer",
+            "href": "https://explorer.solana.com/address/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo"
+          }
         ]
       },
       {
         "title": "Connect",
         "links": [
-          { "label": "X", "href": "https://x.com/TokeCommunity", "icon": "x" },
-          { "label": "Discord", "href": "https://discord.com/invite/gTYuUCthvC", "icon": "discord" }
+          {
+            "label": "X",
+            "href": "https://x.com/TokeCommunity",
+            "icon": "x"
+          },
+          {
+            "label": "Discord",
+            "href": "https://discord.com/invite/gTYuUCthvC",
+            "icon": "discord"
+          }
         ]
       }
     ]

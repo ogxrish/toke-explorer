@@ -41,3 +41,5 @@ gate; data ships **only** on a GREEN verdict. The current verdict + `as_of` live
   shapes, no consumer change.
 - This is read-only public data. No API key, no rate limit published; please cache (files send short
   `Cache-Control` with `stale-while-revalidate`).
+
+- Voyager (lore render of this data, idle game): https://voyager.mctoken.xyz — deep-link any wallet with ?v=<address|name.sol>; distances = Voyager Protocol v1 (balance × days aboard, 1 TOKE·day = 1 km).

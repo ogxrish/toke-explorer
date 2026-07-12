@@ -360,7 +360,7 @@
   .xfoot-tag{color:var(--mut);font-size:13px;line-height:1.6;margin:14px 0 12px;max-width:280px}
   .xfoot-cross{font-family:var(--display);font-size:13px;color:var(--blue);font-weight:500;text-decoration:none}
   .xfoot-cross:hover{color:#74b1ff}
-  .xfoot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .xfoot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px}
   .xfcol h4{font-family:var(--display);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:var(--mut);margin:0 0 12px}
   .xfcol a{display:flex;align-items:center;gap:7px;color:var(--txt);font-size:13.5px;padding:5px 0;text-decoration:none}
   .xfcol a:hover{color:var(--blue)}
@@ -405,6 +405,7 @@
     <nav class="xnav">
       <a href="https://mctoken.xyz">Home</a>
       <a href="https://explorer.mctoken.xyz" class="on" aria-current="page">Explorer</a>
+      <a href="https://voyager.mctoken.xyz" title="The Voyager — the lore render of this ledger: the same wallets as vessels on Moon Man’s idle voyage. Same receipts, two sides.">Voyager</a>
       <a id="navbuy" href="https://jup.ag/tokens/AmgUMQeqW8H74trc8UkKjzZWtxBdpS496wh4GLy2mCpo" target="_blank" rel="noopener">Buy</a>
       <a href="https://x.com/TokeCommunity" target="_blank" rel="noopener">X</a>
     </nav>
@@ -527,12 +528,13 @@
         <th class="c hide-sm" title="Holder class by current balance — 🐳 McWhale 5M+ · 💰 McMillionaire 1M+ · 🎒 McBagger 100K+ · 💵 McStacker 10K+ · 🍔 McToker 1+ (infra accounts unclassed)">Class</th>
         <th class="r" data-sort="balance">Balance <span class="ar" id="ar-balance">▼</span></th>
         <th class="r hide-sm" data-sort="pct">Supply %</th>
+        <th class="r hide-sm" data-sort="voyage" title="Voyage — Voyager Protocol v1: balance × days aboard (1 TOKE·day = 1 km), from this ledger’s own first-seen dates. Time in the hold beats size of the bag. The lore render lives at voyager.mctoken.xyz.">Voyage <span class="ar" id="ar-voyage"></span></th>
         <th class="c">Tags</th>
         <th class="c" data-sort="mcv" title="Great McVote NFTs — three commemorative medals, one per annual 4/20 vote (2024 · 2025 · 2026). A slot fills when the wallet holds that year; holding all three is a complete set.">NFT <span class="ar" id="ar-mcv"></span></th>
         <th class="c" data-sort="dank" title="$DANK — a Token-2022 SPL token. The icon shows when a wallet actively holds any amount; exact balance is in the wallet drawer.">DANK <span class="ar" id="ar-dank"></span></th>
         <th class="c" style="width:26px"></th>
       </tr></thead>
-      <tbody id="rows"><tr><td colspan="9" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
+      <tbody id="rows"><tr><td colspan="10" style="padding:22px;color:var(--mut);text-align:center">Loading wallets…</td></tr></tbody>
     </table>
     <div class="pager" id="pager"></div>
   </div>
@@ -580,6 +582,7 @@
   <div class="dw-addr mono" id="dw-addr"></div>
   <div class="dw-actions">
     <a class="dw-btn" id="dw-solscan" target="_blank" rel="noopener">View on Orb ↗</a>
+    <a class="dw-btn" id="dw-voyager" target="_blank" rel="noopener" title="The Voyager — this wallet as a vessel on Moon Man’s voyage">Lore render ↗</a>
     <span class="dw-btn" id="dw-copy">Copy address ⧉</span>
   </div>
   <div id="dw-kvs"></div>
@@ -618,7 +621,7 @@ const usd=n=>n==null?'—':(n>=1e9?'$'+(n/1e9).toFixed(2)+'B':n>=1e6?'$'+(n/1e6)
 const tokeHtml=n=>{ if(n==null)return '—'; const neg=n<0; let v=Math.abs(+n);
   let I=Math.floor(v), G=Math.round((v-I)*1000); if(G>=1000){I++;G=0;}
   return (neg?'-':'')+I.toLocaleString('en-US')+'<span class="g" title="grams · 0.001 TOKE each">.'+String(G).padStart(3,'0')+'</span>'; };
-let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, DANK={}, MOVERS=null, TF='1d', view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=20, ENV=null, TOKE_PRICE=null;
+let ALL=[], TAGS={tags:{},assign:{},detail:{}}, LABELS={categories:{},assign:{}}, NFT={}, DANK={}, MOVERS=null, TF='1d', view=[], focus='all', sortKey='balance', sortDir=-1, page=0, PER=20, ENV=null, TOKE_PRICE=null, VOY_ASOF=0;
 const MCV_YEARS=['2024','2025','2026'];
 // ── Provenance module · McVault Era filter state (facets compose with quick-view focus + search) ──
 const MCV={voted:new Set(),nft:new Set(),set:false};
@@ -749,6 +752,11 @@ fetch('https://api.mctoken.xyz/v1/oracle',{cache:'no-cache'}).then(r=>{ if(!r.ok
 }).catch(marketFallbackDex);
 
 
+// Voyager Protocol v1 distance formatter (1 TOKE·day = 1 km)
+const kmFmt=n=>{ if(!(n>0))return'—'; const a=Math.abs(n);
+  if(a>=1e12)return (n/1e12).toFixed(2)+'T km'; if(a>=1e9)return (n/1e9).toFixed(2)+'B km';
+  if(a>=1e6)return (n/1e6).toFixed(2)+'M km'; if(a>=1e3)return (n/1e3).toFixed(1)+'K km'; return Math.round(n)+' km'; };
+
 // ── base listing + tags ──
 Promise.all([
   fetch('api/v1/base_lean.json').then(r=>r.json()),
@@ -764,12 +772,24 @@ Promise.all([
   if(NFT.hold) ALL.forEach(r=>{ const h=NFT.hold[r.address]; r.mcv=h?h.total:0; });
   // annotate each row with its $DANK balance so the column sorts/filters like any other field
   if(DANK.hold) ALL.forEach(r=>{ r.dank=DANK.hold[r.address]||0; });
+  // annotate each row with its Voyager Protocol v1 distance (balance × days aboard, 1 TOKE·day = 1 km)
+  // so the column sorts like any other field — ages come from this ledger's own first-seen dates
+  VOY_ASOF=Date.parse(base.as_of||'')||Date.now();
+  ALL.forEach(r=>{ const t=r.first_seen?Date.parse(r.first_seen):NaN;
+    r.days=isFinite(t)?Math.max(0,Math.floor((VOY_ASOF-t)/864e5)):0;
+    r.voyage=(r.balance>0&&r.days>0)?r.balance*r.days:0; });
   buildKpis(); renderMcvault(); renderDank(); apply();
+  // twin handoff: ?v=<address|name> opens the wallet drawer — the Voyager links here with the same param
+  try{ const v=(new URLSearchParams(location.search).get('v')||'').trim();
+    if(v){ const lv=v.toLowerCase();
+      const row=ALL.find(r=>r.address===v)||ALL.find(r=>(r.sns||'').toLowerCase()===lv||((r.sns_all||[]).some(d=>String(d).toLowerCase()===lv)));
+      if(row){ $('q').value=(row.sns&&lv===(row.sns||'').toLowerCase())?row.sns:v; apply(); openDrawer(row); } }
+  }catch(e){}
   const f=base.freshness||{};
   $('srcline').innerHTML='Source: on-chain transfer ledger + token-account snapshot · built '+
     ((base.source&&base.source.pipeline)||'build_base_lean.py')+' · ledger spans '+
     (f.first_block_time||'').slice(0,10)+' → '+(base.as_of||'').replace('T',' ').replace('Z',' UTC')+'.';
-}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="9" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
+}).catch(()=>{ $('rows').innerHTML='<tr><td colspan="10" style="padding:20px;color:var(--warn)">Could not load base_lean.json</td></tr>'; });
 
 const tagsFor=a=>TAGS.assign[a]||[];
 const labelFor=a=>LABELS.assign[a]||null;
@@ -1029,11 +1049,12 @@ function draw(){
       <td class="c hide-sm tagcell">${classHtml(r)}</td>
       <td class="r">${bal}${mv.bal}</td>
       <td class="r pct hide-sm">${r.balance>0?fmt(r.pct,4)+'%':'—'}</td>
+      <td class="r hide-sm">${r.voyage>0?`<span class="voy" title="${fmt(r.days,0)} days aboard · lore render: voyager.mctoken.xyz">${kmFmt(r.voyage)}</span>`:'—'}</td>
       <td class="c tagcell">${em||'<span class="none">—</span>'}</td>
       <td class="c">${medalsHtml(r.address)}</td>
       <td class="c">${dankHtml(r.address)}</td>
       <td class="c chev">›</td></tr>`;
-  }).join('')||'<tr><td colspan="9" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
+  }).join('')||'<tr><td colspan="10" style="padding:20px;color:var(--mut)">No wallets match.</td></tr>';
   [...$('rows').querySelectorAll('tr[data-i]')].forEach(tr=>tr.onclick=()=>openDrawer(view[+tr.dataset.i]));
   $('pager').innerHTML=`<span class="pgsz">Rows <select id="pgsize">${[10,20,50,100].map(o=>`<option value="${o}"${o===PER?' selected':''}>${o}</option>`).join('')}</select></span>`+
     `<span class="pgnav"><button class="pgb" id="first" ${page<=0?'disabled':''}>« First</button>`+
@@ -1055,6 +1076,7 @@ function openDrawer(r){
   $('dw-rank').textContent=r.balance>0&&r.rank?('Rank #'+r.rank+' · holder'):(r.balance>0?'Current holder':'Former / zero balance');
   $('dw-addr').textContent=r.address;
   $('dw-solscan').href=orb(r.address);
+  $('dw-voyager').href='https://voyager.mctoken.xyz/?v='+r.address;
   $('dw-copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(r.address);$('dw-copy').textContent='Copied ✓';setTimeout(()=>$('dw-copy').textContent='Copy address ⧉',1000);};
   const mvKv=(()=>{ const f=MOVERS&&MOVERS.frames&&MOVERS.frames[TF]; const m=f&&f.moves[r.address];
     if(!m||(!m[0]&&!m[1])) return null;
@@ -1069,6 +1091,8 @@ function openDrawer(r){
     ['Value', TOKE_PRICE==null?'—':usd(r.balance*TOKE_PRICE)],
     ['Balance', (r.balance>0?tokeHtml(r.balance):'0<span class="g">.000</span>')+' TOKE'],
     ['Supply %', r.balance>0?fmt(r.pct,4)+'%':'—'],
+    ['Days aboard', r.days>0?fmt(r.days,0)+' d':'—'],
+    ['Voyage distance', r.voyage>0?kmFmt(r.voyage)+' <span style="color:var(--mut2);font-weight:400">· Protocol v1</span>':'—'],
     ...(mvKv?[mvKv]:[]),
     ['First seen', r.first_seen||'—'],
     ['Last seen', r.last_seen||'—'],
