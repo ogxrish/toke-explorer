@@ -1,0 +1,51 @@
+name: refresh-holders
+
+# Keeps holders.json / holders_all.json in lockstep with the auto-refreshed
+# base datasets. Runs whenever the external pipeline pushes fresh facts
+# (base_lean / labels / badges), plus a 6-hourly safety net and a manual
+# trigger. Pushes made with GITHUB_TOKEN cannot re-trigger workflows, and the
+# paths filter excludes the derived files — no loops possible.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api/v1/base_lean.json'
+      - 'api/v1/labels.json'
+      - 'api/v1/badges.json'
+      - 'scripts/refresh_holders.py'
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-holders
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Derive holders datasets from base_lean + labels + badges
+        run: python3 scripts/refresh_holders.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- api/v1/holders.json api/v1/holders_all.json; then
+            echo "holders already current — nothing to commit"
+            exit 0
+          fi
+          git config user.name  "toke-refresh"
+          git config user.email "refresh@mctoken.xyz"
+          git add api/v1/holders.json api/v1/holders_all.json
+          AS_OF=$(python3 -c "import json; print(json.load(open('api/v1/base_lean.json'))['as_of'])")
+          git commit -m "auto-refresh: holders derived from base_lean as of ${AS_OF} [holders-refresh]"
+          git pull --rebase origin main
+          git push origin main
