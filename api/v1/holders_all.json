@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-13T17:59:33Z",
+  "as_of": "2026-07-13T21:36:07Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -165484,7 +165484,7 @@
       "pct": 0.0001,
       "rank": 9180,
       "type": "holder",
-      "sns": "noiz.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
