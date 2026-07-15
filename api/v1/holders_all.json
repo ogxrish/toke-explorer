@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-14T15:34:33Z",
+  "as_of": "2026-07-14T22:34:09Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -168,7 +168,7 @@
       "pct": 2.326003,
       "rank": 8,
       "type": "holder",
-      "sns": "reverend.skr",
+      "sns": null,
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -5980,7 +5980,7 @@
       "pct": 0.002481,
       "rank": 322,
       "type": "holder",
-      "sns": "chris.bonk",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -147808,7 +147808,7 @@
       "pct": 0.0001,
       "rank": 8198,
       "type": "holder",
-      "sns": "solana-heroes.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -153676,7 +153676,7 @@
       "pct": 0.0001,
       "rank": 8524,
       "type": "holder",
-      "sns": "addyz.skr",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -163792,7 +163792,7 @@
       "pct": 0.0001,
       "rank": 9086,
       "type": "holder",
-      "sns": "juamps.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
