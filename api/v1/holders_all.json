@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-16T08:15:46Z",
+  "as_of": "2026-07-16T23:22:20Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 75596666.674,
-      "pct": 17.999203,
+      "balance": 75599838.157,
+      "pct": 17.999959,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -608,8 +608,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3535681.695,
-      "pct": 0.841829,
+      "balance": 3532510.212,
+      "pct": 0.841074,
       "rank": 28,
       "type": "lp",
       "sns": null,
@@ -206776,7 +206776,7 @@
       "pct": 0.0001,
       "rank": 11474,
       "type": "holder",
-      "sns": "patriarh.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -209116,7 +209116,7 @@
       "pct": 0.0001,
       "rank": 11604,
       "type": "holder",
-      "sns": "ingueno.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
