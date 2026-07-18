@@ -207,8 +207,11 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "reverend.skr",
+      "domains": [
+        "reverendreilly.sol",
+        "reverend.skr"
+      ],
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -1390,8 +1393,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "zachssecureseeker.skr",
+      "domains": [
+        "zachssecureseeker.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -1870,8 +1875,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "silverfoxcc.letsbonk",
+      "domains": [
+        "silverfoxcc.letsbonk"
+      ],
       "badges": [
         "mcvoter"
       ],
@@ -2132,8 +2139,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "hud.skr",
+      "domains": [
+        "hud.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale"
