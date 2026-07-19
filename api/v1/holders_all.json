@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-19T11:34:38Z",
+  "as_of": "2026-07-19T14:47:56Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 75673843.727,
-      "pct": 18.017579,
+      "balance": 75666808.872,
+      "pct": 18.015904,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -608,8 +608,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3545689.967,
-      "pct": 0.844212,
+      "balance": 3545245.653,
+      "pct": 0.844106,
       "rank": 28,
       "type": "lp",
       "sns": null,
@@ -1701,10 +1701,28 @@
       }
     },
     {
+      "address": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ",
+      "balance": 107523.555,
+      "pct": 0.025601,
+      "rank": 86,
+      "type": "holder",
+      "sns": null,
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [],
+      "first_seen": "2024-11-20",
+      "age_days": 606,
+      "cite": {
+        "type": "account",
+        "ref": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ"
+      }
+    },
+    {
       "address": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w",
       "balance": 105049.267,
       "pct": 0.025012,
-      "rank": 86,
+      "rank": 87,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1724,7 +1742,7 @@
       "address": "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY",
       "balance": 101997.025,
       "pct": 0.024285,
-      "rank": 87,
+      "rank": 88,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1738,24 +1756,6 @@
       "cite": {
         "type": "account",
         "ref": "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY"
-      }
-    },
-    {
-      "address": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ",
-      "balance": 100044.386,
-      "pct": 0.02382,
-      "rank": 88,
-      "type": "holder",
-      "sns": null,
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [],
-      "first_seen": "2024-11-20",
-      "age_days": 606,
-      "cite": {
-        "type": "account",
-        "ref": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ"
       }
     },
     {
