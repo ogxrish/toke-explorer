@@ -3,9 +3,9 @@
   "publish_allowed": true,
   "flow_reconciled": false,
   "scope": "verified: complete wallet listing + exact current balances + freshness. DAO/treasury transfer-flow history is a documented, in-progress reconciliation.",
-  "generated": "2026-07-21T00:26:17.505233Z",
-  "as_of": "2026-07-20T18:12:39Z",
-  "lag_hours": 5.86,
+  "generated": "2026-07-21T06:26:08.448652Z",
+  "as_of": "2026-07-21T05:49:07Z",
+  "lag_hours": 0.25,
   "gating": [
     {
       "check": "I1 genesis mint",
