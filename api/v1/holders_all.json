@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-21T06:36:12Z",
+  "as_of": "2026-07-21T23:33:43Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 75658874.209,
-      "pct": 18.014015,
+      "balance": 75570079.424,
+      "pct": 17.992873,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -608,8 +608,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3551894.886,
-      "pct": 0.845689,
+      "balance": 3531251.649,
+      "pct": 0.840774,
       "rank": 28,
       "type": "lp",
       "sns": null,
@@ -1381,10 +1381,28 @@
       }
     },
     {
+      "address": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ",
+      "balance": 217519.067,
+      "pct": 0.05179,
+      "rank": 69,
+      "type": "holder",
+      "sns": "tokeup.sol",
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [],
+      "first_seen": "2025-06-22",
+      "age_days": 394,
+      "cite": {
+        "type": "account",
+        "ref": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ"
+      }
+    },
+    {
       "address": "25mYnjJ2MXHZH6NvTTdA63JvjgRVcuiaj6MRiEQNs1Dq",
       "balance": 194679.033,
       "pct": 0.046352,
-      "rank": 69,
+      "rank": 70,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1402,7 +1420,7 @@
       "address": "BamRvWvs9b2W4haLon5ihn4hTpFCQcjDcL51WLLGFiW3",
       "balance": 193072.615,
       "pct": 0.04597,
-      "rank": 70,
+      "rank": 71,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1420,7 +1438,7 @@
       "address": "HuWcGCHZ8UcqcDM9jjjUavDDqqNStDiqbaXhNMp5qRo7",
       "balance": 191559.153,
       "pct": 0.045609,
-      "rank": 71,
+      "rank": 72,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1438,7 +1456,7 @@
       "address": "9eAMnhXwup2BVfdijQtJ1MhQufRyf5zNfNWHLid3hPLR",
       "balance": 187824.869,
       "pct": 0.04472,
-      "rank": 72,
+      "rank": 73,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1456,7 +1474,7 @@
       "address": "Ebt34viXjyF67sRMmQ6cnuLqAbC4yF1ihkqdFXiry7S7",
       "balance": 175338.268,
       "pct": 0.041747,
-      "rank": 73,
+      "rank": 74,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1474,7 +1492,7 @@
       "address": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
       "balance": 166717.07,
       "pct": 0.039695,
-      "rank": 74,
+      "rank": 75,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1498,7 +1516,7 @@
       "address": "3M6n1wNnZ2bJFrgwgs8J73RcsQXiYdUVFg8c2p56mzCu",
       "balance": 163624.33,
       "pct": 0.038958,
-      "rank": 75,
+      "rank": 76,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1516,7 +1534,7 @@
       "address": "Doh9aJ1ASkJkhcH3q7LRPCqfPUFQ2FuBuRc1XP8Dzvfn",
       "balance": 159400.196,
       "pct": 0.037952,
-      "rank": 76,
+      "rank": 77,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1532,9 +1550,9 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 156785.383,
-      "pct": 0.03733,
-      "rank": 77,
+      "balance": 156227.922,
+      "pct": 0.037197,
+      "rank": 78,
       "type": "lp",
       "sns": null,
       "badges": [
@@ -1554,7 +1572,7 @@
       "address": "9TZPd1E36mH7RA1qTuNeDCshQKax4kV8oiMWBgE8oBKa",
       "balance": 144153.212,
       "pct": 0.034322,
-      "rank": 78,
+      "rank": 79,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1572,7 +1590,7 @@
       "address": "GXCCtJ7bZinBxcqPB1iA7JQFmqAb997dfVvDxAfe64zj",
       "balance": 139661.38,
       "pct": 0.033253,
-      "rank": 79,
+      "rank": 80,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1590,7 +1608,7 @@
       "address": "45ruCyfdRkWpRNGEqWzjCiXRHkZs8WXCLQ67Pnpye7Hp",
       "balance": 138372.904,
       "pct": 0.032946,
-      "rank": 80,
+      "rank": 81,
       "type": "program",
       "sns": null,
       "badges": [
@@ -1610,7 +1628,7 @@
       "address": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8",
       "balance": 131785.637,
       "pct": 0.031378,
-      "rank": 81,
+      "rank": 82,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1630,7 +1648,7 @@
       "address": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG",
       "balance": 123239.384,
       "pct": 0.029343,
-      "rank": 82,
+      "rank": 83,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1650,7 +1668,7 @@
       "address": "9FMpnrPf33HyUKdGxwXznsG2adxz4eEUfQWL3F51UXho",
       "balance": 118229.203,
       "pct": 0.02815,
-      "rank": 83,
+      "rank": 84,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1668,7 +1686,7 @@
       "address": "FuhhoJe8HMa8X62Znh62Ko2hLA9NyVH8JUUrfJaaz5g4",
       "balance": 116108.024,
       "pct": 0.027645,
-      "rank": 84,
+      "rank": 85,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -1686,7 +1704,7 @@
       "address": "7EfKr9enEvWuUV2c33YGWx5N5SJa6uUJp3BGQt4fD512",
       "balance": 110608.735,
       "pct": 0.026335,
-      "rank": 85,
+      "rank": 86,
       "type": "program",
       "sns": null,
       "badges": [
@@ -1698,24 +1716,6 @@
       "cite": {
         "type": "account",
         "ref": "7EfKr9enEvWuUV2c33YGWx5N5SJa6uUJp3BGQt4fD512"
-      }
-    },
-    {
-      "address": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ",
-      "balance": 107523.555,
-      "pct": 0.025601,
-      "rank": 86,
-      "type": "holder",
-      "sns": null,
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [],
-      "first_seen": "2024-11-20",
-      "age_days": 608,
-      "cite": {
-        "type": "account",
-        "ref": "nhSpEfqM1i8S5r14v4EW9Y1o9mr2FHHLyP9rdYZuheQ"
       }
     },
     {
@@ -21737,7 +21737,7 @@
       "pct": 0.000473,
       "rank": 1196,
       "type": "holder",
-      "sns": "lessin.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -212788,7 +212788,7 @@
       "pct": 0.0001,
       "rank": 11808,
       "type": "holder",
-      "sns": "hrothgar.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -227260,7 +227260,7 @@
       "pct": 0.0001,
       "rank": 12612,
       "type": "holder",
-      "sns": "nature.btc",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -233707,28 +233707,10 @@
       }
     },
     {
-      "address": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ",
-      "balance": 0.029,
-      "pct": 0.0,
-      "rank": 12969,
-      "type": "holder",
-      "sns": "tokeup.sol",
-      "badges": [
-        "sub-1-toke"
-      ],
-      "cohorts": [],
-      "first_seen": "2025-06-22",
-      "age_days": 394,
-      "cite": {
-        "type": "account",
-        "ref": "D7GCMdtdi24g5bnS8RG6KtHf6B9xja8WEeiyE1ZZ4vfZ"
-      }
-    },
-    {
       "address": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4",
       "balance": 0.029,
       "pct": 0.0,
-      "rank": 12970,
+      "rank": 12969,
       "type": "holder",
       "sns": "supertoke.sol",
       "badges": [
@@ -233749,7 +233731,7 @@
       "address": "G1mnQHKX5TP7oqdSBFTrjwb1wnH62tg9EhaTScVXmMpc",
       "balance": 0.016,
       "pct": 0.0,
-      "rank": 12971,
+      "rank": 12970,
       "type": "lp",
       "sns": null,
       "badges": [
@@ -233767,7 +233749,7 @@
       "address": "B8AH9qeiAxMbmtVcatngKznpQi8kUctE3eeZ6cR7MPp4",
       "balance": 0.014,
       "pct": 0.0,
-      "rank": 12972,
+      "rank": 12971,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233785,7 +233767,7 @@
       "address": "7BgXHAFmQWNy1vHqVpfC2fyUZ52DP2dsjsMhHAngpD5s",
       "balance": 0.013,
       "pct": 0.0,
-      "rank": 12973,
+      "rank": 12972,
       "type": "lp",
       "sns": null,
       "badges": [
@@ -233803,7 +233785,7 @@
       "address": "3EaksaaFdG5X9TEL4oKmSbBFCxai6zGPdPQuagzHR6kh",
       "balance": 0.01,
       "pct": 0.0,
-      "rank": 12974,
+      "rank": 12973,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233821,7 +233803,7 @@
       "address": "GN9yohmAL7ETT27uRxAZEdmEj7bYBJDZGS6oFrHXNy9k",
       "balance": 0.01,
       "pct": 0.0,
-      "rank": 12975,
+      "rank": 12974,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233839,7 +233821,7 @@
       "address": "6g48C9cVvf5ZhnNh9YRKfg8Y4K1QmyvHTvse8Wa3uZ9G",
       "balance": 0.008,
       "pct": 0.0,
-      "rank": 12976,
+      "rank": 12975,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233857,7 +233839,7 @@
       "address": "3nMNd89AxwHUa1AFvQGqohRkxFEQsTsgiEyEyqXFHyyH",
       "balance": 0.006,
       "pct": 0.0,
-      "rank": 12977,
+      "rank": 12976,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233877,7 +233859,7 @@
       "address": "J434EKW6KDmnJHxVty1axHT6kjszKKFEyesKqxdQ7y64",
       "balance": 0.004,
       "pct": 0.0,
-      "rank": 12978,
+      "rank": 12977,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233895,7 +233877,7 @@
       "address": "7UPwrDM9FpHZazVpDLRHY8w3YSWg5nmfoPqZbqKDMyfu",
       "balance": 0.002,
       "pct": 0.0,
-      "rank": 12979,
+      "rank": 12978,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233913,7 +233895,7 @@
       "address": "4hnBkxpXUNK2ukEChKwSysXZNYfgP28o2t9u418auoAz",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 12980,
+      "rank": 12979,
       "type": "lp",
       "sns": null,
       "badges": [
@@ -233931,7 +233913,7 @@
       "address": "7ou6rGCEJdTG6uz62wXgKCUbr6MXEuLSoW2kG1mTM3Tt",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 12981,
+      "rank": 12980,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233949,7 +233931,7 @@
       "address": "8QpEdzd6ccYoM4p7aDnwtp4ZfXHmzovDSgG1U8L62Pii",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 12982,
+      "rank": 12981,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233967,7 +233949,7 @@
       "address": "8hCZGefRFLE57ZpyQisjfZ8x2ewX32TiQb5MogD38eod",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 12983,
+      "rank": 12982,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -233985,7 +233967,7 @@
       "address": "G5UXXXsJVn3t9fQoEpMgDZ8WD2R2t6kDP3vUjmeayySz",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 12984,
+      "rank": 12983,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -234003,7 +233985,7 @@
       "address": "Gmzkbvr9f5yodC7SSQGMeZBGe8QyMxL9SBjeHBqTE5Sw",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 12985,
+      "rank": 12984,
       "type": "holder",
       "sns": null,
       "badges": [
@@ -234021,7 +234003,7 @@
       "address": "WcxMZyxxV7Z7LfsSvEZdWpPzghT6xhzuBudz66F4H1Z",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 12986,
+      "rank": 12985,
       "type": "holder",
       "sns": null,
       "badges": [
