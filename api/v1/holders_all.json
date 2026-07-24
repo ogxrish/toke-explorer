@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-23T17:56:21Z",
+  "as_of": "2026-07-23T18:05:17Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -3960,7 +3960,7 @@
       "pct": 0.005743,
       "rank": 210,
       "type": "holder",
-      "sns": "lifafa.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -153658,7 +153658,7 @@
       "pct": 0.0001,
       "rank": 8523,
       "type": "holder",
-      "sns": "addyz.skr",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -213616,7 +213616,7 @@
       "pct": 0.0001,
       "rank": 11854,
       "type": "holder",
-      "sns": "nomutemind.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -224002,7 +224002,7 @@
       "pct": 0.0001,
       "rank": 12431,
       "type": "holder",
-      "sns": "secondlife.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
