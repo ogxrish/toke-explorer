@@ -130,7 +130,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
+      "sns": "pulselabs.sol",
       "domains": [
         "pulseagency.sol",
         "pulselabs.sol"
@@ -2789,11 +2789,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "ooharu.letsbonk",
-      "domains": [
-        "paredis.sol",
-        "ooharu.letsbonk"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter",
         "born-mcwhale"
