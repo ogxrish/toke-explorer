@@ -130,7 +130,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "pulselabs.sol",
+      "sns": null,
       "domains": [
         "pulseagency.sol",
         "pulselabs.sol"
@@ -209,7 +209,6 @@
       "pair": null,
       "sns": "reverend.skr",
       "domains": [
-        "reverendreilly.sol",
         "reverend.skr"
       ],
       "badges": [
@@ -1258,8 +1257,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "shadowdrsp.sol",
+      "domains": [
+        "shadowdrsp.sol"
+      ],
       "badges": [
         "mcvoter"
       ],
@@ -1310,8 +1311,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "pinkerton.sol",
+      "domains": [
+        "pinkerton.sol"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -1389,8 +1392,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "zachssecureseeker.skr",
+      "domains": [
+        "zachssecureseeker.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -1867,8 +1872,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "silverfoxcc.letsbonk",
+      "domains": [
+        "silverfoxcc.letsbonk"
+      ],
       "badges": [
         "mcvoter"
       ],
@@ -2129,8 +2136,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "hud.skr",
+      "domains": [
+        "hud.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale"
@@ -2224,10 +2233,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "oghst.sol",
-      "domains": [
-        "oghst.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter"
       ],
@@ -2789,8 +2796,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "ooharu.letsbonk",
+      "domains": [
+        "ooharu.letsbonk"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale"
@@ -3145,8 +3154,10 @@
       "type_basis": "top holder | SuperToke brand wallet -- NOT an official treasury",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "supertoke.sol",
+      "domains": [
+        "supertoke.sol"
+      ],
       "badges": [
         "sub-1-toke"
       ],
