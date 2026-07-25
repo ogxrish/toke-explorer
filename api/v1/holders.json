@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-07-24T14:19:09Z",
+  "as_of": "2026-07-24T21:12:59Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -99,7 +99,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "fartcoinmaxi.sol",
+      "sns": null,
       "domains": [
         "fartcoinmaxi.sol",
         "fartcoinmaximalist.sol"
@@ -130,7 +130,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "pulselabs.sol",
+      "sns": null,
       "domains": [
         "pulseagency.sol",
         "pulselabs.sol"
@@ -1258,10 +1258,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "shadowdrsp.sol",
-      "domains": [
-        "shadowdrsp.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter"
       ],
@@ -1682,10 +1680,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "trill_og.sol",
-      "domains": [
-        "trill_og.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter",
         "born-mcwhale"
