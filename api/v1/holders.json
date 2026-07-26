@@ -99,7 +99,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
+      "sns": "fartcoinmaxi.sol",
       "domains": [
         "fartcoinmaxi.sol",
         "fartcoinmaximalist.sol"
@@ -207,10 +207,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "reverend.skr",
-      "domains": [
-        "reverend.skr"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -1311,10 +1309,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "pinkerton.sol",
-      "domains": [
-        "pinkerton.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -1392,10 +1388,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "zachssecureseeker.skr",
-      "domains": [
-        "zachssecureseeker.skr"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -1872,10 +1866,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "silverfoxcc.letsbonk",
-      "domains": [
-        "silverfoxcc.letsbonk"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter"
       ],
@@ -2136,10 +2128,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "hud.skr",
-      "domains": [
-        "hud.skr"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter",
         "born-mcwhale"
@@ -2798,6 +2788,7 @@
       "pair": null,
       "sns": "ooharu.letsbonk",
       "domains": [
+        "paredis.sol",
         "ooharu.letsbonk"
       ],
       "badges": [
