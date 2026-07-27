@@ -73,10 +73,8 @@
       "type_basis": "tokecouncil.sol -- the project's official DAO treasury + governance",
       "pool": null,
       "pair": null,
-      "sns": "tokecouncil.sol",
-      "domains": [
-        "tokecouncil.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcwhale"
       ],
@@ -632,10 +630,7 @@
       "pool": null,
       "pair": null,
       "sns": null,
-      "domains": [
-        "hola.sol",
-        "holaplex.sol"
-      ],
+      "domains": [],
       "badges": [
         "mcwhale"
       ],
