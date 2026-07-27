@@ -99,7 +99,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "fartcoinmaxi.sol",
+      "sns": null,
       "domains": [
         "fartcoinmaxi.sol",
         "fartcoinmaximalist.sol"
@@ -130,7 +130,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
+      "sns": "pulselabs.sol",
       "domains": [
         "pulseagency.sol",
         "pulselabs.sol"
