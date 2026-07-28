@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-07-27T13:42:11Z",
+  "as_of": "2026-07-27T23:04:23Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 75558039.429,
-      "pct": 17.990006,
+      "balance": 75573470.586,
+      "pct": 17.993681,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -722,8 +722,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3544377.561,
-      "pct": 0.843899,
+      "balance": 3528946.404,
+      "pct": 0.840225,
       "rank": 28,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -3135,10 +3135,8 @@
       "type_basis": "top holder | SuperToke brand wallet -- NOT an official treasury",
       "pool": null,
       "pair": null,
-      "sns": "supertoke.sol",
-      "domains": [
-        "supertoke.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "sub-1-toke"
       ],
