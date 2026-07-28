@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-28T02:24:16Z",
+  "as_of": "2026-07-28T07:29:29Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -28019,7 +28019,7 @@
       "pct": 0.000473,
       "rank": 1545,
       "type": "holder",
-      "sns": "daiane.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -110260,7 +110260,7 @@
       "pct": 0.0001,
       "rank": 6112,
       "type": "holder",
-      "sns": "wayneo.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -165448,7 +165448,7 @@
       "pct": 0.0001,
       "rank": 9178,
       "type": "holder",
-      "sns": null,
+      "sns": "noiz.sol",
       "badges": [
         "mcvoter"
       ],
@@ -210142,7 +210142,7 @@
       "pct": 0.0001,
       "rank": 11661,
       "type": "holder",
-      "sns": null,
+      "sns": "shejo.sol",
       "badges": [
         "mcvoter"
       ],
@@ -210178,7 +210178,7 @@
       "pct": 0.0001,
       "rank": 11663,
       "type": "holder",
-      "sns": "ucsdmiami2020.letsbonk",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
@@ -213922,7 +213922,7 @@
       "pct": 0.0001,
       "rank": 11871,
       "type": "holder",
-      "sns": "comrade.sol",
+      "sns": null,
       "badges": [
         "mcvoter"
       ],
