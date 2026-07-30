@@ -1,7 +1,7 @@
 {
   "dataset": "dank",
   "version": "v1",
-  "as_of": "2026-07-29",
+  "as_of": "2026-07-30",
   "chain": "solana-mainnet",
   "source": {
     "confidence": "confirmed",
@@ -31,9 +31,36 @@
       "holders": 86,
       "supply": 68274668.976,
       "genesis_unit_holders": 23,
-      "airdropees": null
+      "airdropees": 16
     },
-    "airdrop": null,
+    "airdrop": {
+      "tge_date": "2024-03-08",
+      "count": 16,
+      "total_airdropped": 28531134.858,
+      "distributor": "7UdfcEtKpH92girjgho42KpE4duPM7eMSoUHJrP5Pg2Y",
+      "cite": {
+        "type": "mint",
+        "ref": "2F3jy8JCmuUURhzRufWqxMdBichXfjemA3A8wokgreY4"
+      },
+      "recipients": {
+        "2DDJYSMohwodPdHX5ZfQHLXWzhbFEZrUSho2bJK8zWEJ": 509069.019,
+        "2bQye4ZMNnqVi41W9arQwihhCV1Crhd1kXVFLcyiAg6A": 171593.364,
+        "3CgvbiM3op4vjrrjH2zcrQUwsqh5veNVRjFCB9N6sRoD": 1405.352,
+        "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG": 44461.231,
+        "41aG2SQnWaRWrLYSBRLkysC6zo9RWPiaKxwsSPUybFHN": 3411853.384,
+        "44wmXvwxVf3kSie93PHUyhKWM3yRnAh9aRLZtRwC257r": 19062.001,
+        "4vds2WZaa1jpxMvuG6ujBnjQV7MoMx8WS17pmdQqd87u": 162523.922,
+        "Axuag93xbc2hEg5LpqNByt9nWbMuW4sogZvv2HU8VQUY": 1521325.071,
+        "BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV": 102057.281,
+        "CYdNNkCPBE5JB8zWG9E6mtyG3Ecucypp4xDBH5Gf5Mn3": 2846291.831,
+        "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E": 2847880.453,
+        "GkFTCgGC9kp1F1p2FAGpWbZiT9yxPy1TpP19xveZ3Wa5": 1183494.047,
+        "HPQTF8okxV5vqRZEu6pFBwdevNkmCCrdpEgfVZ6UZvyb": 15123812.99,
+        "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K": 290881.282,
+        "PbFaJsbFx1LGf67w1hVmC9K7YmmbztRy979Xq3WD646": 280862.584,
+        "emzmZ5H4mKst5RNVJyxXkfa8QVmPvvVAAuYG1wVdFwM": 14561.046
+      }
+    },
     "hold": {
       "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC": 32083968.022,
       "8FSeN4nQZn1Rujp5ZgHsEvKm6j6dr7qA23vJX4R4vTLp": 7023927.85,
