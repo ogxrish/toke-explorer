@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-07-31T14:07:09Z",
+  "as_of": "2026-07-31T20:38:03Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -82,7 +82,7 @@
       "pct": 4.380645,
       "rank": 4,
       "type": "holder",
-      "sns": null,
+      "sns": "fartcoinmaxi.sol",
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -608,8 +608,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3530532.542,
-      "pct": 0.840603,
+      "balance": 3530244.825,
+      "pct": 0.840534,
       "rank": 28,
       "type": "lp",
       "sns": null,
@@ -1550,8 +1550,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 155562.695,
-      "pct": 0.037039,
+      "balance": 155850.412,
+      "pct": 0.037107,
       "rank": 78,
       "type": "lp",
       "sns": null,

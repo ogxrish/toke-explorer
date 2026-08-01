@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-07-31T14:07:09Z",
+  "as_of": "2026-07-31T20:38:03Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -97,7 +97,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
+      "sns": "fartcoinmaxi.sol",
       "domains": [
         "fartcoinmaxi.sol",
         "fartcoinmaximalist.sol"
@@ -719,8 +719,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3530532.542,
-      "pct": 0.840603,
+      "balance": 3530244.825,
+      "pct": 0.840534,
       "rank": 28,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -1399,8 +1399,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 155562.695,
-      "pct": 0.037039,
+      "balance": 155850.412,
+      "pct": 0.037107,
       "rank": 57,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
