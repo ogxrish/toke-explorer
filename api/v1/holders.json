@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-08-01T18:24:59Z",
+  "as_of": "2026-08-01T18:49:52Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -73,8 +73,10 @@
       "type_basis": "tokecouncil.sol -- the project's official DAO treasury + governance",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "tokecouncil.sol",
+      "domains": [
+        "tokecouncil.sol"
+      ],
       "badges": [
         "mcwhale"
       ],
@@ -97,8 +99,11 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "fartcoinmaxi.sol",
+      "domains": [
+        "fartcoinmaxi.sol",
+        "fartcoinmaximalist.sol"
+      ],
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -125,8 +130,11 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "pulselabs.sol",
+      "domains": [
+        "pulseagency.sol",
+        "pulselabs.sol"
+      ],
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -199,8 +207,11 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "reverend.skr",
+      "domains": [
+        "reverendreilly.sol",
+        "reverend.skr"
+      ],
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -624,7 +635,10 @@
       "pool": null,
       "pair": null,
       "sns": null,
-      "domains": [],
+      "domains": [
+        "hola.sol",
+        "holaplex.sol"
+      ],
       "badges": [
         "mcwhale"
       ],
@@ -1244,8 +1258,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "shadowdrsp.sol",
+      "domains": [
+        "shadowdrsp.sol"
+      ],
       "badges": [
         "mcvoter"
       ],
@@ -1375,8 +1391,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "zachssecureseeker.skr",
+      "domains": [
+        "zachssecureseeker.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -1666,8 +1684,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "trill_og.sol",
+      "domains": [
+        "trill_og.sol"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale"
@@ -2115,8 +2135,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "hud.skr",
+      "domains": [
+        "hud.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale"
@@ -2210,8 +2232,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "oghst.sol",
+      "domains": [
+        "oghst.sol"
+      ],
       "badges": [
         "mcvoter"
       ],
@@ -2773,8 +2797,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "paredis.sol",
+      "domains": [
+        "paredis.sol"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale"
