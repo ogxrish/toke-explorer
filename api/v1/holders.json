@@ -2786,10 +2786,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "paredis.sol",
-      "domains": [
-        "paredis.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter",
         "born-mcwhale"
