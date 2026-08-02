@@ -97,7 +97,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
+      "sns": "fartcoinmaxi.sol",
       "domains": [
         "fartcoinmaxi.sol",
         "fartcoinmaximalist.sol"
@@ -1677,10 +1677,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "trill_og.sol",
-      "domains": [
-        "trill_og.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter",
         "born-mcwhale"
