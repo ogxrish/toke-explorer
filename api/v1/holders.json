@@ -98,10 +98,7 @@
       "pool": null,
       "pair": null,
       "sns": null,
-      "domains": [
-        "fartcoinmaxi.sol",
-        "fartcoinmaximalist.sol"
-      ],
+      "domains": [],
       "badges": [
         "mcwhale",
         "born-mcwhale",
