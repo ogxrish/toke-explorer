@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-08-02T04:57:04Z",
+  "as_of": "2026-08-02T21:46:07Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 75571084.43,
-      "pct": 17.993112,
+      "balance": 75564697.836,
+      "pct": 17.991592,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -97,7 +97,7 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "fartcoinmaxi.sol",
+      "sns": null,
       "domains": [
         "fartcoinmaxi.sol",
         "fartcoinmaximalist.sol"
@@ -128,11 +128,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "pulselabs.sol",
-      "domains": [
-        "pulseagency.sol",
-        "pulselabs.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -630,10 +627,7 @@
       "pool": null,
       "pair": null,
       "sns": null,
-      "domains": [
-        "hola.sol",
-        "holaplex.sol"
-      ],
+      "domains": [],
       "badges": [
         "mcwhale"
       ],
@@ -725,8 +719,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3533867.02,
-      "pct": 0.841397,
+      "balance": 3540253.614,
+      "pct": 0.842917,
       "rank": 28,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -2221,10 +2215,8 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": "oghst.sol",
-      "domains": [
-        "oghst.sol"
-      ],
+      "sns": null,
+      "domains": [],
       "badges": [
         "mcvoter"
       ],
