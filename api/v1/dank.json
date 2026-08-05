@@ -1,7 +1,7 @@
 {
   "dataset": "dank",
   "version": "v1",
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "chain": "solana-mainnet",
   "source": {
     "confidence": "confirmed",
