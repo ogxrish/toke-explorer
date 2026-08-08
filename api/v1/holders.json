@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-08-07T04:03:10Z",
+  "as_of": "2026-08-07T20:14:18Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -716,8 +716,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3535938.306,
-      "pct": 0.84189,
+      "balance": 3536628.296,
+      "pct": 0.842054,
       "rank": 28,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -1396,8 +1396,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 154384.224,
-      "pct": 0.036758,
+      "balance": 153694.234,
+      "pct": 0.036594,
       "rank": 57,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
