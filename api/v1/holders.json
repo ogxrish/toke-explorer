@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-08-10T20:24:14Z",
+  "as_of": "2026-08-11T11:05:05Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 75619294.435,
-      "pct": 18.004591,
+      "balance": 80446131.479,
+      "pct": 19.153838,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -36,7 +36,7 @@
         "dank"
       ],
       "first_seen": "2025-06-22",
-      "age_days": 414,
+      "age_days": 415,
       "cite": {
         "type": "account",
         "ref": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC"
@@ -58,7 +58,7 @@
       ],
       "cohorts": [],
       "first_seen": "2026-07-01",
-      "age_days": 40,
+      "age_days": 41,
       "cite": {
         "type": "account",
         "ref": "H2TpziM2ukBxyXgF5SebtfiLv4qNLZ9fqdkeit34QKXh"
@@ -82,7 +82,7 @@
         "voter"
       ],
       "first_seen": "2025-07-23",
-      "age_days": 383,
+      "age_days": 384,
       "cite": {
         "type": "account",
         "ref": "EJRLuph8jS33dVFYRcMqFuaq8J5NAvmGxZ5z6qHrZp9G"
@@ -110,7 +110,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "Cn4PFeEoYEESmaxyxButz4tPeJwTPe9Wu1brLN4ZoAjm"
@@ -138,7 +138,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "B9kqXmUGtCkox8iB7mU4NA8j6F2vaSAT4ycTH43Jd2go"
@@ -160,7 +160,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-01-22",
-      "age_days": 931,
+      "age_days": 932,
       "cite": {
         "type": "account",
         "ref": "BEmzTQaiwyj69uvxmdL9fSEuETg9vsVrRDAkmDE1HWTD"
@@ -184,7 +184,7 @@
         "voter"
       ],
       "first_seen": "2024-03-19",
-      "age_days": 874,
+      "age_days": 875,
       "cite": {
         "type": "account",
         "ref": "F5jVYEUgBJq8StFVgeFHCLwi1V6xAVw6KeZhcdguZPFA"
@@ -212,7 +212,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "4PQqQS1zgYtfffwjWWHBHSBbN2Z4NhSKuyFU57k73fRg"
@@ -239,7 +239,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "6jh58Wrdj1hqm1isoJzzwLFY3z59LJkcDTofbeCvXdta"
@@ -263,7 +263,7 @@
         "voter"
       ],
       "first_seen": "2025-06-24",
-      "age_days": 412,
+      "age_days": 413,
       "cite": {
         "type": "account",
         "ref": "CNYZVtjWmxAReY5cDZ1pGMKVbpGpzFX9M5UmUxDJJ8zb"
@@ -289,7 +289,7 @@
         "voter"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "9Tr2n1FgSdVbVSbZMbzWeEUcD38vPnZUeT49Rn5WMsjg"
@@ -311,7 +311,7 @@
       ],
       "cohorts": [],
       "first_seen": "2025-12-27",
-      "age_days": 226,
+      "age_days": 227,
       "cite": {
         "type": "account",
         "ref": "CAtbYmRPGQ89w7Mhvm542HTBNVNdivnYuSDk8yu23b1G"
@@ -338,7 +338,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "HywKobFsXKgEjXdmRUhDZSNhy5ZsYzEQcpkznC8vfudM"
@@ -363,7 +363,7 @@
         "genesis-71"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "262TD6WsmfNzNynJvdeeUjpRb6TKRpv7qvZWaqg9y9BY"
@@ -390,7 +390,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "2QHBAEfVpWoQhH8gZ8ayEDG9Qx8B4GND6CtjhNF66VXV"
@@ -418,7 +418,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU"
@@ -445,7 +445,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "DZfnwyPkeie3VhqYKnqMCwbGpXkyhpkw3krQtGrRDTRt"
@@ -472,7 +472,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "7uX1Y92jMmKf85oVbqa9SkPcWKKBKiM1ijHmpnBenffG"
@@ -499,7 +499,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "CEMG8XgB8nCswF2JfN58HmMXXQYQAw9iEdB96d9Ey2hN"
@@ -526,7 +526,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "HEgQJtRcqbqff4AysJeqriXMLsTe4xNYD7gNTFesCCKo"
@@ -553,7 +553,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "8g5q1HaEf35BbUTssb2Ciae14zWo4VCFVciXqudVY8Et"
@@ -581,7 +581,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "BUUpQKV29s7ETEDDHSR61gATqFe9FZAaCGmtLFNkTYm7"
@@ -608,39 +608,17 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "2DAjebnMhZixg8tA7zBHkUDovqB6fiEnnU2r9USASiWk"
       }
     },
     {
-      "address": "7r8oBPs3vNqgqEG8gnyPWUPgWuScxXyUxtmoLd1bg17F",
-      "balance": 5000000.0,
-      "pct": 1.190476,
-      "rank": 24,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcwhale"
-      ],
-      "cohorts": [],
-      "first_seen": "2024-05-21",
-      "age_days": 811,
-      "cite": {
-        "type": "account",
-        "ref": "7r8oBPs3vNqgqEG8gnyPWUPgWuScxXyUxtmoLd1bg17F"
-      }
-    },
-    {
       "address": "BeWdDLTddmeeGYPJ1DUFLBmBT7rZinLrpmztd7bC3kyT",
       "balance": 4811480.69,
       "pct": 1.14559,
-      "rank": 25,
+      "rank": 24,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -654,7 +632,7 @@
         "voter"
       ],
       "first_seen": "2026-04-20",
-      "age_days": 112,
+      "age_days": 113,
       "cite": {
         "type": "account",
         "ref": "BeWdDLTddmeeGYPJ1DUFLBmBT7rZinLrpmztd7bC3kyT"
@@ -664,7 +642,7 @@
       "address": "yUMVe9AAEhTHYZ66YtNZGYzM3Yw831S2jL16M48qu5h",
       "balance": 4693084.814,
       "pct": 1.117401,
-      "rank": 26,
+      "rank": 25,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -681,10 +659,32 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "yUMVe9AAEhTHYZ66YtNZGYzM3Yw831S2jL16M48qu5h"
+      }
+    },
+    {
+      "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
+      "balance": 3705740.946,
+      "pct": 0.882319,
+      "rank": 26,
+      "type": "lp",
+      "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
+      "pool": "Liquidity Pool · Raydium",
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcmillionaire"
+      ],
+      "cohorts": [],
+      "first_seen": "2023-07-07",
+      "age_days": 1131,
+      "cite": {
+        "type": "account",
+        "ref": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1"
       }
     },
     {
@@ -708,39 +708,17 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "6kF876MVyNvQPpk6t2N86YsAvdxeujhLjfV5QxrEnMzm"
       }
     },
     {
-      "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3538283.13,
-      "pct": 0.842448,
-      "rank": 28,
-      "type": "lp",
-      "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
-      "pool": "Liquidity Pool · Raydium",
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcmillionaire"
-      ],
-      "cohorts": [],
-      "first_seen": "2023-07-07",
-      "age_days": 1130,
-      "cite": {
-        "type": "account",
-        "ref": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1"
-      }
-    },
-    {
       "address": "7e8gwANGNHCNYfoymmbxXFaT6w8htGTAEYU74qrabnXP",
       "balance": 3077906.074,
       "pct": 0.732835,
-      "rank": 29,
+      "rank": 28,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -752,7 +730,7 @@
       ],
       "cohorts": [],
       "first_seen": "2023-09-25",
-      "age_days": 1050,
+      "age_days": 1051,
       "cite": {
         "type": "account",
         "ref": "7e8gwANGNHCNYfoymmbxXFaT6w8htGTAEYU74qrabnXP"
@@ -762,7 +740,7 @@
       "address": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi",
       "balance": 2506304.941,
       "pct": 0.596739,
-      "rank": 30,
+      "rank": 29,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -777,7 +755,7 @@
         "dank"
       ],
       "first_seen": "2023-09-25",
-      "age_days": 1050,
+      "age_days": 1051,
       "cite": {
         "type": "account",
         "ref": "A9YQ8AGnQ48HpKuFJWy7to4uQKyZK8WUeCc6NqUpR1Yi"
@@ -787,7 +765,7 @@
       "address": "4CujvSgw7GPbQQUwSQn7WAwaAQfeNuefUH26o6un98r7",
       "balance": 2247562.45,
       "pct": 0.535134,
-      "rank": 31,
+      "rank": 30,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Value Average",
       "pool": null,
@@ -799,7 +777,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-06-23",
-      "age_days": 778,
+      "age_days": 779,
       "cite": {
         "type": "account",
         "ref": "4CujvSgw7GPbQQUwSQn7WAwaAQfeNuefUH26o6un98r7"
@@ -809,7 +787,7 @@
       "address": "GzgQVVYUSeNAtzq5j4oVPSSnQWVeuHtyRANPHFn5BVN6",
       "balance": 2105181.623,
       "pct": 0.501234,
-      "rank": 32,
+      "rank": 31,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Value Average",
       "pool": null,
@@ -821,7 +799,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-09-10",
-      "age_days": 699,
+      "age_days": 700,
       "cite": {
         "type": "account",
         "ref": "GzgQVVYUSeNAtzq5j4oVPSSnQWVeuHtyRANPHFn5BVN6"
@@ -831,7 +809,7 @@
       "address": "Hh1XASEhhnAUiNBTSrvy1oHVxV2mCnXpnK8da2ksZJ98",
       "balance": 2000104.336,
       "pct": 0.476215,
-      "rank": 33,
+      "rank": 32,
       "type": "lp",
       "type_basis": "Meteora — Meteora DLMM — TOKE vault -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Meteora",
@@ -843,7 +821,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-08-21",
-      "age_days": 719,
+      "age_days": 720,
       "cite": {
         "type": "account",
         "ref": "Hh1XASEhhnAUiNBTSrvy1oHVxV2mCnXpnK8da2ksZJ98"
@@ -853,7 +831,7 @@
       "address": "CcPT7f8UNLkVAniuYAS6dQra9XpgGhpuHfMKDqt9czEH",
       "balance": 1868033.58,
       "pct": 0.44477,
-      "rank": 34,
+      "rank": 33,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -865,7 +843,7 @@
       ],
       "cohorts": [],
       "first_seen": "2026-04-28",
-      "age_days": 104,
+      "age_days": 105,
       "cite": {
         "type": "account",
         "ref": "CcPT7f8UNLkVAniuYAS6dQra9XpgGhpuHfMKDqt9czEH"
@@ -875,7 +853,7 @@
       "address": "89WVHa1aWgQhUzn7QbzgRqftiN6g7XzG7kVzHejkvozb",
       "balance": 1713861.676,
       "pct": 0.408062,
-      "rank": 35,
+      "rank": 34,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -887,7 +865,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-03-28",
-      "age_days": 865,
+      "age_days": 866,
       "cite": {
         "type": "account",
         "ref": "89WVHa1aWgQhUzn7QbzgRqftiN6g7XzG7kVzHejkvozb"
@@ -897,7 +875,7 @@
       "address": "AwYP4c3CkR3PmjB24GMs2StpqVNJrjes7rQyJ7whWMBP",
       "balance": 1420069.0,
       "pct": 0.338112,
-      "rank": 36,
+      "rank": 35,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -911,7 +889,7 @@
         "dank"
       ],
       "first_seen": "2023-07-15",
-      "age_days": 1122,
+      "age_days": 1123,
       "cite": {
         "type": "account",
         "ref": "AwYP4c3CkR3PmjB24GMs2StpqVNJrjes7rQyJ7whWMBP"
@@ -921,7 +899,7 @@
       "address": "2RiLEvkxMf4Exj9ehkx1M6J5ZbWUDjZhBC7dGLy5KAKu",
       "balance": 1300000.0,
       "pct": 0.309524,
-      "rank": 37,
+      "rank": 36,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -933,7 +911,7 @@
       ],
       "cohorts": [],
       "first_seen": "2023-12-31",
-      "age_days": 953,
+      "age_days": 954,
       "cite": {
         "type": "account",
         "ref": "2RiLEvkxMf4Exj9ehkx1M6J5ZbWUDjZhBC7dGLy5KAKu"
@@ -943,7 +921,7 @@
       "address": "75e8V3dgRuhWgJhzBAGHCzp5cQkWmwDKsJgbo98PdGJH",
       "balance": 1163325.368,
       "pct": 0.276982,
-      "rank": 38,
+      "rank": 37,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -957,7 +935,7 @@
         "voter"
       ],
       "first_seen": "2023-08-02",
-      "age_days": 1104,
+      "age_days": 1105,
       "cite": {
         "type": "account",
         "ref": "75e8V3dgRuhWgJhzBAGHCzp5cQkWmwDKsJgbo98PdGJH"
@@ -967,7 +945,7 @@
       "address": "GL75PPxY9333e8pDSYmSXLhzs1K4HSqVPnhJiWbEbLZg",
       "balance": 1123338.46,
       "pct": 0.267461,
-      "rank": 39,
+      "rank": 38,
       "type": "lp",
       "type_basis": "Meteora — Meteora DLMM — TOKE vault -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Meteora",
@@ -979,7 +957,7 @@
       ],
       "cohorts": [],
       "first_seen": "2025-12-07",
-      "age_days": 246,
+      "age_days": 247,
       "cite": {
         "type": "account",
         "ref": "GL75PPxY9333e8pDSYmSXLhzs1K4HSqVPnhJiWbEbLZg"
@@ -989,7 +967,7 @@
       "address": "CEkpDznmt6PLfqP1UBgGK1kHEunquN5BsmQqhnya8WYR",
       "balance": 1099124.8,
       "pct": 0.261696,
-      "rank": 40,
+      "rank": 39,
       "type": "treasury-dao",
       "type_basis": "Align — Align org wallet — DAO treasury",
       "pool": null,
@@ -1001,7 +979,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-10-29",
-      "age_days": 650,
+      "age_days": 651,
       "cite": {
         "type": "account",
         "ref": "CEkpDznmt6PLfqP1UBgGK1kHEunquN5BsmQqhnya8WYR"
@@ -1011,6 +989,30 @@
       "address": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht",
       "balance": 1052667.189,
       "pct": 0.250635,
+      "rank": 40,
+      "type": "holder",
+      "type_basis": "default -- holds TOKE; no further claim",
+      "pool": null,
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcmillionaire"
+      ],
+      "cohorts": [
+        "voter"
+      ],
+      "first_seen": "2023-09-25",
+      "age_days": 1051,
+      "cite": {
+        "type": "account",
+        "ref": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht"
+      }
+    },
+    {
+      "address": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
+      "balance": 1049531.63,
+      "pct": 0.249888,
       "rank": 41,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
@@ -1025,31 +1027,7 @@
         "voter"
       ],
       "first_seen": "2023-09-25",
-      "age_days": 1050,
-      "cite": {
-        "type": "account",
-        "ref": "AZX2SC9YR7Efon7GpTSV9UZo76y2DWQwqdrnrUJNj7Ht"
-      }
-    },
-    {
-      "address": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E",
-      "balance": 1049531.63,
-      "pct": 0.249888,
-      "rank": 42,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcmillionaire"
-      ],
-      "cohorts": [
-        "voter"
-      ],
-      "first_seen": "2023-09-25",
-      "age_days": 1050,
+      "age_days": 1051,
       "cite": {
         "type": "account",
         "ref": "G1z63UwmikRCk9Ftfg3i3JHJaxLxdTU1t3zvgqM3Dr1E"
@@ -1059,7 +1037,7 @@
       "address": "yZVVD5wuUkif6QoZB8zXLVwRD7npeFPjuAnfdJAS8cR",
       "balance": 1000420.0,
       "pct": 0.238195,
-      "rank": 43,
+      "rank": 42,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1071,7 +1049,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-04-23",
-      "age_days": 839,
+      "age_days": 840,
       "cite": {
         "type": "account",
         "ref": "yZVVD5wuUkif6QoZB8zXLVwRD7npeFPjuAnfdJAS8cR"
@@ -1081,7 +1059,7 @@
       "address": "6xAUBxf6UNp9VVuZ2okccKPFivZYmqeaKkRAhMEkMEqt",
       "balance": 1000000.0,
       "pct": 0.238095,
-      "rank": 44,
+      "rank": 43,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1095,7 +1073,7 @@
         "dank"
       ],
       "first_seen": "2023-10-03",
-      "age_days": 1042,
+      "age_days": 1043,
       "cite": {
         "type": "account",
         "ref": "6xAUBxf6UNp9VVuZ2okccKPFivZYmqeaKkRAhMEkMEqt"
@@ -1105,7 +1083,7 @@
       "address": "CdBwbERBjB34S56HTk3u8gekN6iexj3Sxaim2y3TTKVe",
       "balance": 999999.972,
       "pct": 0.238095,
-      "rank": 45,
+      "rank": 44,
       "type": "lp",
       "type_basis": "Meteora — Meteora DLMM — TOKE vault -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Meteora",
@@ -1117,7 +1095,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-10-17",
-      "age_days": 662,
+      "age_days": 663,
       "cite": {
         "type": "account",
         "ref": "CdBwbERBjB34S56HTk3u8gekN6iexj3Sxaim2y3TTKVe"
@@ -1127,7 +1105,7 @@
       "address": "8gqqXGYn12rEk1i8cteiDv3agUsA9TAXQXFSwet48Kjx",
       "balance": 894830.271,
       "pct": 0.213055,
-      "rank": 46,
+      "rank": 45,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Value Average",
       "pool": null,
@@ -1139,7 +1117,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-09-09",
-      "age_days": 700,
+      "age_days": 701,
       "cite": {
         "type": "account",
         "ref": "8gqqXGYn12rEk1i8cteiDv3agUsA9TAXQXFSwet48Kjx"
@@ -1149,7 +1127,7 @@
       "address": "3Fece1MgF38DHebxttqtQtN5Qga1zc8c1FqQdGiFa8Kp",
       "balance": 613351.649,
       "pct": 0.146036,
-      "rank": 47,
+      "rank": 46,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Value Average",
       "pool": null,
@@ -1161,7 +1139,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-08-25",
-      "age_days": 715,
+      "age_days": 716,
       "cite": {
         "type": "account",
         "ref": "3Fece1MgF38DHebxttqtQtN5Qga1zc8c1FqQdGiFa8Kp"
@@ -1171,7 +1149,7 @@
       "address": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K",
       "balance": 525024.068,
       "pct": 0.125006,
-      "rank": 48,
+      "rank": 47,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1185,7 +1163,7 @@
         "voter"
       ],
       "first_seen": "2023-09-25",
-      "age_days": 1050,
+      "age_days": 1051,
       "cite": {
         "type": "account",
         "ref": "J5H2BrCyKyMYFc8We7MMpDNz2VGtZPGJqSeXaDJyjR1K"
@@ -1195,7 +1173,7 @@
       "address": "5H3k8cjdR5vGSzy1mxYGyx4BThxbEe5ETAZx7NYPAw78",
       "balance": 500001.0,
       "pct": 0.119048,
-      "rank": 49,
+      "rank": 48,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -1207,7 +1185,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-07-20",
-      "age_days": 751,
+      "age_days": 752,
       "cite": {
         "type": "account",
         "ref": "5H3k8cjdR5vGSzy1mxYGyx4BThxbEe5ETAZx7NYPAw78"
@@ -1217,7 +1195,7 @@
       "address": "4EWqcx3aNZmMetCnxwLYwyNjan6XLGp3Ca2W316vrSjv",
       "balance": 468434.903,
       "pct": 0.111532,
-      "rank": 50,
+      "rank": 49,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -1229,7 +1207,7 @@
       ],
       "cohorts": [],
       "first_seen": "2025-05-09",
-      "age_days": 458,
+      "age_days": 459,
       "cite": {
         "type": "account",
         "ref": "4EWqcx3aNZmMetCnxwLYwyNjan6XLGp3Ca2W316vrSjv"
@@ -1239,7 +1217,7 @@
       "address": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9",
       "balance": 338098.678,
       "pct": 0.0805,
-      "rank": 51,
+      "rank": 50,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1253,7 +1231,7 @@
         "voter"
       ],
       "first_seen": "2024-08-25",
-      "age_days": 715,
+      "age_days": 716,
       "cite": {
         "type": "account",
         "ref": "3y1hVagSF13rusdQApdZeMcu4XaYA8wCUYEqa85M3QX9"
@@ -1263,6 +1241,34 @@
       "address": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i",
       "balance": 296386.279,
       "pct": 0.070568,
+      "rank": 51,
+      "type": "holder",
+      "type_basis": "default -- holds TOKE; no further claim",
+      "pool": null,
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter",
+        "born-mcwhale",
+        "dank"
+      ],
+      "cohorts": [
+        "genesis-71",
+        "voter",
+        "dank"
+      ],
+      "first_seen": "2023-06-22",
+      "age_days": 1146,
+      "cite": {
+        "type": "account",
+        "ref": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i"
+      }
+    },
+    {
+      "address": "DzLoB3ZED5r6XWojr94ePM76uX5FX2CHgJtKFRV9aDsK",
+      "balance": 293856.496,
+      "pct": 0.069966,
       "rank": 52,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
@@ -1277,20 +1283,19 @@
       ],
       "cohorts": [
         "genesis-71",
-        "voter",
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
-        "ref": "4RwK9mHw3g52LPXRGaBFX6HtAT5Tax6WVFDbFcTADE4i"
+        "ref": "DzLoB3ZED5r6XWojr94ePM76uX5FX2CHgJtKFRV9aDsK"
       }
     },
     {
-      "address": "DzLoB3ZED5r6XWojr94ePM76uX5FX2CHgJtKFRV9aDsK",
-      "balance": 293856.496,
-      "pct": 0.069966,
+      "address": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
+      "balance": 293472.822,
+      "pct": 0.069874,
       "rank": 53,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
@@ -1305,38 +1310,11 @@
       ],
       "cohorts": [
         "genesis-71",
-        "dank"
-      ],
-      "first_seen": "2023-06-22",
-      "age_days": 1145,
-      "cite": {
-        "type": "account",
-        "ref": "DzLoB3ZED5r6XWojr94ePM76uX5FX2CHgJtKFRV9aDsK"
-      }
-    },
-    {
-      "address": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
-      "balance": 293472.822,
-      "pct": 0.069874,
-      "rank": 54,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter",
-        "born-mcwhale",
-        "dank"
-      ],
-      "cohorts": [
-        "genesis-71",
         "voter",
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2"
@@ -1346,7 +1324,7 @@
       "address": "3wNQnr98nRfcbNEjfvq88J5mv8BdJKKqEzyibFfhCvoA",
       "balance": 261939.291,
       "pct": 0.062366,
-      "rank": 55,
+      "rank": 54,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1360,7 +1338,7 @@
         "voter"
       ],
       "first_seen": "2024-10-29",
-      "age_days": 650,
+      "age_days": 651,
       "cite": {
         "type": "account",
         "ref": "3wNQnr98nRfcbNEjfvq88J5mv8BdJKKqEzyibFfhCvoA"
@@ -1370,7 +1348,7 @@
       "address": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
       "balance": 166717.07,
       "pct": 0.039695,
-      "rank": 56,
+      "rank": 55,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1388,7 +1366,7 @@
         "dank"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx"
@@ -1396,9 +1374,9 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 151206.45,
-      "pct": 0.036002,
-      "rank": 57,
+      "balance": 155925.419,
+      "pct": 0.037125,
+      "rank": 56,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -1412,7 +1390,7 @@
         "dank"
       ],
       "first_seen": "2024-08-16",
-      "age_days": 724,
+      "age_days": 725,
       "cite": {
         "type": "account",
         "ref": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL"
@@ -1422,7 +1400,7 @@
       "address": "45ruCyfdRkWpRNGEqWzjCiXRHkZs8WXCLQ67Pnpye7Hp",
       "balance": 138372.904,
       "pct": 0.032946,
-      "rank": 58,
+      "rank": 57,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Referral Program",
       "pool": null,
@@ -1436,7 +1414,7 @@
         "dank"
       ],
       "first_seen": "2023-07-18",
-      "age_days": 1119,
+      "age_days": 1120,
       "cite": {
         "type": "account",
         "ref": "45ruCyfdRkWpRNGEqWzjCiXRHkZs8WXCLQ67Pnpye7Hp"
@@ -1446,7 +1424,7 @@
       "address": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8",
       "balance": 131785.637,
       "pct": 0.031378,
-      "rank": 59,
+      "rank": 58,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1460,7 +1438,7 @@
         "voter"
       ],
       "first_seen": "2025-04-18",
-      "age_days": 479,
+      "age_days": 480,
       "cite": {
         "type": "account",
         "ref": "5UfAujJoXK7RASkG8AdCVXB6N2iqBc3MNX29s81Tp3j8"
@@ -1470,7 +1448,7 @@
       "address": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG",
       "balance": 123239.384,
       "pct": 0.029343,
-      "rank": 60,
+      "rank": 59,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1484,7 +1462,7 @@
         "voter"
       ],
       "first_seen": "2024-03-08",
-      "age_days": 885,
+      "age_days": 886,
       "cite": {
         "type": "account",
         "ref": "3sKtMPJ9K7ejdhh9RrXr5LBn6cGYnccf4fe2JwXvk6jG"
@@ -1494,7 +1472,7 @@
       "address": "7EfKr9enEvWuUV2c33YGWx5N5SJa6uUJp3BGQt4fD512",
       "balance": 110608.735,
       "pct": 0.026335,
-      "rank": 61,
+      "rank": 60,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Value Average",
       "pool": null,
@@ -1506,7 +1484,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-07-31",
-      "age_days": 740,
+      "age_days": 741,
       "cite": {
         "type": "account",
         "ref": "7EfKr9enEvWuUV2c33YGWx5N5SJa6uUJp3BGQt4fD512"
@@ -1516,7 +1494,7 @@
       "address": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w",
       "balance": 105049.267,
       "pct": 0.025012,
-      "rank": 62,
+      "rank": 61,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1530,7 +1508,7 @@
         "voter"
       ],
       "first_seen": "2024-04-21",
-      "age_days": 841,
+      "age_days": 842,
       "cite": {
         "type": "account",
         "ref": "EKY7Y6k47uoMHm8R3aTKjYhuedQB4dMRWo3dwPUEQy7w"
@@ -1540,7 +1518,7 @@
       "address": "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY",
       "balance": 101997.025,
       "pct": 0.024285,
-      "rank": 63,
+      "rank": 62,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1554,7 +1532,7 @@
         "voter"
       ],
       "first_seen": "2024-11-13",
-      "age_days": 635,
+      "age_days": 636,
       "cite": {
         "type": "account",
         "ref": "Bc1ExwDLQiS4fF3QYvZWpoxEv8ST9crvdvvGvGpE62VY"
@@ -1564,7 +1542,7 @@
       "address": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ",
       "balance": 94458.485,
       "pct": 0.02249,
-      "rank": 64,
+      "rank": 63,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1578,7 +1556,7 @@
         "voter"
       ],
       "first_seen": "2025-04-22",
-      "age_days": 475,
+      "age_days": 476,
       "cite": {
         "type": "account",
         "ref": "F58QoaJfZyhoop7u57mcU2ifvdyWbTHTa2svFdcRvPzQ"
@@ -1588,7 +1566,7 @@
       "address": "24JJsUjgco4Rvp3zPboVR4h8CjtXouPJ39vcLMyM8B8Q",
       "balance": 92071.27,
       "pct": 0.021922,
-      "rank": 65,
+      "rank": 64,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1603,7 +1581,7 @@
         "genesis-71"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "24JJsUjgco4Rvp3zPboVR4h8CjtXouPJ39vcLMyM8B8Q"
@@ -1611,9 +1589,9 @@
     },
     {
       "address": "7UdfcEtKpH92girjgho42KpE4duPM7eMSoUHJrP5Pg2Y",
-      "balance": 74949.659,
-      "pct": 0.017845,
-      "rank": 66,
+      "balance": 75872.071,
+      "pct": 0.018065,
+      "rank": 65,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -1627,7 +1605,7 @@
         "dank"
       ],
       "first_seen": "2024-03-08",
-      "age_days": 885,
+      "age_days": 886,
       "cite": {
         "type": "account",
         "ref": "7UdfcEtKpH92girjgho42KpE4duPM7eMSoUHJrP5Pg2Y"
@@ -1637,7 +1615,7 @@
       "address": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt",
       "balance": 71950.512,
       "pct": 0.017131,
-      "rank": 67,
+      "rank": 66,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1651,7 +1629,7 @@
         "voter"
       ],
       "first_seen": "2023-09-25",
-      "age_days": 1050,
+      "age_days": 1051,
       "cite": {
         "type": "account",
         "ref": "J59xUBAKNQpQ2TN3cMxCzufahrYs27SRpx1dauQ8fTt"
@@ -1661,7 +1639,7 @@
       "address": "411NsBymTGeD594RYEkh6bCzRiyNTm5Ayq5LcgYChuuQ",
       "balance": 66002.0,
       "pct": 0.015715,
-      "rank": 68,
+      "rank": 67,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1676,7 +1654,7 @@
         "genesis-71"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "411NsBymTGeD594RYEkh6bCzRiyNTm5Ayq5LcgYChuuQ"
@@ -1686,7 +1664,7 @@
       "address": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa",
       "balance": 46206.169,
       "pct": 0.011001,
-      "rank": 69,
+      "rank": 68,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1700,7 +1678,7 @@
         "voter"
       ],
       "first_seen": "2024-02-15",
-      "age_days": 907,
+      "age_days": 908,
       "cite": {
         "type": "account",
         "ref": "J9gEBwE8JrB5cyTaw5XWAVPwopdZtkK3RwLqasKZecWa"
@@ -1710,7 +1688,7 @@
       "address": "CaRVMAahWoDKjo2t2wm3o4eQ7r4Pf4kHkQy7Ne2xktbj",
       "balance": 45650.233,
       "pct": 0.010869,
-      "rank": 70,
+      "rank": 69,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -1722,7 +1700,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-06-23",
-      "age_days": 778,
+      "age_days": 779,
       "cite": {
         "type": "account",
         "ref": "CaRVMAahWoDKjo2t2wm3o4eQ7r4Pf4kHkQy7Ne2xktbj"
@@ -1732,7 +1710,7 @@
       "address": "7QTVDSypfDiubj6tqBqXTZUMBAxy8DTpkCxZjLy4cAA8",
       "balance": 30354.532,
       "pct": 0.007227,
-      "rank": 71,
+      "rank": 70,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1746,7 +1724,7 @@
         "voter"
       ],
       "first_seen": "2024-02-10",
-      "age_days": 912,
+      "age_days": 913,
       "cite": {
         "type": "account",
         "ref": "7QTVDSypfDiubj6tqBqXTZUMBAxy8DTpkCxZjLy4cAA8"
@@ -1756,7 +1734,7 @@
       "address": "EKgqDf31eNiWrYBuhSPHq1MrSkdhqzD7HR61KzXUH5WU",
       "balance": 25930.201,
       "pct": 0.006174,
-      "rank": 72,
+      "rank": 71,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -1768,7 +1746,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-12-17",
-      "age_days": 601,
+      "age_days": 602,
       "cite": {
         "type": "account",
         "ref": "EKgqDf31eNiWrYBuhSPHq1MrSkdhqzD7HR61KzXUH5WU"
@@ -1778,7 +1756,7 @@
       "address": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w",
       "balance": 25713.525,
       "pct": 0.006122,
-      "rank": 73,
+      "rank": 72,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1792,7 +1770,7 @@
         "voter"
       ],
       "first_seen": "2024-02-16",
-      "age_days": 906,
+      "age_days": 907,
       "cite": {
         "type": "account",
         "ref": "8TSEjLoFRwBd9sMSNyxZz3BK5TFnaXiZebBcMZ75ra9w"
@@ -1802,7 +1780,7 @@
       "address": "CSovdZP3ondsYbRjeNdhdVGtReW52qjbLRBpp5cLnHt4",
       "balance": 24000.0,
       "pct": 0.005714,
-      "rank": 74,
+      "rank": 73,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1816,7 +1794,7 @@
         "dank"
       ],
       "first_seen": "2024-06-11",
-      "age_days": 790,
+      "age_days": 791,
       "cite": {
         "type": "account",
         "ref": "CSovdZP3ondsYbRjeNdhdVGtReW52qjbLRBpp5cLnHt4"
@@ -1826,7 +1804,7 @@
       "address": "GUFxwDrsLzSQ27xxTVe4y9BARZ6cENWmjzwe8XPy7AKu",
       "balance": 21642.604,
       "pct": 0.005153,
-      "rank": 75,
+      "rank": 74,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -1838,7 +1816,7 @@
       ],
       "cohorts": [],
       "first_seen": "2023-11-17",
-      "age_days": 997,
+      "age_days": 998,
       "cite": {
         "type": "account",
         "ref": "GUFxwDrsLzSQ27xxTVe4y9BARZ6cENWmjzwe8XPy7AKu"
@@ -1848,7 +1826,7 @@
       "address": "8Yjy7sGuKW7qDRHnnLPETPfH637PZas6Q59JoBwN3wAp",
       "balance": 13097.046,
       "pct": 0.003118,
-      "rank": 76,
+      "rank": 75,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1862,7 +1840,7 @@
         "voter"
       ],
       "first_seen": "2024-10-20",
-      "age_days": 659,
+      "age_days": 660,
       "cite": {
         "type": "account",
         "ref": "8Yjy7sGuKW7qDRHnnLPETPfH637PZas6Q59JoBwN3wAp"
@@ -1872,7 +1850,7 @@
       "address": "BtEbqpszWtqDJuubALLqtA6krcwmwWXomTSsyjusCqDR",
       "balance": 10673.32,
       "pct": 0.002541,
-      "rank": 77,
+      "rank": 76,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Limit Order",
       "pool": null,
@@ -1884,7 +1862,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-01-24",
-      "age_days": 929,
+      "age_days": 930,
       "cite": {
         "type": "account",
         "ref": "BtEbqpszWtqDJuubALLqtA6krcwmwWXomTSsyjusCqDR"
@@ -1894,7 +1872,7 @@
       "address": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX",
       "balance": 10316.287,
       "pct": 0.002456,
-      "rank": 78,
+      "rank": 77,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1908,7 +1886,7 @@
         "voter"
       ],
       "first_seen": "2025-04-22",
-      "age_days": 475,
+      "age_days": 476,
       "cite": {
         "type": "account",
         "ref": "84YPQXyPZjJEbhWsNT2bUzn4H6ukw1DQh8843Ai1DGfX"
@@ -1918,7 +1896,7 @@
       "address": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ",
       "balance": 10232.933,
       "pct": 0.002436,
-      "rank": 79,
+      "rank": 78,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1932,7 +1910,7 @@
         "voter"
       ],
       "first_seen": "2024-02-16",
-      "age_days": 906,
+      "age_days": 907,
       "cite": {
         "type": "account",
         "ref": "7x4MXnMKQMTnV5JXRs8FhBRDdBCt6E7yyyFX18nmuAsZ"
@@ -1942,7 +1920,7 @@
       "address": "ARccxmUvDpDZax4jXXPraFQMW69TtAu8YK1Fwo7dmYjU",
       "balance": 10000.0,
       "pct": 0.002381,
-      "rank": 80,
+      "rank": 79,
       "type": "program",
       "type_basis": "Jupiter — Jupiter Limit Order",
       "pool": null,
@@ -1954,7 +1932,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-04-16",
-      "age_days": 846,
+      "age_days": 847,
       "cite": {
         "type": "account",
         "ref": "ARccxmUvDpDZax4jXXPraFQMW69TtAu8YK1Fwo7dmYjU"
@@ -1964,7 +1942,7 @@
       "address": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c",
       "balance": 7332.284,
       "pct": 0.001746,
-      "rank": 81,
+      "rank": 80,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1978,7 +1956,7 @@
         "voter"
       ],
       "first_seen": "2024-04-04",
-      "age_days": 858,
+      "age_days": 859,
       "cite": {
         "type": "account",
         "ref": "9C2XVhcTevzcE8tSkgtc3cv95s5GT2GUFpnumqWkkg9c"
@@ -1988,7 +1966,7 @@
       "address": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z",
       "balance": 6843.55,
       "pct": 0.001629,
-      "rank": 82,
+      "rank": 81,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2002,7 +1980,7 @@
         "voter"
       ],
       "first_seen": "2024-05-21",
-      "age_days": 811,
+      "age_days": 812,
       "cite": {
         "type": "account",
         "ref": "BojanPsSS58pH9VzG5BhU7CSYx2pZWnTYpTBKbVGZR1Z"
@@ -2012,7 +1990,7 @@
       "address": "Dz8zYKBXpAZF2ij6vooJCheEmKzTGw5W2PYr3qpdSG9W",
       "balance": 4830.699,
       "pct": 0.00115,
-      "rank": 83,
+      "rank": 82,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2026,7 +2004,7 @@
         "dank"
       ],
       "first_seen": "2024-12-20",
-      "age_days": 598,
+      "age_days": 599,
       "cite": {
         "type": "account",
         "ref": "Dz8zYKBXpAZF2ij6vooJCheEmKzTGw5W2PYr3qpdSG9W"
@@ -2036,7 +2014,7 @@
       "address": "69yhtoJR4JYPPABZcSNkzuqbaFbwHsCkja1sP1Q2aVT5",
       "balance": 4621.194,
       "pct": 0.0011,
-      "rank": 84,
+      "rank": 83,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2050,7 +2028,7 @@
         "dank"
       ],
       "first_seen": "2024-01-14",
-      "age_days": 939,
+      "age_days": 940,
       "cite": {
         "type": "account",
         "ref": "69yhtoJR4JYPPABZcSNkzuqbaFbwHsCkja1sP1Q2aVT5"
@@ -2060,7 +2038,7 @@
       "address": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM",
       "balance": 4408.247,
       "pct": 0.00105,
-      "rank": 85,
+      "rank": 84,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2074,7 +2052,7 @@
         "voter"
       ],
       "first_seen": "2023-09-25",
-      "age_days": 1050,
+      "age_days": 1051,
       "cite": {
         "type": "account",
         "ref": "4hvaFXNEYAy2kMuJK48NkMACoyLQcRW9a69YuspFdmSM"
@@ -2084,7 +2062,7 @@
       "address": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV",
       "balance": 3866.112,
       "pct": 0.000921,
-      "rank": 86,
+      "rank": 85,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2100,7 +2078,7 @@
         "voter"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "9SpCKjemGLUhPLPfKFYBU4tG8dRvyZ8gFK18C7Zd2wuV"
@@ -2110,7 +2088,7 @@
       "address": "yn2hCxLNuG27pafeyBwb3HML4ZvhCQWws1opnq3oSsk",
       "balance": 3417.837,
       "pct": 0.000814,
-      "rank": 87,
+      "rank": 86,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2125,7 +2103,7 @@
         "genesis-71"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "yn2hCxLNuG27pafeyBwb3HML4ZvhCQWws1opnq3oSsk"
@@ -2135,7 +2113,7 @@
       "address": "7WE2YjRvFmT9aGrtHwBDgQqKNhtVpS8SDLqpzyZug4y3",
       "balance": 2741.162,
       "pct": 0.000653,
-      "rank": 88,
+      "rank": 87,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2147,7 +2125,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-08-26",
-      "age_days": 714,
+      "age_days": 715,
       "cite": {
         "type": "account",
         "ref": "7WE2YjRvFmT9aGrtHwBDgQqKNhtVpS8SDLqpzyZug4y3"
@@ -2157,6 +2135,30 @@
       "address": "HFqp6ErWHY6Uzhj8rFyjYuDya2mXUpYEk8VW75K9PSiY",
       "balance": 2571.098,
       "pct": 0.000612,
+      "rank": 88,
+      "type": "lp",
+      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
+      "pool": "Liquidity Pool",
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [
+        "dank"
+      ],
+      "first_seen": "2024-01-15",
+      "age_days": 939,
+      "cite": {
+        "type": "account",
+        "ref": "HFqp6ErWHY6Uzhj8rFyjYuDya2mXUpYEk8VW75K9PSiY"
+      }
+    },
+    {
+      "address": "7iWnBRRhBCiNXXPhqiGzvvBkKrvFSWqqmxRyu9VyYBxE",
+      "balance": 2212.993,
+      "pct": 0.000527,
       "rank": 89,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
@@ -2171,31 +2173,7 @@
         "dank"
       ],
       "first_seen": "2024-01-15",
-      "age_days": 938,
-      "cite": {
-        "type": "account",
-        "ref": "HFqp6ErWHY6Uzhj8rFyjYuDya2mXUpYEk8VW75K9PSiY"
-      }
-    },
-    {
-      "address": "7iWnBRRhBCiNXXPhqiGzvvBkKrvFSWqqmxRyu9VyYBxE",
-      "balance": 2212.993,
-      "pct": 0.000527,
-      "rank": 90,
-      "type": "lp",
-      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
-      "pool": "Liquidity Pool",
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [
-        "dank"
-      ],
-      "first_seen": "2024-01-15",
-      "age_days": 938,
+      "age_days": 939,
       "cite": {
         "type": "account",
         "ref": "7iWnBRRhBCiNXXPhqiGzvvBkKrvFSWqqmxRyu9VyYBxE"
@@ -2205,7 +2183,7 @@
       "address": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr",
       "balance": 1869.216,
       "pct": 0.000445,
-      "rank": 91,
+      "rank": 90,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2219,7 +2197,7 @@
         "voter"
       ],
       "first_seen": "2024-08-25",
-      "age_days": 715,
+      "age_days": 716,
       "cite": {
         "type": "account",
         "ref": "3oatM7v9eJXwTfqAaKwNkpDQz9fGtBu1QmA8WfRedFRr"
@@ -2229,6 +2207,30 @@
       "address": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h",
       "balance": 1823.354,
       "pct": 0.000434,
+      "rank": 91,
+      "type": "holder",
+      "type_basis": "default -- holds TOKE; no further claim",
+      "pool": null,
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [
+        "voter"
+      ],
+      "first_seen": "2025-04-22",
+      "age_days": 476,
+      "cite": {
+        "type": "account",
+        "ref": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h"
+      }
+    },
+    {
+      "address": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ",
+      "balance": 1712.428,
+      "pct": 0.000408,
       "rank": 92,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
@@ -2242,32 +2244,8 @@
       "cohorts": [
         "voter"
       ],
-      "first_seen": "2025-04-22",
-      "age_days": 475,
-      "cite": {
-        "type": "account",
-        "ref": "9wpDTYvkSsfXNZv6Ue1ehfH9ocLjk7AkV19B3QXseE3h"
-      }
-    },
-    {
-      "address": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ",
-      "balance": 1712.428,
-      "pct": 0.000408,
-      "rank": 93,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [
-        "voter"
-      ],
       "first_seen": "2024-04-18",
-      "age_days": 844,
+      "age_days": 845,
       "cite": {
         "type": "account",
         "ref": "8AsXw6RYpsFPLGn3vrioMEvEL8nGEjVmQvrZyo8EXNqJ"
@@ -2277,7 +2255,7 @@
       "address": "3LoAYHuSd7Gh8d7RTFnhvYtiTiefdZ5ByamU42vkzd76",
       "balance": 1642.174,
       "pct": 0.000391,
-      "rank": 94,
+      "rank": 93,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2291,7 +2269,7 @@
         "dank"
       ],
       "first_seen": "2024-01-15",
-      "age_days": 938,
+      "age_days": 939,
       "cite": {
         "type": "account",
         "ref": "3LoAYHuSd7Gh8d7RTFnhvYtiTiefdZ5ByamU42vkzd76"
@@ -2301,7 +2279,7 @@
       "address": "G63T88bCy9Z76d4w7C3hkDhWonvQeKBPKba2eKPrxQPN",
       "balance": 1624.499,
       "pct": 0.000387,
-      "rank": 95,
+      "rank": 94,
       "type": "lp",
       "type_basis": "Raydium — Raydium CLMM — TOKE vault -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Raydium",
@@ -2315,7 +2293,7 @@
         "dank"
       ],
       "first_seen": "2025-01-14",
-      "age_days": 573,
+      "age_days": 574,
       "cite": {
         "type": "account",
         "ref": "G63T88bCy9Z76d4w7C3hkDhWonvQeKBPKba2eKPrxQPN"
@@ -2325,7 +2303,7 @@
       "address": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR",
       "balance": 1529.831,
       "pct": 0.000364,
-      "rank": 96,
+      "rank": 95,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2339,7 +2317,7 @@
         "voter"
       ],
       "first_seen": "2025-04-22",
-      "age_days": 475,
+      "age_days": 476,
       "cite": {
         "type": "account",
         "ref": "CyYTFCsksVA2dVqfxypuE99a4bpmsff2AGvH9heVDNgR"
@@ -2349,7 +2327,7 @@
       "address": "5C4y6Yck6EGcAB728DbvgwWsWRwuxhKkCKiYXbzrYDQK",
       "balance": 1342.138,
       "pct": 0.00032,
-      "rank": 97,
+      "rank": 96,
       "type": "lp",
       "type_basis": "Orca — Orca Whirlpool — TOKE vault -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Orca",
@@ -2361,7 +2339,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-03-07",
-      "age_days": 886,
+      "age_days": 887,
       "cite": {
         "type": "account",
         "ref": "5C4y6Yck6EGcAB728DbvgwWsWRwuxhKkCKiYXbzrYDQK"
@@ -2371,7 +2349,7 @@
       "address": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU",
       "balance": 1233.171,
       "pct": 0.000294,
-      "rank": 98,
+      "rank": 97,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2385,7 +2363,7 @@
         "voter"
       ],
       "first_seen": "2023-09-25",
-      "age_days": 1050,
+      "age_days": 1051,
       "cite": {
         "type": "account",
         "ref": "3JjxgCSDZsbzqW3TnoeuC83azgpHexiAZ1tvKZRipgRU"
@@ -2395,7 +2373,7 @@
       "address": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ",
       "balance": 1206.03,
       "pct": 0.000287,
-      "rank": 99,
+      "rank": 98,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2409,7 +2387,7 @@
         "voter"
       ],
       "first_seen": "2024-12-27",
-      "age_days": 591,
+      "age_days": 592,
       "cite": {
         "type": "account",
         "ref": "D15QGgPSY1nvAnZvthsdrjQLLBfd7gNtK3EPTSSdLpKQ"
@@ -2419,7 +2397,7 @@
       "address": "HU23r7UoZbqTUuh3vA7emAGztFtqwTeVips789vqxxBw",
       "balance": 1078.886,
       "pct": 0.000257,
-      "rank": 100,
+      "rank": 99,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2433,7 +2411,7 @@
         "dank"
       ],
       "first_seen": "2024-01-15",
-      "age_days": 938,
+      "age_days": 939,
       "cite": {
         "type": "account",
         "ref": "HU23r7UoZbqTUuh3vA7emAGztFtqwTeVips789vqxxBw"
@@ -2443,7 +2421,7 @@
       "address": "8iCxDXSnsdvWszSwsF4yWFaMHePxJkr3U7796KgQKr5D",
       "balance": 1066.549,
       "pct": 0.000254,
-      "rank": 101,
+      "rank": 100,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2458,7 +2436,7 @@
         "dank"
       ],
       "first_seen": "2025-05-03",
-      "age_days": 464,
+      "age_days": 465,
       "cite": {
         "type": "account",
         "ref": "8iCxDXSnsdvWszSwsF4yWFaMHePxJkr3U7796KgQKr5D"
@@ -2468,7 +2446,7 @@
       "address": "CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps",
       "balance": 1043.937,
       "pct": 0.000249,
-      "rank": 102,
+      "rank": 101,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2482,7 +2460,7 @@
         "dank"
       ],
       "first_seen": "2023-08-02",
-      "age_days": 1104,
+      "age_days": 1105,
       "cite": {
         "type": "account",
         "ref": "CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps"
@@ -2490,6 +2468,28 @@
     },
     {
       "address": "BukMG6otjo5dDiSu7P9gjRc2SDK8wwaKTA5ytotYgrj9",
+      "balance": 919.587,
+      "pct": 0.000219,
+      "rank": 102,
+      "type": "lp",
+      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
+      "pool": "Liquidity Pool",
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [],
+      "first_seen": "2024-08-20",
+      "age_days": 721,
+      "cite": {
+        "type": "account",
+        "ref": "BukMG6otjo5dDiSu7P9gjRc2SDK8wwaKTA5ytotYgrj9"
+      }
+    },
+    {
+      "address": "CSa459TRfkAeJ1Z43GDuZhFxtYVX5QTzK83shq2JQTUe",
       "balance": 919.587,
       "pct": 0.000219,
       "rank": 103,
@@ -2503,17 +2503,17 @@
         "mcvoter"
       ],
       "cohorts": [],
-      "first_seen": "2024-08-20",
-      "age_days": 720,
+      "first_seen": "2024-09-13",
+      "age_days": 697,
       "cite": {
         "type": "account",
-        "ref": "BukMG6otjo5dDiSu7P9gjRc2SDK8wwaKTA5ytotYgrj9"
+        "ref": "CSa459TRfkAeJ1Z43GDuZhFxtYVX5QTzK83shq2JQTUe"
       }
     },
     {
-      "address": "CSa459TRfkAeJ1Z43GDuZhFxtYVX5QTzK83shq2JQTUe",
-      "balance": 919.587,
-      "pct": 0.000219,
+      "address": "GP8StUXNYSZjPikyRsvkTbvRV1GBxMErb59cpeCJnDf1",
+      "balance": 842.838,
+      "pct": 0.000201,
       "rank": 104,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
@@ -2525,30 +2525,8 @@
         "mcvoter"
       ],
       "cohorts": [],
-      "first_seen": "2024-09-13",
-      "age_days": 696,
-      "cite": {
-        "type": "account",
-        "ref": "CSa459TRfkAeJ1Z43GDuZhFxtYVX5QTzK83shq2JQTUe"
-      }
-    },
-    {
-      "address": "GP8StUXNYSZjPikyRsvkTbvRV1GBxMErb59cpeCJnDf1",
-      "balance": 842.838,
-      "pct": 0.000201,
-      "rank": 105,
-      "type": "lp",
-      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
-      "pool": "Liquidity Pool",
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [],
       "first_seen": "2024-01-14",
-      "age_days": 939,
+      "age_days": 940,
       "cite": {
         "type": "account",
         "ref": "GP8StUXNYSZjPikyRsvkTbvRV1GBxMErb59cpeCJnDf1"
@@ -2558,7 +2536,7 @@
       "address": "9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8",
       "balance": 790.809,
       "pct": 0.000188,
-      "rank": 106,
+      "rank": 105,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2572,7 +2550,7 @@
         "dank"
       ],
       "first_seen": "2023-08-05",
-      "age_days": 1101,
+      "age_days": 1102,
       "cite": {
         "type": "account",
         "ref": "9nnLbotNTcUhvbrsA6Mdkx45Sm82G35zo28AqUvjExn8"
@@ -2582,7 +2560,7 @@
       "address": "6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx",
       "balance": 632.27,
       "pct": 0.000151,
-      "rank": 107,
+      "rank": 106,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2596,7 +2574,7 @@
         "dank"
       ],
       "first_seen": "2023-08-04",
-      "age_days": 1102,
+      "age_days": 1103,
       "cite": {
         "type": "account",
         "ref": "6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx"
@@ -2606,7 +2584,7 @@
       "address": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU",
       "balance": 526.191,
       "pct": 0.000125,
-      "rank": 108,
+      "rank": 107,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2622,7 +2600,7 @@
         "voter"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "Hd1HTDwEqFQbaFhrcUjmWdshEjNJCjQZiUt9uDgLmCdU"
@@ -2632,7 +2610,7 @@
       "address": "BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV",
       "balance": 492.322,
       "pct": 0.000117,
-      "rank": 109,
+      "rank": 108,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2646,7 +2624,7 @@
         "dank"
       ],
       "first_seen": "2023-08-04",
-      "age_days": 1102,
+      "age_days": 1103,
       "cite": {
         "type": "account",
         "ref": "BQ72nSv9f3PRyRKCBnHLVrerrv37CYTHm5h3s9VSGQDV"
@@ -2656,7 +2634,7 @@
       "address": "3CgvbiM3op4vjrrjH2zcrQUwsqh5veNVRjFCB9N6sRoD",
       "balance": 476.746,
       "pct": 0.000114,
-      "rank": 110,
+      "rank": 109,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2670,7 +2648,7 @@
         "dank"
       ],
       "first_seen": "2024-01-15",
-      "age_days": 938,
+      "age_days": 939,
       "cite": {
         "type": "account",
         "ref": "3CgvbiM3op4vjrrjH2zcrQUwsqh5veNVRjFCB9N6sRoD"
@@ -2679,6 +2657,28 @@
     {
       "address": "5DFotm6azrsyXsmwGwNyNtoKZCcTgB6LNPbRL9y7dxL9",
       "balance": 420.69,
+      "pct": 0.0001,
+      "rank": 110,
+      "type": "lp",
+      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
+      "pool": "Liquidity Pool",
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [],
+      "first_seen": "2024-03-13",
+      "age_days": 881,
+      "cite": {
+        "type": "account",
+        "ref": "5DFotm6azrsyXsmwGwNyNtoKZCcTgB6LNPbRL9y7dxL9"
+      }
+    },
+    {
+      "address": "6LTqLbwcy1gKrtkgusR7o1f5YysvJnq8VumbnkHuqkEP",
+      "balance": 420.0,
       "pct": 0.0001,
       "rank": 111,
       "type": "lp",
@@ -2691,15 +2691,15 @@
         "mcvoter"
       ],
       "cohorts": [],
-      "first_seen": "2024-03-13",
-      "age_days": 880,
+      "first_seen": "2024-10-17",
+      "age_days": 663,
       "cite": {
         "type": "account",
-        "ref": "5DFotm6azrsyXsmwGwNyNtoKZCcTgB6LNPbRL9y7dxL9"
+        "ref": "6LTqLbwcy1gKrtkgusR7o1f5YysvJnq8VumbnkHuqkEP"
       }
     },
     {
-      "address": "6LTqLbwcy1gKrtkgusR7o1f5YysvJnq8VumbnkHuqkEP",
+      "address": "6Y6TadDs1iuzztYe2QrkapLwkfFgJZCWYMsJ5PhsKFAC",
       "balance": 420.0,
       "pct": 0.0001,
       "rank": 112,
@@ -2714,14 +2714,14 @@
       ],
       "cohorts": [],
       "first_seen": "2024-10-17",
-      "age_days": 662,
+      "age_days": 663,
       "cite": {
         "type": "account",
-        "ref": "6LTqLbwcy1gKrtkgusR7o1f5YysvJnq8VumbnkHuqkEP"
+        "ref": "6Y6TadDs1iuzztYe2QrkapLwkfFgJZCWYMsJ5PhsKFAC"
       }
     },
     {
-      "address": "6Y6TadDs1iuzztYe2QrkapLwkfFgJZCWYMsJ5PhsKFAC",
+      "address": "ADLgoNgR4Tfa5xYY2R32L8GnrpCBoJKS7xwyd1xnQMEn",
       "balance": 420.0,
       "pct": 0.0001,
       "rank": 113,
@@ -2736,29 +2736,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-10-17",
-      "age_days": 662,
-      "cite": {
-        "type": "account",
-        "ref": "6Y6TadDs1iuzztYe2QrkapLwkfFgJZCWYMsJ5PhsKFAC"
-      }
-    },
-    {
-      "address": "ADLgoNgR4Tfa5xYY2R32L8GnrpCBoJKS7xwyd1xnQMEn",
-      "balance": 420.0,
-      "pct": 0.0001,
-      "rank": 114,
-      "type": "lp",
-      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
-      "pool": "Liquidity Pool",
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [],
-      "first_seen": "2024-10-17",
-      "age_days": 662,
+      "age_days": 663,
       "cite": {
         "type": "account",
         "ref": "ADLgoNgR4Tfa5xYY2R32L8GnrpCBoJKS7xwyd1xnQMEn"
@@ -2768,7 +2746,7 @@
       "address": "EvRz8ERwcnBn4YN3iFj1LT6621euqt6BC4ZupwSJeZcb",
       "balance": 323.63,
       "pct": 7.7e-05,
-      "rank": 115,
+      "rank": 114,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2783,7 +2761,7 @@
         "genesis-71"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "EvRz8ERwcnBn4YN3iFj1LT6621euqt6BC4ZupwSJeZcb"
@@ -2793,6 +2771,30 @@
       "address": "6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB",
       "balance": 287.93,
       "pct": 6.9e-05,
+      "rank": 115,
+      "type": "lp",
+      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
+      "pool": "Liquidity Pool",
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [
+        "dank"
+      ],
+      "first_seen": "2023-08-03",
+      "age_days": 1104,
+      "cite": {
+        "type": "account",
+        "ref": "6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB"
+      }
+    },
+    {
+      "address": "DSN3j1ykL3obAVNv7ZX49VsFCPe4LqzxHnmtLiPwY6xg",
+      "balance": 132.88,
+      "pct": 3.2e-05,
       "rank": 116,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
@@ -2806,17 +2808,17 @@
       "cohorts": [
         "dank"
       ],
-      "first_seen": "2023-08-03",
-      "age_days": 1103,
+      "first_seen": "2024-01-15",
+      "age_days": 939,
       "cite": {
         "type": "account",
-        "ref": "6U91aKa8pmMxkJwBCfPTmUEfZi6dHe7DcFq2ALvB2tbB"
+        "ref": "DSN3j1ykL3obAVNv7ZX49VsFCPe4LqzxHnmtLiPwY6xg"
       }
     },
     {
-      "address": "DSN3j1ykL3obAVNv7ZX49VsFCPe4LqzxHnmtLiPwY6xg",
-      "balance": 132.88,
-      "pct": 3.2e-05,
+      "address": "4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71",
+      "balance": 118.772,
+      "pct": 2.8e-05,
       "rank": 117,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
@@ -2830,32 +2832,8 @@
       "cohorts": [
         "dank"
       ],
-      "first_seen": "2024-01-15",
-      "age_days": 938,
-      "cite": {
-        "type": "account",
-        "ref": "DSN3j1ykL3obAVNv7ZX49VsFCPe4LqzxHnmtLiPwY6xg"
-      }
-    },
-    {
-      "address": "4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71",
-      "balance": 118.772,
-      "pct": 2.8e-05,
-      "rank": 118,
-      "type": "lp",
-      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
-      "pool": "Liquidity Pool",
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [
-        "dank"
-      ],
       "first_seen": "2023-08-03",
-      "age_days": 1103,
+      "age_days": 1104,
       "cite": {
         "type": "account",
         "ref": "4xDsmeTWPNjgSVSS1VTfzFq3iHZhp77ffPkAmkZkdu71"
@@ -2865,7 +2843,7 @@
       "address": "71c746kezHHTtEUaMuNByXxcp8qJ6qetiuffQGB8p47F",
       "balance": 108.762,
       "pct": 2.6e-05,
-      "rank": 119,
+      "rank": 118,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2877,7 +2855,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-10-06",
-      "age_days": 673,
+      "age_days": 674,
       "cite": {
         "type": "account",
         "ref": "71c746kezHHTtEUaMuNByXxcp8qJ6qetiuffQGB8p47F"
@@ -2887,7 +2865,7 @@
       "address": "GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ",
       "balance": 100.324,
       "pct": 2.4e-05,
-      "rank": 120,
+      "rank": 119,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2901,7 +2879,7 @@
         "dank"
       ],
       "first_seen": "2023-08-04",
-      "age_days": 1102,
+      "age_days": 1103,
       "cite": {
         "type": "account",
         "ref": "GGztQqQ6pCPaJQnNpXBgELr5cs3WwDakRbh1iEMzjgSJ"
@@ -2911,7 +2889,7 @@
       "address": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
       "balance": 68.794,
       "pct": 1.6e-05,
-      "rank": 121,
+      "rank": 120,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2925,7 +2903,7 @@
         "dank"
       ],
       "first_seen": "2023-08-02",
-      "age_days": 1104,
+      "age_days": 1105,
       "cite": {
         "type": "account",
         "ref": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h"
@@ -2935,7 +2913,7 @@
       "address": "4vds2WZaa1jpxMvuG6ujBnjQV7MoMx8WS17pmdQqd87u",
       "balance": 19.0,
       "pct": 5e-06,
-      "rank": 122,
+      "rank": 121,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2950,7 +2928,7 @@
         "genesis-71"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "4vds2WZaa1jpxMvuG6ujBnjQV7MoMx8WS17pmdQqd87u"
@@ -2960,7 +2938,7 @@
       "address": "ESuvjvsQtjuxC4XGsDeMhx8Wp5yjQcCFGncGhupcJbg8",
       "balance": 10.975,
       "pct": 3e-06,
-      "rank": 123,
+      "rank": 122,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -2974,7 +2952,7 @@
         "dank"
       ],
       "first_seen": "2026-03-25",
-      "age_days": 138,
+      "age_days": 139,
       "cite": {
         "type": "account",
         "ref": "ESuvjvsQtjuxC4XGsDeMhx8Wp5yjQcCFGncGhupcJbg8"
@@ -2984,7 +2962,7 @@
       "address": "9RknqkTvTac1dn2x42zDkePy3UV2V7rRHgo2Q4XUnUHf",
       "balance": 10.103,
       "pct": 2e-06,
-      "rank": 124,
+      "rank": 123,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -2996,7 +2974,7 @@
       ],
       "cohorts": [],
       "first_seen": "2023-07-16",
-      "age_days": 1121,
+      "age_days": 1122,
       "cite": {
         "type": "account",
         "ref": "9RknqkTvTac1dn2x42zDkePy3UV2V7rRHgo2Q4XUnUHf"
@@ -3006,7 +2984,7 @@
       "address": "9chn1NHGuNj2SKRtFPC7WLKuK1yazgG1Fx72jouDk6gh",
       "balance": 1.0,
       "pct": 0.0,
-      "rank": 125,
+      "rank": 124,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -3018,7 +2996,7 @@
       ],
       "cohorts": [],
       "first_seen": "2025-02-25",
-      "age_days": 531,
+      "age_days": 532,
       "cite": {
         "type": "account",
         "ref": "9chn1NHGuNj2SKRtFPC7WLKuK1yazgG1Fx72jouDk6gh"
@@ -3026,6 +3004,31 @@
     },
     {
       "address": "38jq7W7HA3YUJ5zj5PaUwP6yNrVpp1YAWKg1tYTfxK17",
+      "balance": 0.929,
+      "pct": 0.0,
+      "rank": 125,
+      "type": "holder",
+      "type_basis": "default -- holds TOKE; no further claim",
+      "pool": null,
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "sub-1-toke",
+        "born-mcwhale"
+      ],
+      "cohorts": [
+        "genesis-71"
+      ],
+      "first_seen": "2023-06-22",
+      "age_days": 1146,
+      "cite": {
+        "type": "account",
+        "ref": "38jq7W7HA3YUJ5zj5PaUwP6yNrVpp1YAWKg1tYTfxK17"
+      }
+    },
+    {
+      "address": "9y6Z3aGWhaXp6wmSPjLn3ybhriVi5FfN4ae5Ry2PdXmx",
       "balance": 0.929,
       "pct": 0.0,
       "rank": 126,
@@ -3043,32 +3046,7 @@
         "genesis-71"
       ],
       "first_seen": "2023-06-22",
-      "age_days": 1145,
-      "cite": {
-        "type": "account",
-        "ref": "38jq7W7HA3YUJ5zj5PaUwP6yNrVpp1YAWKg1tYTfxK17"
-      }
-    },
-    {
-      "address": "9y6Z3aGWhaXp6wmSPjLn3ybhriVi5FfN4ae5Ry2PdXmx",
-      "balance": 0.929,
-      "pct": 0.0,
-      "rank": 127,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "sub-1-toke",
-        "born-mcwhale"
-      ],
-      "cohorts": [
-        "genesis-71"
-      ],
-      "first_seen": "2023-06-22",
-      "age_days": 1145,
+      "age_days": 1146,
       "cite": {
         "type": "account",
         "ref": "9y6Z3aGWhaXp6wmSPjLn3ybhriVi5FfN4ae5Ry2PdXmx"
@@ -3078,7 +3056,7 @@
       "address": "mq6Z9eA9TMQXNrsTpzxEq2VSHbuivWSNA8i67hD8yjW",
       "balance": 0.4,
       "pct": 0.0,
-      "rank": 128,
+      "rank": 127,
       "type": "lp",
       "type_basis": "Meteora — Meteora DLMM — TOKE vault -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Meteora",
@@ -3090,7 +3068,7 @@
       ],
       "cohorts": [],
       "first_seen": "2025-01-01",
-      "age_days": 586,
+      "age_days": 587,
       "cite": {
         "type": "account",
         "ref": "mq6Z9eA9TMQXNrsTpzxEq2VSHbuivWSNA8i67hD8yjW"
@@ -3100,7 +3078,7 @@
       "address": "EZvyYN1Q98yPJXh8FCTx94ZYFeo6wtJ544hKdAF72QyU",
       "balance": 0.202,
       "pct": 0.0,
-      "rank": 129,
+      "rank": 128,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -3114,7 +3092,7 @@
         "dank"
       ],
       "first_seen": "2024-05-31",
-      "age_days": 801,
+      "age_days": 802,
       "cite": {
         "type": "account",
         "ref": "EZvyYN1Q98yPJXh8FCTx94ZYFeo6wtJ544hKdAF72QyU"
@@ -3124,7 +3102,7 @@
       "address": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4",
       "balance": 0.029,
       "pct": 0.0,
-      "rank": 130,
+      "rank": 129,
       "type": "holder",
       "type_basis": "top holder | SuperToke brand wallet -- NOT an official treasury",
       "pool": null,
@@ -3139,7 +3117,7 @@
         "dank"
       ],
       "first_seen": "2025-06-11",
-      "age_days": 425,
+      "age_days": 426,
       "cite": {
         "type": "account",
         "ref": "HxnhAmD7ZhGgqWM3t2Mv9dzv6xvQxAZZp1LnAK7MSmP4"
@@ -3149,7 +3127,7 @@
       "address": "G1mnQHKX5TP7oqdSBFTrjwb1wnH62tg9EhaTScVXmMpc",
       "balance": 0.016,
       "pct": 0.0,
-      "rank": 131,
+      "rank": 130,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -3161,7 +3139,7 @@
       ],
       "cohorts": [],
       "first_seen": "2023-08-17",
-      "age_days": 1089,
+      "age_days": 1090,
       "cite": {
         "type": "account",
         "ref": "G1mnQHKX5TP7oqdSBFTrjwb1wnH62tg9EhaTScVXmMpc"
@@ -3171,7 +3149,7 @@
       "address": "7BgXHAFmQWNy1vHqVpfC2fyUZ52DP2dsjsMhHAngpD5s",
       "balance": 0.013,
       "pct": 0.0,
-      "rank": 132,
+      "rank": 131,
       "type": "lp",
       "type_basis": "Orca — Orca Whirlpool — TOKE vault -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Orca",
@@ -3183,7 +3161,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-03-07",
-      "age_days": 886,
+      "age_days": 887,
       "cite": {
         "type": "account",
         "ref": "7BgXHAFmQWNy1vHqVpfC2fyUZ52DP2dsjsMhHAngpD5s"
@@ -3193,7 +3171,7 @@
       "address": "3nMNd89AxwHUa1AFvQGqohRkxFEQsTsgiEyEyqXFHyyH",
       "balance": 0.006,
       "pct": 0.0,
-      "rank": 133,
+      "rank": 132,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -3207,7 +3185,7 @@
         "dank"
       ],
       "first_seen": "2025-07-30",
-      "age_days": 376,
+      "age_days": 377,
       "cite": {
         "type": "account",
         "ref": "3nMNd89AxwHUa1AFvQGqohRkxFEQsTsgiEyEyqXFHyyH"
@@ -3217,7 +3195,7 @@
       "address": "4hnBkxpXUNK2ukEChKwSysXZNYfgP28o2t9u418auoAz",
       "balance": 0.001,
       "pct": 0.0,
-      "rank": 134,
+      "rank": 133,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
       "pool": "Liquidity Pool",
@@ -3229,7 +3207,7 @@
       ],
       "cohorts": [],
       "first_seen": "2024-06-13",
-      "age_days": 788,
+      "age_days": 789,
       "cite": {
         "type": "account",
         "ref": "4hnBkxpXUNK2ukEChKwSysXZNYfgP28o2t9u418auoAz"
