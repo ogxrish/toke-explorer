@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-08-18T11:49:56Z",
+  "as_of": "2026-08-18T16:04:38Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 82085071.855,
-      "pct": 19.544062,
+      "balance": 82073401.653,
+      "pct": 19.541283,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -667,8 +667,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3759457.086,
-      "pct": 0.895109,
+      "balance": 3770310.603,
+      "pct": 0.897693,
       "rank": 26,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -1352,8 +1352,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 163539.98,
-      "pct": 0.038938,
+      "balance": 164356.665,
+      "pct": 0.039133,
       "rank": 55,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
