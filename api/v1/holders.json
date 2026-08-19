@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-08-19T05:30:38Z",
+  "as_of": "2026-08-19T11:43:50Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 82070128.675,
-      "pct": 19.540504,
+      "balance": 82066553.387,
+      "pct": 19.539652,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -667,8 +667,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3771463.48,
-      "pct": 0.897967,
+      "balance": 3774133.338,
+      "pct": 0.898603,
       "rank": 26,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -1323,10 +1323,34 @@
       }
     },
     {
+      "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "balance": 167382.196,
+      "pct": 0.039853,
+      "rank": 54,
+      "type": "lp",
+      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
+      "pool": "Liquidity Pool",
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [
+        "dank"
+      ],
+      "first_seen": "2024-08-16",
+      "age_days": 733,
+      "cite": {
+        "type": "account",
+        "ref": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL"
+      }
+    },
+    {
       "address": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
       "balance": 166717.07,
       "pct": 0.039695,
-      "rank": 54,
+      "rank": 55,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1348,30 +1372,6 @@
       "cite": {
         "type": "account",
         "ref": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx"
-      }
-    },
-    {
-      "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 166476.766,
-      "pct": 0.039637,
-      "rank": 55,
-      "type": "lp",
-      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
-      "pool": "Liquidity Pool",
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [
-        "dank"
-      ],
-      "first_seen": "2024-08-16",
-      "age_days": 733,
-      "cite": {
-        "type": "account",
-        "ref": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL"
       }
     },
     {
