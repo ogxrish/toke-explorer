@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-08-22T05:36:09Z",
+  "as_of": "2026-08-22T10:38:32Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 81972699.586,
-      "pct": 19.517306,
+      "balance": 81986674.416,
+      "pct": 19.520634,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -567,8 +567,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3792655.781,
-      "pct": 0.903013,
+      "balance": 3779233.569,
+      "pct": 0.899817,
       "rank": 26,
       "type": "lp",
       "sns": null,
@@ -1454,8 +1454,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 170115.47,
-      "pct": 0.040504,
+      "balance": 169442.19,
+      "pct": 0.040343,
       "rank": 73,
       "type": "lp",
       "sns": null,
@@ -11828,28 +11828,10 @@
       }
     },
     {
-      "address": "849D8oa5dDaQunyHXv63UEDZKo5uiAkVyWzQH7UG5HNs",
-      "balance": 3003.208,
-      "pct": 0.000715,
-      "rank": 646,
-      "type": "holder",
-      "sns": null,
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [],
-      "first_seen": "2023-09-25",
-      "age_days": 1062,
-      "cite": {
-        "type": "account",
-        "ref": "849D8oa5dDaQunyHXv63UEDZKo5uiAkVyWzQH7UG5HNs"
-      }
-    },
-    {
       "address": "7WE2YjRvFmT9aGrtHwBDgQqKNhtVpS8SDLqpzyZug4y3",
-      "balance": 2899.422,
-      "pct": 0.00069,
-      "rank": 647,
+      "balance": 3020.084,
+      "pct": 0.000719,
+      "rank": 646,
       "type": "lp",
       "sns": null,
       "badges": [
@@ -11861,6 +11843,24 @@
       "cite": {
         "type": "account",
         "ref": "7WE2YjRvFmT9aGrtHwBDgQqKNhtVpS8SDLqpzyZug4y3"
+      }
+    },
+    {
+      "address": "849D8oa5dDaQunyHXv63UEDZKo5uiAkVyWzQH7UG5HNs",
+      "balance": 3003.208,
+      "pct": 0.000715,
+      "rank": 647,
+      "type": "holder",
+      "sns": null,
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [],
+      "first_seen": "2023-09-25",
+      "age_days": 1062,
+      "cite": {
+        "type": "account",
+        "ref": "849D8oa5dDaQunyHXv63UEDZKo5uiAkVyWzQH7UG5HNs"
       }
     },
     {
