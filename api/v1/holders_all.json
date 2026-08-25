@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-08-24T11:15:59Z",
+  "as_of": "2026-08-24T15:25:25Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 82015423.918,
-      "pct": 19.527479,
+      "balance": 82012004.066,
+      "pct": 19.526664,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -168,7 +168,7 @@
       "pct": 2.326003,
       "rank": 8,
       "type": "holder",
-      "sns": null,
+      "sns": "reverend.skr",
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -567,8 +567,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3795475.644,
-      "pct": 0.903685,
+      "balance": 3798895.496,
+      "pct": 0.904499,
       "rank": 26,
       "type": "lp",
       "sns": null,
@@ -1478,7 +1478,7 @@
       "pct": 0.039695,
       "rank": 74,
       "type": "holder",
-      "sns": null,
+      "sns": "zachssecureseeker.skr",
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -2786,7 +2786,7 @@
       "pct": 0.008232,
       "rank": 145,
       "type": "holder",
-      "sns": null,
+      "sns": "takisoul.ser",
       "badges": [
         "mcvoter"
       ],
@@ -3544,7 +3544,7 @@
       "pct": 0.006273,
       "rank": 187,
       "type": "holder",
-      "sns": null,
+      "sns": "bitfusion.skr",
       "badges": [
         "mcvoter"
       ],
@@ -4178,7 +4178,7 @@
       "pct": 0.004242,
       "rank": 222,
       "type": "holder",
-      "sns": null,
+      "sns": "spazzer.skr",
       "badges": [
         "mcvoter"
       ],
@@ -5890,7 +5890,7 @@
       "pct": 0.002481,
       "rank": 317,
       "type": "holder",
-      "sns": null,
+      "sns": "chris.bonk",
       "badges": [
         "mcvoter"
       ],
@@ -11776,7 +11776,7 @@
       "pct": 0.000814,
       "rank": 643,
       "type": "holder",
-      "sns": null,
+      "sns": "hud.skr",
       "badges": [
         "mcvoter",
         "born-mcwhale"
@@ -20693,7 +20693,7 @@
       "pct": 0.000473,
       "rank": 1138,
       "type": "holder",
-      "sns": null,
+      "sns": "dantebriger.poor",
       "badges": [
         "mcvoter"
       ],
@@ -23573,7 +23573,7 @@
       "pct": 0.000473,
       "rank": 1298,
       "type": "holder",
-      "sns": null,
+      "sns": "dfmerin.skr",
       "badges": [
         "mcvoter"
       ],
@@ -38153,7 +38153,7 @@
       "pct": 0.000473,
       "rank": 2108,
       "type": "holder",
-      "sns": null,
+      "sns": "maxfun.skr",
       "badges": [
         "mcvoter"
       ],
@@ -40066,7 +40066,7 @@
       "pct": 0.0002,
       "rank": 2213,
       "type": "holder",
-      "sns": null,
+      "sns": "mystic_venkyyy.x",
       "badges": [
         "mcvoter"
       ],
@@ -40870,7 +40870,7 @@
       "pct": 0.0001,
       "rank": 2257,
       "type": "holder",
-      "sns": null,
+      "sns": "royganesh.skr",
       "badges": [
         "mcvoter"
       ],
@@ -63262,7 +63262,7 @@
       "pct": 0.0001,
       "rank": 3501,
       "type": "holder",
-      "sns": null,
+      "sns": "zendev.solana",
       "badges": [
         "mcvoter"
       ],
@@ -64702,7 +64702,7 @@
       "pct": 0.0001,
       "rank": 3581,
       "type": "holder",
-      "sns": null,
+      "sns": "bitcandy.skr",
       "badges": [
         "mcvoter"
       ],
@@ -143830,7 +143830,7 @@
       "pct": 0.0001,
       "rank": 7977,
       "type": "holder",
-      "sns": null,
+      "sns": "kanata.skr",
       "badges": [
         "mcvoter"
       ],
@@ -150256,7 +150256,7 @@
       "pct": 0.0001,
       "rank": 8334,
       "type": "holder",
-      "sns": null,
+      "sns": "sha256wn.skr",
       "badges": [
         "mcvoter"
       ],
@@ -153532,7 +153532,7 @@
       "pct": 0.0001,
       "rank": 8516,
       "type": "holder",
-      "sns": null,
+      "sns": "addyz.skr",
       "badges": [
         "mcvoter"
       ],
@@ -161038,7 +161038,7 @@
       "pct": 0.0001,
       "rank": 8933,
       "type": "holder",
-      "sns": null,
+      "sns": "entrefin.skr",
       "badges": [
         "mcvoter"
       ],
@@ -178606,7 +178606,7 @@
       "pct": 0.0001,
       "rank": 9909,
       "type": "holder",
-      "sns": null,
+      "sns": "401.skr",
       "badges": [
         "mcvoter"
       ],
@@ -180298,7 +180298,7 @@
       "pct": 0.0001,
       "rank": 10003,
       "type": "holder",
-      "sns": null,
+      "sns": "chatgpt.skr",
       "badges": [
         "mcvoter"
       ],
@@ -187498,7 +187498,7 @@
       "pct": 0.0001,
       "rank": 10403,
       "type": "holder",
-      "sns": null,
+      "sns": "mmwright1987.skr",
       "badges": [
         "mcvoter"
       ],
@@ -194104,7 +194104,7 @@
       "pct": 0.0001,
       "rank": 10770,
       "type": "holder",
-      "sns": null,
+      "sns": "ussoland.skr",
       "badges": [
         "mcvoter"
       ],
@@ -201970,7 +201970,7 @@
       "pct": 0.0001,
       "rank": 11207,
       "type": "holder",
-      "sns": null,
+      "sns": "geewiz01.skr",
       "badges": [
         "mcvoter"
       ],
@@ -206416,7 +206416,7 @@
       "pct": 0.0001,
       "rank": 11454,
       "type": "holder",
-      "sns": null,
+      "sns": "blackketchup.skr",
       "badges": [
         "mcvoter"
       ],
@@ -206524,7 +206524,7 @@
       "pct": 0.0001,
       "rank": 11460,
       "type": "holder",
-      "sns": null,
+      "sns": "ralfskii.skr",
       "badges": [
         "mcvoter"
       ],
@@ -207460,7 +207460,7 @@
       "pct": 0.0001,
       "rank": 11512,
       "type": "holder",
-      "sns": null,
+      "sns": "mikeindomaret.x",
       "badges": [
         "mcvoter"
       ],
@@ -207820,7 +207820,7 @@
       "pct": 0.0001,
       "rank": 11532,
       "type": "holder",
-      "sns": null,
+      "sns": "darkeh.skr",
       "badges": [
         "mcvoter"
       ],
@@ -208378,7 +208378,7 @@
       "pct": 0.0001,
       "rank": 11563,
       "type": "holder",
-      "sns": null,
+      "sns": "donatsu.skr",
       "badges": [
         "mcvoter"
       ],
@@ -208864,7 +208864,7 @@
       "pct": 0.0001,
       "rank": 11590,
       "type": "holder",
-      "sns": null,
+      "sns": "sibbob.skr",
       "badges": [
         "mcvoter"
       ],
@@ -209422,7 +209422,7 @@
       "pct": 0.0001,
       "rank": 11621,
       "type": "holder",
-      "sns": null,
+      "sns": "zolana.skr",
       "badges": [
         "mcvoter"
       ],
@@ -209440,7 +209440,7 @@
       "pct": 0.0001,
       "rank": 11622,
       "type": "holder",
-      "sns": null,
+      "sns": "runner2025.skr",
       "badges": [
         "mcvoter"
       ],
@@ -209620,7 +209620,7 @@
       "pct": 0.0001,
       "rank": 11632,
       "type": "holder",
-      "sns": null,
+      "sns": "gr8oncrypto.x",
       "badges": [
         "mcvoter"
       ],
@@ -210538,7 +210538,7 @@
       "pct": 0.0001,
       "rank": 11683,
       "type": "holder",
-      "sns": null,
+      "sns": "sjoerd.solana",
       "badges": [
         "mcvoter"
       ],
@@ -210682,7 +210682,7 @@
       "pct": 0.0001,
       "rank": 11691,
       "type": "holder",
-      "sns": null,
+      "sns": "fecoxa.skr",
       "badges": [
         "mcvoter"
       ],
@@ -211564,7 +211564,7 @@
       "pct": 0.0001,
       "rank": 11740,
       "type": "holder",
-      "sns": null,
+      "sns": "mawie.skr",
       "badges": [
         "mcvoter"
       ],
@@ -211600,7 +211600,7 @@
       "pct": 0.0001,
       "rank": 11742,
       "type": "holder",
-      "sns": null,
+      "sns": "jonme76327194.x",
       "badges": [
         "mcvoter"
       ],
@@ -212806,7 +212806,7 @@
       "pct": 0.0001,
       "rank": 11809,
       "type": "holder",
-      "sns": null,
+      "sns": "fredpv.skr",
       "badges": [
         "mcvoter"
       ],
@@ -213310,7 +213310,7 @@
       "pct": 0.0001,
       "rank": 11837,
       "type": "holder",
-      "sns": null,
+      "sns": "bruno45657877.x",
       "badges": [
         "mcvoter"
       ],
@@ -213526,7 +213526,7 @@
       "pct": 0.0001,
       "rank": 11849,
       "type": "holder",
-      "sns": null,
+      "sns": "t5.skr",
       "badges": [
         "mcvoter"
       ],
@@ -214588,7 +214588,7 @@
       "pct": 0.0001,
       "rank": 11908,
       "type": "holder",
-      "sns": null,
+      "sns": "hallelujah.skr",
       "badges": [
         "mcvoter"
       ],
@@ -214894,7 +214894,7 @@
       "pct": 0.0001,
       "rank": 11925,
       "type": "holder",
-      "sns": null,
+      "sns": "herkules.skr",
       "badges": [
         "mcvoter"
       ],
@@ -215146,7 +215146,7 @@
       "pct": 0.0001,
       "rank": 11939,
       "type": "holder",
-      "sns": null,
+      "sns": "xpentor.skr",
       "badges": [
         "mcvoter"
       ],
@@ -215326,7 +215326,7 @@
       "pct": 0.0001,
       "rank": 11949,
       "type": "holder",
-      "sns": null,
+      "sns": "rohitkanaiya.x",
       "badges": [
         "mcvoter"
       ],
@@ -216064,7 +216064,7 @@
       "pct": 0.0001,
       "rank": 11990,
       "type": "holder",
-      "sns": null,
+      "sns": "mythago.skr",
       "badges": [
         "mcvoter"
       ],
@@ -216334,7 +216334,7 @@
       "pct": 0.0001,
       "rank": 12005,
       "type": "holder",
-      "sns": null,
+      "sns": "malecho.skr",
       "badges": [
         "mcvoter"
       ],
@@ -216784,7 +216784,7 @@
       "pct": 0.0001,
       "rank": 12030,
       "type": "holder",
-      "sns": null,
+      "sns": "drmemes.skr",
       "badges": [
         "mcvoter"
       ],
@@ -216910,7 +216910,7 @@
       "pct": 0.0001,
       "rank": 12037,
       "type": "holder",
-      "sns": null,
+      "sns": "zer0xplay.skr",
       "badges": [
         "mcvoter"
       ],
@@ -217324,7 +217324,7 @@
       "pct": 0.0001,
       "rank": 12060,
       "type": "holder",
-      "sns": null,
+      "sns": "vince_solami.x",
       "badges": [
         "mcvoter"
       ],
@@ -217576,7 +217576,7 @@
       "pct": 0.0001,
       "rank": 12074,
       "type": "holder",
-      "sns": null,
+      "sns": "ruzzi11.skr",
       "badges": [
         "mcvoter"
       ],
@@ -217846,7 +217846,7 @@
       "pct": 0.0001,
       "rank": 12089,
       "type": "holder",
-      "sns": null,
+      "sns": "ubuntuburihabwa.skr",
       "badges": [
         "mcvoter"
       ],
@@ -218008,7 +218008,7 @@
       "pct": 0.0001,
       "rank": 12098,
       "type": "holder",
-      "sns": null,
+      "sns": "cwestfale.skr",
       "badges": [
         "mcvoter"
       ],
@@ -218440,7 +218440,7 @@
       "pct": 0.0001,
       "rank": 12122,
       "type": "holder",
-      "sns": null,
+      "sns": "renmei.skr",
       "badges": [
         "mcvoter"
       ],
@@ -218746,7 +218746,7 @@
       "pct": 0.0001,
       "rank": 12139,
       "type": "holder",
-      "sns": null,
+      "sns": "jakovaka.solana",
       "badges": [
         "mcvoter"
       ],
@@ -219664,7 +219664,7 @@
       "pct": 0.0001,
       "rank": 12190,
       "type": "holder",
-      "sns": null,
+      "sns": "dafakehobo.x",
       "badges": [
         "mcvoter"
       ],
@@ -219880,7 +219880,7 @@
       "pct": 0.0001,
       "rank": 12202,
       "type": "holder",
-      "sns": null,
+      "sns": "olusola32486003.x",
       "badges": [
         "mcvoter"
       ],
@@ -219916,7 +219916,7 @@
       "pct": 0.0001,
       "rank": 12204,
       "type": "holder",
-      "sns": null,
+      "sns": "ian_monteirotol.x",
       "badges": [
         "mcvoter"
       ],
@@ -220204,7 +220204,7 @@
       "pct": 0.0001,
       "rank": 12220,
       "type": "holder",
-      "sns": null,
+      "sns": "elcapitain.skr",
       "badges": [
         "mcvoter"
       ],
@@ -220222,7 +220222,7 @@
       "pct": 0.0001,
       "rank": 12221,
       "type": "holder",
-      "sns": null,
+      "sns": "lollom.skr",
       "badges": [
         "mcvoter"
       ],
@@ -220510,7 +220510,7 @@
       "pct": 0.0001,
       "rank": 12237,
       "type": "holder",
-      "sns": null,
+      "sns": "legendofthe.skr",
       "badges": [
         "mcvoter"
       ],
@@ -221086,7 +221086,7 @@
       "pct": 0.0001,
       "rank": 12269,
       "type": "holder",
-      "sns": null,
+      "sns": "akninja68.x",
       "badges": [
         "mcvoter"
       ],
@@ -222112,7 +222112,7 @@
       "pct": 0.0001,
       "rank": 12326,
       "type": "holder",
-      "sns": null,
+      "sns": "ruicosta.skr",
       "badges": [
         "mcvoter"
       ],
@@ -222346,7 +222346,7 @@
       "pct": 0.0001,
       "rank": 12339,
       "type": "holder",
-      "sns": null,
+      "sns": "j0nga.skr",
       "badges": [
         "mcvoter"
       ],
@@ -222418,7 +222418,7 @@
       "pct": 0.0001,
       "rank": 12343,
       "type": "holder",
-      "sns": null,
+      "sns": "julius1984.skr",
       "badges": [
         "mcvoter"
       ],
@@ -223696,7 +223696,7 @@
       "pct": 0.0001,
       "rank": 12414,
       "type": "holder",
-      "sns": null,
+      "sns": "ssn.skr",
       "badges": [
         "mcvoter"
       ],
@@ -224416,7 +224416,7 @@
       "pct": 0.0001,
       "rank": 12454,
       "type": "holder",
-      "sns": null,
+      "sns": "bokrs.skr",
       "badges": [
         "mcvoter"
       ],
@@ -224848,7 +224848,7 @@
       "pct": 0.0001,
       "rank": 12478,
       "type": "holder",
-      "sns": null,
+      "sns": "budgiemorris.skr",
       "badges": [
         "mcvoter"
       ],
@@ -226432,7 +226432,7 @@
       "pct": 0.0001,
       "rank": 12566,
       "type": "holder",
-      "sns": null,
+      "sns": "rigid.skr",
       "badges": [
         "mcvoter"
       ],
@@ -226756,7 +226756,7 @@
       "pct": 0.0001,
       "rank": 12584,
       "type": "holder",
-      "sns": null,
+      "sns": "poimagbanuade.x",
       "badges": [
         "mcvoter"
       ],
@@ -227044,7 +227044,7 @@
       "pct": 0.0001,
       "rank": 12600,
       "type": "holder",
-      "sns": null,
+      "sns": "nature.btc",
       "badges": [
         "mcvoter"
       ],
@@ -227368,7 +227368,7 @@
       "pct": 0.0001,
       "rank": 12618,
       "type": "holder",
-      "sns": null,
+      "sns": "gecko8868.skr",
       "badges": [
         "mcvoter"
       ],
@@ -228453,7 +228453,7 @@
       "pct": 5e-05,
       "rank": 12678,
       "type": "holder",
-      "sns": null,
+      "sns": "isalpokidq.x",
       "badges": [
         "mcvoter"
       ],

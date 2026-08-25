@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-08-24T11:15:59Z",
+  "as_of": "2026-08-24T15:25:25Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 82015423.918,
-      "pct": 19.527479,
+      "balance": 82012004.066,
+      "pct": 19.526664,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -199,8 +199,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "reverend.skr",
+      "domains": [
+        "reverend.skr"
+      ],
       "badges": [
         "mcwhale",
         "born-mcwhale",
@@ -667,8 +669,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3795475.644,
-      "pct": 0.903685,
+      "balance": 3798895.496,
+      "pct": 0.904499,
       "rank": 26,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -1355,8 +1357,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "zachssecureseeker.skr",
+      "domains": [
+        "zachssecureseeker.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale",
@@ -2071,8 +2075,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "hud.skr",
+      "domains": [
+        "hud.skr"
+      ],
       "badges": [
         "mcvoter",
         "born-mcwhale"
