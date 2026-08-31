@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-08-30T15:03:39Z",
+  "as_of": "2026-08-30T23:46:07Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 90187226.401,
-      "pct": 21.473146,
+      "balance": 90198191.128,
+      "pct": 21.475756,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -567,8 +567,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 4093849.103,
-      "pct": 0.974726,
+      "balance": 4082774.666,
+      "pct": 0.972089,
       "rank": 26,
       "type": "lp",
       "sns": null,
@@ -11808,28 +11808,10 @@
       }
     },
     {
-      "address": "8hajr2JAbVezYD4rUphth3AupaQr6pFeiAPpreFpRWFE",
-      "balance": 3365.52,
-      "pct": 0.000801,
-      "rank": 645,
-      "type": "holder",
-      "sns": null,
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [],
-      "first_seen": "2025-01-04",
-      "age_days": 603,
-      "cite": {
-        "type": "account",
-        "ref": "8hajr2JAbVezYD4rUphth3AupaQr6pFeiAPpreFpRWFE"
-      }
-    },
-    {
       "address": "7WE2YjRvFmT9aGrtHwBDgQqKNhtVpS8SDLqpzyZug4y3",
-      "balance": 3277.942,
-      "pct": 0.00078,
-      "rank": 646,
+      "balance": 3387.652,
+      "pct": 0.000807,
+      "rank": 645,
       "type": "lp",
       "sns": null,
       "badges": [
@@ -11841,6 +11823,24 @@
       "cite": {
         "type": "account",
         "ref": "7WE2YjRvFmT9aGrtHwBDgQqKNhtVpS8SDLqpzyZug4y3"
+      }
+    },
+    {
+      "address": "8hajr2JAbVezYD4rUphth3AupaQr6pFeiAPpreFpRWFE",
+      "balance": 3365.52,
+      "pct": 0.000801,
+      "rank": 646,
+      "type": "holder",
+      "sns": null,
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [],
+      "first_seen": "2025-01-04",
+      "age_days": 603,
+      "cite": {
+        "type": "account",
+        "ref": "8hajr2JAbVezYD4rUphth3AupaQr6pFeiAPpreFpRWFE"
       }
     },
     {
