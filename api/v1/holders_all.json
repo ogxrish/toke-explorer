@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-08-31T16:26:35Z",
+  "as_of": "2026-08-31T18:50:02Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 90193860.89,
-      "pct": 21.474725,
+      "balance": 90186919.035,
+      "pct": 21.473072,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -567,8 +567,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 4086657.587,
-      "pct": 0.973014,
+      "balance": 4092678.575,
+      "pct": 0.974447,
       "rank": 26,
       "type": "lp",
       "sns": null,
@@ -1343,28 +1343,10 @@
       }
     },
     {
-      "address": "25mYnjJ2MXHZH6NvTTdA63JvjgRVcuiaj6MRiEQNs1Dq",
-      "balance": 194679.033,
-      "pct": 0.046352,
-      "rank": 67,
-      "type": "holder",
-      "sns": null,
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [],
-      "first_seen": "2024-05-31",
-      "age_days": 822,
-      "cite": {
-        "type": "account",
-        "ref": "25mYnjJ2MXHZH6NvTTdA63JvjgRVcuiaj6MRiEQNs1Dq"
-      }
-    },
-    {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 194632.553,
-      "pct": 0.046341,
-      "rank": 68,
+      "balance": 195553.42,
+      "pct": 0.04656,
+      "rank": 67,
       "type": "lp",
       "sns": null,
       "badges": [
@@ -1378,6 +1360,24 @@
       "cite": {
         "type": "account",
         "ref": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL"
+      }
+    },
+    {
+      "address": "25mYnjJ2MXHZH6NvTTdA63JvjgRVcuiaj6MRiEQNs1Dq",
+      "balance": 194679.033,
+      "pct": 0.046352,
+      "rank": 68,
+      "type": "holder",
+      "sns": null,
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [],
+      "first_seen": "2024-05-31",
+      "age_days": 822,
+      "cite": {
+        "type": "account",
+        "ref": "25mYnjJ2MXHZH6NvTTdA63JvjgRVcuiaj6MRiEQNs1Dq"
       }
     },
     {
