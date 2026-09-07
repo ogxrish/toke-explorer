@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-09-07T07:59:11Z",
+  "as_of": "2026-09-07T17:21:27Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 84550084.953,
-      "pct": 20.130969,
+      "balance": 85345016.131,
+      "pct": 20.320239,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -370,38 +370,10 @@
       }
     },
     {
-      "address": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
-      "balance": 6807023.01,
-      "pct": 1.620719,
-      "rank": 15,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcwhale",
-        "born-mcwhale",
-        "dank"
-      ],
-      "cohorts": [
-        "genesis-71",
-        "voter",
-        "dank"
-      ],
-      "first_seen": "2023-06-22",
-      "age_days": 1173,
-      "cite": {
-        "type": "account",
-        "ref": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2"
-      }
-    },
-    {
       "address": "2QHBAEfVpWoQhH8gZ8ayEDG9Qx8B4GND6CtjhNF66VXV",
       "balance": 6562684.856,
       "pct": 1.562544,
-      "rank": 16,
+      "rank": 15,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -428,7 +400,7 @@
       "address": "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU",
       "balance": 6229794.449,
       "pct": 1.483284,
-      "rank": 17,
+      "rank": 16,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -456,7 +428,7 @@
       "address": "BEmzTQaiwyj69uvxmdL9fSEuETg9vsVrRDAkmDE1HWTD",
       "balance": 6054076.863,
       "pct": 1.441447,
-      "rank": 18,
+      "rank": 17,
       "type": "dao-contract",
       "type_basis": "Realms DAO governance program account (vote escrow)",
       "pool": null,
@@ -472,6 +444,34 @@
       "cite": {
         "type": "account",
         "ref": "BEmzTQaiwyj69uvxmdL9fSEuETg9vsVrRDAkmDE1HWTD"
+      }
+    },
+    {
+      "address": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2",
+      "balance": 6006859.695,
+      "pct": 1.430204,
+      "rank": 18,
+      "type": "holder",
+      "type_basis": "default -- holds TOKE; no further claim",
+      "pool": null,
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcwhale",
+        "born-mcwhale",
+        "dank"
+      ],
+      "cohorts": [
+        "genesis-71",
+        "voter",
+        "dank"
+      ],
+      "first_seen": "2023-06-22",
+      "age_days": 1173,
+      "cite": {
+        "type": "account",
+        "ref": "6vVKt2XLviBsnPTTqpz5abfTDdNVsB8nE12CCyzA2ev2"
       }
     },
     {
@@ -744,8 +744,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3471099.583,
-      "pct": 0.826452,
+      "balance": 3476331.72,
+      "pct": 0.827698,
       "rank": 29,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
