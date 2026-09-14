@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-09-14T09:54:41Z",
+  "as_of": "2026-09-14T17:54:25Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -1256,8 +1256,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 183220.724,
-      "pct": 0.043624,
+      "balance": 183234.96,
+      "pct": 0.043627,
       "rank": 51,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
