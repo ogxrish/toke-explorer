@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-09-15T17:51:29Z",
+  "as_of": "2026-09-15T23:37:14Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 77864824.949,
-      "pct": 18.539241,
+      "balance": 79553402.296,
+      "pct": 18.941283,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -270,32 +270,10 @@
       }
     },
     {
-      "address": "FF8X16kP23EqkMfQMJE6Y35ukggRgQec5i1LNPTJBBfy",
-      "balance": 7838623.861,
-      "pct": 1.866339,
-      "rank": 11,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcwhale"
-      ],
-      "cohorts": [],
-      "first_seen": "2026-09-15",
-      "age_days": 0,
-      "cite": {
-        "type": "account",
-        "ref": "FF8X16kP23EqkMfQMJE6Y35ukggRgQec5i1LNPTJBBfy"
-      }
-    },
-    {
       "address": "9Tr2n1FgSdVbVSbZMbzWeEUcD38vPnZUeT49Rn5WMsjg",
       "balance": 7653821.088,
       "pct": 1.822338,
-      "rank": 12,
+      "rank": 11,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -321,7 +299,7 @@
       "address": "CAtbYmRPGQ89w7Mhvm542HTBNVNdivnYuSDk8yu23b1G",
       "balance": 7644757.008,
       "pct": 1.82018,
-      "rank": 13,
+      "rank": 12,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -343,7 +321,7 @@
       "address": "HywKobFsXKgEjXdmRUhDZSNhy5ZsYzEQcpkznC8vfudM",
       "balance": 7301378.171,
       "pct": 1.738423,
-      "rank": 14,
+      "rank": 13,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -370,7 +348,7 @@
       "address": "262TD6WsmfNzNynJvdeeUjpRb6TKRpv7qvZWaqg9y9BY",
       "balance": 7190539.016,
       "pct": 1.712033,
-      "rank": 15,
+      "rank": 14,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -395,7 +373,7 @@
       "address": "2QHBAEfVpWoQhH8gZ8ayEDG9Qx8B4GND6CtjhNF66VXV",
       "balance": 6562684.856,
       "pct": 1.562544,
-      "rank": 16,
+      "rank": 15,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -422,7 +400,7 @@
       "address": "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU",
       "balance": 6229794.449,
       "pct": 1.483284,
-      "rank": 17,
+      "rank": 16,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -444,6 +422,28 @@
       "cite": {
         "type": "account",
         "ref": "APqeHDALK9amxHVo6BViuMahyTjqFQRNyVVAKzf4dYGU"
+      }
+    },
+    {
+      "address": "FF8X16kP23EqkMfQMJE6Y35ukggRgQec5i1LNPTJBBfy",
+      "balance": 6096707.449,
+      "pct": 1.451597,
+      "rank": 17,
+      "type": "holder",
+      "type_basis": "default -- holds TOKE; no further claim",
+      "pool": null,
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcwhale"
+      ],
+      "cohorts": [],
+      "first_seen": "2026-09-15",
+      "age_days": 0,
+      "cite": {
+        "type": "account",
+        "ref": "FF8X16kP23EqkMfQMJE6Y35ukggRgQec5i1LNPTJBBfy"
       }
     },
     {
@@ -766,8 +766,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3214724.532,
-      "pct": 0.76541,
+      "balance": 3265342.122,
+      "pct": 0.777462,
       "rank": 30,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -1277,10 +1277,34 @@
       }
     },
     {
+      "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "balance": 168690.123,
+      "pct": 0.040164,
+      "rank": 52,
+      "type": "lp",
+      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
+      "pool": "Liquidity Pool",
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcvoter"
+      ],
+      "cohorts": [
+        "dank"
+      ],
+      "first_seen": "2024-08-16",
+      "age_days": 760,
+      "cite": {
+        "type": "account",
+        "ref": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL"
+      }
+    },
+    {
       "address": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx",
       "balance": 166717.07,
       "pct": 0.039695,
-      "rank": 52,
+      "rank": 53,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -1302,30 +1326,6 @@
       "cite": {
         "type": "account",
         "ref": "BRLpvQCoqWjH4osrueoeQk4gofTT7kmJVgBoPg1aKApx"
-      }
-    },
-    {
-      "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 165968.648,
-      "pct": 0.039516,
-      "rank": 53,
-      "type": "lp",
-      "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
-      "pool": "Liquidity Pool",
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcvoter"
-      ],
-      "cohorts": [
-        "dank"
-      ],
-      "first_seen": "2024-08-16",
-      "age_days": 760,
-      "cite": {
-        "type": "account",
-        "ref": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL"
       }
     },
     {
