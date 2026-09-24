@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-09-23T18:27:21Z",
+  "as_of": "2026-09-23T21:16:35Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -755,8 +755,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3449351.014,
-      "pct": 0.821274,
+      "balance": 3452280.356,
+      "pct": 0.821971,
       "rank": 29,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
