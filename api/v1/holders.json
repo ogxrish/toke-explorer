@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-09-24T16:41:31Z",
+  "as_of": "2026-09-24T19:49:39Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 83845916.106,
-      "pct": 19.96331,
+      "balance": 83845920.987,
+      "pct": 19.963311,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -154,8 +154,10 @@
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
       "pair": null,
-      "sns": null,
-      "domains": [],
+      "sns": "ogrish.sol",
+      "domains": [
+        "ogrish.sol"
+      ],
       "badges": [
         "mcwhale"
       ],
@@ -755,15 +757,20 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3464321.657,
-      "pct": 0.824838,
+      "balance": 3464182.077,
+      "pct": 0.824805,
       "rank": 29,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
       "pool": "Liquidity Pool · Raydium",
       "pair": null,
       "sns": null,
-      "domains": [],
+      "domains": [
+        "bonklanatoken.sol",
+        "raydiumpool.sol",
+        "rayidumauthority.sol",
+        "usedsaga.sol"
+      ],
       "badges": [
         "mcmillionaire"
       ],
@@ -1271,8 +1278,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 178815.375,
-      "pct": 0.042575,
+      "balance": 178954.955,
+      "pct": 0.042608,
       "rank": 51,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
@@ -1333,7 +1340,11 @@
       "pool": null,
       "pair": null,
       "sns": null,
-      "domains": [],
+      "domains": [
+        "appletini.sol",
+        "birdeye-is-stealing-your-money.sol",
+        "brrrrrrmoon.sol"
+      ],
       "badges": [
         "mcvoter"
       ],
