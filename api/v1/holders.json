@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-10-02T05:00:11Z",
+  "as_of": "2026-10-02T15:58:12Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 83839163.135,
-      "pct": 19.961702,
+      "balance": 83122280.252,
+      "pct": 19.791016,
       "rank": 1,
       "type": "lp",
       "type_basis": "Meteora DYN2 SOL pool -- liquidity, not a personal holder",
@@ -260,8 +260,8 @@
     },
     {
       "address": "CNYZVtjWmxAReY5cDZ1pGMKVbpGpzFX9M5UmUxDJJ8zb",
-      "balance": 8855988.771,
-      "pct": 2.108568,
+      "balance": 9272052.069,
+      "pct": 2.207631,
       "rank": 10,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
@@ -757,8 +757,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3471287.134,
-      "pct": 0.826497,
+      "balance": 3435490.819,
+      "pct": 0.817974,
       "rank": 29,
       "type": "lp",
       "type_basis": "Raydium — Raydium AMM v4 authority -- liquidity, not a personal holder",
@@ -874,32 +874,10 @@
       }
     },
     {
-      "address": "CcPT7f8UNLkVAniuYAS6dQra9XpgGhpuHfMKDqt9czEH",
-      "balance": 1868033.58,
-      "pct": 0.44477,
-      "rank": 34,
-      "type": "holder",
-      "type_basis": "default -- holds TOKE; no further claim",
-      "pool": null,
-      "pair": null,
-      "sns": null,
-      "domains": [],
-      "badges": [
-        "mcmillionaire"
-      ],
-      "cohorts": [],
-      "first_seen": "2026-04-28",
-      "age_days": 157,
-      "cite": {
-        "type": "account",
-        "ref": "CcPT7f8UNLkVAniuYAS6dQra9XpgGhpuHfMKDqt9czEH"
-      }
-    },
-    {
       "address": "2sziof21j2WdMZ5Z1HjHihZVD6J23hqoomebZtR5KoXf",
-      "balance": 1806311.632,
-      "pct": 0.430074,
-      "rank": 35,
+      "balance": 2092562.459,
+      "pct": 0.498229,
+      "rank": 34,
       "type": "holder",
       "type_basis": "default -- holds TOKE; no further claim",
       "pool": null,
@@ -915,6 +893,28 @@
       "cite": {
         "type": "account",
         "ref": "2sziof21j2WdMZ5Z1HjHihZVD6J23hqoomebZtR5KoXf"
+      }
+    },
+    {
+      "address": "CcPT7f8UNLkVAniuYAS6dQra9XpgGhpuHfMKDqt9czEH",
+      "balance": 1868033.58,
+      "pct": 0.44477,
+      "rank": 35,
+      "type": "holder",
+      "type_basis": "default -- holds TOKE; no further claim",
+      "pool": null,
+      "pair": null,
+      "sns": null,
+      "domains": [],
+      "badges": [
+        "mcmillionaire"
+      ],
+      "cohorts": [],
+      "first_seen": "2026-04-28",
+      "age_days": 157,
+      "cite": {
+        "type": "account",
+        "ref": "CcPT7f8UNLkVAniuYAS6dQra9XpgGhpuHfMKDqt9czEH"
       }
     },
     {
@@ -1278,8 +1278,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 176382.854,
-      "pct": 0.041996,
+      "balance": 175440.587,
+      "pct": 0.041772,
       "rank": 51,
       "type": "lp",
       "type_basis": "Pool vault authority (off-curve PDA) -- liquidity, not a personal holder",
