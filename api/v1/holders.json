@@ -1,7 +1,7 @@
 {
   "dataset": "holders",
   "version": "v1",
-  "as_of": "2026-10-03T08:18:31Z",
+  "as_of": "2026-10-03T23:42:44Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
