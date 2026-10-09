@@ -1,7 +1,7 @@
 {
   "dataset": "holders_all",
   "version": "v1",
-  "as_of": "2026-10-08T17:47:06Z",
+  "as_of": "2026-10-08T23:56:54Z",
   "chain": "solana-mainnet",
   "source": {
     "derived_from": [
@@ -20,8 +20,8 @@
   "data": [
     {
       "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-      "balance": 82618876.345,
-      "pct": 19.671158,
+      "balance": 82599056.044,
+      "pct": 19.666439,
       "rank": 1,
       "type": "lp",
       "sns": null,
@@ -632,8 +632,8 @@
     },
     {
       "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
-      "balance": 3391541.761,
-      "pct": 0.80751,
+      "balance": 3410531.372,
+      "pct": 0.812031,
       "rank": 29,
       "type": "lp",
       "sns": null,
@@ -1380,8 +1380,8 @@
     },
     {
       "address": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
-      "balance": 170685.479,
-      "pct": 0.040639,
+      "balance": 171516.169,
+      "pct": 0.040837,
       "rank": 69,
       "type": "lp",
       "sns": null,
